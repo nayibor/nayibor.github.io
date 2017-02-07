@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on Code Musings</title>
+    <link>https://nayibor.github.io/tags/php/index.xml</link>
+    <description>Recent content in Php on Code Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://nayibor.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cakephp 2.6.7  rawQuery defect</title>
+      <link>https://nayibor.github.io/post/cakephp267-rawquery-defect/</link>
+      <pubDate>Tue, 11 Aug 2015 13:42:38 +0000</pubDate>
+      
+      <guid>https://nayibor.github.io/post/cakephp267-rawquery-defect/</guid>
+      <description>&lt;p&gt;Small observation i had with cakephp 2.6.7 .&lt;/p&gt;&lt;p&gt;I was trying to write a query with &lt;a href=&#34;http://cakephp.org/&#34;&gt;cakephp&lt;/a&gt; and&amp;nbsp; noticed that the query was not &lt;br&gt;&lt;/p&gt;&lt;p&gt;being sent to the server for processing .&lt;/p&gt;&lt;p&gt;I was using the rawQuery method and not the orm&amp;nbsp; methods like find etc...&lt;br&gt;&lt;/p&gt;&lt;p&gt;Query is &lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; $query=&#34; SELECT id,stock_available FROM products WHERE &amp;nbsp;(id = ? and stock_available &amp;gt;= ?)or &amp;nbsp; (id &amp;nbsp;= ? and stock_available &amp;gt;= ?) FOR UPDATE&#34;;&lt;br&gt; $query_params=array(1,50,2,30);&lt;br&gt; $response = $this-&amp;gt;Product-&amp;gt;getDataSource()-&amp;gt;rawQuery($query,$query_params);&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;It was because the&amp;nbsp; &lt;a href=&#34;https://github.com/cakephp/cakephp/blob/2.7/lib/Cake/Model/Datasource/DboSource.php#L397-L436&#34;&gt;rawQuery&lt;/a&gt; method&amp;nbsp; was missing an extra option which was &lt;br&gt;&lt;/p&gt;&lt;p&gt;preventing the query from being run&amp;nbsp; due&amp;nbsp; to&amp;nbsp; confusion in this section &lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;
+
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;       return $this-&amp;gt;execute($sql, $params); &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;This was accepting two parameters instead of three and due to this was &lt;br&gt;&lt;/p&gt;&lt;p&gt;mistaking the $params value for the options value thus query was not run .&lt;br&gt;&lt;/p&gt;&lt;p&gt;query was being run as &lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;public function rawQuery($sql, $params = array()) {
+
+ &amp;nbsp; &amp;nbsp;
+
+
+
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
+
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;       $this-&amp;gt;took = $this-&amp;gt;numRows = false;
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;&lt;b&gt;
+
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;       return $this-&amp;gt;execute($sql, $params); &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/b&gt;&lt;br&gt;
+
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;   }&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;Instead of &lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;public function rawQuery($sql, $params = array()) {
+
+ &amp;nbsp; &amp;nbsp;
+
+
+
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
+
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;       $this-&amp;gt;took = $this-&amp;gt;numRows = false;
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &lt;br&gt;&lt;b&gt;
+
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;       return $this-&amp;gt;execute($sql, array(), $params); &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+
+ &amp;nbsp; &amp;nbsp;
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &lt;/b&gt;&lt;br&gt;
+
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;   }&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;It has subsequently been fixed .&lt;/p&gt;&lt;p&gt;Issue is at this &lt;a href=&#34;https://github.com/cakephp/cakephp/issues/6992/&#34;&gt;link&lt;/a&gt; . &lt;br&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

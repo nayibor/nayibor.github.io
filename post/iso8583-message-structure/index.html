@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" iso8583  message structure &middot;  Code Musings" />
+        <meta property="og:site_name" content="Code Musings" />
+        <meta property="og:url" content="https://nayibor.github.io/post/iso8583-message-structure/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2016-12-05T07:55:57Z" />
+        <meta property="og:article:tag" content="payments" />
+        <meta property="og:article:tag" content="iso8583" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="iso8583  message structure" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://nayibor.github.io/post/iso8583-message-structure/" />
+    
+
+        <title> iso8583  message structure &middot;  Code Musings</title>
+
+        <link rel="preload" href="/js/main.js" as="script" />
+        <link rel="preload" href="/css/main.css" as="style" />
+
+    
+        <meta name="description" content="" />
+    
+
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+        
+
+    
+        <link href="https://nayibor.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Code Musings" />
+    
+
+    
+        <link rel="canonical" href="https://nayibor.github.io/post/iso8583-message-structure/" />
+
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "iso8583  message structure",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2016-12-05",
+        "description": "",
+        "wordCount":  1044 
+    }
+    </script>
+
+
+    
+    <script type="text/javascript">
+    
+    
+    </script>
+    
+
+    <style>
+html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,figure,footer,header,main,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figure{margin:1em 40px}a{background-color:transparent;-webkit-text-decoration-skip:objects}img{border-style:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:300;src:local("Merriweather Sans Light"),local(MerriweatherSans-Light),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowY_zIojJi0m4a5Z6tRh6itY.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:400;src:local("Merriweather Sans Regular"),local(MerriweatherSans-Regular),url(//fonts.gstatic.com/s/merriweathersans/v5/AKu1CjQ4qnV8MUltkAX3sL2aU247V0zTzydO4RoO9Ok.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:700;src:local("Merriweather Sans Bold"),local(MerriweatherSans-Bold),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowQfd-b-I5PxxcmB4_-MNcqw.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:800;src:local("Merriweather Sans ExtraBold"),local(MerriweatherSans-ExtraBold),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowWT7sFQ1Iz1BbpcuCPlgc9Q.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:300;src:local("Merriweather Sans Light Italic"),local(MerriweatherSans-LightItalic),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVX9UU5BmOJGkLxUCVv5VXdc.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:400;src:local("Merriweather Sans Italic"),local(MerriweatherSans-Italic),url(//fonts.gstatic.com/s/merriweathersans/v5/3Mz4hOHzs2npRMG3B1ascf0KIgDhPIHb_R-SWdtqte8.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:700;src:local("Merriweather Sans Bold Italic"),local(MerriweatherSans-BoldItalic),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVYM8pfYvjMoOxygpzLVILAs.woff) format("woff")}@font-face{font-family:'icons';src:url(/fonts/icons.eot?9273991);src:url(/fonts/icons.eot?9273991#iefix) format("embedded-opentype"),url(/fonts/icons.woff?9273991) format("woff"),url(/fonts/icons.ttf?9273991) format("truetype"),url(/fonts/icons.svg?9273991#icons) format("svg");font-weight:400;font-style:normal}[class^="icon-"]:before{font-family:"icons";font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-arrow-right:before{content:'\e807'}.icon-rss:before{content:'\e808'}body{font:300 1em / 1.5em 'Merriweather Sans',sans-serif;color:#595B66}a{color:inherit;text-decoration:none;font-weight:400}h1,h2{text-rendering:optimizeLegibility;color:#1F2026}h2 a{font-weight:inherit}h1{font-size:2em;line-height:1em;margin:2em 0 -.5em}h2{font-size:1.75em;line-height:1.143em;margin:2.286em 0 -.571em}p{margin:2em auto}i{font-weight:400;font-style:italic;color:#363740}img{display:block;max-width:100%;height:auto;margin:2.5em auto}body{background:#fff}.inner{max-width:48em;margin:0 auto;padding:0 1em}#wrapper{position:relative;box-sizing:border-box;width:100%;min-height:100vh;padding-bottom:6em;background:#F2F3F5}#push{transform:translate3d(0,0,0);transform-style:preserve-3d;opacity:1}#nav{position:relative;background:#fff;z-index:70;transform:translate3d(0,0,0);transform-style:preserve-3d;opacity:1}#nav:after{clear:both;content:'';display:table}#nav .nav-logo{float:left;height:2em;padding:1em;max-width:50%}#nav .nav-logo img{width:auto;max-width:none;height:2em;margin:0;border-radius:5px}#nav .nav-menu{float:right}#nav .nav-menu:after{clear:both;content:'';display:table}#nav .nav-menu a{display:block;width:1em;height:1em;line-height:1em;padding:1.5em;text-align:center;float:left}#nav .nav-menu a i:before{margin:auto}.overlay{display:none;position:fixed;left:0;top:0;width:100%;height:100%;z-index:80;display:none}.overlay:before{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:#1F2026;opacity:0;transform-style:preserve-3d}#header{position:relative;padding:4em 0}#header .inner{position:relative;z-index:2}#header .header-title{display:block;text-align:center}#header .header-name{font-weight:700;letter-spacing:-1px;display:block;line-height:1em;font-size:2em;text-decoration:none;color:#1F2026;padding:0;margin:0}#header.has-cover .header-name{color:#fff}#header .header-description{display:block;margin:1em auto 0;color:#9D9FA6;position:relative;font-weight:300}#header .header-description:after{content:'';position:absolute;height:1px;width:100px;margin-left:-50px;left:50%;top:-.5em;background:#D4D5D9}#header.has-cover .header-description{color:#fff}#header.has-cover .header-description:after{background:#fff}#header .header-cover{position:absolute;width:100%;height:100%;top:0;left:0;margin-top:-4em;padding:4em 0;background:no-repeat fixed center 100% / cover;z-index:1}#header .header-cover:before{content:'';position:absolute;width:100%;height:100%;left:0;top:0;background:rgba(0,0,0,0.2)}#header .header-cover:after{content:'';position:absolute;width:100%;left:0;bottom:0;border-bottom:4px solid #36D995}#footer{position:absolute;width:100%;left:0;bottom:0;font-size:.75em;line-height:1.334em;background:#1F2026;color:#737580;z-index:20;transform:translate3d(0,0,0);transform-style:preserve-3d;opacity:1}#footer a{color:#9D9FA6;font-weight:400}#footer .credits{text-align:center;font-size:.75em;line-height:1.334em;padding:2.667em;overflow:auto}#footer .credits span{display:block}#footer .credits .credits-theme{float:left}#footer .credits .credits-software{float:right}.post{position:relative;z-index:20}.post .post-image{display:block;margin:0;padding:0}.post .post-image img{display:block;width:100%;height:auto;margin:0;padding:0}.post .post-meta{display:block;font-size:.75em;line-height:1.334em;font-weight:400;margin-bottom:1.334em}.post .post-title{position:relative;color:#000;font-size:2em;line-height:1.375em;font-weight:800;text-indent:-1px;margin:.25em 0 .75em}.post .post-title:before{content:'';position:absolute;left:0;bottom:-.334em;width:1em;margin-bottom:-2px;border-bottom:4px solid #36D995}.post .post-title a{text-decoration:none;color:inherit;font-weight:inherit}#post-index{position:relative;max-width:1200px;margin:0 auto 4em;padding:.5em;z-index:10}@keyframes fade{0%{transform:translate3d(0,3em,0);opacity:0}100%{transform:translate3d(0,0,0);opacity:1}}.post-list{position:relative}.post-list .post{float:left;width:33.3%;transform:translate3d(0,3em,0);transform-style:preserve-3d;opacity:0;animation:fade ease-out .5s forwards;animation-delay:1.4s}@media only screen and (max-width: 50em){.post-list .post{width:49.9%}}@media only screen and (max-width: 30em){.post-list .post{width:100%;float:none}}.post-list .post:nth-child(1){animation-delay:.1s}.post-list .post:nth-child(2){animation-delay:.2s}.post-list .post:nth-child(3){animation-delay:.3s}.post-list .post:nth-child(4){animation-delay:.4s}.post-list .post:nth-child(5){animation-delay:.5s}.post-list .post:nth-child(6){animation-delay:.6s}.post-list .post:nth-child(7){animation-delay:.7s}.post-list .post:nth-child(8){animation-delay:.8s}.post-list .post:nth-child(9){animation-delay:.9s}.post-list .post .inner{padding:2em;margin:.5em;max-width:none;background:#fff;box-sizing:border-box;transform:scale(1);transform-style:preserve-3d}@media only screen and (max-width: 50em){.post-list .post .inner{padding:1em}}.post-list .post .post-link{position:absolute;left:0;top:0;width:100%;height:100%;z-index:10}.post-list .post .post-image{position:relative;margin:-2em -2em 0;overflow:hidden;background:#36D995}@media only screen and (max-width: 50em){.post-list .post .post-image{margin:-1em -1em 0}}.post-list .post .post-image img{transform:scale(1);transform-style:preserve-3d;opacity:1}.post-list .post .post-image:after{content:'';position:absolute;left:-5%;bottom:-2.5em;width:110%;height:4em;background:#fff;border-top:4px solid #36D995;box-shadow:0 0 2em rgba(0,0,0,0.2);transform:rotate(5deg)}.post-list .post .post-title{font-size:1.5em;line-height:1.167em}.post-list .post .post-excerpt{margin:0}.post-list .post .post-more{display:block;margin-top:1.5em}.post-list .post .post-more a{display:inline-block;font-size:.875em;line-height:1.143em;font-weight:400;color:#363740}.post-list .post .post-more a i{color:#2DB77E}.pagination{min-height:3em;margin:4em auto 2em;padding:0;position:relative}.pagination .pagination-item{position:relative;display:block;height:3em;line-height:3em;padding:0 1em;text-align:center;text-decoration:none;font-weight:700;color:#363740;border:1px solid #36D995;border-radius:4em;z-index:60}.pagination .pagination-item i{position:relative}@media only screen and (max-width: 30em){.pagination .pagination-item{width:4em;height:4em;line-height:4em;margin-top:-.5em;padding:0!important}.pagination .pagination-item i{font-size:1.5em}.pagination .pagination-item>span{display:none}}.pagination .pagination-prev{float:right}.pagination .pagination-prev i{right:-.05em}.pagination .pagination-info{display:block;left:0;top:0;height:3em;line-height:3em;position:absolute;text-align:center;width:100%;z-index:50;color:#9D9FA6}#loader-wrapper{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}#loader{display:block;position:relative;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;border:3px solid transparent;border-top-color:#36D995;animation:spin 2s linear infinite}#loader:before{content:"";position:absolute;top:5px;left:5px;right:5px;bottom:5px;border-radius:50%;border:3px solid transparent;border-top-color:#2DB77E;animation:spin 3s linear infinite}#loader:after{content:"";position:absolute;top:15px;left:15px;right:15px;bottom:15px;border-radius:50%;border:3px solid transparent;border-top-color:#D4D5D9;animation:spin 1.5s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+</style>
+
+
+    </head>
+    <body class="home-template">
+      <div id="loader-wrapper">
+        <div id="loader"></div>
+      </div>
+      <section id="wrapper" style="display: none;">
+        <div id="ajax-container">
+          <nav id="nav" class="nav">
+            <div class="nav-logo">
+              <a href="https://nayibor.github.io/">
+      			  
+              </a>
+            </div>
+            <div class="nav-menu">
+              <a class="rss" href="">
+                <i class="icon-rss"></i>
+              </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
+                
+                
+            </div>
+          </nav>
+
+
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
+
+			<div id="push">
+
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">5 Dec 2016</span> <span class="reading-time">| <span class="estimated-reading-time">5 min.</span> (<span class="word-count">1044</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">iso8583  message structure</h1>
+  			</header>
+
+  			<section class="post-content">
+  				<p>alloha.<br>at last i have been able to get my lazy behind to write a blog post on this .</p><p>About time :) .<br>This will be the first in a series about parsing iso8583 financial messages &nbsp;using erlang .<br>we will get to know <br>about iso8583 and the message structure,<br>receiving iso 8583 messages over the wire using erlang tcp server and parsing the message .&nbsp;<br>parsing those messages in various formats(text(acii),binary,custom format).</p><p>Here we go .</p><h2>First off what is iso8583 ?</h2><p>Simply put it is a protocol which specificies the content of financial transaction done with payment cards in the form of request/response messages as well as info on how to process the financial transaction.</p><p>more general info can be found on the wikipedia page about it <a href="https://en.wikipedia.org/wiki/ISO_8583">here</a> .</p><h2>What are the components of an iso &nbsp;message ?</h2><ul><li>optional header . optional zero padded header showing size of message.header size is known in advance by receipient and is specified by sender .Usually contains size of message ony but may contain size of header + size of message . An &nbsp;example of a header is 0158 which means the content of the message(mti+bitmap+data elements) is 158 bytes&nbsp;</li><li>mti(message type indicator). A 4 digit &nbsp;number showing info about the message . each digit shows some info about the message . <br>example of an mti is 1200 meaning with the meaning below .<br>1 - first digit is message version - 1 message class means 1993 version <br>2 - second digit specifies the message class(purpose of message) &nbsp;eg. authorization,reversal.etc.. 2 means financial message<br>0 - third digit specifies message function(how the message should flow within system) -eg. requests,advices,etc.. &nbsp;0 means request<br>0 - fourth digit specifies message origin (where is the message coming from ) eg. from acquirer,issue etc.. 0 means acquirer</li><li>bitmap(primary or secondary).A 16/32 hexadecimal number showing the presence or absence of data elements . a bitmap can be a primary or a secondary bitmap . <br>primary means presence of &nbsp;fields from 1-64 .<br>secondary means the presence of presence of fields greater than 64 means 64-128 .<br>the bitmap has to be converted from hex form to binary form where each binary digit represent presence or absence of a data element .if &nbsp;if the first digit of the bitmap in binary form is 1 it means bitmap has fields greater than 64 which makes it a secondary bitmap .<br>An example of a bitmap is F230040102B000000000000004000000 meaning fields 1,2,3,4,7,11,12,22,32,39,41,43,44,102 are present and bitmap is a secondary bitmap due to fields greater than 64 being present .<br></li><li>data elements . These are the &nbsp;actual contents of &nbsp;the financial message such as the amount of the transaction,currecy,transaction type(balance enquiry,withdrawal,etc..),card number . <br>there are 128 data elements from 1-128 .&nbsp;</li></ul><h2>What variants of iso messages are available?</h2><p>There are a few differnt variants of the iso8583 messaging format but &nbsp;the most common ones are (1987 format/1993 format /2003 format ).<br>the specification of &nbsp;the various variants specify &nbsp;the position of the various data elements &nbsp;as well as what format the message will be transmitted in .<br>proprietery/custom ones also exist based on the above ones which may be cusom format agreed to be used between two parties or internal format for one party. &nbsp;<br></p><h2>How are messages processed ?</h2><p>Financial messages consist of request/response messages are sent between two entities to process financial transactions &nbsp; .<br>a tcp connection or other connection type(UDP, X.25, SDLC, SNA,ASYNC, QTP, SSL, HTTP,custom) is opened between the two entities . <br>Some handshake mechanism may be done to prepare both parties for sending messages &nbsp; .<br>Messages are sent consisting of a request/response message .<br>Depending on connection type a persistant connection may be kept open or a connection may be closed and reopened later for subsequent messages to be sent and received.</p><h2>What to keep in mind when processing messages ? </h2><ul><li>Message format (ascii,binary,custom format).eg 1993 acii,1993 binary.in what format the message will be transmitted in as well as rules to encode/decode the message .&nbsp;<br></li><li>Wire protocol (TCP/IP,UDP, X.25, SDLC, SNA,ASYNC, QTP, SSL, HTTP,custom protocol )how a message is transmitted over the wire.<br></li><li>Message flow (e.g., send request for authorization, wait for response, retransmit, reversal).Various states the message may be in .&nbsp;<br></li><li>Optional beginning and ending headers &nbsp;showing size of message and/or headers themeselves .</li></ul><h2>Enough talking . An example please ???</h2><p>The assumption is that we are using iso 1992 iso8583 ascii specification for specifying message rules for encoding decoding messages .the specification will also show the data type of a field(number,string,hex,etc..),where it is variable length or not or whether it has an optional padding or not . &nbsp; &nbsp; &nbsp;<br>We will deconstruct the iso message below &nbsp;as an example and show the optional header,mti,bitmap,data elements in the message . <br>the optional header will be assumed to be 4 bytes long excluding the size of the header itself.</p><p><br></p><p>Consider the iso message below<br></p><p><b>01581200F230040102B000000000000004000000</b></p><p><b>1048468112122012340000100000001107221800</b></p><p><b>000001161204171926FABCDE123ABD06414243</b></p><p><b>000termid1210Community106A5DFGR1112341234234</b><br></p><p>this is &nbsp;breakdown of the message below from left to right</p><ul><li>0158 -&gt; header length(4 byte or digit header). this show the length of the message is 158 digits excluding the header<br></li><li>1200 -&gt; mti<br></li><li>F230040102B000000000000004000000 -&gt; fld 1 bitmap(secondary in this case cuz F converted into 4 digit binary number is 1111 meaning bitmap contains secondary &nbsp;)<br></li><li>104846811212 -&gt; fld 2 primary account number(prefix header showing length of fld 2 is is 10 digits)<br></li><li>201234 -&gt; fld3 processing code&nbsp;<br></li><li>000010000000 -&gt; fld 4 transaction amount&nbsp;<br></li><li>1107221800 -&gt; fld 7 Transmission date &amp; time<br></li><li>000001 -&gt; fld 11 rrn<br></li><li>161204171926 -&gt; fld 12 time local transaction<br></li><li>FABCDE123ABD -&gt; fld 22 pos data code&nbsp;<br></li><li>06414243 -&gt; fld 32 Acquiring institution identification code(prefix header showing length of fld32 is 6 digits)&nbsp;<br></li><li>000 &nbsp;-&gt; fld 39 response code&nbsp;<br></li><li>termid12 -&gt; &nbsp;fld 41 terminal id&nbsp;<br></li><li>10Community1 -&gt; &nbsp;fld 43 location data(prefix header showing length of fld43 is 10 digits)<br></li><li>06A5DFGR -&gt; fld 44 additional response code (prefix header showing length of fld32 is 6 digits)&nbsp;<br></li><li>1112341234234 -&gt; fld 102 account number<br></li></ul><p>this is a short summary of the basics of iso .</p><p>more info can be on the wikipedia page if you want to delve more deeply into it .</p><p>next post will be about using erlang to extract the various component (mti,bitmap,data elements) out of a message using a spec .&nbsp;</p>
+
+  			</section>
+
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+            
+                <a href="https://nayibor.github.io//tags/payments/">payments</a>
+            
+                <a href="https://nayibor.github.io//tags/iso8583/">iso8583</a>
+            
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=iso8583%20%c2%a0message%20structure&url=https%3a%2f%2fnayibor.github.io%2fpost%2fiso8583-message-structure%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnayibor.github.io%2fpost%2fiso8583-message-structure%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fnayibor.github.io%2fpost%2fiso8583-message-structure%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
+
+  			<aside class="post-comments">
+    
+    
+    
+</aside>
+
+
+			</div>
+
+			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/creating-basic-tcp-server-for-iso-messaging-processing-/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Creating basic tcp server for iso messaging processing .</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				
+					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/post/pagination-using-backbonejs-and-underscore-template/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Pagination using backbone.js and underscore template</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
+
+		</div>
+	</article>
+</main>
+
+				<div id="body-class" style="display: none;"></div>
+				<footer id="footer">
+					<section class="credits">
+						<span class="credits-theme">Theme <a href="https://github.com/zenithar/hugo-theme-bleak" target="_blank" rel="nofollow">Bleak</a> by <a href="http://zutrinken.com" target="_blank" rel="nofollow">zutrinken</a></span>
+						<span class="credits-software">Published with <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a></span>
+					</section>
+				</footer>
+				
+				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        
+    </div>
+</div>
+
+
+				<div class="overlay"></div>
+			</div>
+		</section>
+
+    <script async src="/js/main.js"></script>
+
+
+
+
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+</body>
+</html>
+
