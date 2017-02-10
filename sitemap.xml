@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://nayibor.github.io/post/creating-basic-tcp-server-for-iso-messaging-processing-/</loc>
+    <loc>https://nayibor.github.io/post/parsing-%20iso-messages-part1/</loc>
     <lastmod>2016-12-12T07:57:26+00:00</lastmod>
   </url>
   
@@ -19,6 +19,11 @@
   <url>
     <loc>https://nayibor.github.io/post/cakephp267-rawquery-defect/</loc>
     <lastmod>2015-08-11T13:42:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/post/Parsing%20Iso%20Messages%20Part%202/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
   </url>
   
   <url>
@@ -42,6 +47,12 @@
   <url>
     <loc>https://nayibor.github.io/tags/erlang/</loc>
     <lastmod>2016-12-12T07:57:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/erlang-binary-processing/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
