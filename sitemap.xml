@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://nayibor.github.io/post/Parsing%20Iso%20Messages%20Part%202/</loc>
+    <lastmod>2016-12-22T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nayibor.github.io/post/parsing-%20iso-messages-part1/</loc>
     <lastmod>2016-12-12T07:57:26+00:00</lastmod>
   </url>
@@ -22,11 +27,6 @@
   </url>
   
   <url>
-    <loc>https://nayibor.github.io/post/Parsing%20Iso%20Messages%20Part%202/</loc>
-    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nayibor.github.io/tags/backbone/</loc>
     <lastmod>2016-07-03T02:41:08+00:00</lastmod>
     <priority>0</priority>
@@ -40,25 +40,25 @@
   
   <url>
     <loc>https://nayibor.github.io/</loc>
-    <lastmod>2016-12-12T07:57:26+00:00</lastmod>
+    <lastmod>2016-12-22T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nayibor.github.io/tags/erlang/</loc>
-    <lastmod>2016-12-12T07:57:26+00:00</lastmod>
+    <lastmod>2016-12-22T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nayibor.github.io/tags/erlang-binary-processing/</loc>
-    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+    <lastmod>2016-12-22T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nayibor.github.io/tags/iso8583/</loc>
-    <lastmod>2016-12-12T07:57:26+00:00</lastmod>
+    <lastmod>2016-12-22T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -82,7 +82,7 @@
   
   <url>
     <loc>https://nayibor.github.io/post/</loc>
-    <lastmod>2016-12-12T07:57:26+00:00</lastmod>
+    <lastmod>2016-12-22T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   

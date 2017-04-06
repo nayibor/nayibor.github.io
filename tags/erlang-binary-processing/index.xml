@@ -11,7 +11,7 @@
     <item>
       <title>Parsing iso8583 messages Part 2</title>
       <link>https://nayibor.github.io/post/Parsing%20Iso%20Messages%20Part%202/</link>
-      <pubDate>Fri, 11 Jul 2014 10:54:24 +0200</pubDate>
+      <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate>
       
       <guid>https://nayibor.github.io/post/Parsing%20Iso%20Messages%20Part%202/</guid>
       <description>&lt;p&gt;Today we will be showing how to  extract the various components out of an iso string.
