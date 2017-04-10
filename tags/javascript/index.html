@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -12,28 +11,15 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Pagination using backbone.js and underscore template &middot;  Code Musings" />
+        <meta property="og:title" content=" Javascript &middot;  Code Musings" />
         <meta property="og:site_name" content="Code Musings" />
-        <meta property="og:url" content="https://nayibor.github.io/post/pagination-using-backbonejs-and-underscore-template/" />
+        <meta property="og:url" content="https://nayibor.github.io/tags/javascript/" />
 
     
-        <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2016-07-03T02:41:08Z" />
-        <meta property="og:article:tag" content="cakephp" />
-        <meta property="og:article:tag" content="backbone" />
-        <meta property="og:article:tag" content="underscore" />
-        <meta property="og:article:tag" content="pagination" />
-        
-
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@" />
-        <meta name="twitter:creator" content="@" />
-        <meta name="twitter:title" content="Pagination using backbone.js and underscore template" />
-        <meta name="twitter:description" content="" />
-        <meta name="twitter:url" content="https://nayibor.github.io/post/pagination-using-backbonejs-and-underscore-template/" />
+        <meta property="og:type" content="website" />
     
 
-        <title> Pagination using backbone.js and underscore template &middot;  Code Musings</title>
+        <title> Javascript &middot;  Code Musings</title>
 
         <link rel="preload" href="/js/main.js" as="script" />
         <link rel="preload" href="/css/main.css" as="style" />
@@ -55,23 +41,10 @@
     
 
     
-        <link rel="canonical" href="https://nayibor.github.io/post/pagination-using-backbonejs-and-underscore-template/" />
+        <link href="https://nayibor.github.io/tags/javascript/index.xml" rel="alternate" type="application/rss+xml" title="Javascript &middot; Code Musings" />
+    
+        <link rel="canonical" href="https://nayibor.github.io/tags/javascript/" />
 
-
-    <script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "headline": "Pagination using backbone.js and underscore template",
-        "author": {
-            "@type": "Person",
-            "name": "http://profiles.google.com/?rel=author"
-        },
-        "datePublished": "2016-07-03",
-        "description": "",
-        "wordCount":  496 
-    }
-    </script>
 
 
     
@@ -100,117 +73,69 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
               </a>
             </div>
             <div class="nav-menu">
-              <a class="rss" href="">
+              <a class="rss" href="https://nayibor.github.io/tags/javascript/index.xml">
                 <i class="icon-rss"></i>
               </a>
-                
-                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
                 
                 
             </div>
           </nav>
 
 
-<main class="content" role="main">
-	<article class="post">
-		<div class="inner">
+<header id="header" class="header has-cover">
+	<div class="inner">
+		<a class="header-title" href="https://nayibor.github.io/">
+			<h1 class="header-name">Javascript</h1>
+		</a>
+	</div>
+	
+	<div class="header-cover" style="background-image: url(cover.png)"></div>
+	
+</header>
 
-			<div id="push">
+	<div id="post-index" class="container">
 
-  			<header class="post-header">
-  				<span class="post-meta">
-						<span class="post-date">3 Jul 2016</span> <span class="reading-time">| <span class="estimated-reading-time">3 min.</span> (<span class="word-count">496</span> words)</span></span>
-  				</span>
-  				<div class="clear"></div>
-  				<h1 class="post-title">Pagination using backbone.js and underscore template</h1>
-  			</header>
+		<main class="content" role="main">
 
-  			<section class="post-content">
-  				<p>this post will talk about how to create a pagination area for pagination using backbone.js and underscore templates.</p><p>you will need to have the pagination object available on the client side in the following form before its passed to the model object.this could have been request as &nbsp;part of a collection request &nbsp;which had been done to get fresh data about a collection . subfields can be created for the pagination parts .</p><p>//sample pagintation info &nbsp;returned from controller function will be passed as an &nbsp; &nbsp; arguement when the view is being created for the PaginateView<br></p><p><b>//cakephp controller example below&nbsp;</b></p><blockquote><p>class ProductController extends AppController {<br>public $name = 'Product';</p><p>public function products(){</p></blockquote><blockquote><p>$products = $this-&gt;paginate('Product'); &nbsp;<br>$paginate_data=array();<br>$paginate_data['page']=$this-&gt;request-&gt;params['paging']['Product']['page'];<br>$paginate_data['pageCount']=$this-&gt;request-&gt;params['paging']['Product']['pageCount'];<br>$paginate_data['prevPage']=$this-&gt;request-&gt;params['paging']['Product']['prevPage'];<br>$paginate_data['nextPage']=$this-&gt;request-&gt;params['paging']['Product']['nextPage'];<br>//for putting the product info retrieved int a form which can be used for the backbone collection <br>//on the front end        <br>$response_array=array();<br>foreach($products as $val){         <br>response_array[]=$val['Product'];<br>};<br>echo json_encode(array("pagination"=&gt;$paginate_data,"products"=&gt;$response_array));<br>exit();</p><p>}}</p><p><br></p></blockquote><p><b>//sample pagination model with default setup</b></p><p>&nbsp;var PageModel = Backbone.Model.extend({&nbsp;</p><blockquote><p>   defaults: {<br>query :’null,<br>    pagination : null,<br>  url:”http://localhost/Product/products/”<br>}&nbsp;});</p></blockquote><p><b>//sample view for pagination item<br></b></p><blockquote><p>var PaginateView= Backbone.View.extend({<br>   tagname:'div',<br>  id:'page_div',<br>  model:PageModel,<br>    template: _.template($('#paginate_tmpl').html()),<br>   render:function(){              <br>    var pass_data={<br>     query:this.model.get('query'),<br>  url:this.model.get('url'),<br>  paginate:this.model.get('pagination')<br>   };<br> &nbsp; &nbsp; var html = this.template(pass_data);<br> &nbsp; &nbsp; this.$el.html(html);<br> &nbsp; &nbsp; return this;<br>     }<br>   });</p></blockquote><p><b>//sample creation of a pagination view with data returned from server as arguement</b><br></p><p>var pagination_data={<br>page:2,<br>pageCount:10,<br>prevPage:1,<br>nextPage:3<br>};<br>var query_data="a=1&amp;b=2&amp;c=3";<br>var url_data=$("#product_list_url").val();<br>var page = new PaginateView({model:new PageModel({query:query_data,url:url_data,pagination:pagination_data})});</p><p><b>//lastly pagination underscore template</b><br></p><blockquote><p>this example works &nbsp;for (first,previous,next,last)pagination type and cycling inbtween them<br>paginate template does some calculations using the page,pageCount,prevPage,nextPage to determine current page <br>and show it and hide links for the others&nbsp;<br>you will have to use your own css here to style links</p><p>&lt;!--</p><p>this template is a template for pagination <br>combination of underscore tempate<br>--&gt;</p><p>&lt;script type="text/template" id="paginate_tmpl"&gt;</p><p>&lt;%<br>//for first page of &nbsp;multiple page&nbsp;resultset<br>if(paginate.page!=paginate.pageCount &amp;&amp; paginate.page==1 &amp;&amp; !paginate.prevPage &amp;&amp; paginate.nextPage) &nbsp;{ &nbsp; &nbsp;<br>%&gt;</p><p>&lt;span class="pglink"&gt;&lt;&lt; previous &lt;/span&gt;<br>&lt;span class="pglink"&gt;&lt;a href="&lt;%= url+"?page="+(paginate.page+1)+"&amp;"+query %&gt;"&gt;next &gt;&gt;&lt;/a&gt;&lt;/span&gt;<br>&lt;span class="pglink"&gt;&lt;a href="&lt;%= url+"?page="+(paginate.pageCount)+"&amp;"+query %&gt;" rel="last"&gt;last &gt;&lt;/a&gt;&lt;/span&gt;</p><p>&lt;%<br>//for pages &gt; current page but less than pageCount<br>}else if(paginate.page &gt; 1 &amp;&amp; paginate.page &lt; paginate.pageCount){ &nbsp; <br>%&gt;</p><p>&lt;span class="pglink"&gt;&lt;a href="&lt;%= url+"?page=1"+"&amp;"+query %&gt;"&gt;&lt; first&lt;/a&gt;&lt;/span&gt;<br>&lt;span class="pglink"&gt;&lt;a href="&lt;%= url+"?page="+(paginate.page-1)+"&amp;"+query %&gt;" rel="previous"&gt;&lt;&lt; previous&lt;/a&gt;&lt;/span&gt;<br>&lt;span class="pglink"&gt;&lt;a href="&lt;%= url+"?page="+(paginate.page+1)+"&amp;"+query %&gt;" rel="next"&gt;next &gt;&gt;&lt;/a&gt;&lt;/span&gt;<br>&lt;span class="pglink"&gt;&lt;a href="&lt;%= url+"?page="+paginate.pageCount+"&amp;"+query %&gt;" rel="last"&gt;last &gt;&lt;/a&gt;&lt;/span&gt;</p><p>&lt;%<br>//for a single page resultset<br>}else if(paginate.page==paginate.pageCount &amp;&amp; !paginate.nextPage &amp;&amp; !paginate.prevPage){ &nbsp; &nbsp;<br>%&gt;<br>&lt;span class="pglink"&gt;&lt;&lt; previous&lt;/span&gt; &nbsp;<br>&lt;span class="pglink"&gt;next &gt;&gt;&lt;/span&gt; &nbsp;</p><p>&lt;% <br>//for last page of multi page resultset&nbsp;<br>}else if(paginate.page==paginate.pageCount &amp;&amp; !paginate.nextPage &amp;&amp; paginate.prevPage){ &nbsp; <br>%&gt;</p><p>&lt;span class="pglink"&gt;&lt;a href="&lt;%= url+"?"+query %&gt;"&gt;&lt; first&lt;/a&gt;&lt;/span&gt;<br>&lt;span class="pglink"&gt;&lt;a href="&lt;%= url+"?page="+(paginate.page-1)+"&amp;"+query %&gt;"&gt;&lt;&lt; previous&lt;/a&gt;&lt;/span&gt;<br>&lt;span class="pglink"&gt;next &gt;&lt;/span&gt; &nbsp;<br>&lt;% &nbsp; <br>}                     &nbsp; <br>%&gt;<br>&lt;/script&gt;</p></blockquote><p><br></p><p>you can play around with the template and also the data returned from your controller to change the data returned to create more complex templates with more jump links .</p><p>this was just a starting point to show a sample underscore,backbone pagination template .</p><p>code &nbsp;for tutorial can be found at this <a href="https://bitbucket.org/nayibor/cake_backbone_pagination">repo</a>&nbsp;</p>
+			<div class="post-list">
+				<div id="push">
 
-  			</section>
+			
 
-  			<footer class="post-footer">
-  				<div class="post-tags">
-            
-            
-                <a href="https://nayibor.github.io//tags/cakephp/">cakephp</a>
-            
-                <a href="https://nayibor.github.io//tags/backbone/">backbone</a>
-            
-                <a href="https://nayibor.github.io//tags/underscore/">underscore</a>
-            
-                <a href="https://nayibor.github.io//tags/pagination/">pagination</a>
-            
-            
-  				</div>
-  				<div class="post-share">
-  					<a class="icon-twitter" href="https://twitter.com/share?text=Pagination%20using%20backbone.js%20and%20underscore%20template&url=https%3a%2f%2fnayibor.github.io%2fpost%2fpagination-using-backbonejs-and-underscore-template%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-  						<span>Twitter</span>
-  					</a>
-  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnayibor.github.io%2fpost%2fpagination-using-backbonejs-and-underscore-template%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-  						<span>Facebook</span>
-  					</a>
-  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fnayibor.github.io%2fpost%2fpagination-using-backbonejs-and-underscore-template%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-  						<span>Google+</span>
-  					</a>
-  				</div>
-  			</footer>
+			
+			  
+<article class="post">
 
-  			<aside class="post-comments">
-    
-    
+	<div class="inner">
+		<a class="post-link" href="https://nayibor.github.io/post/Programming%20languages%20as%20web%20template%20languages/"></a>
+		
+		<span class="post-meta">
+			<span class="post-date">9 Apr 2017</span>
+		</span>
+		<h2 class="post-title"><a href="https://nayibor.github.io/post/Programming%20languages%20as%20web%20template%20languages/">Programming languages as web template languages</a></h2>
+		<p class="post-excerpt">&hellip;</p>
+		<span class="post-more"><a href="https://nayibor.github.io/post/Programming%20languages%20as%20web%20template%20languages/">Read More <i class="icon-arrow-right"></i></a></span>
+	</div>
+</article>
 
-<div id="disqus_thread"></div>
-<script type="text/javascript">
+			
 
-
-
-
-(function() { 
-var d = document, s = d.createElement('script');
-s.src = 'https://https-nayibor-github-io.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-    
-</aside>
-
-
+				</div>
 			</div>
 
-			<nav class="post-nav">
-				
-					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/iso8583-message-structure/">
-						<section class="post-nav-teaser">
-							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
-							<span class="post-nav-info">
-								<h4 class="post-nav-title">Iso8583  message structure</h4>
-								<p class="post-nav-excerpt">&hellip;</p>
-							</span>
-						</section>
-					</a>
-				
-				
-					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/post/cakephp267-rawquery-defect/">
-						<section class="post-nav-teaser">
-							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
-							<span class="post-nav-info">
-								<h4 class="post-nav-title">Cakephp 2.6.7  rawQuery bug</h4>
-								<p class="post-nav-excerpt">&hellip;</p>
-							</span>
-						</section>
-					</a>
-				
-				<div class="clear"></div>
-			</nav>
+			<nav id="pagination" class="pagination" role="pagination">
+	<div class="inner">
+	
+		<span class="pagination-info">Page 1 of 1</span>
+	
+		<div class="clear"></div>
+	</div>
+</nav>
 
-		</div>
-	</article>
-</main>
+
+		</main>
+
+	</div>
 
 				<div id="body-class" style="display: none;"></div>
 				<footer id="footer">
@@ -221,16 +146,6 @@ s.setAttribute('data-timestamp', +new Date());
 				</footer>
 				
 				
-<div id="tocMenu" data-target="toc">
-    <div class="menu-header">
-        <span class="menu-label">Menu</span>
-        <a class="menu-close" data-action="toc" data-target="toc"></a>
-    </div>
-    <div id="toc" class="menu-list">
-        
-    </div>
-</div>
-
 
 				<div class="overlay"></div>
 			</div>
