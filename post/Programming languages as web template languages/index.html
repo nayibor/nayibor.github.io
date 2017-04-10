@@ -134,9 +134,8 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 <div>
 <img src="/images/underscore.png" alt="underscore" />
 <img src="/images/handlebars_logo.png" alt="handlerbars" />
-<img src="/images/mustache.png" alt="mustache" /></p>
-
-<p></div></p>
+<img src="/images/mustache.png" alt="mustache" />
+</div></p>
 
 <p>Every one has their favourite but a common denominator among them all is that they make our work as web developers
 easier by giving us separation of concerns between data and content as well as lots of other <a href="https://en.wikipedia.org/wiki/Web_template_system#Motivations_and_typical_uses">advantages</a>.
@@ -218,11 +217,10 @@ This will expand into the html below
 <span style="color: #f92672">&lt;/table&gt;</span>
 </pre></div>
 
-Another example below which will generate a list of headers sent with a request in yaws using elm  is seen below
+Another example below which will generate a list of headers sent with a request in yaws using erlang is seen below
 <pre>
     <code class="erlang">
 out(A) -&gt;
-    Req = A#arg.req,
     H = yaws_api:reformat_header(A#arg.headers),%%list containing headers
     {ehtml,
     [
@@ -257,11 +255,11 @@ The above code will expand into the html below
 </pre></div>
 
 I know the syntax is a bit foreign :) but bear with me . In both examples the power of the language was used to generate the html.
-this makes expressing sometimes very complex logic easy will keeping input data seperate from content</p>
+this makes expressing sometimes very complex logic easy will keeping input data seperate from content.</p>
 
 <h1 id="elm-views">elm views</h1>
 
-<p><a href="http://elm-lang.org/">Elm</a> is a functional language that compiles to javascript .You can do some really cool front end stuff  with elm but for the purposes of our post we will concentrate on how  a view (html output) is created in elm. An example below of code for creating html output in elm is given below
+<p><a href="http://elm-lang.org/">Elm</a> is a functional language that compiles to javascript .You can do some really cool front end stuff  with elm but for the purposes of this post we will concentrate on how  a view (html output) is created in elm. An example below of code for creating html output in elm is given below
 <pre>
     <code class="elm">
 view : Model -&gt; Html Msg
@@ -277,19 +275,20 @@ view model =
     ]
     </code>
 </pre>
-In this case the div,button,onClick,text are all functions which accept parameters.
-generally the pattern is that the functions(dom elements) accept as the first parameter a list of attributes and
+Notice how the data is completely separate from the view functions (no mixing of html with data).
+In this case also the div,button,onClick,text are all functions which accept parameters.
+The general pattern is that the functions(dom elements) accept as the first parameter a list of attributes and
 then a list of child nodes or inner html value as the second parameter.</p>
 
 <p>So the first div above has no attributes but has child nodes.
-the first input element has a list representing attributes(i.e. the type=text and placeholder=name).
+the first input element has a list representing attributes(i.e. the type=text and placeholder=Name).
 the text function can be used for putting  values into the tags and is the innerhtml in the parent div tag .
 The value of <em>model</em> which contains the state of the application in this case is <em>0</em>.</p>
 
 <p>the text function accepts only strings as a parameter  so 0 has to converted to &ldquo;0&rdquo; else there will be an error thrown.
 <em>(toString model)</em> just means turn 0 into a string and give us the result of that computation.
-Elm is statically typed so does type checking at compile time. one nice thing it also has is <a href="https://en.wikipedia.org/wiki/Type_inference">type inference</a>) which basically means it can infer types without type annotations.
-Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen.its very fast to put it short :).</p>
+Elm is statically typed so does type checking at compile time. one nice thing it also has is <a href="https://en.wikipedia.org/wiki/Type_inference">type inference</a> which basically means it can infer types without type annotations.
+Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen. This results in very fast rendering speeds :).</p>
 
 <p>At the end the above elm view code will turn into the html below
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;div&gt;</span>
@@ -302,14 +301,14 @@ Elm  generated html also does does some virtual dom stuff internally before cont
 <span style="color: #f92672">&lt;/div&gt;</span>
 </pre></div>
 
-pretty neat huh .notice how the data is completely separate from the view (no mixing of stuff).you also have the power of the
-elm language at your disposal to do any computation,testing you want before outputting html . components are also just functions so
+pretty neat huh.you also have the power of the
+elm language at your disposal to do any computation,testing you want before outputting html.components are also just functions so
 you can create reusable components and use them anywhere you want while  still respecting the separation of data and content.</p>
 
 <h1 id="mithril-js-components">mithril.js components</h1>
 
 <p><a href="https://mithril.js.org/">Mithril</a> is a modern client-side Javascript framework for building Single Page Applications .
-you can also do some cool stuff with it too but we will be concentration on the way components are created using javascript in this case .
+you can also do some cool stuff with it too but we will be concentrating on the way components are created using javascript in this case .
 An example below of code for creating a component is given below
 <pre>
     <code class="javascript">
@@ -325,10 +324,10 @@ m.mount(root, Hello);//to activate the content
     </code>
 </pre>
 A Mithril component is just an object with a view function.
-As usual the code is a variant of a function accepting a list of attributes,and a list of childnodes or inner html value.
-The m(a,b) is a function for which the first parameter is a list of attributes , the second parameter being a list of child nodes.
-mithril.js also does some virtual dom diffing under the hood so it renders html quite quickly also .
-you can do some really fancy stuff in there especially if you combine it with libraries like <a href="http://ramdajs.com/">rambda</a> library for component creation.
+As usual the code is a variant of a function accepting a list of attributes and a list of childnodes or an inner html value.
+The <em>m(a,b)</em> is a function for which the first parameter is a list of attributes , the second parameter being a list of child nodes or an inner html value.
+mithril.js also does some virtual dom diffing under the hood so it renders html quite quickly also.
+you can do some really fancy stuff in there especially if you combine it with libraries like <a href="http://ramdajs.com/">rambda</a> for component creation.
 this is a very simple example but it does have all the advantages like ease of testing,separation of data from content,power of js to create components.</p>
 
 <p>This will expand into the html below
@@ -346,12 +345,12 @@ this is a very simple example but it does have all the advantages like ease of t
 <ul>
 <li>making available all  the power of a  programming language to be used in generating templates</li>
 <li>reduced learning curve since no special syntax has to be learnt to create templates</li>
-<li>its easier to  debug and find errors when creating  components/html because html/components are all functions .
-the compiler/debugger of the language is also at your disposal . elm is super at this :)</li>
-<li>separation of data from view is very easy . the data mostly become input to the component generation functions</li>
+<li>its easier to  debug and find errors when creating  components/html because html/components are all functions
+the compiler/debugger of the language is also at your disposal.elm is super at this :)</li>
+<li>separation of data from view is very easy .the data mostly become input to the component generation functions</li>
 <li>rapid and more flexible development due to familiarity with language (this however depends on the capability of the language in question)</li>
 <li>standards compliance made easier.no more looking for that div hidden somewhere which is breaking all the html code :)</li>
-<li>not constrained by how the template engine does stuff. logic-less,logic,small template library functions etc&hellip;</li>
+<li>not constrained by how the template engine does stuff.logic-less,logic,small template library functions etc&hellip;</li>
 </ul>
 
   			</section>

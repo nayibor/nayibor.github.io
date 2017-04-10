@@ -20,9 +20,8 @@
 &lt;div&gt;
 &lt;img src=&#34;https://nayibor.github.io/images/underscore.png&#34; alt=&#34;underscore&#34; /&gt;
 &lt;img src=&#34;https://nayibor.github.io/images/handlebars_logo.png&#34; alt=&#34;handlerbars&#34; /&gt;
-&lt;img src=&#34;https://nayibor.github.io/images/mustache.png&#34; alt=&#34;mustache&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;img src=&#34;https://nayibor.github.io/images/mustache.png&#34; alt=&#34;mustache&#34; /&gt;
+&lt;/div&gt;&lt;/p&gt;
 
 &lt;p&gt;Every one has their favourite but a common denominator among them all is that they make our work as web developers
 easier by giving us separation of concerns between data and content as well as lots of other &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system#Motivations_and_typical_uses&#34;&gt;advantages&lt;/a&gt;.
@@ -104,11 +103,10 @@ This will expand into the html below
 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-Another example below which will generate a list of headers sent with a request in yaws using elm  is seen below
+Another example below which will generate a list of headers sent with a request in yaws using erlang is seen below
 &lt;pre&gt;
     &lt;code class=&#34;erlang&#34;&gt;
 out(A) -&amp;gt;
-    Req = A#arg.req,
     H = yaws_api:reformat_header(A#arg.headers),%%list containing headers
     {ehtml,
     [
@@ -143,11 +141,11 @@ The above code will expand into the html below
 &lt;/pre&gt;&lt;/div&gt;
 
 I know the syntax is a bit foreign :) but bear with me . In both examples the power of the language was used to generate the html.
-this makes expressing sometimes very complex logic easy will keeping input data seperate from content&lt;/p&gt;
+this makes expressing sometimes very complex logic easy will keeping input data seperate from content.&lt;/p&gt;
 
 &lt;h1 id=&#34;elm-views&#34;&gt;elm views&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://elm-lang.org/&#34;&gt;Elm&lt;/a&gt; is a functional language that compiles to javascript .You can do some really cool front end stuff  with elm but for the purposes of our post we will concentrate on how  a view (html output) is created in elm. An example below of code for creating html output in elm is given below
+&lt;p&gt;&lt;a href=&#34;http://elm-lang.org/&#34;&gt;Elm&lt;/a&gt; is a functional language that compiles to javascript .You can do some really cool front end stuff  with elm but for the purposes of this post we will concentrate on how  a view (html output) is created in elm. An example below of code for creating html output in elm is given below
 &lt;pre&gt;
     &lt;code class=&#34;elm&#34;&gt;
 view : Model -&amp;gt; Html Msg
@@ -163,19 +161,20 @@ view model =
     ]
     &lt;/code&gt;
 &lt;/pre&gt;
-In this case the div,button,onClick,text are all functions which accept parameters.
-generally the pattern is that the functions(dom elements) accept as the first parameter a list of attributes and
+Notice how the data is completely separate from the view functions (no mixing of html with data).
+In this case also the div,button,onClick,text are all functions which accept parameters.
+The general pattern is that the functions(dom elements) accept as the first parameter a list of attributes and
 then a list of child nodes or inner html value as the second parameter.&lt;/p&gt;
 
 &lt;p&gt;So the first div above has no attributes but has child nodes.
-the first input element has a list representing attributes(i.e. the type=text and placeholder=name).
+the first input element has a list representing attributes(i.e. the type=text and placeholder=Name).
 the text function can be used for putting  values into the tags and is the innerhtml in the parent div tag .
 The value of &lt;em&gt;model&lt;/em&gt; which contains the state of the application in this case is &lt;em&gt;0&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;the text function accepts only strings as a parameter  so 0 has to converted to &amp;ldquo;0&amp;rdquo; else there will be an error thrown.
 &lt;em&gt;(toString model)&lt;/em&gt; just means turn 0 into a string and give us the result of that computation.
-Elm is statically typed so does type checking at compile time. one nice thing it also has is &lt;a href=&#34;https://en.wikipedia.org/wiki/Type_inference&#34;&gt;type inference&lt;/a&gt;) which basically means it can infer types without type annotations.
-Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen.its very fast to put it short :).&lt;/p&gt;
+Elm is statically typed so does type checking at compile time. one nice thing it also has is &lt;a href=&#34;https://en.wikipedia.org/wiki/Type_inference&#34;&gt;type inference&lt;/a&gt; which basically means it can infer types without type annotations.
+Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen. This results in very fast rendering speeds :).&lt;/p&gt;
 
 &lt;p&gt;At the end the above elm view code will turn into the html below
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
@@ -188,14 +187,14 @@ Elm  generated html also does does some virtual dom stuff internally before cont
 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-pretty neat huh .notice how the data is completely separate from the view (no mixing of stuff).you also have the power of the
-elm language at your disposal to do any computation,testing you want before outputting html . components are also just functions so
+pretty neat huh.you also have the power of the
+elm language at your disposal to do any computation,testing you want before outputting html.components are also just functions so
 you can create reusable components and use them anywhere you want while  still respecting the separation of data and content.&lt;/p&gt;
 
 &lt;h1 id=&#34;mithril-js-components&#34;&gt;mithril.js components&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://mithril.js.org/&#34;&gt;Mithril&lt;/a&gt; is a modern client-side Javascript framework for building Single Page Applications .
-you can also do some cool stuff with it too but we will be concentration on the way components are created using javascript in this case .
+you can also do some cool stuff with it too but we will be concentrating on the way components are created using javascript in this case .
 An example below of code for creating a component is given below
 &lt;pre&gt;
     &lt;code class=&#34;javascript&#34;&gt;
@@ -211,10 +210,10 @@ m.mount(root, Hello);//to activate the content
     &lt;/code&gt;
 &lt;/pre&gt;
 A Mithril component is just an object with a view function.
-As usual the code is a variant of a function accepting a list of attributes,and a list of childnodes or inner html value.
-The m(a,b) is a function for which the first parameter is a list of attributes , the second parameter being a list of child nodes.
-mithril.js also does some virtual dom diffing under the hood so it renders html quite quickly also .
-you can do some really fancy stuff in there especially if you combine it with libraries like &lt;a href=&#34;http://ramdajs.com/&#34;&gt;rambda&lt;/a&gt; library for component creation.
+As usual the code is a variant of a function accepting a list of attributes and a list of childnodes or an inner html value.
+The &lt;em&gt;m(a,b)&lt;/em&gt; is a function for which the first parameter is a list of attributes , the second parameter being a list of child nodes or an inner html value.
+mithril.js also does some virtual dom diffing under the hood so it renders html quite quickly also.
+you can do some really fancy stuff in there especially if you combine it with libraries like &lt;a href=&#34;http://ramdajs.com/&#34;&gt;rambda&lt;/a&gt; for component creation.
 this is a very simple example but it does have all the advantages like ease of testing,separation of data from content,power of js to create components.&lt;/p&gt;
 
 &lt;p&gt;This will expand into the html below
@@ -232,12 +231,12 @@ this is a very simple example but it does have all the advantages like ease of t
 &lt;ul&gt;
 &lt;li&gt;making available all  the power of a  programming language to be used in generating templates&lt;/li&gt;
 &lt;li&gt;reduced learning curve since no special syntax has to be learnt to create templates&lt;/li&gt;
-&lt;li&gt;its easier to  debug and find errors when creating  components/html because html/components are all functions .
-the compiler/debugger of the language is also at your disposal . elm is super at this :)&lt;/li&gt;
-&lt;li&gt;separation of data from view is very easy . the data mostly become input to the component generation functions&lt;/li&gt;
+&lt;li&gt;its easier to  debug and find errors when creating  components/html because html/components are all functions
+the compiler/debugger of the language is also at your disposal.elm is super at this :)&lt;/li&gt;
+&lt;li&gt;separation of data from view is very easy .the data mostly become input to the component generation functions&lt;/li&gt;
 &lt;li&gt;rapid and more flexible development due to familiarity with language (this however depends on the capability of the language in question)&lt;/li&gt;
 &lt;li&gt;standards compliance made easier.no more looking for that div hidden somewhere which is breaking all the html code :)&lt;/li&gt;
-&lt;li&gt;not constrained by how the template engine does stuff. logic-less,logic,small template library functions etc&amp;hellip;&lt;/li&gt;
+&lt;li&gt;not constrained by how the template engine does stuff.logic-less,logic,small template library functions etc&amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
