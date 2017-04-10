@@ -217,6 +217,14 @@ mithril.js also does some virtual dom diffing under the hood so it renders html 
 you can do some really fancy stuff in there especially if you combine it with libraries like &lt;a href=&#34;http://ramdajs.com/&#34;&gt;rambda&lt;/a&gt; library for component creation.
 this is a very simple example but it does have all the advantages like ease of testing,separation of data from content,power of js to create components.&lt;/p&gt;
 
+&lt;p&gt;This will expand into the html below
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;main&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;h1&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;My first app&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;A button&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
 &lt;h1 id=&#34;summing-up&#34;&gt;Summing up&lt;/h1&gt;
 
 &lt;p&gt;Programming languages which are used as template languages are in a lot of ways very powerful and they enhance templating by&lt;/p&gt;
