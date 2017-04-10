@@ -174,7 +174,7 @@ The value of &lt;em&gt;model&lt;/em&gt; which contains the state of the applicat
 
 &lt;p&gt;the text function accepts only strings as a parameter  so 0 has to converted to &amp;ldquo;0&amp;rdquo; else there will be an error thrown.
 &lt;em&gt;(toString model)&lt;/em&gt; just means turn 0 into a string and give us the result of that computation.
-Elm is statically typed so does type checking. one nice thing it also has is &lt;a href=&#34;https://en.wikipedia.org/wiki/Type_inference&#34;&gt;type inference&lt;/a&gt;).
+Elm is statically typed so does type checking at compile time. one nice thing it also has is &lt;a href=&#34;https://en.wikipedia.org/wiki/Type_inference&#34;&gt;type inference&lt;/a&gt;) which basically means it can infer types without type annotations.
 Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen.its very fast to put it short :).&lt;/p&gt;
 
 &lt;p&gt;At the end the above elm view code will turn into the html below
