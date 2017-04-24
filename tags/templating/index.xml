@@ -10,10 +10,10 @@
     
     <item>
       <title>Programming languages as web template languages</title>
-      <link>https://nayibor.github.io/post/Programming%20languages%20as%20web%20template%20languages/</link>
+      <link>https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/Programming%20languages%20as%20web%20template%20languages/</guid>
+      <guid>https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/</guid>
       <description>
 
 &lt;p&gt;Web templating languages!!. Don&amp;rsquo;t we love em.
@@ -49,13 +49,15 @@ possibly using some data source to customize the pages or present a large amount
     &lt;/code&gt;
 &lt;/pre&gt;
 However today we are having a different take on templating i.e. libraries,frameworks  which generate content without mixing html with the template system.
-These frameworks,libraries rather have helper functions which are used for generating various dom elements without mixing in html with template logic .
-&lt;pre&gt;
+These frameworks,libraries rather have helper functions which are used for generating various dom elements without mixing in html with template logic.
+&lt;!--&lt;pre&gt;
     &lt;code class=&#34;javascript&#34;&gt;
-var output = Mustache.render(“{{title}} spends {{calc}}”, view);
+var output = Mustache.render(“&lt;label&gt;{{title}} spends {{calc}}&lt;/label&gt;”, view);
     &lt;/code&gt;
 &lt;/pre&gt;
-We will be giving basic examples from the following three languages,frameworks.&lt;/p&gt;
+--&gt;&lt;/p&gt;
+
+&lt;p&gt;We will be giving basic examples from the following three languages,frameworks.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;yaws &lt;a href=&#34;http://yaws.hyber.org/dynamic.yaws&#34;&gt;ehtml&lt;/a&gt;&lt;/li&gt;
@@ -141,7 +143,7 @@ The above code will expand into the html below
 &lt;/pre&gt;&lt;/div&gt;
 
 I know the syntax is a bit foreign :) but bear with me . In both examples the power of the language was used to generate the html.
-this makes expressing sometimes very complex logic easy will keeping input data seperate from content.&lt;/p&gt;
+this makes expressing sometimes very complex logic easy while keeping input data seperate from content.&lt;/p&gt;
 
 &lt;h1 id=&#34;elm-views&#34;&gt;elm views&lt;/h1&gt;
 
@@ -160,10 +162,27 @@ view model =
     , button [ onClick Reset ] [ text &amp;ldquo;0&amp;rdquo; ]
     ]
     &lt;/code&gt;
+&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;the code below is called a type annotation which is similar to defining types in function headers in more object oriented languages like java.
+&lt;pre&gt;
+    &lt;code class=&#34;elm&#34;&gt;
+view : Model -&amp;gt; Html Msg
+    &lt;/code&gt;
 &lt;/pre&gt;
-Notice how the data is completely separate from the view functions (no mixing of html with data).
-In this case also the div,button,onClick,text are all functions which accept parameters.
-The general pattern is that the functions(dom elements) accept as the first parameter a list of attributes and
+it means view is a function which accepts a Model type and returns an Html Msg value.
+This means that it is a chunk of HTML that can produce Msg values.
+kind of like this in java.
+&lt;pre&gt;
+    &lt;code class=&#34;java&#34;&gt;
+public static &lt;Msg&gt; Html&lt;Msg&gt; view (model Data ){&amp;hellip;}
+    &lt;/code&gt;
+&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;Back to the elm example.&lt;/p&gt;
+
+&lt;p&gt;Notice how the data is used as input to the html element generation and event functions(&lt;em&gt;input&lt;/em&gt;,&lt;em&gt;button&lt;/em&gt;,&lt;em&gt;div&lt;/em&gt;,&lt;em&gt;onClick&lt;/em&gt;).
+In html generation the general pattern is that the functions(dom elements) accept as the first parameter a list of attributes and
 then a list of child nodes or inner html value as the second parameter.&lt;/p&gt;
 
 &lt;p&gt;So the first div above has no attributes but has child nodes.
@@ -188,13 +207,13 @@ Elm  generated html also does does some virtual dom stuff internally before cont
 &lt;/pre&gt;&lt;/div&gt;
 
 pretty neat huh.you also have the power of the
-elm language at your disposal to do any computation,testing you want before outputting html.components are also just functions so
-you can create reusable components and use them anywhere you want while  still respecting the separation of data and content.&lt;/p&gt;
+elm language at your disposal to do any computation,testing you want before outputting html.html elements are are also just functions so
+you can create reusable html elements and use them anywhere you want while  still respecting the separation of data and content.&lt;/p&gt;
 
 &lt;h1 id=&#34;mithril-js-components&#34;&gt;mithril.js components&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://mithril.js.org/&#34;&gt;Mithril&lt;/a&gt; is a modern client-side Javascript framework for building Single Page Applications .
-you can also do some cool stuff with it too but we will be concentrating on the way components are created using javascript in this case .
+&lt;p&gt;&lt;a href=&#34;https://mithril.js.org/&#34;&gt;Mithril&lt;/a&gt; is a modern client-side Javascript framework for building Single Page Applications.
+you can also do some cool stuff with it too but we will be concentrating on the way components are created using javascript in this case.
 An example below of code for creating a component is given below
 &lt;pre&gt;
     &lt;code class=&#34;javascript&#34;&gt;
@@ -210,7 +229,7 @@ m.mount(root, Hello);//to activate the content
     &lt;/code&gt;
 &lt;/pre&gt;
 A Mithril component is just an object with a view function.
-As usual the code is a variant of a function accepting a list of attributes and a list of childnodes or an inner html value.
+As usual the code is a variant of a function accepting a list of attributes and a list of child nodes or an inner html value.
 The &lt;em&gt;m(a,b)&lt;/em&gt; is a function for which the first parameter is a list of attributes , the second parameter being a list of child nodes or an inner html value.
 mithril.js also does some virtual dom diffing under the hood so it renders html quite quickly also.
 you can do some really fancy stuff in there especially if you combine it with libraries like &lt;a href=&#34;http://ramdajs.com/&#34;&gt;rambda&lt;/a&gt; for component creation.

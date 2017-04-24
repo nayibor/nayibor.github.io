@@ -10,10 +10,10 @@
     
     <item>
       <title>Parsing iso8583 messages Part 2</title>
-      <link>https://nayibor.github.io/post/Parsing%20Iso%20Messages%20Part%202/</link>
+      <link>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</link>
       <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/Parsing%20Iso%20Messages%20Part%202/</guid>
+      <guid>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</guid>
       <description>&lt;p&gt;Today we will be showing how to  extract the various components out of an iso string.
 &lt;br&gt;
 The combination of a tcp server as well as code to extract the  iso message components

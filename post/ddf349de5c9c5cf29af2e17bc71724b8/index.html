@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -11,15 +12,26 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Posts &middot;  Code Musings" />
+        <meta property="og:title" content=" Iso8583  message structure &middot;  Code Musings" />
         <meta property="og:site_name" content="Code Musings" />
-        <meta property="og:url" content="https://nayibor.github.io/post/" />
+        <meta property="og:url" content="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/" />
 
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2016-12-05T07:55:57Z" />
+        <meta property="og:article:tag" content="payments" />
+        <meta property="og:article:tag" content="iso8583" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Iso8583  message structure" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/" />
     
 
-        <title> Posts &middot;  Code Musings</title>
+        <title> Iso8583  message structure &middot;  Code Musings</title>
 
         <link rel="preload" href="/js/main.js" as="script" />
         <link rel="preload" href="/css/main.css" as="style" />
@@ -41,10 +53,23 @@
     
 
     
-        <link href="https://nayibor.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; Code Musings" />
-    
-        <link rel="canonical" href="https://nayibor.github.io/post/" />
+        <link rel="canonical" href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/" />
 
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Iso8583  message structure",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2016-12-05",
+        "description": "",
+        "wordCount":  1044 
+    }
+    </script>
 
 
     
@@ -73,161 +98,113 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
               </a>
             </div>
             <div class="nav-menu">
-              <a class="rss" href="https://nayibor.github.io/post/index.xml">
+              <a class="rss" href="">
                 <i class="icon-rss"></i>
               </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
                 
                 
             </div>
           </nav>
 
 
-<header id="header" class="header has-cover">
-	<div class="inner">
-		<a class="header-title" href="https://nayibor.github.io/">
-			<h1 class="header-name">Posts</h1>
-		</a>
-	</div>
-	
-	<div class="header-cover" style="background-image: url(cover.png)"></div>
-	
-</header>
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
 
-	<div id="post-index" class="container">
+			<div id="push">
 
-		<main class="content" role="main">
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">5 Dec 2016</span> <span class="reading-time">| <span class="estimated-reading-time">5 min.</span> (<span class="word-count">1044</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">Iso8583  message structure</h1>
+  			</header>
 
-			<div class="post-list">
-				<div id="push">
+  			<section class="post-content">
+  				<p>alloha.<br>at last i have been able to get my lazy behind to write a blog post on this .</p><p>About time :) .<br>This will be the first in a series about parsing iso8583 financial messages &nbsp;using erlang .<br>we will get to know <br>about iso8583 and the message structure,<br>receiving iso 8583 messages over the wire using erlang tcp server and parsing the message .&nbsp;<br>parsing those messages in various formats(text(acii),binary,custom format).</p><p>Here we go .</p><h2>First off what is iso8583 ?</h2><p>Simply put it is a protocol which specificies the content of financial transaction done with payment cards in the form of request/response messages as well as info on how to process the financial transaction.</p><p>more general info can be found on the wikipedia page about it <a href="https://en.wikipedia.org/wiki/ISO_8583">here</a> .</p><h2>What are the components of an iso &nbsp;message ?</h2><ul><li>optional header . optional zero padded header showing size of message.header size is known in advance by receipient and is specified by sender .Usually contains size of message ony but may contain size of header + size of message . An &nbsp;example of a header is 0158 which means the content of the message(mti+bitmap+data elements) is 158 bytes&nbsp;</li><li>mti(message type indicator). A 4 digit &nbsp;number showing info about the message . each digit shows some info about the message . <br>example of an mti is 1200 meaning with the meaning below .<br>1 - first digit is message version - 1 message class means 1993 version <br>2 - second digit specifies the message class(purpose of message) &nbsp;eg. authorization,reversal.etc.. 2 means financial message<br>0 - third digit specifies message function(how the message should flow within system) -eg. requests,advices,etc.. &nbsp;0 means request<br>0 - fourth digit specifies message origin (where is the message coming from ) eg. from acquirer,issue etc.. 0 means acquirer</li><li>bitmap(primary or secondary).A 16/32 hexadecimal number showing the presence or absence of data elements . a bitmap can be a primary or a secondary bitmap . <br>primary means presence of &nbsp;fields from 1-64 .<br>secondary means the presence of presence of fields greater than 64 means 64-128 .<br>the bitmap has to be converted from hex form to binary form where each binary digit represent presence or absence of a data element .if &nbsp;if the first digit of the bitmap in binary form is 1 it means bitmap has fields greater than 64 which makes it a secondary bitmap .<br>An example of a bitmap is F230040102B000000000000004000000 meaning fields 1,2,3,4,7,11,12,22,32,39,41,43,44,102 are present and bitmap is a secondary bitmap due to fields greater than 64 being present .<br></li><li>data elements . These are the &nbsp;actual contents of &nbsp;the financial message such as the amount of the transaction,currecy,transaction type(balance enquiry,withdrawal,etc..),card number . <br>there are 128 data elements from 1-128 .&nbsp;</li></ul><h2>What variants of iso messages are available?</h2><p>There are a few differnt variants of the iso8583 messaging format but &nbsp;the most common ones are (1987 format/1993 format /2003 format ).<br>the specification of &nbsp;the various variants specify &nbsp;the position of the various data elements &nbsp;as well as what format the message will be transmitted in .<br>proprietery/custom ones also exist based on the above ones which may be cusom format agreed to be used between two parties or internal format for one party. &nbsp;<br></p><h2>How are messages processed ?</h2><p>Financial messages consist of request/response messages are sent between two entities to process financial transactions &nbsp; .<br>a tcp connection or other connection type(UDP, X.25, SDLC, SNA,ASYNC, QTP, SSL, HTTP,custom) is opened between the two entities . <br>Some handshake mechanism may be done to prepare both parties for sending messages &nbsp; .<br>Messages are sent consisting of a request/response message .<br>Depending on connection type a persistant connection may be kept open or a connection may be closed and reopened later for subsequent messages to be sent and received.</p><h2>What to keep in mind when processing messages ? </h2><ul><li>Message format (ascii,binary,custom format).eg 1993 acii,1993 binary.in what format the message will be transmitted in as well as rules to encode/decode the message .&nbsp;<br></li><li>Wire protocol (TCP/IP,UDP, X.25, SDLC, SNA,ASYNC, QTP, SSL, HTTP,custom protocol )how a message is transmitted over the wire.<br></li><li>Message flow (e.g., send request for authorization, wait for response, retransmit, reversal).Various states the message may be in .&nbsp;<br></li><li>Optional beginning and ending headers &nbsp;showing size of message and/or headers themeselves .</li></ul><h2>Enough talking . An example please ???</h2><p>The assumption is that we are using iso 1992 iso8583 ascii specification for specifying message rules for encoding decoding messages .the specification will also show the data type of a field(number,string,hex,etc..),where it is variable length or not or whether it has an optional padding or not . &nbsp; &nbsp; &nbsp;<br>We will deconstruct the iso message below &nbsp;as an example and show the optional header,mti,bitmap,data elements in the message . <br>the optional header will be assumed to be 4 bytes long excluding the size of the header itself.</p><p><br></p><p>Consider the iso message below<br></p><p><b>01581200F230040102B000000000000004000000</b></p><p><b>1048468112122012340000100000001107221800</b></p><p><b>000001161204171926FABCDE123ABD06414243</b></p><p><b>000termid1210Community106A5DFGR1112341234234</b><br></p><p>this is &nbsp;breakdown of the message below from left to right</p><ul><li>0158 -&gt; header length(4 byte or digit header). this show the length of the message is 158 digits excluding the header<br></li><li>1200 -&gt; mti<br></li><li>F230040102B000000000000004000000 -&gt; fld 1 bitmap(secondary in this case cuz F converted into 4 digit binary number is 1111 meaning bitmap contains secondary &nbsp;)<br></li><li>104846811212 -&gt; fld 2 primary account number(prefix header showing length of fld 2 is is 10 digits)<br></li><li>201234 -&gt; fld3 processing code&nbsp;<br></li><li>000010000000 -&gt; fld 4 transaction amount&nbsp;<br></li><li>1107221800 -&gt; fld 7 Transmission date &amp; time<br></li><li>000001 -&gt; fld 11 rrn<br></li><li>161204171926 -&gt; fld 12 time local transaction<br></li><li>FABCDE123ABD -&gt; fld 22 pos data code&nbsp;<br></li><li>06414243 -&gt; fld 32 Acquiring institution identification code(prefix header showing length of fld32 is 6 digits)&nbsp;<br></li><li>000 &nbsp;-&gt; fld 39 response code&nbsp;<br></li><li>termid12 -&gt; &nbsp;fld 41 terminal id&nbsp;<br></li><li>10Community1 -&gt; &nbsp;fld 43 location data(prefix header showing length of fld43 is 10 digits)<br></li><li>06A5DFGR -&gt; fld 44 additional response code (prefix header showing length of fld32 is 6 digits)&nbsp;<br></li><li>1112341234234 -&gt; fld 102 account number<br></li></ul><p>this is a short summary of the basics of iso .</p><p>more info can be on the wikipedia page if you want to delve more deeply into it .</p><p>next post will be about using erlang to extract the various component (mti,bitmap,data elements) out of a message using a spec .&nbsp;</p>
 
-			
+  			</section>
 
-			
-			  
-<article class="post">
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+            
+                <a href="https://nayibor.github.io//tags/payments/">payments</a>
+            
+                <a href="https://nayibor.github.io//tags/iso8583/">iso8583</a>
+            
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Iso8583%20%c2%a0message%20structure&url=https%3a%2f%2fnayibor.github.io%2fpost%2fddf349de5c9c5cf29af2e17bc71724b8%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnayibor.github.io%2fpost%2fddf349de5c9c5cf29af2e17bc71724b8%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fnayibor.github.io%2fpost%2fddf349de5c9c5cf29af2e17bc71724b8%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">9 Apr 2017</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">Programming languages as web template languages</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
+  			<aside class="post-comments">
+    
+    
 
-			
-			  
-<article class="post">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">22 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/">Parsing iso8583 messages Part 2</a></h2>
-		<p class="post-excerpt">parsing iso8583 messages using erlang&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
 
-			
-			  
-<article class="post">
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">12 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/">Parsing iso8583 messages Part 1</a></h2>
-		<p class="post-excerpt">parsing iso8583 messages using erlang&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
 
-			
-			  
-<article class="post">
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://https-nayibor-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/"><img src="images/iso_message.jpg" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">5 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/">Iso8583  message structure</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
 
-			
-			  
-<article class="post">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/"><img src="images/backbone.png" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">3 Jul 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/">Pagination using backbone.js and underscore template</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-			  
-<article class="post">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/"><img src="images/cakephp.png" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">11 Aug 2015</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/">Cakephp 2.6.7  rawQuery bug</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-
-				</div>
 			</div>
 
-			<nav id="pagination" class="pagination" role="pagination">
-	<div class="inner">
-	
-		<span class="pagination-info">Page 1 of 1</span>
-	
-		<div class="clear"></div>
-	</div>
-</nav>
+			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Parsing iso8583 messages Part 1</h4>
+								<p class="post-nav-excerpt">parsing iso8583 messages using erlang&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				
+					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Pagination using backbone.js and underscore template</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
 
-
-		</main>
-
-	</div>
+		</div>
+	</article>
+</main>
 
 				<div id="body-class" style="display: none;"></div>
 				<footer id="footer">
@@ -238,6 +215,16 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 				</footer>
 				
 				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        
+    </div>
+</div>
+
 
 				<div class="overlay"></div>
 			</div>

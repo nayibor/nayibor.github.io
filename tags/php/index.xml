@@ -10,10 +10,10 @@
     
     <item>
       <title>Cakephp 2.6.7  rawQuery bug</title>
-      <link>https://nayibor.github.io/post/cakephp267-rawquery-defect/</link>
+      <link>https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/</link>
       <pubDate>Tue, 11 Aug 2015 13:42:38 +0000</pubDate>
       
-      <guid>https://nayibor.github.io/post/cakephp267-rawquery-defect/</guid>
+      <guid>https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/</guid>
       <description>&lt;p&gt;Small observation i had with cakephp 2.6.7 .&lt;/p&gt;&lt;p&gt;I was trying to write a query with &lt;a href=&#34;http://cakephp.org/&#34;&gt;cakephp&lt;/a&gt; and&amp;nbsp; noticed that the query was not &lt;br&gt;&lt;/p&gt;&lt;p&gt;being sent to the server for processing .&lt;/p&gt;&lt;p&gt;I was using the rawQuery method and not the orm&amp;nbsp; methods like find etc...&lt;br&gt;&lt;/p&gt;&lt;p&gt;Query is &lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; $query=&#34; SELECT id,stock_available FROM products WHERE &amp;nbsp;(id = ? and stock_available &amp;gt;= ?)or &amp;nbsp; (id &amp;nbsp;= ? and stock_available &amp;gt;= ?) FOR UPDATE&#34;;&lt;br&gt; $query_params=array(1,50,2,30);&lt;br&gt; $response = $this-&amp;gt;Product-&amp;gt;getDataSource()-&amp;gt;rawQuery($query,$query_params);&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;It was because the&amp;nbsp; &lt;a href=&#34;https://github.com/cakephp/cakephp/blob/2.7/lib/Cake/Model/Datasource/DboSource.php#L397-L436&#34;&gt;rawQuery&lt;/a&gt; method&amp;nbsp; was missing an extra option which was &lt;br&gt;&lt;/p&gt;&lt;p&gt;preventing the query from being run&amp;nbsp; due&amp;nbsp; to&amp;nbsp; confusion in this section &lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;
 
  &amp;nbsp; &amp;nbsp; &amp;nbsp;       return $this-&amp;gt;execute($sql, $params); &amp;nbsp; &amp;nbsp;

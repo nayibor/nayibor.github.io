@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -11,15 +12,26 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Posts &middot;  Code Musings" />
+        <meta property="og:title" content=" Cakephp 2.6.7  rawQuery bug &middot;  Code Musings" />
         <meta property="og:site_name" content="Code Musings" />
-        <meta property="og:url" content="https://nayibor.github.io/post/" />
+        <meta property="og:url" content="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/" />
 
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2015-08-11T13:42:38Z" />
+        <meta property="og:article:tag" content="php" />
+        <meta property="og:article:tag" content="cakephp" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Cakephp 2.6.7  rawQuery bug" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/" />
     
 
-        <title> Posts &middot;  Code Musings</title>
+        <title> Cakephp 2.6.7  rawQuery bug &middot;  Code Musings</title>
 
         <link rel="preload" href="/js/main.js" as="script" />
         <link rel="preload" href="/css/main.css" as="style" />
@@ -41,10 +53,23 @@
     
 
     
-        <link href="https://nayibor.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; Code Musings" />
-    
-        <link rel="canonical" href="https://nayibor.github.io/post/" />
+        <link rel="canonical" href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/" />
 
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Cakephp 2.6.7  rawQuery bug",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2015-08-11",
+        "description": "",
+        "wordCount":  290 
+    }
+    </script>
 
 
     
@@ -73,161 +98,180 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
               </a>
             </div>
             <div class="nav-menu">
-              <a class="rss" href="https://nayibor.github.io/post/index.xml">
+              <a class="rss" href="">
                 <i class="icon-rss"></i>
               </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
                 
                 
             </div>
           </nav>
 
 
-<header id="header" class="header has-cover">
-	<div class="inner">
-		<a class="header-title" href="https://nayibor.github.io/">
-			<h1 class="header-name">Posts</h1>
-		</a>
-	</div>
-	
-	<div class="header-cover" style="background-image: url(cover.png)"></div>
-	
-</header>
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
 
-	<div id="post-index" class="container">
+			<div id="push">
 
-		<main class="content" role="main">
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">11 Aug 2015</span> <span class="reading-time">| <span class="estimated-reading-time">2 min.</span> (<span class="word-count">290</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">Cakephp 2.6.7  rawQuery bug</h1>
+  			</header>
 
-			<div class="post-list">
-				<div id="push">
+  			<section class="post-content">
+  				<p>Small observation i had with cakephp 2.6.7 .</p><p>I was trying to write a query with <a href="http://cakephp.org/">cakephp</a> and&nbsp; noticed that the query was not <br></p><p>being sent to the server for processing .</p><p>I was using the rawQuery method and not the orm&nbsp; methods like find etc...<br></p><p>Query is <br></p><blockquote><p> $query=" SELECT id,stock_available FROM products WHERE &nbsp;(id = ? and stock_available &gt;= ?)or &nbsp; (id &nbsp;= ? and stock_available &gt;= ?) FOR UPDATE";<br> $query_params=array(1,50,2,30);<br> $response = $this-&gt;Product-&gt;getDataSource()-&gt;rawQuery($query,$query_params);</p></blockquote><p>It was because the&nbsp; <a href="https://github.com/cakephp/cakephp/blob/2.7/lib/Cake/Model/Datasource/DboSource.php#L397-L436">rawQuery</a> method&nbsp; was missing an extra option which was <br></p><p>preventing the query from being run&nbsp; due&nbsp; to&nbsp; confusion in this section <br></p><blockquote><p>
 
-			
+ &nbsp; &nbsp; &nbsp;       return $this-&gt;execute($sql, $params); &nbsp; &nbsp;
 
-			
-			  
-<article class="post">
+ &nbsp; &nbsp;
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">9 Apr 2017</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">Programming languages as web template languages</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
+ &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp;&nbsp; <br></p></blockquote><p>This was accepting two parameters instead of three and due to this was <br></p><p>mistaking the $params value for the options value thus query was not run .<br></p><p>query was being run as <br></p><blockquote><p>public function rawQuery($sql, $params = array()) {
 
-			
-			  
-<article class="post">
+ &nbsp; &nbsp;
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">22 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/">Parsing iso8583 messages Part 2</a></h2>
-		<p class="post-excerpt">parsing iso8583 messages using erlang&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
 
-			
-			  
-<article class="post">
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">12 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/">Parsing iso8583 messages Part 1</a></h2>
-		<p class="post-excerpt">parsing iso8583 messages using erlang&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
 
-			
-			  
-<article class="post">
+ &nbsp; &nbsp;
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/"><img src="images/iso_message.jpg" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">5 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/">Iso8583  message structure</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
+ &nbsp; &nbsp;
 
-			
-			  
-<article class="post">
+ &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp;<br>
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/"><img src="images/backbone.png" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">3 Jul 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/">Pagination using backbone.js and underscore template</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
+ &nbsp; &nbsp; &nbsp;       $this-&gt;took = $this-&gt;numRows = false;
 
-			
-			  
-<article class="post">
+ &nbsp; &nbsp;
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/"><img src="images/cakephp.png" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">11 Aug 2015</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/">Cakephp 2.6.7  rawQuery bug</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
+ &nbsp; &nbsp;
 
-			
+ &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; 
 
-				</div>
+ &nbsp; &nbsp;
+
+ &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp;<br><b>
+
+ &nbsp; &nbsp; &nbsp;       return $this-&gt;execute($sql, $params); &nbsp; &nbsp;
+
+ &nbsp; &nbsp;
+
+ &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp;</b><br>
+
+ &nbsp; &nbsp; &nbsp;   }<br></p></blockquote><p>Instead of <br></p><blockquote><p>public function rawQuery($sql, $params = array()) {
+
+ &nbsp; &nbsp;
+
+
+
+
+ &nbsp; &nbsp;
+
+ &nbsp; &nbsp;
+
+ &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp;<br>
+
+ &nbsp; &nbsp; &nbsp;       $this-&gt;took = $this-&gt;numRows = false;
+
+ &nbsp; &nbsp;
+
+ &nbsp; &nbsp;
+
+ &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+
+ &nbsp; &nbsp;
+
+ &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp;&nbsp; <br><b>
+
+ &nbsp; &nbsp; &nbsp;       return $this-&gt;execute($sql, array(), $params); &nbsp; &nbsp;
+
+ &nbsp; &nbsp;
+
+ &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp;&nbsp; </b><br>
+
+ &nbsp; &nbsp; &nbsp;   }</p></blockquote><p>It has subsequently been fixed .</p><p>Issue is at this <a href="https://github.com/cakephp/cakephp/issues/6992/">link</a> . <br></p>
+
+  			</section>
+
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+            
+                <a href="https://nayibor.github.io//tags/php/">php</a>
+            
+                <a href="https://nayibor.github.io//tags/cakephp/">cakephp</a>
+            
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Cakephp%c2%a02.6.7%c2%a0%20rawQuery%20bug&url=https%3a%2f%2fnayibor.github.io%2fpost%2fa0a580a0696d4382cab7314f832df7c3%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnayibor.github.io%2fpost%2fa0a580a0696d4382cab7314f832df7c3%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fnayibor.github.io%2fpost%2fa0a580a0696d4382cab7314f832df7c3%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
+
+  			<aside class="post-comments">
+    
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://https-nayibor-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
+
+
 			</div>
 
-			<nav id="pagination" class="pagination" role="pagination">
-	<div class="inner">
-	
-		<span class="pagination-info">Page 1 of 1</span>
-	
-		<div class="clear"></div>
-	</div>
-</nav>
+			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Pagination using backbone.js and underscore template</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				
+				<div class="clear"></div>
+			</nav>
 
-
-		</main>
-
-	</div>
+		</div>
+	</article>
+</main>
 
 				<div id="body-class" style="display: none;"></div>
 				<footer id="footer">
@@ -238,6 +282,16 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 				</footer>
 				
 				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        
+    </div>
+</div>
+
 
 				<div class="overlay"></div>
 			</div>

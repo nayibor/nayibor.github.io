@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -11,21 +12,32 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Posts &middot;  Code Musings" />
+        <meta property="og:title" content=" Parsing iso8583 messages Part 1 &middot;  Code Musings" />
         <meta property="og:site_name" content="Code Musings" />
-        <meta property="og:url" content="https://nayibor.github.io/post/" />
+        <meta property="og:url" content="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/" />
 
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2016-12-12T07:57:26Z" />
+        <meta property="og:article:tag" content="erlang" />
+        <meta property="og:article:tag" content="iso8583" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Parsing iso8583 messages Part 1" />
+        <meta name="twitter:description" content="parsing iso8583 messages using erlang" />
+        <meta name="twitter:url" content="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/" />
     
 
-        <title> Posts &middot;  Code Musings</title>
+        <title> Parsing iso8583 messages Part 1 &middot;  Code Musings</title>
 
         <link rel="preload" href="/js/main.js" as="script" />
         <link rel="preload" href="/css/main.css" as="style" />
 
     
-        <meta name="description" content="" />
+        <meta name="description" content="parsing iso8583 messages using erlang" />
     
 
         <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
@@ -41,10 +53,23 @@
     
 
     
-        <link href="https://nayibor.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; Code Musings" />
-    
-        <link rel="canonical" href="https://nayibor.github.io/post/" />
+        <link rel="canonical" href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/" />
 
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Parsing iso8583 messages Part 1",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2016-12-12",
+        "description": "parsing iso8583 messages using erlang",
+        "wordCount":  605 
+    }
+    </script>
 
 
     
@@ -73,161 +98,113 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
               </a>
             </div>
             <div class="nav-menu">
-              <a class="rss" href="https://nayibor.github.io/post/index.xml">
+              <a class="rss" href="">
                 <i class="icon-rss"></i>
               </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
                 
                 
             </div>
           </nav>
 
 
-<header id="header" class="header has-cover">
-	<div class="inner">
-		<a class="header-title" href="https://nayibor.github.io/">
-			<h1 class="header-name">Posts</h1>
-		</a>
-	</div>
-	
-	<div class="header-cover" style="background-image: url(cover.png)"></div>
-	
-</header>
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
 
-	<div id="post-index" class="container">
+			<div id="push">
 
-		<main class="content" role="main">
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">12 Dec 2016</span> <span class="reading-time">| <span class="estimated-reading-time">3 min.</span> (<span class="word-count">605</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">Parsing iso8583 messages Part 1</h1>
+  			</header>
 
-			<div class="post-list">
-				<div id="push">
+  			<section class="post-content">
+  				<p>Today we are going to talk about creating a tcp server to &nbsp;parse iso messages using erlang . This tutorial explains the very basic of creating tcp servers in erlang . there are better specialized &nbsp;libraries out there (<a href="https://github.com/ninenines/ranch">ranch</a>) for creating tcp servers and pools of them but this is very basic and we need just a simple tcp server to show how to process incoming iso messages .&nbsp;<br></p><p>We will be using the 1993 iso8583 ascii protocol format .<br>I covered this in a previous post(<a href="/post/ddf349de5c9c5cf29af2e17bc71724b8/">here</a>) so you can go there to get a basic summary of iso8583 . knowledge of this protocol and also erlang would help &nbsp;.</p><p>to install erlang go <a href="http://www.erlang.org/downloads">here</a>&nbsp;.&nbsp;</p><p>the files for the example is contained in this git &nbsp;<a href="https://github.com/nayibor/iso_process_tut_repo"><i>repository</i></a> &nbsp;.&nbsp;</p><p>Lets hit the road !!<br></p><h2>Creating a basic tcp server in erlang</h2><p>lets look at the iso_process.erl file and the portions where the tcp server is created .</p><blockquote><p>%% @doc this part is for starting the iso server <br>-spec start_iso_server()-&gt;[pid()] | {error,term()}. <br>start_iso_server()-&gt; ....<br></p><p>%% @doc this part is for listener socket<br>-spec loop_listen(port())-&gt;[port()] | {error,term()} | fun(). <br>loop_listen(Listen_socket)-&gt;....</p></blockquote><p>the start_iso_server function and the loop_listen function are responsible for creating the tcp server and erlang processes for handling client connection .</p><p>the {ok,Listen} = gen_tcp:listen(...) in <b>start_iso_server</b> function creates the tcp listener socket and sets up pattern matching so if the listener socket &nbsp;is created successfully the code goes on succesfully else it stops if there is an error(eg.. if port is being used by another program) .&nbsp;</p><p>note that because the messages will be coming as strings and also because we want to process only one message at a time we use <b>[list, {packet, 0},{active, once}]</b> options .strings are represented as lists in erlang so list is in there . the {packet,0} option also tells us to allow messages to flow without breaking it up .</p><p>&nbsp;the<b> loop_listen</b> function</p><blockquote><p>%% @doc this part is for listener socket<br>-spec loop_listen(port())-&gt;[port()] | {error,term()} | fun(). <br>loop_listen(Listen_socket)-&gt;...</p></blockquote><p>&nbsp;is &nbsp;what waits for connections from clients and independently deal with each client connection while the loop_receive is what is responsible for sending/receiving data from clients .<br></p><p>the <b>loop_receive </b>function</p><blockquote><p>%% @doc this part is for the acceptor socket <br>-spec loop_receive(port(),[])-&gt;[pos_integer()] | {error,term()} | fun().        <br>loop_receive(Socket,Isom)-&gt;...</p></blockquote><p>&nbsp;is the function which receives communicates with clients . i.e. sends and receives data in this case iso messages from clients .</p><p>for every iso string(string = header+iso message) sent &nbsp; a check is first done to get the header which contains the size of the iso message messsage itself . the size of the message in the header is then used to calculate &nbsp;how many more bits needs to be streamed to get the whole message in . the iso string is streamed until the whole message is obtained after which it is processed with this function</p><blockquote><p>                               Response_message = process_message(Rest),<br></p></blockquote><p>TO run the program do a git clone of the <a href="https://github.com/nayibor/iso_process_tut_repo">repo</a>&nbsp;.</p><p>cd to the&nbsp;iso_process_tut_repo folder .</p><p>after that log into the erlang shell(erl or werl in windows) and run c(iso_process).</p><p>this compiles iso_process.erl module .</p><p>&nbsp;then run iso_process.start_iso_server() whch starts the tcp server .</p><p>to send messages to server run iso_process:send_message(Message) .</p><p>eg .&nbsp;</p><p>iso_process:send_message(”</p><p>012912007230040102B000001012312313122</p><p>0123400001000000011072218000000011612</p><p>12081731FABCDE123ABD06414243000termi</p><p>d1210Community106A5DFGR”).</p><p>you should see a print out of the isomessage showing the various fields .</p><p>we will go into how the message is processed and the mti,bitmap,data elements are obtained from the message in the next post as well as how to use jpos to send the messages so we learn a little about both jpos and message processing . neat huh . see u later for that !!!</p>
 
-			
+  			</section>
 
-			
-			  
-<article class="post">
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+            
+                <a href="https://nayibor.github.io//tags/erlang/">erlang</a>
+            
+                <a href="https://nayibor.github.io//tags/iso8583/">iso8583</a>
+            
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Parsing%20iso8583%20messages%20Part%201&url=https%3a%2f%2fnayibor.github.io%2fpost%2f73e0ec2ac943bfecb47acbe2e603f814%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnayibor.github.io%2fpost%2f73e0ec2ac943bfecb47acbe2e603f814%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fnayibor.github.io%2fpost%2f73e0ec2ac943bfecb47acbe2e603f814%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">9 Apr 2017</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">Programming languages as web template languages</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
+  			<aside class="post-comments">
+    
+    
 
-			
-			  
-<article class="post">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">22 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/">Parsing iso8583 messages Part 2</a></h2>
-		<p class="post-excerpt">parsing iso8583 messages using erlang&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
 
-			
-			  
-<article class="post">
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">12 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/">Parsing iso8583 messages Part 1</a></h2>
-		<p class="post-excerpt">parsing iso8583 messages using erlang&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
 
-			
-			  
-<article class="post">
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://https-nayibor-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/"><img src="images/iso_message.jpg" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">5 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/">Iso8583  message structure</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
 
-			
-			  
-<article class="post">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/"><img src="images/backbone.png" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">3 Jul 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/">Pagination using backbone.js and underscore template</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-			  
-<article class="post">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/"><img src="images/cakephp.png" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">11 Aug 2015</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/">Cakephp 2.6.7  rawQuery bug</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-
-				</div>
 			</div>
 
-			<nav id="pagination" class="pagination" role="pagination">
-	<div class="inner">
-	
-		<span class="pagination-info">Page 1 of 1</span>
-	
-		<div class="clear"></div>
-	</div>
-</nav>
+			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Parsing iso8583 messages Part 2</h4>
+								<p class="post-nav-excerpt">parsing iso8583 messages using erlang&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				
+					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Iso8583  message structure</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
 
-
-		</main>
-
-	</div>
+		</div>
+	</article>
+</main>
 
 				<div id="body-class" style="display: none;"></div>
 				<footer id="footer">
@@ -238,6 +215,16 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 				</footer>
 				
 				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        
+    </div>
+</div>
+
 
 				<div class="overlay"></div>
 			</div>
