@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Code Musings</title>
+    <link>https://nayibor.github.io/tags/git/index.xml</link>
+    <description>Recent content in Git on Code Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://nayibor.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Deploying code with git and apache</title>
+      <link>https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/</link>
+      <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/</guid>
+      <description>
+
+&lt;p&gt;Today we are going to talk about how to deploy our code to our testing server or production server using git/apache.
+In this scenario git will be taking the place of the tradional method of using ftp servers to upload code to a server.&lt;/p&gt;
+
+&lt;p&gt;We will get to know how to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;configure a remote git repository so it checks out data to a web root location&lt;/li&gt;
+&lt;li&gt;configure apache and create an apache conf file that will enable communication between the git repository and apache&lt;/li&gt;
+&lt;li&gt;setup authenticaton in apache for git events&lt;/li&gt;
+&lt;li&gt;push to remote repository and see files in web root&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let&amp;rsquo;s hit the road!!!&lt;/p&gt;
+
+&lt;h3 id=&#34;configure-remote-git-repository&#34;&gt;Configure remote git repository&lt;/h3&gt;
+
+&lt;p&gt;We first need to create an empty remote git repository on the remote box we want to push changes to using apache.
+For the sake of this post the local/remote repositories can be on the same local machine but the distinction has to be
+made betweeen local repository(where u store your local work/code) and remote repo(remote repo where u push after working)
+which is usually on a remote machine with a git repo available.&lt;/p&gt;
+
+&lt;p&gt;Assuming we want to create the  local repo in &lt;em&gt;/opt/git/local/&lt;/em&gt; and the remote repo in &lt;em&gt;/opt/git/remote/test_repo.git&lt;/em&gt;
+We use the commands below
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##for local&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; /opt/git/
+mkdir &lt;span style=&#34;color: #f8f8f2&#34;&gt;local&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd local&lt;/span&gt;
+git init
+&lt;span style=&#34;color: #75715e&#34;&gt;##for remote&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; /opt/git/
+mkdir remote
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd &lt;/span&gt;remote
+git init --bare --shared&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;group test_repo.git
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The flag &lt;em&gt;- -bare&lt;/em&gt; create an empty repository with no content.
+The &lt;em&gt;- -shared=group&lt;/em&gt; flag also creates a git repository which will be shared among many users.&lt;/p&gt;
+
+&lt;p&gt;We now have to enable pushing to the remote git repository else valid users won&amp;rsquo;t be able to push to the git repository.
+We use the commands below to enabling pushing
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; /opt/git/remote/test_repo.git
+git config --file config http.receivepack &lt;span style=&#34;color: #f8f8f2&#34;&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+We now need to create what is called a &lt;em&gt;git hook&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;A git hook is a script which can perform some action when some event occurs.
+They are stored in the .git/hooks/ directory of your git repository.
+They are executed at various stages when using git such  as when a  push,commit,merge ,etc is done ..&lt;/p&gt;
+
+&lt;p&gt;There are &lt;em&gt;client side hooks&lt;/em&gt; as well as &lt;em&gt;server side hooks&lt;/em&gt;.
+Client side hooks are used on the local repository and server side hooks on the remote repository.&lt;br /&gt;
+We will be using the &lt;em&gt;post-receive&lt;/em&gt; hook which is a server side hook which gets run after the push is done.
+This script can’t stop the push process, but the client doesn’t disconnect until it has completed, so be careful if you try to do anything that may take a long time.&lt;/p&gt;
+
+&lt;p&gt;We will rename the &lt;em&gt;post-receive.sample&lt;/em&gt; to &lt;em&gt;post-receive&lt;/em&gt; in the &lt;em&gt;/opt/git/remote/test_repo.git/hooks/&lt;/em&gt; folder
+and make it executable so it can be run after a git push.&lt;/p&gt;
+
+&lt;p&gt;We will then paste in our shell script to move our code to the web root of our box.
+We use the code below
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##renames post-receive sampe script to post-receive &lt;/span&gt;
+mv /opt/git/remote/test_repo.git/hooks/post-receive.sample /opt/git/remote/test_repo.git/hooks/post-receive
+&lt;span style=&#34;color: #75715e&#34;&gt;##makes it executable&lt;/span&gt;
+chmod u+x /opt/git/remote/test_repo.git/hooks/post-receive
+&lt;/pre&gt;&lt;/div&gt;
+
+We now paste in our shell script below into &lt;em&gt;post-receive&lt;/em&gt; to move our content to the web root after the push is done.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;unset &lt;/span&gt;GIT_INDEX_FILE
+&lt;span style=&#34;color: #75715e&#34;&gt;##the target below should have been created already in our web root else we will get an error &lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;## although the push will succed&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;TARGET&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/var/www/html/remote/test_repo_web&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;GIT_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/opt/git/remote/test_repo.git/&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;##this can be http or https depending on whether you are using a http/https&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;UAT_BRANCH_PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;http://127.0.0.1/remote/test_repo_web&amp;quot;&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;##this short script creates a new directory where branches can be checked out to&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;##if branch directory does not exist it is  created and data is checked in there &lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;##some checks will have to be done if branch conforms to naming conventions&lt;/span&gt;
+
+&lt;span style=&#34;color: #66d9ef&#34;&gt;while &lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;read &lt;/span&gt;oldrev newrev ref
+&lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;        &lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;IN&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ref&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;BRANCH_NAME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;$(&lt;/span&gt;git rev-parse --symbolic --abbrev-ref &lt;span style=&#34;color: #f8f8f2&#34;&gt;$ref&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;BRANCH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$TARGET&lt;/span&gt;/&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH_NAME&lt;/span&gt;     
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;branch is ${BRANCH_NAME}&amp;quot;&lt;/span&gt;
+        &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt; ! -d &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;$BRANCH&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color: #66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;                &lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;  &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Creating branch directory&amp;quot;&lt;/span&gt;
+                mkdir   &lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH&lt;/span&gt;
+                &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;  &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&amp;quot;&lt;/span&gt;
+                &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&amp;quot;&lt;/span&gt;
+                git --work-tree&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH&lt;/span&gt; --git-dir&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$GIT_DIR&lt;/span&gt; checkout -f &lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH_NAME&lt;/span&gt;
+        &lt;span style=&#34;color: #66d9ef&#34;&gt;else&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;                &lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;  &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Branch exists. skipping creation&amp;quot;&lt;/span&gt;
+                &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;  &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&amp;quot;&lt;/span&gt;
+                &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&amp;quot;&lt;/span&gt;               
+                git --work-tree&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH&lt;/span&gt; --git-dir&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$GIT_DIR&lt;/span&gt; checkout -f &lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH_NAME&lt;/span&gt;
+        &lt;span style=&#34;color: #66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+the basic thing which gets done here is that for every change from our local repo which is pushed to remote
+the code in the branch is checked out to  &lt;em&gt;test_repo_web/branch_name&lt;/em&gt; and can be viewed at
+&lt;em&gt;&lt;a href=&#34;http://127.0.0.1/remote/test_repo_web/branch_name&#34;&gt;here&lt;/a&gt;&lt;/em&gt;.
+It actually overwrites the content in the branch with the new content in the push.
+Cool huuh ?? .&lt;/p&gt;
+
+&lt;p&gt;Thats it for git !! . Next is apache.&lt;/p&gt;
+
+&lt;h3 id=&#34;configure-apache&#34;&gt;Configure apache&lt;/h3&gt;
+
+&lt;p&gt;Assuming you dont have apache installed, you have to install it for your os distribution first before continuing.
+After installing apache you have to enable some modules which are needed for our purpose.
+We will use the command below to enable the modules we need
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; 
+sudo a2enmod cgi &lt;span style=&#34;color: #f8f8f2&#34;&gt;alias &lt;/span&gt;env auth_digest
+&lt;/pre&gt;&lt;/div&gt;
+
+this enables the following modules with their respecive uses&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;cgi&lt;/em&gt; module allows apache to communicate with the cgi script &lt;em&gt;git-http-backend&lt;/em&gt; which is
+is a simple CGI program to serve the contents of a Git repository to Git clients
+accessing the repository over &lt;em&gt;http://&lt;/em&gt; and &lt;em&gt;https://&lt;/em&gt; protocols.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;alias&lt;/em&gt; module allow for manipulation and control of URLs as requests arrive at the server.
+This is necessary becuase we will be setting up patterns which identify requests as git requests&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;env&lt;/em&gt; allows control of the environment that will be provided to CGI scripts and SSI pages.
+We basically need to pass environmental variables and pass them to the &lt;em&gt;git-http-backend&lt;/em&gt; cgi script&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;auth_digest&lt;/em&gt; module enables us to setup authentication using md5 digests stored in password files.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After enabling the above modules,we now need to creat an apache configuration file for git .
+So we creat an apache config file for git,insert comands in and make sure that apache loads it when its starting.&lt;br /&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;touch /etc/apache2/git.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+We then put the following content in it .
+The various uses of the various segments are added as comments in the configuration below.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;#environmental variables for git-http-backend&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;#also tells apache to run the git-http-backend as the handler for anything coming into &lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;#the /git/ path your web server&lt;/span&gt;
+ 
+SetEnv GIT_PROJECT_ROOT /opt/git/remote/
+SetEnv GIT_HTTP_EXPORT_ALL
+ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
+
+&lt;span style=&#34;color: #75715e&#34;&gt;##tells apache to allow requests to this path which contains git commands&lt;/span&gt;
+&amp;lt;Directory &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/usr/lib/git-core*&amp;quot;&lt;/span&gt;&amp;gt;
+Options +ExecCGI +Indexes
+Require all granted
+&amp;lt;/Directory&amp;gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;#tells apache to ask for authentication before allowing  pushing&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;#it will use the /opt/git/.htpasswd file for authentication&lt;/span&gt;
+&amp;lt;LocationMatch &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;^/git/.*/git-receive-pack$&amp;quot;&lt;/span&gt;&amp;gt;
+AuthType Digest
+AuthName &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Git Access&amp;quot;&lt;/span&gt;
+AuthUserFile /opt/git/.htpasswd
+Require valid-user
+&amp;lt;/LocationMatch&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+We then execute the commands below in &lt;em&gt;/etc/apache2.conf&lt;/em&gt; so the conf file gets loaded and also restart apache so the enabled modules are loaded
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Include /etc/apache2/git.conf&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/apache2/apache2.conf
+sudo apache2 restart
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;setup-authentication&#34;&gt;Setup authentication&lt;/h3&gt;
+
+&lt;p&gt;We next need to setup authentication so the whole world cant push to our git repository.
+We partly did that by setting up the AuthUserFile but we now have to create the physical file and put users in it .
+we do the following
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##create auth file &lt;/span&gt;
+touch /opt/git/.htpasswd
+&lt;span style=&#34;color: #75715e&#34;&gt;##add users&lt;/span&gt;
+htdigest  /opt/git/.htpasswd &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Git Access&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;test&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;##enter password when prompted&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+This sets up git to use the password file for authentication when a git push is being made.
+You can add as many users as possible to the file as well as edit the password of the existin users using the htdigest command.&lt;/p&gt;
+
+&lt;h3 id=&#34;push-to-remote-repository-and-view-files-through-browser&#34;&gt;Push to remote repository and view files through browser&lt;/h3&gt;
+
+&lt;p&gt;Now we are ready to make some changes to our local repo .
+after the changes are made,we will be able to view the changes cuz the branch will have been moved to the web root.
+Exampe if we were to  execute the following  commands below in our local repo
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; /opt/git/local/
+git remote add origin http://127.0.0.1/git/test_repo.git
+git checkout -b testing
+touch index.html
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;&amp;lt;div&amp;gt;It works!!&amp;lt;/div&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; index.html
+git add index.html
+git commit
+git push -u origin testing
+&lt;span style=&#34;color: #75715e&#34;&gt;##ask for username and password here password here.. &lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;## enter test and the password you used earlier &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+we can access the &lt;em&gt;testing&lt;/em&gt; branch at this url &lt;em&gt;&lt;a href=&#34;http://127.0.0.1/remote/test_repo_web/testing/index.html&#34;&gt;here&lt;/a&gt;&lt;/em&gt; .
+We can use this method to make our code viewable on the web if the code is web based stuff.
+We can also use this to push code to a seperate folder if we dont want the code to be viewable on the web.&lt;/p&gt;
+
+&lt;p&gt;Either way with a little creativity we can do some nice stuff with git.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

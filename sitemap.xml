@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/</loc>
+    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/</loc>
     <lastmod>2017-04-09T20:52:24+02:00</lastmod>
   </url>
@@ -32,6 +37,12 @@
   </url>
   
   <url>
+    <loc>https://nayibor.github.io/tags/apache2/</loc>
+    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nayibor.github.io/tags/backbone/</loc>
     <lastmod>2016-07-03T02:41:08+00:00</lastmod>
     <priority>0</priority>
@@ -45,7 +56,7 @@
   
   <url>
     <loc>https://nayibor.github.io/</loc>
-    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
+    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -64,6 +75,12 @@
   <url>
     <loc>https://nayibor.github.io/tags/erlang-binary-processing/</loc>
     <lastmod>2016-12-22T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/git/</loc>
+    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -105,7 +122,7 @@
   
   <url>
     <loc>https://nayibor.github.io/post/</loc>
-    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
+    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
