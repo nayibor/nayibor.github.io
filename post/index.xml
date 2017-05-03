@@ -11,10 +11,10 @@
     
     <item>
       <title>Deploying code with git and apache</title>
-      <link>https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/</link>
+      <link>https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/</link>
       <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/</guid>
+      <guid>https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/</guid>
       <description>
 
 &lt;p&gt;Today we are going to talk about how to deploy our code to our testing server or production server using git/apache.

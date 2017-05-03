@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Deploying code with git and apache &middot;  Code Musings" />
+        <meta property="og:site_name" content="Code Musings" />
+        <meta property="og:url" content="https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2017-04-25T10:54:24&#43;02:00" />
+        <meta property="og:article:tag" content="git" />
+        <meta property="og:article:tag" content="apache2" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Deploying code with git and apache" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/" />
+    
+
+        <title> Deploying code with git and apache &middot;  Code Musings</title>
+
+        <link rel="preload" href="/js/main.js" as="script" />
+        <link rel="preload" href="/css/main.css" as="style" />
+
+    
+        <meta name="description" content="" />
+    
+
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+        
+
+    
+        <link href="https://nayibor.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Code Musings" />
+    
+
+    
+        <link rel="canonical" href="https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/" />
+
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Deploying code with git and apache",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2017-04-25",
+        "description": "",
+        "wordCount":  1378 
+    }
+    </script>
+
+
+    
+    <script type="text/javascript">
+    
+    
+    </script>
+    
+
+    <style>
+html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,figure,footer,header,main,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figure{margin:1em 40px}a{background-color:transparent;-webkit-text-decoration-skip:objects}img{border-style:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:300;src:local("Merriweather Sans Light"),local(MerriweatherSans-Light),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowY_zIojJi0m4a5Z6tRh6itY.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:400;src:local("Merriweather Sans Regular"),local(MerriweatherSans-Regular),url(//fonts.gstatic.com/s/merriweathersans/v5/AKu1CjQ4qnV8MUltkAX3sL2aU247V0zTzydO4RoO9Ok.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:700;src:local("Merriweather Sans Bold"),local(MerriweatherSans-Bold),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowQfd-b-I5PxxcmB4_-MNcqw.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:800;src:local("Merriweather Sans ExtraBold"),local(MerriweatherSans-ExtraBold),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowWT7sFQ1Iz1BbpcuCPlgc9Q.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:300;src:local("Merriweather Sans Light Italic"),local(MerriweatherSans-LightItalic),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVX9UU5BmOJGkLxUCVv5VXdc.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:400;src:local("Merriweather Sans Italic"),local(MerriweatherSans-Italic),url(//fonts.gstatic.com/s/merriweathersans/v5/3Mz4hOHzs2npRMG3B1ascf0KIgDhPIHb_R-SWdtqte8.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:700;src:local("Merriweather Sans Bold Italic"),local(MerriweatherSans-BoldItalic),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVYM8pfYvjMoOxygpzLVILAs.woff) format("woff")}@font-face{font-family:'icons';src:url(/fonts/icons.eot?9273991);src:url(/fonts/icons.eot?9273991#iefix) format("embedded-opentype"),url(/fonts/icons.woff?9273991) format("woff"),url(/fonts/icons.ttf?9273991) format("truetype"),url(/fonts/icons.svg?9273991#icons) format("svg");font-weight:400;font-style:normal}[class^="icon-"]:before{font-family:"icons";font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-arrow-right:before{content:'\e807'}.icon-rss:before{content:'\e808'}body{font:300 1em / 1.5em 'Merriweather Sans',sans-serif;color:#595B66}a{color:inherit;text-decoration:none;font-weight:400}h1,h2{text-rendering:optimizeLegibility;color:#1F2026}h2 a{font-weight:inherit}h1{font-size:2em;line-height:1em;margin:2em 0 -.5em}h2{font-size:1.75em;line-height:1.143em;margin:2.286em 0 -.571em}p{margin:2em auto}i{font-weight:400;font-style:italic;color:#363740}img{display:block;max-width:100%;height:auto;margin:2.5em auto}body{background:#fff}.inner{max-width:48em;margin:0 auto;padding:0 1em}#wrapper{position:relative;box-sizing:border-box;width:100%;min-height:100vh;padding-bottom:6em;background:#F2F3F5}#push{transform:translate3d(0,0,0);transform-style:preserve-3d;opacity:1}#nav{position:relative;background:#fff;z-index:70;transform:translate3d(0,0,0);transform-style:preserve-3d;opacity:1}#nav:after{clear:both;content:'';display:table}#nav .nav-logo{float:left;height:2em;padding:1em;max-width:50%}#nav .nav-logo img{width:auto;max-width:none;height:2em;margin:0;border-radius:5px}#nav .nav-menu{float:right}#nav .nav-menu:after{clear:both;content:'';display:table}#nav .nav-menu a{display:block;width:1em;height:1em;line-height:1em;padding:1.5em;text-align:center;float:left}#nav .nav-menu a i:before{margin:auto}.overlay{display:none;position:fixed;left:0;top:0;width:100%;height:100%;z-index:80;display:none}.overlay:before{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:#1F2026;opacity:0;transform-style:preserve-3d}#header{position:relative;padding:4em 0}#header .inner{position:relative;z-index:2}#header .header-title{display:block;text-align:center}#header .header-name{font-weight:700;letter-spacing:-1px;display:block;line-height:1em;font-size:2em;text-decoration:none;color:#1F2026;padding:0;margin:0}#header.has-cover .header-name{color:#fff}#header .header-description{display:block;margin:1em auto 0;color:#9D9FA6;position:relative;font-weight:300}#header .header-description:after{content:'';position:absolute;height:1px;width:100px;margin-left:-50px;left:50%;top:-.5em;background:#D4D5D9}#header.has-cover .header-description{color:#fff}#header.has-cover .header-description:after{background:#fff}#header .header-cover{position:absolute;width:100%;height:100%;top:0;left:0;margin-top:-4em;padding:4em 0;background:no-repeat fixed center 100% / cover;z-index:1}#header .header-cover:before{content:'';position:absolute;width:100%;height:100%;left:0;top:0;background:rgba(0,0,0,0.2)}#header .header-cover:after{content:'';position:absolute;width:100%;left:0;bottom:0;border-bottom:4px solid #36D995}#footer{position:absolute;width:100%;left:0;bottom:0;font-size:.75em;line-height:1.334em;background:#1F2026;color:#737580;z-index:20;transform:translate3d(0,0,0);transform-style:preserve-3d;opacity:1}#footer a{color:#9D9FA6;font-weight:400}#footer .credits{text-align:center;font-size:.75em;line-height:1.334em;padding:2.667em;overflow:auto}#footer .credits span{display:block}#footer .credits .credits-theme{float:left}#footer .credits .credits-software{float:right}.post{position:relative;z-index:20}.post .post-image{display:block;margin:0;padding:0}.post .post-image img{display:block;width:100%;height:auto;margin:0;padding:0}.post .post-meta{display:block;font-size:.75em;line-height:1.334em;font-weight:400;margin-bottom:1.334em}.post .post-title{position:relative;color:#000;font-size:2em;line-height:1.375em;font-weight:800;text-indent:-1px;margin:.25em 0 .75em}.post .post-title:before{content:'';position:absolute;left:0;bottom:-.334em;width:1em;margin-bottom:-2px;border-bottom:4px solid #36D995}.post .post-title a{text-decoration:none;color:inherit;font-weight:inherit}#post-index{position:relative;max-width:1200px;margin:0 auto 4em;padding:.5em;z-index:10}@keyframes fade{0%{transform:translate3d(0,3em,0);opacity:0}100%{transform:translate3d(0,0,0);opacity:1}}.post-list{position:relative}.post-list .post{float:left;width:33.3%;transform:translate3d(0,3em,0);transform-style:preserve-3d;opacity:0;animation:fade ease-out .5s forwards;animation-delay:1.4s}@media only screen and (max-width: 50em){.post-list .post{width:49.9%}}@media only screen and (max-width: 30em){.post-list .post{width:100%;float:none}}.post-list .post:nth-child(1){animation-delay:.1s}.post-list .post:nth-child(2){animation-delay:.2s}.post-list .post:nth-child(3){animation-delay:.3s}.post-list .post:nth-child(4){animation-delay:.4s}.post-list .post:nth-child(5){animation-delay:.5s}.post-list .post:nth-child(6){animation-delay:.6s}.post-list .post:nth-child(7){animation-delay:.7s}.post-list .post:nth-child(8){animation-delay:.8s}.post-list .post:nth-child(9){animation-delay:.9s}.post-list .post .inner{padding:2em;margin:.5em;max-width:none;background:#fff;box-sizing:border-box;transform:scale(1);transform-style:preserve-3d}@media only screen and (max-width: 50em){.post-list .post .inner{padding:1em}}.post-list .post .post-link{position:absolute;left:0;top:0;width:100%;height:100%;z-index:10}.post-list .post .post-image{position:relative;margin:-2em -2em 0;overflow:hidden;background:#36D995}@media only screen and (max-width: 50em){.post-list .post .post-image{margin:-1em -1em 0}}.post-list .post .post-image img{transform:scale(1);transform-style:preserve-3d;opacity:1}.post-list .post .post-image:after{content:'';position:absolute;left:-5%;bottom:-2.5em;width:110%;height:4em;background:#fff;border-top:4px solid #36D995;box-shadow:0 0 2em rgba(0,0,0,0.2);transform:rotate(5deg)}.post-list .post .post-title{font-size:1.5em;line-height:1.167em}.post-list .post .post-excerpt{margin:0}.post-list .post .post-more{display:block;margin-top:1.5em}.post-list .post .post-more a{display:inline-block;font-size:.875em;line-height:1.143em;font-weight:400;color:#363740}.post-list .post .post-more a i{color:#2DB77E}.pagination{min-height:3em;margin:4em auto 2em;padding:0;position:relative}.pagination .pagination-item{position:relative;display:block;height:3em;line-height:3em;padding:0 1em;text-align:center;text-decoration:none;font-weight:700;color:#363740;border:1px solid #36D995;border-radius:4em;z-index:60}.pagination .pagination-item i{position:relative}@media only screen and (max-width: 30em){.pagination .pagination-item{width:4em;height:4em;line-height:4em;margin-top:-.5em;padding:0!important}.pagination .pagination-item i{font-size:1.5em}.pagination .pagination-item>span{display:none}}.pagination .pagination-prev{float:right}.pagination .pagination-prev i{right:-.05em}.pagination .pagination-info{display:block;left:0;top:0;height:3em;line-height:3em;position:absolute;text-align:center;width:100%;z-index:50;color:#9D9FA6}#loader-wrapper{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}#loader{display:block;position:relative;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;border:3px solid transparent;border-top-color:#36D995;animation:spin 2s linear infinite}#loader:before{content:"";position:absolute;top:5px;left:5px;right:5px;bottom:5px;border-radius:50%;border:3px solid transparent;border-top-color:#2DB77E;animation:spin 3s linear infinite}#loader:after{content:"";position:absolute;top:15px;left:15px;right:15px;bottom:15px;border-radius:50%;border:3px solid transparent;border-top-color:#D4D5D9;animation:spin 1.5s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+</style>
+
+
+    </head>
+    <body class="home-template">
+      <div id="loader-wrapper">
+        <div id="loader"></div>
+      </div>
+      <section id="wrapper" style="display: none;">
+        <div id="ajax-container">
+          <nav id="nav" class="nav">
+            <div class="nav-logo">
+              <a href="https://nayibor.github.io/">
+      			  
+              </a>
+            </div>
+            <div class="nav-menu">
+              <a class="rss" href="">
+                <i class="icon-rss"></i>
+              </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
+                
+                
+            </div>
+          </nav>
+
+
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
+
+			<div id="push">
+
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">25 Apr 2017</span> <span class="reading-time">| <span class="estimated-reading-time">7 min.</span> (<span class="word-count">1378</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">Deploying code with git and apache</h1>
+  			</header>
+
+  			<section class="post-content">
+  				
+
+<p>Today we are going to talk about how to deploy our code to our testing server or production server using git/apache.
+In this scenario git will be taking the place of the tradional method of using ftp servers to upload code to a server.</p>
+
+<p>We will get to know how to</p>
+
+<ul>
+<li>configure a remote git repository so it checks out data to a web root location</li>
+<li>configure apache and create an apache conf file that will enable communication between the git repository and apache</li>
+<li>setup authenticaton in apache for git events</li>
+<li>push to remote repository and see files in web root</li>
+</ul>
+
+<p>Let&rsquo;s hit the road!!!</p>
+
+<h3 id="configure-remote-git-repository">Configure remote git repository</h3>
+
+<p>We first need to create an empty remote git repository on the remote box we want to push changes to using apache.
+For the sake of this post the local/remote repositories can be on the same local machine but the distinction has to be
+made betweeen local repository(where u store your local work/code) and remote repo(remote repo where u push after working)
+which is usually on a remote machine with a git repo available.</p>
+
+<p>Assuming we want to create the  local repo in <em>/opt/git/local/</em> and the remote repo in <em>/opt/git/remote/test_repo.git</em>
+We use the commands below
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">##for local</span>
+<span style="color: #f8f8f2">cd</span> /opt/git/
+mkdir <span style="color: #f8f8f2">local</span>
+<span style="color: #f8f8f2">cd local</span>
+git init
+<span style="color: #75715e">##for remote</span>
+<span style="color: #f8f8f2">cd</span> /opt/git/
+mkdir remote
+<span style="color: #f8f8f2">cd </span>remote
+git init --bare --shared<span style="color: #f92672">=</span>group test_repo.git
+</pre></div>
+</p>
+
+<p>The flag <em>- -bare</em> create an empty repository with no content.
+The <em>- -shared=group</em> flag also creates a git repository which will be shared among many users.</p>
+
+<p>We now have to enable pushing to the remote git repository else valid users won&rsquo;t be able to push to the git repository.
+We use the commands below to enabling pushing
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">cd</span> /opt/git/remote/test_repo.git
+git config --file config http.receivepack <span style="color: #f8f8f2">true</span>
+</pre></div>
+
+We now need to create what is called a <em>git hook</em>.</p>
+
+<p>A git hook is a script which can perform some action when some event occurs.
+They are stored in the .git/hooks/ directory of your git repository.
+They are executed at various stages when using git such  as when a  push,commit,merge ,etc is done ..</p>
+
+<p>There are <em>client side hooks</em> as well as <em>server side hooks</em>.
+Client side hooks are used on the local repository and server side hooks on the remote repository.<br />
+We will be using the <em>post-receive</em> hook which is a server side hook which gets run after the push is done.
+This script can’t stop the push process, but the client doesn’t disconnect until it has completed, so be careful if you try to do anything that may take a long time.</p>
+
+<p>We will rename the <em>post-receive.sample</em> to <em>post-receive</em> in the <em>/opt/git/remote/test_repo.git/hooks/</em> folder
+and make it executable so it can be run after a git push.</p>
+
+<p>We will then paste in our shell script to move our code to the web root of our box.
+We use the code below
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">##renames post-receive sampe script to post-receive </span>
+mv /opt/git/remote/test_repo.git/hooks/post-receive.sample /opt/git/remote/test_repo.git/hooks/post-receive
+<span style="color: #75715e">##makes it executable</span>
+chmod u+x /opt/git/remote/test_repo.git/hooks/post-receive
+</pre></div>
+
+We now paste in our shell script below into <em>post-receive</em> to move our content to the web root after the push is done.</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">#!/bin/bash</span>
+
+<span style="color: #f8f8f2">unset </span>GIT_INDEX_FILE
+<span style="color: #75715e">##the target below should have been created already in our web root else we will get an error </span>
+<span style="color: #75715e">## although the push will succed</span>
+<span style="color: #f8f8f2">TARGET</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/var/www/html/remote/test_repo_web&quot;</span>
+<span style="color: #f8f8f2">GIT_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/opt/git/remote/test_repo.git/&quot;</span>
+<span style="color: #75715e">##this can be http or https depending on whether you are using a http/https</span>
+<span style="color: #f8f8f2">UAT_BRANCH_PATH</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;http://127.0.0.1/remote/test_repo_web&quot;</span>
+
+<span style="color: #75715e">##this short script creates a new directory where branches can be checked out to</span>
+<span style="color: #75715e">##if branch directory does not exist it is  created and data is checked in there </span>
+<span style="color: #75715e">##some checks will have to be done if branch conforms to naming conventions</span>
+
+<span style="color: #66d9ef">while </span><span style="color: #f8f8f2">read </span>oldrev newrev ref
+<span style="color: #66d9ef">do</span>
+<span style="color: #66d9ef">        </span>
+<span style="color: #66d9ef">        </span><span style="color: #f8f8f2">IN</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$ref</span>
+        <span style="color: #f8f8f2">BRANCH_NAME</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>git rev-parse --symbolic --abbrev-ref <span style="color: #f8f8f2">$ref</span><span style="color: #66d9ef">)</span>
+        <span style="color: #f8f8f2">BRANCH</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$TARGET</span>/<span style="color: #f8f8f2">$BRANCH_NAME</span>     
+        <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;branch is ${BRANCH_NAME}&quot;</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> ! -d <span style="color: #e6db74">&quot;$BRANCH&quot;</span> <span style="color: #f92672">]</span>; <span style="color: #66d9ef">then</span>
+<span style="color: #66d9ef">                </span><span style="color: #f8f8f2">echo</span>  <span style="color: #e6db74">&quot;Creating branch directory&quot;</span>
+                mkdir   <span style="color: #f8f8f2">$BRANCH</span>
+                <span style="color: #f8f8f2">echo</span>  <span style="color: #e6db74">&quot;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&quot;</span>
+                <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&quot;</span>
+                git --work-tree<span style="color: #f92672">=</span><span style="color: #f8f8f2">$BRANCH</span> --git-dir<span style="color: #f92672">=</span><span style="color: #f8f8f2">$GIT_DIR</span> checkout -f <span style="color: #f8f8f2">$BRANCH_NAME</span>
+        <span style="color: #66d9ef">else</span>
+<span style="color: #66d9ef">                </span><span style="color: #f8f8f2">echo</span>  <span style="color: #e6db74">&quot;Branch exists. skipping creation&quot;</span>
+                <span style="color: #f8f8f2">echo</span>  <span style="color: #e6db74">&quot;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&quot;</span>
+                <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&quot;</span>               
+                git --work-tree<span style="color: #f92672">=</span><span style="color: #f8f8f2">$BRANCH</span> --git-dir<span style="color: #f92672">=</span><span style="color: #f8f8f2">$GIT_DIR</span> checkout -f <span style="color: #f8f8f2">$BRANCH_NAME</span>
+        <span style="color: #66d9ef">fi</span>
+<span style="color: #66d9ef">done</span>
+</pre></div>
+
+the basic thing which gets done here is that for every change from our local repo which is pushed to remote
+the code in the branch is checked out to  <em>test_repo_web/branch_name</em> and can be viewed at
+<em><a href="http://127.0.0.1/remote/test_repo_web/branch_name">here</a></em>.
+It actually overwrites the content in the branch with the new content in the push.
+Cool huuh ?? .</p>
+
+<p>Thats it for git !! . Next is apache.</p>
+
+<h3 id="configure-apache">Configure apache</h3>
+
+<p>Assuming you dont have apache installed, you have to install it for your os distribution first before continuing.
+After installing apache you have to enable some modules which are needed for our purpose.
+We will use the command below to enable the modules we need
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"> 
+sudo a2enmod cgi <span style="color: #f8f8f2">alias </span>env auth_digest
+</pre></div>
+
+this enables the following modules with their respecive uses</p>
+
+<ul>
+<li><em>cgi</em> module allows apache to communicate with the cgi script <em>git-http-backend</em> which is
+is a simple CGI program to serve the contents of a Git repository to Git clients
+accessing the repository over <em>http://</em> and <em>https://</em> protocols.</li>
+<li><em>alias</em> module allow for manipulation and control of URLs as requests arrive at the server.
+This is necessary becuase we will be setting up patterns which identify requests as git requests</li>
+<li><em>env</em> allows control of the environment that will be provided to CGI scripts and SSI pages.
+We basically need to pass environmental variables and pass them to the <em>git-http-backend</em> cgi script</li>
+<li><em>auth_digest</em> module enables us to setup authentication using md5 digests stored in password files.</li>
+</ul>
+
+<p>After enabling the above modules,we now need to creat an apache configuration file for git .
+So we creat an apache config file for git,insert comands in and make sure that apache loads it when its starting.<br />
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">touch /etc/apache2/git.conf
+</pre></div>
+
+We then put the following content in it .
+The various uses of the various segments are added as comments in the configuration below.
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">#environmental variables for git-http-backend</span>
+<span style="color: #75715e">#also tells apache to run the git-http-backend as the handler for anything coming into </span>
+<span style="color: #75715e">#the /git/ path your web server</span>
+ 
+SetEnv GIT_PROJECT_ROOT /opt/git/remote/
+SetEnv GIT_HTTP_EXPORT_ALL
+ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
+
+<span style="color: #75715e">##tells apache to allow requests to this path which contains git commands</span>
+&lt;Directory <span style="color: #e6db74">&quot;/usr/lib/git-core*&quot;</span>&gt;
+Options +ExecCGI +Indexes
+Require all granted
+&lt;/Directory&gt;
+
+<span style="color: #75715e">#tells apache to ask for authentication before allowing  pushing</span>
+<span style="color: #75715e">#it will use the /opt/git/.htpasswd file for authentication</span>
+&lt;LocationMatch <span style="color: #e6db74">&quot;^/git/.*/git-receive-pack$&quot;</span>&gt;
+AuthType Digest
+AuthName <span style="color: #e6db74">&quot;Git Access&quot;</span>
+AuthUserFile /opt/git/.htpasswd
+Require valid-user
+&lt;/LocationMatch&gt;
+</pre></div>
+
+We then execute the commands below in <em>/etc/apache2.conf</em> so the conf file gets loaded and also restart apache so the enabled modules are loaded
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">sudo <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;Include /etc/apache2/git.conf&quot;</span> &gt;&gt; /etc/apache2/apache2.conf
+sudo apache2 restart
+</pre></div>
+</p>
+
+<h3 id="setup-authentication">Setup authentication</h3>
+
+<p>We next need to setup authentication so the whole world cant push to our git repository.
+We partly did that by setting up the AuthUserFile but we now have to create the physical file and put users in it .
+we do the following
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">##create auth file </span>
+touch /opt/git/.htpasswd
+<span style="color: #75715e">##add users</span>
+htdigest  /opt/git/.htpasswd <span style="color: #e6db74">&quot;Git Access&quot;</span> <span style="color: #f8f8f2">test</span>
+<span style="color: #75715e">##enter password when prompted</span>
+</pre></div>
+
+This sets up git to use the password file for authentication when a git push is being made.
+You can add as many users as possible to the file as well as edit the password of the existin users using the htdigest command.</p>
+
+<h3 id="push-to-remote-repository-and-view-files-through-browser">Push to remote repository and view files through browser</h3>
+
+<p>Now we are ready to make some changes to our local repo .
+after the changes are made,we will be able to view the changes cuz the branch will have been moved to the web root.
+Exampe if we were to  execute the following  commands below in our local repo
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">cd</span> /opt/git/local/
+git remote add origin http://127.0.0.1/git/test_repo.git
+git checkout -b testing
+touch index.html
+<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;&lt;div&gt;It works!!&lt;/div&gt;&quot;</span> &gt;&gt; index.html
+git add index.html
+git commit
+git push -u origin testing
+<span style="color: #75715e">##ask for username and password here password here.. </span>
+<span style="color: #75715e">## enter test and the password you used earlier </span>
+</pre></div>
+
+we can access the <em>testing</em> branch at this url <em><a href="http://127.0.0.1/remote/test_repo_web/testing/index.html">here</a></em> .
+We can use this method to make our code viewable on the web if the code is web based stuff.
+We can also use this to push code to a seperate folder if we dont want the code to be viewable on the web.</p>
+
+<p>Either way with a little creativity we can do some nice stuff with git.</p>
+
+  			</section>
+
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+            
+                <a href="https://nayibor.github.io//tags/git/">git</a>
+            
+                <a href="https://nayibor.github.io//tags/apache2/">apache2</a>
+            
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Deploying%20code%20with%20git%20and%20apache&url=https%3a%2f%2fnayibor.github.io%2fpost%2f1cfc17a4d52eacf94391cdb49d5fe5f2%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnayibor.github.io%2fpost%2f1cfc17a4d52eacf94391cdb49d5fe5f2%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fnayibor.github.io%2fpost%2f1cfc17a4d52eacf94391cdb49d5fe5f2%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
+
+  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="" data-url="https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/"/>
+<aside class="post-comments">
+    
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    
+    var disq_var = document.getElementById('disq_variables');
+    var disqus_shortname = 'https-nayibor-github-io';
+    var disqus_identifier = disq_var.getAttribute('data-ident');
+    var disqus_url = disq_var.getAttribute('data-url');
+	var disqus_config = function () { 
+	  this.language = "en";
+	};
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+     
+    var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                this.page.identifier = newIdentifier;
+                this.page.url = newUrl;
+                this.page.title = newTitle;
+                this.language = newLanguage;
+            }
+        });
+    };
+
+
+
+
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
+
+
+			</div>
+
+			<nav class="post-nav">
+				
+				
+					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Programming languages as web template languages</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
+
+		</div>
+	</article>
+</main>
+
+				<div id="body-class" style="display: none;"></div>
+				<footer id="footer">
+					<section class="credits">
+						<span class="credits-theme">Theme <a href="https://github.com/zenithar/hugo-theme-bleak" target="_blank" rel="nofollow">Bleak</a> by <a href="http://zutrinken.com" target="_blank" rel="nofollow">zutrinken</a></span>
+						<span class="credits-software">Published with <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a></span>
+					</section>
+				</footer>
+				
+				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#configure-remote-git-repository">Configure remote git repository</a></li>
+<li><a href="#configure-apache">Configure apache</a></li>
+<li><a href="#setup-authentication">Setup authentication</a></li>
+<li><a href="#push-to-remote-repository-and-view-files-through-browser">Push to remote repository and view files through browser</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+
+				<div class="overlay"></div>
+			</div>
+		</section>
+
+    <script async src="/js/main.js"></script>
+
+
+
+
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+</body>
+</html>
+
