@@ -12,33 +12,33 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Parsing iso8583 messages Part 2 &middot;  Nuku&#39;s blog" />
+        <meta property="og:title" content=" Connect to odbc data source from erlang &middot;  Nuku&#39;s blog" />
         <meta property="og:site_name" content="Nuku&#39;s blog" />
-        <meta property="og:url" content="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/" />
+        <meta property="og:url" content="https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/" />
 
     
         <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2016-12-22T10:54:24&#43;02:00" />
+        <meta property="og:article:published_time" content="2017-05-03T10:54:24&#43;02:00" />
         <meta property="og:article:tag" content="erlang" />
-        <meta property="og:article:tag" content="iso8583" />
-        <meta property="og:article:tag" content="erlang binary processing" />
+        <meta property="og:article:tag" content="odbc" />
+        <meta property="og:article:tag" content="freedts" />
         
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@" />
         <meta name="twitter:creator" content="@" />
-        <meta name="twitter:title" content="Parsing iso8583 messages Part 2" />
-        <meta name="twitter:description" content="parsing iso8583 messages using erlang" />
-        <meta name="twitter:url" content="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/" />
+        <meta name="twitter:title" content="Connect to odbc data source from erlang" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/" />
     
 
-        <title> Parsing iso8583 messages Part 2 &middot;  Nuku&#39;s blog</title>
+        <title> Connect to odbc data source from erlang &middot;  Nuku&#39;s blog</title>
 
         <link rel="preload" href="/js/main.js" as="script" />
         <link rel="preload" href="/css/main.css" as="style" />
 
     
-        <meta name="description" content="parsing iso8583 messages using erlang" />
+        <meta name="description" content="" />
     
 
         <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
@@ -54,21 +54,21 @@
     
 
     
-        <link rel="canonical" href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/" />
+        <link rel="canonical" href="https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/" />
 
 
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Parsing iso8583 messages Part 2",
+        "headline": "Connect to odbc data source from erlang",
         "author": {
             "@type": "Person",
             "name": "http://profiles.google.com/?rel=author"
         },
-        "datePublished": "2016-12-22",
-        "description": "parsing iso8583 messages using erlang",
-        "wordCount":  1403 
+        "datePublished": "2017-05-03",
+        "description": "",
+        "wordCount":  869 
     }
     </script>
 
@@ -118,281 +118,180 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 
   			<header class="post-header">
   				<span class="post-meta">
-						<span class="post-date">22 Dec 2016</span> <span class="reading-time">| <span class="estimated-reading-time">7 min.</span> (<span class="word-count">1403</span> words)</span></span>
+						<span class="post-date">3 May 2017</span> <span class="reading-time">| <span class="estimated-reading-time">5 min.</span> (<span class="word-count">869</span> words)</span></span>
   				</span>
   				<div class="clear"></div>
-  				<h1 class="post-title">Parsing iso8583 messages Part 2</h1>
+  				<h1 class="post-title">Connect to odbc data source from erlang</h1>
   			</header>
 
   			<section class="post-content">
-  				<p>Today we will be showing how to  extract the various components out of an iso string.
-<br>
-The combination of a tcp server as well as code to extract the  iso message components
-and send it for further processing is what is popularly called an interface server in payment processing .
-</br>
-Specifically the components we are interested in are
-<ul>
-<li>message type indicator also known as mti</li>
-<li>bitmap</li>
-<li>data elements</li>
-</ul>
- The code snippets  used for this post is in this  git &nbsp;<a href="https://github.com/nayibor/iso_process_tut_repo"><i>repository</i></a>.
- Also the 1993 ascii protocol will be used here as well as erlang  programming language for the code explanations . So git clone the repository,cd to <strong>iso_process_tut_repo</strong> and fire up your erlang vm and lets begin !!.
-<p>Consider the message below<br></p><p><b>1200F230040102B000000000000004000000</b></p><p><b>1048468112122012340000100000001107221800</b></p><p><b>000001161204171926FABCDE123ABD06414243</b></p><p><b>000termid1210Community106A5DFGR1112341234234</b></p><p>
-the iso message in this case is an ascii string(erlang has no concept of strings just a list of unicode points).
-The function below is what processes the messages and returns a map containing the various fields of the message as well the mti and bitmap
-<blockquote>
-    <p>
--spec process_message([{list | binary,pos_integer()}])-&gt;map().<br />
-    </p>
-    <p>
-        process_message({binary,Rest})-&gt;
-    </p>
-</blockquote><br />
-the first statement converts the string to a binary.
-Binary strings or binaries store data in a more space efficient manner and has more efficient functions for handling large binary data.
-<blockquote>
-    <p>
-        Bin_message = erlang:list_to_binary(Rest),%%this gives &lt;&lt;&ldquo;01581200F230040102B&hellip;&rdquo;&gt;&gt;
-    </p>
-</blockquote><br />
-the next step is to find the mti which is made up of the first 4 digits.We do that and then store the mti along with with some metadata in a map.
-the <strong>?MTI_SIZE</strong> is macro which is defined at the top of the file  and is equal to 4.<br />
-<blockquote>
-    <p>
-        Mti = binary:part(Bin_message,0,?MTI_SIZE),%%this gives &lt;&lt;&ldquo;1200&rdquo;&gt;&gt;
-    </p><p>
-        Mti_Data_Element = maps:from_list([{ftype,ans},{fld_no,0},{name,&lt;&lt;&ldquo;Mti&rdquo;&gt;&gt;},{val_binary_form,Mti}]),
-    </p>
-    <p>
-        %%this gives #{fld_no =&gt; 0,ftype =&gt; ans,name =&gt; &lt;&lt;&ldquo;Mti&rdquo;&gt;&gt;,val_binary_form =&gt; &lt;&lt;&ldquo;1200&rdquo;&gt;&gt;}<br />
-    </p>
-</blockquote></p>
+  				
 
-<p>the next step is to get the bitmap which is a hexadecimal(base 16
-number)which starts from the fifth  digit and is either 8 or 16 in
-size.
-<br>
-The bitmap tell us which data elements exist in the message.
-the bitmap is either a <strong>primary bitmap</strong> or a <strong>secondary bitmap</strong>.
-the first bit in a bitmap tell us whether the secondary bitmap exists.
-the bitmap is either an 8 byte(primary) or 16 byte(secondary) hexadecimal which when converted to base 2 shows the presence or absence of fields from 1 to 128.
-Each bit in a primary/secondary bitmap shows the presence/absence of a data element.
-<br>
-Each digit when converted into base 2 and left padded to a max of 4 digits with zero represents the presence or absence of 4 data elements.
-For example the bitmap <strong>4210001102C04804</strong> is <strong>0100001000010000000000000001000100000010110000000100100000000100</strong> in base 2.
-<br>
-this means Fields 2, 7, 12, 28, 32, 39, 41, 42, 50, 53, 62 are present and there is no secondary bitmap since bit 1 is 0.
-<br>
-Find below code sections for getting the bitmap out of our message as
-explained above from
-<blockquote>
-    <p>
-        Fthdig = binary:part(Bin_message,4,1),%%this gives F
-    </p>
-</blockquote>
-to<br />
-<blockquote>
-    <p>
-        Bitmap_transaction = &lt;&lt; &lt;&lt; (convert_base_pad(One,4,&lt;&lt;&ldquo;0&rdquo;&gt;&gt;)):4/binary &gt;&gt;  || &lt;<a href="One:1/binary">One:1/binary</a>&gt; &lt;= Bitmap_Segment &gt;&gt;,
-        %%this gives &lt;&lt;&ldquo;111100100011000000000100000000010&hellip;&rdquo;&gt;&gt;
-    </p><br />
-</blockquote>
-the next three statements creates a map which contains the bitmap and
-the mti .
-<br>The next step is to get the data elements which is the actual
-content of the message itself and contains info like</p>
+<p>Today we are going to talk about how to connect to an odbc data source from Erlang.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Open_Database_Connectivity">Odbc</a> is a Microsoft standard for connecting to a relational database.By using odbc you can have access to different databases example mssql,oracle,mysql,excel,dbase,Access as well as some others.
+The design of odbc aimed to make it independent of the database management system.</p>
+
+<p>ODBC accomplishes DBMS independence by using an ODBC driver as a translation layer between the application and the DBMS. The application uses ODBC functions through an ODBC driver manager with which it is linked, and the driver passes the query to the DBMS.</p>
+
+<p>We are now going to learn how to make erlang and odbc talk together like a happy couple :).</p>
+
+<p>Lets hit the road!!.</p>
+
+<h3 id="setups-needed">Setups needed</h3>
+
+<p>I am using an Ubuntu Linux environment specifically <code>trusty</code> on an <code>amd64</code> box so this tutorial is geared towards  that platform.</p>
+
+<p>The general things listed below to check are however quite similar for other platforms (windows,Solaris,UNIX,etc..)</p>
 
 <ul>
-<li>transaction amount</li>
-<li>currency</li>
-<li>transaction type</li>
+<li>Install and setup driver for the database</li>
+<li>Setup environmental variables,paths,configurations</li>
+<li>Use erlang odbc application to talk to db !!</li>
 </ul>
 
-<p>the start_index calculation tells us  to start processing the binary
-string at a particular position.Since the primary bitmap is always sent
-with every message and the secondary bitmap is optional we start the
-processing from the point of the  secondary bitmap .
-<br>
-Of importance to note is the <strong>get_spec_field</strong> function which contains
-info about every data element.The function returns info such as</p>
+<h3 id="install-and-setup-driver-for-the-database">Install and setup driver for the database</h3>
+
+<p>You first need to make sure you have  the header files which are necessary for compiling your driver.
+They are</p>
 
 <ul>
-<li>maximum field length</li>
-<li>field type</li>
-<li>whether field is fixed length or variable length</li>
-<li>header length if field has a header</li>
+<li>sql.h</li>
+<li>sqlext.h</li>
+<li>sqltypes.h</li>
 </ul>
 
-<p>Variable length fields have a header which shows how long the field is
-even though the field may have a maximum length .
-<br>You could say this is the erlang representation of the iso93 asci
-spec.This also makes it quite easy to modify the spec if some fields
-change.</p>
+<p>Ubuntu by default has the odbc library files in the <code>unixodbc</code> package but not the header file required for compilation,development etc&hellip;</p>
 
-<p>the fold_bin function is a custom function which kind of works like a
-list fold. In this case instead of a list it takes a binary,accepts a
-fun for processing the binary and processes the binary until the
-binary is of size zero .there is also an accumilator variable in there
-just like with a list fold .
-<blockquote>
-    <p>
-        fold_bin(_Fun, Accum, &lt;&lt;&gt;&gt;) -&gt; Accum;
-    </p><p>
-        fold_bin(Fun, Accum, Bin) -&gt;
-    </p><p>
-            {NewBin, NewAccum} = Fun(Bin, Accum),
-    </p><p>
-            fold_bin(Fun, NewAccum, NewBin).
-    </p><br />
-</blockquote><br />
-The reason for this is because we will be passing the bitmap as the
-input element with the iso message also being passed as an input but as an accumulator
-in this case.The bitmap of course represents the presence or absence of a field .
-<br>If a field is present then we extract the data element out
-of the iso message because the iso message will be available on every
-iteration and then move on.If the field is not present we move on to the
-next element anyway .
-<br>The fold_bin segment which gets the data elements and puts them in
-a map works like this in its simplified form<br />
-<blockquote>
-    <p>
-        <strong>OutData=fold_bin(
-        fun
-        <br>(Bitmap,
-        {Data_for_use_in,Index_start_in,Current_index_in,Map_out_list_in})
-        when X =:= &lt;&lt;&ldquo;1&rdquo;&gt;&gt; -&gt;</strong>
-    </p><p>
-        in this case field exists
-        <br>
-        Data_for_use_in = Iso Message as input in fold_bin function
-        <br>
-        Index_start_in = Position we are in in iso message which
-        corresponds to a specific start position for data element
-        <br>
-        Current_index_in = current data element
-        <br>
-        Map_out_list_in = accumulator for data elements
-        <br>
-        statement to extract data elements based on field
-        length,maximum length etc follow..
-    </p><p>
-        <strong>{Rest_bin,{Data_for_use_in,New_Index,Fld_num_out,NewMap}};</strong>
-        <br>
-        %%output which contains NewMap which contains the data element
-        <br>
-        Rest_bin =  bitmap which contains presence/absence of
-        data elements yet to be processed
-        <br>
-        Data_for_use_in = Iso Message as input in fold_bin function
-        <br>
-        New_Index = Position we are in in iso message which
-        corresponds to a specific start position for next data element
-        <br>
-        Fld_num_out = next data element<br />
-        <br>
-        Also New_Index is the position of the next element so we know
-        where in the binary to start processing the next date element and Fld_num_out
-        is the fld_num which we will use for getting the spec for a
-        field using the <strong>get_spec_field</strong> function<br />
-    </p>
-    <p>
-        <strong>(Bitmap,
-        {Data_for_use_in,Index_start_in,Current_index_in,Map_out_list_in})
-        when X =:= &lt;&lt;&ldquo;0&rdquo;&gt;&gt; -&gt;</strong>
-    </p><p>
-        in this case field does not exist
-        <br>
-        &hellip;statement to extract data elements based on field
-        length,maximum length etc..
-    </p><p>
-        <strong>{Rest_bin,{Data_for_use_in,New_Index,Fld_num_out,NewMap}};</strong>
-        <br>
-    </p><p>
-        <strong>end,
-        {Bin_message,Start_index,1,Map_Data_Element},Bitmap_transaction),</strong>
-        <br>
-        %%
-        Bin_message = Iso Message
-        <br>
-        Start_index = is used to tell where to start processing the
-        binary from ,
-        <br>
-        1  = this tells us we are starting from field 1
-        <br>
-        Map_Data_Element = the accumulator for the data elements
-        where each data element is added this accumulator as a map
-        with some metadata about the data element also added
-    </p>
-</blockquote>
-   At each iteration as we are going through the iso message there is
-   a calculation which is done to find out metadata about the data element .
-   This metadata will give us the header length of the field or if
-   even the field has a header .After we get the header  or not we
-   then get to calculate the actual message and its starting and
-   ending points .
-   <br>
-    After the data element is obtained it is put in the output map
-    along with some metadata about the data element.
-    <br><br />
-    Please browse through the source code to better understand the
-    code as well as how to get the various data elements if my explanation
-    is not enough .
-    <br>
-    There is also a function on how to do the above with strings.
-<blockquote>
-    <p>
-        process_message({list,Rest})-&gt;<br />
-    </p>
-</blockquote><br />
-    As i said earlier binaries occupy less space and has more
-    efficient functions for processing but you can browse through the
-    code to get a better idea of processing the message but using
-    string functions .
-    <br>
-    To test it out by sending sample iso messages open the erlang
-    shell and compile the iso_process with <strong>c(iso_process)</strong>.You can
-    then send iso messages by first starting the server with
-<blockquote>
-    <p> iso_process:start_iso_server().</p>
-</blockquote><br />
-afterwhich you can send iso messages with
-<blockquote>
-    <p> iso_process:send(&ldquo;01581200F230040102B00000000000000400000010&rdquo;</p>
-</blockquote>
-<blockquote>
-    <p>
-    &ldquo;48468112122012340000100000001107221800000001161204171926FA&rdquo;
-    </p>
-</blockquote>
-<blockquote>
-    <p>
-    &ldquo;BCDE123ABD06414243000termid1210Community106A5DFGR1112341234234&rdquo;).
-    </p>
-</blockquote>
-Note that the iso message must be preceded by length of the message
-so in this case <strong>0158</strong> was the length of the message and was added to
-the message when the message was being sent.
-<br></p>
+<p>You can install both header files plus library files using the below bash command.You will need sudo rights to do the below</p>
 
-<p>Alternatively there is a java file <em>Test_java_client.java</em> which you can
-use to edit and send messages to the iso server example.
-<br>
-After editing the various iso fields in the file you can then compile
-the file using
- <blockquote>
-    <p>
-    javac -cp .:jpos-2.0.7-SNAPSHOT.jar Test_java_client.java
-    </p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">sudo apt-get update
+sudo apt-get install unixodbc unixodbc-dev
+</pre></div>
+
+
+<p>After this you can now install the odbc driver of your choice.
+Two popular ones are <a href="http://www.iodbc.org/">iodbc</a> and <a href="http://www.freetds.org/">freetds</a>.</p>
+
+<p>Freetds in particular  enables you to connect to sybase and mssql databases.</p>
+
+<p>We will be using freetds in this tutorial .</p>
+
+<p>We will now install freedtds,freetds drivers and freetds command line utilities   with the below command</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">sudo apt-get install freetds-dev freetds-bin tdsodbc
+</pre></div>
+
+
+<p>After the installation we are now ready to configure freedtds for use as an odbc data source.</p>
+
+<h3 id="setup-environmental-variables-paths-configurations">Setup environmental variables,paths,configurations</h3>
+
+<p>Open <code>/etc/odbcinst.ini</code> using an editor of your choice.</p>
+
+<p>You now have to create an entry for the driver you just installed like below.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">##details for freetds driver</span>
+<span style="color: #f92672">[</span>freetds_driver<span style="color: #f92672">]</span>
+<span style="color: #f8f8f2">Description</span> <span style="color: #f92672">=</span> odbc connection driver
+<span style="color: #f8f8f2">Driver</span> <span style="color: #f92672">=</span> /usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so
+<span style="color: #f8f8f2">Setup</span> <span style="color: #f92672">=</span> /usr/lib/x86_64-linux-gnu/odbc/libtdsS.so
+<span style="color: #f8f8f2">UsageCount</span> <span style="color: #f92672">=</span> 1
+</pre></div>
+
+
+<p>Depending on your platform architecture (x86,x84,etc&hellip;) the driver and setup path  may change .
+They will most likely look like with <code>/usr/lib/x86|x84|amd64|etc../odbc/...</code></p>
+
+<p>You next have to create an entry for your database you want to connect to in the freetds configuration file
+Open <code>/etc/freetds/freetds.conf</code> using an editor of your choice.
+There are examples in the file which will direct you on the format of the configuration.
+You now create an entry like below for your database at the bottom of the file.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e"># Details for database server</span>
+<span style="color: #f92672">[</span>mssql_server<span style="color: #f92672">]</span>
+        <span style="color: #f8f8f2">host</span> <span style="color: #f92672">=</span> 192.168.0.5
+        <span style="color: #f8f8f2">port</span> <span style="color: #f92672">=</span> 1433
+        tds <span style="color: #f8f8f2">version</span> <span style="color: #f92672">=</span> 4.2
+</pre></div>
+
+
+<p>Last but not the least you now create a dns entry that applications can now use as a data source name  in your odbc.ini file
+Open <code>/etc/odbc.ini</code> using an editor of your choice.
+Add an entry for your  database(my_db) with freedts as the driver with a specific server name</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">##details for odbc dns entry</span>
+<span style="color: #f92672">[</span>mssql<span style="color: #f92672">]</span>
+<span style="color: #f8f8f2">Description</span>             <span style="color: #f92672">=</span> MSSQL Server
+<span style="color: #f8f8f2">Driver</span>                  <span style="color: #f92672">=</span> freetds_driver 
+<span style="color: #f8f8f2">Database</span>                <span style="color: #f92672">=</span> my_db
+<span style="color: #f8f8f2">ServerName</span>              <span style="color: #f92672">=</span> mssql_server
+<span style="color: #f8f8f2">TDS_Version</span>             <span style="color: #f92672">=</span> 4.2
+</pre></div>
+
+The driver and the server name are what you configured earlier in <code>/etc/freetds/freetds.conf</code> and <code>/etc/odbcinst.ini</code>`.</p>
+
+<p>The driver version must also match what is in the <code>freedtds.conf</code> file</p>
+
+<p>To test connection use isql.You should see the isql repl.<br />
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">isql mssql sa <span style="color: #e6db74">&#39;weakpass&#39;</span>
++---------------------------------------+
+| Connected!                            |
+|                                       |
+| sql-statement                         |
+| <span style="color: #f8f8f2">help</span> <span style="color: #f92672">[</span>tablename<span style="color: #f92672">]</span>                      |
+| quit                                  |
+|                                       |
++---------------------------------------+
+SQL&gt; 
+</pre></div>
+</p>
+
+<h3 id="use-erlang-odbc-application-to-talk-to-db">Use erlang odbc application to talk to db !!</h3>
+
+<p>We are now ready to use erlang with odbc but a few things first ): ..</p>
+
+<p>From the erlang docs for odbc it says</p>
+
+<blockquote>
+<p>The odbc is made up of c code and erlang.
+The C code is delivered as a precompiled executable for windows, solaris and linux (SLES10) in the commercial build.
+In the open source distribution it is built the same way as all other application using configure and make.</p>
 </blockquote>
-and send the message to the erlang iso server which should have been
-started using
- <blockquote>
-    <p>
-    java -Xbootclasspath/p:jpos-2.0.7-SNAPSHOT.jar Test_java_client 8002
-    </p>
-</blockquote>
-This is where i wind down.</p>
+
+<p>So you should have configured erlang succesful with odbc or have the precompile binary before you can use it .
+ An example below for configuration on my box
+ <div class="highlight" style="background: #272822"><pre style="line-height: 125%">  <span style="color: #75715e">##where path could be /usr/include/ or anywhere where sql.h and sqlext.h header file are found.</span>
+  ./configure --with-odbc<span style="color: #f92672">=</span>/usr/include/
+  
+</pre></div>
+</p>
+
+<p>Assuming odbc was successfully installed with erlang you can now start the odbc application ,make connections to your db and execute queries.
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">%%sample to make connections,execute statements in repl</span>
+<span style="color: #ae81ff">1</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">odbc:</span><span style="color: #a6e22e">start</span><span style="color: #f8f8f2">().</span>
+<span style="color: #f8f8f2">ok</span>
+<span style="color: #ae81ff">2</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{ok,</span> <span style="color: #f8f8f2">Ref}</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">odbc:</span><span style="color: #a6e22e">connect</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;DSN=mssql;UID=sa;PWD=weakpass&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">[]).</span>
+<span style="color: #f8f8f2">{ok,</span><span style="color: #f92672">&lt;</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">.</span><span style="color: #ae81ff">342</span><span style="color: #f8f8f2">.</span><span style="color: #ae81ff">0</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">}</span>
+<span style="color: #ae81ff">3</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">odbc:</span><span style="color: #a6e22e">sql_query</span><span style="color: #f8f8f2">(Ref,</span> <span style="color: #e6db74">&quot;CREATE TABLE EMPLOYEE (NR integer,</span>
+<span style="color: #e6db74">FIRSTNAME char varying(20), LASTNAME char varying(20), GENDER char(1),</span>
+<span style="color: #e6db74">PRIMARY KEY(NR))&quot;</span><span style="color: #f8f8f2">).</span>
+<span style="color: #f8f8f2">{updated,undefined}</span>
+<span style="color: #ae81ff">4</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">odbc:</span><span style="color: #a6e22e">sql_query</span><span style="color: #f8f8f2">(Ref,</span> <span style="color: #e6db74">&quot;INSERT INTO EMPLOYEE VALUES(1, &#39;Jane&#39;, &#39;Doe&#39;, &#39;F&#39;)&quot;</span><span style="color: #f8f8f2">).</span>
+<span style="color: #f8f8f2">{updated,</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">}</span>
+<span style="color: #ae81ff">5</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">odbc:</span><span style="color: #a6e22e">sql_query</span><span style="color: #f8f8f2">(Ref,</span> <span style="color: #e6db74">&quot;SELECT * FROM EMPLOYEE&quot;</span><span style="color: #f8f8f2">).</span>
+<span style="color: #f8f8f2">{selected,[</span><span style="color: #e6db74">&quot;NR&quot;</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;FIRSTNAME&quot;</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;LASTNAME&quot;</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;GENDER&quot;</span><span style="color: #f8f8f2">],</span>
+<span style="color: #f8f8f2">[{</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;Jane&quot;</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;Doe&quot;</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;F&quot;</span><span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">]}</span>
+</pre></div>
+</p>
+
+<p>You may experience some surprises based on the capabilities of the specific odbc driver you are using .
+some may be support/no support for paging,scrollable cursors etc..</p>
+
+<p>Some other gotchas are also well documented here also <a href="http://www2.erlangcentral.org/wiki/?title=Erlang_ODBC_Tips">Odbc Tips</a>.</p>
+
+<p>Till next time have fun with erlang and odbc !!!!!</p>
 
   			</section>
 
@@ -402,26 +301,26 @@ This is where i wind down.</p>
             
                 <a href="https://nayibor.github.io//tags/erlang/">erlang</a>
             
-                <a href="https://nayibor.github.io//tags/iso8583/">iso8583</a>
+                <a href="https://nayibor.github.io//tags/odbc/">odbc</a>
             
-                <a href="https://nayibor.github.io//tags/erlang-binary-processing/">erlang binary processing</a>
+                <a href="https://nayibor.github.io//tags/freedts/">freedts</a>
             
             
   				</div>
   				<div class="post-share">
-  					<a class="icon-twitter" href="https://twitter.com/share?text=Parsing%20iso8583%20messages%20Part%202&url=https%3a%2f%2fnayibor.github.io%2fpost%2f4948d52595d68beab6dd3a919db6d115%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Connect%20to%20odbc%20data%20source%20from%20erlang&url=https%3a%2f%2fnayibor.github.io%2fpost%2f6fcadcda39fbd89ce1be0dc8a8d1191d%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
   						<span>Twitter</span>
   					</a>
-  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnayibor.github.io%2fpost%2f4948d52595d68beab6dd3a919db6d115%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnayibor.github.io%2fpost%2f6fcadcda39fbd89ce1be0dc8a8d1191d%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
   						<span>Facebook</span>
   					</a>
-  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fnayibor.github.io%2fpost%2f4948d52595d68beab6dd3a919db6d115%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fnayibor.github.io%2fpost%2f6fcadcda39fbd89ce1be0dc8a8d1191d%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
   						<span>Google+</span>
   					</a>
   				</div>
   			</footer>
 
-  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="" data-url="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/"/>
+  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="" data-url="https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/"/>
 <aside class="post-comments">
     
     
@@ -469,23 +368,13 @@ This is where i wind down.</p>
 
 			<nav class="post-nav">
 				
-					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">
-						<section class="post-nav-teaser">
-							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
-							<span class="post-nav-info">
-								<h4 class="post-nav-title">Programming languages as web template languages</h4>
-								<p class="post-nav-excerpt">&hellip;</p>
-							</span>
-						</section>
-					</a>
 				
-				
-					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/">
+					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/">
 						<section class="post-nav-teaser">
 							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
 							<span class="post-nav-info">
-								<h4 class="post-nav-title">Parsing iso8583 messages Part 1</h4>
-								<p class="post-nav-excerpt">parsing iso8583 messages using erlang&hellip;</p>
+								<h4 class="post-nav-title">Deploying code with git and apache</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
 							</span>
 						</section>
 					</a>
@@ -512,7 +401,20 @@ This is where i wind down.</p>
         <a class="menu-close" data-action="toc" data-target="toc"></a>
     </div>
     <div id="toc" class="menu-list">
-        
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#setups-needed">Setups needed</a></li>
+<li><a href="#install-and-setup-driver-for-the-database">Install and setup driver for the database</a></li>
+<li><a href="#setup-environmental-variables-paths-configurations">Setup environmental variables,paths,configurations</a></li>
+<li><a href="#use-erlang-odbc-application-to-talk-to-db">Use erlang odbc application to talk to db !!</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 

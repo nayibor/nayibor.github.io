@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/</loc>
+    <lastmod>2017-05-03T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/</loc>
     <lastmod>2017-04-25T10:54:24+02:00</lastmod>
   </url>
@@ -55,12 +60,6 @@
   </url>
   
   <url>
-    <loc>https://nayibor.github.io/</loc>
-    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://nayibor.github.io/tags/elm/</loc>
     <lastmod>2017-04-09T20:52:24+02:00</lastmod>
     <priority>0</priority>
@@ -68,13 +67,19 @@
   
   <url>
     <loc>https://nayibor.github.io/tags/erlang/</loc>
-    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
+    <lastmod>2017-05-03T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nayibor.github.io/tags/erlang-binary-processing/</loc>
     <lastmod>2016-12-22T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/freedts/</loc>
+    <lastmod>2017-05-03T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -103,6 +108,18 @@
   </url>
   
   <url>
+    <loc>https://nayibor.github.io/</loc>
+    <lastmod>2017-05-03T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/odbc/</loc>
+    <lastmod>2017-05-03T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nayibor.github.io/tags/pagination/</loc>
     <lastmod>2016-07-03T02:41:08+00:00</lastmod>
     <priority>0</priority>
@@ -122,7 +139,7 @@
   
   <url>
     <loc>https://nayibor.github.io/post/</loc>
-    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
+    <lastmod>2017-05-03T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   

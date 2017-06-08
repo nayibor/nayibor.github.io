@@ -1,13 +1,189 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Code Musings</title>
+    <title>Posts on Nuku&#39;s blog</title>
     <link>https://nayibor.github.io/post/index.xml</link>
-    <description>Recent content in Posts on Code Musings</description>
+    <description>Recent content in Posts on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Apr 2017 10:54:24 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 03 May 2017 10:54:24 +0200</lastBuildDate>
     <atom:link href="https://nayibor.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Connect to odbc data source from erlang</title>
+      <link>https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/</link>
+      <pubDate>Wed, 03 May 2017 10:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/</guid>
+      <description>
+
+&lt;p&gt;Today we are going to talk about how to connect to an odbc data source from Erlang.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Open_Database_Connectivity&#34;&gt;Odbc&lt;/a&gt; is a Microsoft standard for connecting to a relational database.By using odbc you can have access to different databases example mssql,oracle,mysql,excel,dbase,Access as well as some others.
+The design of odbc aimed to make it independent of the database management system.&lt;/p&gt;
+
+&lt;p&gt;ODBC accomplishes DBMS independence by using an ODBC driver as a translation layer between the application and the DBMS. The application uses ODBC functions through an ODBC driver manager with which it is linked, and the driver passes the query to the DBMS.&lt;/p&gt;
+
+&lt;p&gt;We are now going to learn how to make erlang and odbc talk together like a happy couple :).&lt;/p&gt;
+
+&lt;p&gt;Lets hit the road!!.&lt;/p&gt;
+
+&lt;h3 id=&#34;setups-needed&#34;&gt;Setups needed&lt;/h3&gt;
+
+&lt;p&gt;I am using an Ubuntu Linux environment specifically &lt;code&gt;trusty&lt;/code&gt; on an &lt;code&gt;amd64&lt;/code&gt; box so this tutorial is geared towards  that platform.&lt;/p&gt;
+
+&lt;p&gt;The general things listed below to check are however quite similar for other platforms (windows,Solaris,UNIX,etc..)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install and setup driver for the database&lt;/li&gt;
+&lt;li&gt;Setup environmental variables,paths,configurations&lt;/li&gt;
+&lt;li&gt;Use erlang odbc application to talk to db !!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;install-and-setup-driver-for-the-database&#34;&gt;Install and setup driver for the database&lt;/h3&gt;
+
+&lt;p&gt;You first need to make sure you have  the header files which are necessary for compiling your driver.
+They are&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sql.h&lt;/li&gt;
+&lt;li&gt;sqlext.h&lt;/li&gt;
+&lt;li&gt;sqltypes.h&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ubuntu by default has the odbc library files in the &lt;code&gt;unixodbc&lt;/code&gt; package but not the header file required for compilation,development etc&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;You can install both header files plus library files using the below bash command.You will need sudo rights to do the below&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo apt-get update
+sudo apt-get install unixodbc unixodbc-dev
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After this you can now install the odbc driver of your choice.
+Two popular ones are &lt;a href=&#34;http://www.iodbc.org/&#34;&gt;iodbc&lt;/a&gt; and &lt;a href=&#34;http://www.freetds.org/&#34;&gt;freetds&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Freetds in particular  enables you to connect to sybase and mssql databases.&lt;/p&gt;
+
+&lt;p&gt;We will be using freetds in this tutorial .&lt;/p&gt;
+
+&lt;p&gt;We will now install freedtds,freetds drivers and freetds command line utilities   with the below command&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo apt-get install freetds-dev freetds-bin tdsodbc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After the installation we are now ready to configure freedtds for use as an odbc data source.&lt;/p&gt;
+
+&lt;h3 id=&#34;setup-environmental-variables-paths-configurations&#34;&gt;Setup environmental variables,paths,configurations&lt;/h3&gt;
+
+&lt;p&gt;Open &lt;code&gt;/etc/odbcinst.ini&lt;/code&gt; using an editor of your choice.&lt;/p&gt;
+
+&lt;p&gt;You now have to create an entry for the driver you just installed like below.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##details for freetds driver&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;freetds_driver&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;Description&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; odbc connection driver
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;Driver&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; /usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;Setup&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; /usr/lib/x86_64-linux-gnu/odbc/libtdsS.so
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;UsageCount&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Depending on your platform architecture (x86,x84,etc&amp;hellip;) the driver and setup path  may change .
+They will most likely look like with &lt;code&gt;/usr/lib/x86|x84|amd64|etc../odbc/...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You next have to create an entry for your database you want to connect to in the freetds configuration file
+Open &lt;code&gt;/etc/freetds/freetds.conf&lt;/code&gt; using an editor of your choice.
+There are examples in the file which will direct you on the format of the configuration.
+You now create an entry like below for your database at the bottom of the file.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;# Details for database server&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;mssql_server&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;host&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 192.168.0.5
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;port&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 1433
+        tds &lt;span style=&#34;color: #f8f8f2&#34;&gt;version&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 4.2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Last but not the least you now create a dns entry that applications can now use as a data source name  in your odbc.ini file
+Open &lt;code&gt;/etc/odbc.ini&lt;/code&gt; using an editor of your choice.
+Add an entry for your  database(my_db) with freedts as the driver with a specific server name&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##details for odbc dns entry&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;mssql&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;Description&lt;/span&gt;             &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; MSSQL Server
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;Driver&lt;/span&gt;                  &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; freetds_driver 
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;Database&lt;/span&gt;                &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; my_db
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;ServerName&lt;/span&gt;              &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; mssql_server
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;TDS_Version&lt;/span&gt;             &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 4.2
+&lt;/pre&gt;&lt;/div&gt;
+
+The driver and the server name are what you configured earlier in &lt;code&gt;/etc/freetds/freetds.conf&lt;/code&gt; and &lt;code&gt;/etc/odbcinst.ini&lt;/code&gt;`.&lt;/p&gt;
+
+&lt;p&gt;The driver version must also match what is in the &lt;code&gt;freedtds.conf&lt;/code&gt; file&lt;/p&gt;
+
+&lt;p&gt;To test connection use isql.You should see the isql repl.&lt;br /&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;isql mssql sa &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;weakpass&amp;#39;&lt;/span&gt;
++---------------------------------------+
+| Connected!                            |
+|                                       |
+| sql-statement                         |
+| &lt;span style=&#34;color: #f8f8f2&#34;&gt;help&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;tablename&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;                      |
+| quit                                  |
+|                                       |
++---------------------------------------+
+SQL&amp;gt; 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;use-erlang-odbc-application-to-talk-to-db&#34;&gt;Use erlang odbc application to talk to db !!&lt;/h3&gt;
+
+&lt;p&gt;We are now ready to use erlang with odbc but a few things first ): ..&lt;/p&gt;
+
+&lt;p&gt;From the erlang docs for odbc it says&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The odbc is made up of c code and erlang.
+The C code is delivered as a precompiled executable for windows, solaris and linux (SLES10) in the commercial build.
+In the open source distribution it is built the same way as all other application using configure and make.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So you should have configured erlang succesful with odbc or have the precompile binary before you can use it .
+ An example below for configuration on my box
+ &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;  &lt;span style=&#34;color: #75715e&#34;&gt;##where path could be /usr/include/ or anywhere where sql.h and sqlext.h header file are found.&lt;/span&gt;
+  ./configure --with-odbc&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;/usr/include/
+  
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Assuming odbc was successfully installed with erlang you can now start the odbc application ,make connections to your db and execute queries.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;%%sample to make connections,execute statements in repl&lt;/span&gt;
+&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;start&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;().&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;ok&lt;/span&gt;
+&lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{ok,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Ref}&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;connect&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;DSN=mssql;UID=sa;PWD=weakpass&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[]).&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;{ok,&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;342&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sql_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(Ref,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;CREATE TABLE EMPLOYEE (NR integer,&lt;/span&gt;
+&lt;span style=&#34;color: #e6db74&#34;&gt;FIRSTNAME char varying(20), LASTNAME char varying(20), GENDER char(1),&lt;/span&gt;
+&lt;span style=&#34;color: #e6db74&#34;&gt;PRIMARY KEY(NR))&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;).&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;{updated,undefined}&lt;/span&gt;
+&lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sql_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(Ref,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;INSERT INTO EMPLOYEE VALUES(1, &amp;#39;Jane&amp;#39;, &amp;#39;Doe&amp;#39;, &amp;#39;F&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;).&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;{updated,&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sql_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(Ref,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;SELECT * FROM EMPLOYEE&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;).&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;{selected,[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;NR&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;FIRSTNAME&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;LASTNAME&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;GENDER&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;],&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;[{&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Jane&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Doe&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;F&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;]}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;You may experience some surprises based on the capabilities of the specific odbc driver you are using .
+some may be support/no support for paging,scrollable cursors etc..&lt;/p&gt;
+
+&lt;p&gt;Some other gotchas are also well documented here also &lt;a href=&#34;http://www2.erlangcentral.org/wiki/?title=Erlang_ODBC_Tips&#34;&gt;Odbc Tips&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Till next time have fun with erlang and odbc !!!!!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Deploying code with git and apache</title>
