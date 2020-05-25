@@ -9,9 +9,28 @@
     <atom:link href="https://nayibor.github.io/tags/iso8583/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Library for parsing iso8583 messages in erlang</title>
+      <link>https://nayibor.github.io/post/c33083b29ef6e62daebc9459653f84b9/</link>
+      <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/post/c33083b29ef6e62daebc9459653f84b9/</guid>
+      <description>&lt;p&gt;i have been working on  an iso8583 parsing library.
+&lt;br&gt;its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages.
+&lt;br&gt;this library can be used for packing and unpacking iso8583 financial messages.
+&lt;br&gt;It accepts a specification file which contains info about fields,mti,bitmap for your messages.
+&lt;br&gt;The specification has info such as header length for various fields,padding info for fields,etc&amp;hellip;
+&lt;br&gt;This specification information is then used for packing/unpacking iso8583 formatted messages.
+&lt;br&gt;you will mostly be using the pack/unpack functions plus setting up specification files.
+&lt;br&gt;it can be found on hex at &lt;a href=&#34;https://hex.pm/packages/iso8583_erl&#34;&gt;iso8583_erl&lt;/a&gt; or here &lt;a href=&#34;https://github.com/nayibor/iso8583_erl&#34;&gt;iso8583_erl&lt;/a&gt;
+&lt;br&gt;you can info for using it at the github url.
+&lt;br&gt;take it out for a spin and let me know how you find it !!.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Parsing iso8583 messages Part 2</title>
       <link>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</link>
-      <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate>
+      <pubDate>Sun, 01 Jan 2017 10:00:26 +0000</pubDate>
       
       <guid>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</guid>
       <description>&lt;p&gt;Today we will be showing how to  extract the various components out of an iso string.
