@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Nuku&#39;s blog</title>
+    <link>https://nayibor.github.io/tags/</link>
+    <description>Recent content in Tags on Nuku&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jun 2020 00:54:24 +0200</lastBuildDate><atom:link href="https://nayibor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>erlang</title>
+      <link>https://nayibor.github.io/tags/erlang/</link>
+      <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/erlang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>erlang binary processing</title>
+      <link>https://nayibor.github.io/tags/erlang-binary-processing/</link>
+      <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/erlang-binary-processing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iso8583</title>
+      <link>https://nayibor.github.io/tags/iso8583/</link>
+      <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/iso8583/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apache2</title>
+      <link>https://nayibor.github.io/tags/apache2/</link>
+      <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/apache2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://nayibor.github.io/tags/git/</link>
+      <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elm</title>
+      <link>https://nayibor.github.io/tags/elm/</link>
+      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/elm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://nayibor.github.io/tags/javascript/</link>
+      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mithril</title>
+      <link>https://nayibor.github.io/tags/mithril/</link>
+      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/mithril/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>templating</title>
+      <link>https://nayibor.github.io/tags/templating/</link>
+      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/templating/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yaws</title>
+      <link>https://nayibor.github.io/tags/yaws/</link>
+      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/yaws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>payments</title>
+      <link>https://nayibor.github.io/tags/payments/</link>
+      <pubDate>Mon, 05 Dec 2016 07:55:57 +0000</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/payments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>backbone</title>
+      <link>https://nayibor.github.io/tags/backbone/</link>
+      <pubDate>Sun, 03 Jul 2016 02:41:08 +0000</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/backbone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cakephp</title>
+      <link>https://nayibor.github.io/tags/cakephp/</link>
+      <pubDate>Sun, 03 Jul 2016 02:41:08 +0000</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/cakephp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pagination</title>
+      <link>https://nayibor.github.io/tags/pagination/</link>
+      <pubDate>Sun, 03 Jul 2016 02:41:08 +0000</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/pagination/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>underscore</title>
+      <link>https://nayibor.github.io/tags/underscore/</link>
+      <pubDate>Sun, 03 Jul 2016 02:41:08 +0000</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/underscore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>https://nayibor.github.io/tags/php/</link>
+      <pubDate>Tue, 11 Aug 2015 13:42:38 +0000</pubDate>
+      
+      <guid>https://nayibor.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

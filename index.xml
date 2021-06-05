@@ -6,8 +6,60 @@
     <description>Recent content on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jun 2020 00:54:24 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 04 Jun 2021 10:54:24 +0200</lastBuildDate>
     <atom:link href="https://nayibor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Conference and Community Building</title>
+      <link>https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/</link>
+      <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/</guid>
+      <description>
+
+&lt;p&gt;&lt;br&gt;Conferences/communities are a great way for everyone to network and learn something new.
+&lt;br&gt;the effect of the pandemic on how these events are organized has been interesting.
+&lt;br&gt;its made people have to innovate around the organization of events.
+&lt;br&gt;there have been some positives out of this as well as some negatives
+&lt;br&gt;i have attended three erlang/elixir online conferences(two of my best languages)  so far this year and its been interesting
+&lt;br&gt;the positives/negatives as well as what the future may bring&lt;/p&gt;
+
+&lt;h1 id=&#34;postives&#34;&gt;Postives&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;you have access to the whole world basically for your event if you do the correct marketing since everyone is/was stuck at home&lt;/li&gt;
+&lt;li&gt;People are more confortable with the idea of having conferences online due to the pandemic&lt;/li&gt;
+&lt;li&gt;People can have access to your event from the comfort of their homes/mobile phones which makes it more convenient&lt;/li&gt;
+&lt;li&gt;They wont have to spend large sums of money travelling to your event destination&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;negatives&#34;&gt;Negatives&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the experience of meeting people in 3d,travelling to a new city,not to mention the fact that most communication  happens by body language
+makes you wonder if the experience could have been better face to face&lt;/li&gt;
+&lt;li&gt;screen fatigue can be very real and having to spend long amounts of time focusing and listening to people talk can be draining
+this can be solved by taking  virtual cofee breaks :) in between talks
+&lt;br&gt;there are some apps also like &lt;a href=&#34;https://www.toucan.events/&#34;&gt;toucan&lt;/a&gt; which have an interesting twist around interactivity and i found their virtual lounge
+idea quite interesting&lt;/li&gt;
+&lt;li&gt;interactivity in the case of sponsors or people who want to demo their products may be less effective/interactive but this can be debatable depending on the product of course&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Well as they say time will tell if online conferences can be made better/more interactive.
+ &lt;br&gt;We will also see if virtual reality or other tech can make the experience more interactive.
+ &lt;br&gt;Willl we go back to meeting in person completely after the pandemic becomes bearable or  online conferences/learning is here to stay and
+ has a market share
+ &lt;br&gt;we will see.whats your opinion.give me your thoughts in the comments below&lt;/p&gt;
+
+&lt;p&gt;&lt;h3&gt;ps&lt;/h3&gt;
+ &lt;br&gt;i am setting  up a beam(&lt;a href=&#34;https://www.erlang.org/&#34;&gt;erlang&lt;/a&gt;,&lt;a href=&#34;https://elixir-lang.org/&#34;&gt;elixir&lt;/a&gt;,&lt;a href=&#34;https://lfe.io/&#34;&gt;lfe&lt;/a&gt;,etc&amp;hellip;) community in accra
+  called beam ghana
+ &lt;br&gt;if you are interested in any of the above languages or want to learn about programming/entreprenuership feel free to join/contribute
+ &lt;br&gt; halla me at &lt;a href=&#34;https://twitter.com/nayibor&#34;&gt;@nayibor&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Library for parsing iso8583 messages in erlang</title>
@@ -29,187 +81,11 @@
     </item>
     
     <item>
-      <title>Connect to odbc data source from erlang</title>
-      <link>https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/</link>
-      <pubDate>Wed, 03 May 2017 10:54:24 +0200</pubDate>
-      
-      <guid>https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/</guid>
-      <description>
-
-&lt;p&gt;Today we are going to talk about how to connect to an odbc data source from Erlang.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Open_Database_Connectivity&#34;&gt;Odbc&lt;/a&gt; is a Microsoft standard for connecting to a relational database.By using odbc you can have access to different databases example mssql,oracle,mysql,excel,dbase,Access as well as some others.
-The design of odbc aimed to make it independent of the database management system.&lt;/p&gt;
-
-&lt;p&gt;ODBC accomplishes DBMS independence by using an ODBC driver as a translation layer between the application and the DBMS. The application uses ODBC functions through an ODBC driver manager with which it is linked, and the driver passes the query to the DBMS.&lt;/p&gt;
-
-&lt;p&gt;We are now going to learn how to make erlang and odbc talk together like a happy couple :).&lt;/p&gt;
-
-&lt;p&gt;Lets hit the road!!.&lt;/p&gt;
-
-&lt;h3 id=&#34;setups-needed&#34;&gt;Setups needed&lt;/h3&gt;
-
-&lt;p&gt;I am using an Ubuntu Linux environment specifically &lt;code&gt;trusty&lt;/code&gt; on an &lt;code&gt;amd64&lt;/code&gt; box so this tutorial is geared towards  that platform.&lt;/p&gt;
-
-&lt;p&gt;The general things listed below to check are however quite similar for other platforms (windows,Solaris,UNIX,etc..)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Install and setup driver for the database&lt;/li&gt;
-&lt;li&gt;Setup environmental variables,paths,configurations&lt;/li&gt;
-&lt;li&gt;Use erlang odbc application to talk to db !!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;install-and-setup-driver-for-the-database&#34;&gt;Install and setup driver for the database&lt;/h3&gt;
-
-&lt;p&gt;You first need to make sure you have  the header files which are necessary for compiling your driver.
-They are&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;sql.h&lt;/li&gt;
-&lt;li&gt;sqlext.h&lt;/li&gt;
-&lt;li&gt;sqltypes.h&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ubuntu by default has the odbc library files in the &lt;code&gt;unixodbc&lt;/code&gt; package but not the header file required for compilation,development etc&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;You can install both header files plus library files using the below bash command.You will need sudo rights to do the below&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo apt-get update
-sudo apt-get install unixodbc unixodbc-dev
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;After this you can now install the odbc driver of your choice.
-Two popular ones are &lt;a href=&#34;http://www.iodbc.org/&#34;&gt;iodbc&lt;/a&gt; and &lt;a href=&#34;http://www.freetds.org/&#34;&gt;freetds&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Freetds in particular  enables you to connect to sybase and mssql databases.&lt;/p&gt;
-
-&lt;p&gt;We will be using freetds in this tutorial .&lt;/p&gt;
-
-&lt;p&gt;We will now install freedtds,freetds drivers and freetds command line utilities   with the below command&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo apt-get install freetds-dev freetds-bin tdsodbc
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;After the installation we are now ready to configure freedtds for use as an odbc data source.&lt;/p&gt;
-
-&lt;h3 id=&#34;setup-environmental-variables-paths-configurations&#34;&gt;Setup environmental variables,paths,configurations&lt;/h3&gt;
-
-&lt;p&gt;Open &lt;code&gt;/etc/odbcinst.ini&lt;/code&gt; using an editor of your choice.&lt;/p&gt;
-
-&lt;p&gt;You now have to create an entry for the driver you just installed like below.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##details for freetds driver&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;freetds_driver&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Description&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; odbc connection driver
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Driver&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; /usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Setup&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; /usr/lib/x86_64-linux-gnu/odbc/libtdsS.so
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;UsageCount&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 1
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Depending on your platform architecture (x86,x84,etc&amp;hellip;) the driver and setup path  may change .
-They will most likely look like with &lt;code&gt;/usr/lib/x86|x84|amd64|etc../odbc/...&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;You next have to create an entry for your database you want to connect to in the freetds configuration file
-Open &lt;code&gt;/etc/freetds/freetds.conf&lt;/code&gt; using an editor of your choice.
-There are examples in the file which will direct you on the format of the configuration.
-You now create an entry like below for your database at the bottom of the file.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;# Details for database server&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;mssql_server&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;
-        &lt;span style=&#34;color: #f8f8f2&#34;&gt;host&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 192.168.0.5
-        &lt;span style=&#34;color: #f8f8f2&#34;&gt;port&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 1433
-        tds &lt;span style=&#34;color: #f8f8f2&#34;&gt;version&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 4.2
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Last but not the least you now create a dns entry that applications can now use as a data source name  in your odbc.ini file
-Open &lt;code&gt;/etc/odbc.ini&lt;/code&gt; using an editor of your choice.
-Add an entry for your  database(my_db) with freedts as the driver with a specific server name&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##details for odbc dns entry&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;mssql&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Description&lt;/span&gt;             &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; MSSQL Server
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Driver&lt;/span&gt;                  &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; freetds_driver 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Database&lt;/span&gt;                &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; my_db
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;ServerName&lt;/span&gt;              &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; mssql_server
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;TDS_Version&lt;/span&gt;             &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 4.2
-&lt;/pre&gt;&lt;/div&gt;
-
-The driver and the server name are what you configured earlier in &lt;code&gt;/etc/freetds/freetds.conf&lt;/code&gt; and &lt;code&gt;/etc/odbcinst.ini&lt;/code&gt;`.&lt;/p&gt;
-
-&lt;p&gt;The driver version must also match what is in the &lt;code&gt;freedtds.conf&lt;/code&gt; file&lt;/p&gt;
-
-&lt;p&gt;To test connection use isql.You should see the isql repl.&lt;br /&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;isql mssql sa &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;weakpass&amp;#39;&lt;/span&gt;
-+---------------------------------------+
-| Connected!                            |
-|                                       |
-| sql-statement                         |
-| &lt;span style=&#34;color: #f8f8f2&#34;&gt;help&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;tablename&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;                      |
-| quit                                  |
-|                                       |
-+---------------------------------------+
-SQL&amp;gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h3 id=&#34;use-erlang-odbc-application-to-talk-to-db&#34;&gt;Use erlang odbc application to talk to db !!&lt;/h3&gt;
-
-&lt;p&gt;We are now ready to use erlang with odbc but a few things first ): ..&lt;/p&gt;
-
-&lt;p&gt;From the erlang docs for odbc it says&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The odbc is made up of c code and erlang.
-The C code is delivered as a precompiled executable for windows, solaris and linux (SLES10) in the commercial build.
-In the open source distribution it is built the same way as all other application using configure and make.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So you should have configured erlang succesful with odbc or have the precompile binary before you can use it .
- An example below for configuration on my box
- &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;  &lt;span style=&#34;color: #75715e&#34;&gt;##where path could be /usr/include/ or anywhere where sql.h and sqlext.h header file are found.&lt;/span&gt;
-  ./configure --with-odbc&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;/usr/include/
-  
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Assuming odbc was successfully installed with erlang you can now start the odbc application ,make connections to your db and execute queries.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;%%sample to make connections,execute statements in repl&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;start&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;().&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;ok&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{ok,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Ref}&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;connect&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;DSN=mssql;UID=sa;PWD=weakpass&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[]).&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;{ok,&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;342&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sql_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(Ref,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;CREATE TABLE EMPLOYEE (NR integer,&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;FIRSTNAME char varying(20), LASTNAME char varying(20), GENDER char(1),&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;PRIMARY KEY(NR))&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;).&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;{updated,undefined}&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sql_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(Ref,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;INSERT INTO EMPLOYEE VALUES(1, &amp;#39;Jane&amp;#39;, &amp;#39;Doe&amp;#39;, &amp;#39;F&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;).&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;{updated,&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sql_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(Ref,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;SELECT * FROM EMPLOYEE&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;).&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;{selected,[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;NR&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;FIRSTNAME&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;LASTNAME&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;GENDER&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;],&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;[{&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Jane&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Doe&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;F&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;]}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;You may experience some surprises based on the capabilities of the specific odbc driver you are using .
-some may be support/no support for paging,scrollable cursors etc..&lt;/p&gt;
-
-&lt;p&gt;Some other gotchas are also well documented here also &lt;a href=&#34;http://www2.erlangcentral.org/wiki/?title=Erlang_ODBC_Tips&#34;&gt;Odbc Tips&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Till next time have fun with erlang and odbc !!!!!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Deploying code with git and apache</title>
-      <link>https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/</link>
+      <link>https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/</link>
       <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/</guid>
+      <guid>https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/</guid>
       <description>
 
 &lt;p&gt;Today we are going to talk about how to deploy our code to our testing server or production server using git/apache.
@@ -235,17 +111,17 @@ which is usually on a remote machine with a git repo available.&lt;/p&gt;
 
 &lt;p&gt;Assuming we want to create the  local repo in &lt;em&gt;/opt/git/local/&lt;/em&gt; and the remote repo in &lt;em&gt;/opt/git/remote/test_repo.git&lt;/em&gt;
 We use the commands below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##for local&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; /opt/git/
-mkdir &lt;span style=&#34;color: #f8f8f2&#34;&gt;local&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd local&lt;/span&gt;
+
+##for local
+cd /opt/git/
+mkdir local
+cd local
 git init
-&lt;span style=&#34;color: #75715e&#34;&gt;##for remote&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; /opt/git/
+##for remote
+cd /opt/git/
 mkdir remote
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd &lt;/span&gt;remote
-git init --bare --shared&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;group test_repo.git
-&lt;/pre&gt;&lt;/div&gt;
+cd remote
+git init --bare --shared=group test_repo.git
 &lt;/p&gt;
 
 &lt;p&gt;The flag &lt;em&gt;- -bare&lt;/em&gt; create an empty repository with no content.
@@ -253,9 +129,9 @@ The &lt;em&gt;- -shared=group&lt;/em&gt; flag also creates a git repository whic
 
 &lt;p&gt;We now have to enable pushing to the remote git repository else valid users won&amp;rsquo;t be able to push to the git repository.
 We use the commands below to enabling pushing
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; /opt/git/remote/test_repo.git
-git config --file config http.receivepack &lt;span style=&#34;color: #f8f8f2&#34;&gt;true&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+cd /opt/git/remote/test_repo.git
+git config --file config http.receivepack true
 
 We now need to create what is called a &lt;em&gt;git hook&lt;/em&gt;.&lt;/p&gt;
 
@@ -273,49 +149,49 @@ and make it executable so it can be run after a git push.&lt;/p&gt;
 
 &lt;p&gt;We will then paste in our shell script to move our code to the web root of our box.
 We use the code below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##renames post-receive sampe script to post-receive &lt;/span&gt;
+
+##renames post-receive sampe script to post-receive 
 mv /opt/git/remote/test_repo.git/hooks/post-receive.sample /opt/git/remote/test_repo.git/hooks/post-receive
-&lt;span style=&#34;color: #75715e&#34;&gt;##makes it executable&lt;/span&gt;
+##makes it executable
 chmod u+x /opt/git/remote/test_repo.git/hooks/post-receive
-&lt;/pre&gt;&lt;/div&gt;
 
 We now paste in our shell script below into &lt;em&gt;post-receive&lt;/em&gt; to move our content to the web root after the push is done.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;#!/bin/bash&lt;/span&gt;
+&lt;p&gt;
+#!/bin/bash
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;unset &lt;/span&gt;GIT_INDEX_FILE
-&lt;span style=&#34;color: #75715e&#34;&gt;##the target below should have been created already in our web root else we will get an error &lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;## although the push will succed&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;TARGET&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/var/www/html/remote/test_repo_web&amp;quot;&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;GIT_DIR&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/opt/git/remote/test_repo.git/&amp;quot;&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;##this can be http or https depending on whether you are using a http/https&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;UAT_BRANCH_PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;http://127.0.0.1/remote/test_repo_web&amp;quot;&lt;/span&gt;
+unset GIT_INDEX_FILE
+##the target below should have been created already in our web root else we will get an error 
+## although the push will succed
+TARGET=&#34;/var/www/html/remote/test_repo_web&#34;
+GIT_DIR=&#34;/opt/git/remote/test_repo.git/&#34;
+##this can be http or https depending on whether you are using a http/https
+UAT_BRANCH_PATH=&#34;http://127.0.0.1/remote/test_repo_web&#34;
 
-&lt;span style=&#34;color: #75715e&#34;&gt;##this short script creates a new directory where branches can be checked out to&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;##if branch directory does not exist it is  created and data is checked in there &lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;##some checks will have to be done if branch conforms to naming conventions&lt;/span&gt;
+##this short script creates a new directory where branches can be checked out to
+##if branch directory does not exist it is  created and data is checked in there 
+##some checks will have to be done if branch conforms to naming conventions
 
-&lt;span style=&#34;color: #66d9ef&#34;&gt;while &lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;read &lt;/span&gt;oldrev newrev ref
-&lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;
-&lt;span style=&#34;color: #66d9ef&#34;&gt;        &lt;/span&gt;
-&lt;span style=&#34;color: #66d9ef&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;IN&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ref&lt;/span&gt;
-        &lt;span style=&#34;color: #f8f8f2&#34;&gt;BRANCH_NAME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;$(&lt;/span&gt;git rev-parse --symbolic --abbrev-ref &lt;span style=&#34;color: #f8f8f2&#34;&gt;$ref&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;)&lt;/span&gt;
-        &lt;span style=&#34;color: #f8f8f2&#34;&gt;BRANCH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$TARGET&lt;/span&gt;/&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH_NAME&lt;/span&gt;     
-        &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;branch is ${BRANCH_NAME}&amp;quot;&lt;/span&gt;
-        &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt; ! -d &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;$BRANCH&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color: #66d9ef&#34;&gt;then&lt;/span&gt;
-&lt;span style=&#34;color: #66d9ef&#34;&gt;                &lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;  &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Creating branch directory&amp;quot;&lt;/span&gt;
-                mkdir   &lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH&lt;/span&gt;
-                &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;  &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&amp;quot;&lt;/span&gt;
-                &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&amp;quot;&lt;/span&gt;
-                git --work-tree&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH&lt;/span&gt; --git-dir&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$GIT_DIR&lt;/span&gt; checkout -f &lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH_NAME&lt;/span&gt;
-        &lt;span style=&#34;color: #66d9ef&#34;&gt;else&lt;/span&gt;
-&lt;span style=&#34;color: #66d9ef&#34;&gt;                &lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;  &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Branch exists. skipping creation&amp;quot;&lt;/span&gt;
-                &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;  &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&amp;quot;&lt;/span&gt;
-                &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&amp;quot;&lt;/span&gt;               
-                git --work-tree&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH&lt;/span&gt; --git-dir&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$GIT_DIR&lt;/span&gt; checkout -f &lt;span style=&#34;color: #f8f8f2&#34;&gt;$BRANCH_NAME&lt;/span&gt;
-        &lt;span style=&#34;color: #66d9ef&#34;&gt;fi&lt;/span&gt;
-&lt;span style=&#34;color: #66d9ef&#34;&gt;done&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+while read oldrev newrev ref
+do
+        
+        IN=$ref
+        BRANCH_NAME=$(git rev-parse --symbolic --abbrev-ref $ref)
+        BRANCH=$TARGET/$BRANCH_NAME     
+        echo &#34;branch is ${BRANCH_NAME}&#34;
+        if [ ! -d &#34;$BRANCH&#34; ]; then
+                echo  &#34;Creating branch directory&#34;
+                mkdir   $BRANCH
+                echo  &#34;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&#34;
+                echo &#34;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&#34;
+                git --work-tree=$BRANCH --git-dir=$GIT_DIR checkout -f $BRANCH_NAME
+        else
+                echo  &#34;Branch exists. skipping creation&#34;
+                echo  &#34;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&#34;
+                echo &#34;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&#34;               
+                git --work-tree=$BRANCH --git-dir=$GIT_DIR checkout -f $BRANCH_NAME
+        fi
+done
 
 the basic thing which gets done here is that for every change from our local repo which is pushed to remote
 the code in the branch is checked out to  &lt;em&gt;test_repo_web/branch_name&lt;/em&gt; and can be viewed at
@@ -330,9 +206,8 @@ Cool huuh ?? .&lt;/p&gt;
 &lt;p&gt;Assuming you dont have apache installed, you have to install it for your os distribution first before continuing.
 After installing apache you have to enable some modules which are needed for our purpose.
 We will use the command below to enable the modules we need
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; 
-sudo a2enmod cgi &lt;span style=&#34;color: #f8f8f2&#34;&gt;alias &lt;/span&gt;env auth_digest
-&lt;/pre&gt;&lt;/div&gt;
+ 
+sudo a2enmod cgi alias env auth_digest
 
 this enables the following modules with their respecive uses&lt;/p&gt;
 
@@ -349,39 +224,39 @@ We basically need to pass environmental variables and pass them to the &lt;em&gt
 
 &lt;p&gt;After enabling the above modules,we now need to creat an apache configuration file for git .
 So we creat an apache config file for git,insert comands in and make sure that apache loads it when its starting.&lt;br /&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;touch /etc/apache2/git.conf
-&lt;/pre&gt;&lt;/div&gt;
+
+touch /etc/apache2/git.conf
 
 We then put the following content in it .
 The various uses of the various segments are added as comments in the configuration below.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;#environmental variables for git-http-backend&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;#also tells apache to run the git-http-backend as the handler for anything coming into &lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;#the /git/ path your web server&lt;/span&gt;
+
+#environmental variables for git-http-backend
+#also tells apache to run the git-http-backend as the handler for anything coming into 
+#the /git/ path your web server
  
 SetEnv GIT_PROJECT_ROOT /opt/git/remote/
 SetEnv GIT_HTTP_EXPORT_ALL
 ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
 
-&lt;span style=&#34;color: #75715e&#34;&gt;##tells apache to allow requests to this path which contains git commands&lt;/span&gt;
-&amp;lt;Directory &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/usr/lib/git-core*&amp;quot;&lt;/span&gt;&amp;gt;
+##tells apache to allow requests to this path which contains git commands
+&lt;Directory &#34;/usr/lib/git-core*&#34;&gt;
 Options +ExecCGI +Indexes
 Require all granted
-&amp;lt;/Directory&amp;gt;
+&lt;/Directory&gt;
 
-&lt;span style=&#34;color: #75715e&#34;&gt;#tells apache to ask for authentication before allowing  pushing&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;#it will use the /opt/git/.htpasswd file for authentication&lt;/span&gt;
-&amp;lt;LocationMatch &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;^/git/.*/git-receive-pack$&amp;quot;&lt;/span&gt;&amp;gt;
+#tells apache to ask for authentication before allowing  pushing
+#it will use the /opt/git/.htpasswd file for authentication
+&lt;LocationMatch &#34;^/git/.*/git-receive-pack$&#34;&gt;
 AuthType Digest
-AuthName &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Git Access&amp;quot;&lt;/span&gt;
+AuthName &#34;Git Access&#34;
 AuthUserFile /opt/git/.htpasswd
 Require valid-user
-&amp;lt;/LocationMatch&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/LocationMatch&gt;
 
 We then execute the commands below in &lt;em&gt;/etc/apache2.conf&lt;/em&gt; so the conf file gets loaded and also restart apache so the enabled modules are loaded
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Include /etc/apache2/git.conf&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/apache2/apache2.conf
+
+sudo echo &#34;Include /etc/apache2/git.conf&#34; &gt;&gt; /etc/apache2/apache2.conf
 sudo apache2 restart
-&lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
 &lt;h3 id=&#34;setup-authentication&#34;&gt;Setup authentication&lt;/h3&gt;
@@ -389,12 +264,12 @@ sudo apache2 restart
 &lt;p&gt;We next need to setup authentication so the whole world cant push to our git repository.
 We partly did that by setting up the AuthUserFile but we now have to create the physical file and put users in it .
 we do the following
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##create auth file &lt;/span&gt;
+
+##create auth file 
 touch /opt/git/.htpasswd
-&lt;span style=&#34;color: #75715e&#34;&gt;##add users&lt;/span&gt;
-htdigest  /opt/git/.htpasswd &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Git Access&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;test&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;##enter password when prompted&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+##add users
+htdigest  /opt/git/.htpasswd &#34;Git Access&#34; test
+##enter password when prompted
 
 This sets up git to use the password file for authentication when a git push is being made.
 You can add as many users as possible to the file as well as edit the password of the existin users using the htdigest command.&lt;/p&gt;
@@ -404,17 +279,17 @@ You can add as many users as possible to the file as well as edit the password o
 &lt;p&gt;Now we are ready to make some changes to our local repo .
 after the changes are made,we will be able to view the changes cuz the branch will have been moved to the web root.
 Exampe if we were to  execute the following  commands below in our local repo
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; /opt/git/local/
+
+cd /opt/git/local/
 git remote add origin http://127.0.0.1/git/test_repo.git
 git checkout -b testing
 touch index.html
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;&amp;lt;div&amp;gt;It works!!&amp;lt;/div&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; index.html
+echo &#34;&lt;div&gt;It works!!&lt;/div&gt;&#34; &gt;&gt; index.html
 git add index.html
 git commit
 git push -u origin testing
-&lt;span style=&#34;color: #75715e&#34;&gt;##ask for username and password here password here.. &lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;## enter test and the password you used earlier &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+##ask for username and password here password here.. 
+## enter test and the password you used earlier 
 
 we can access the &lt;em&gt;testing&lt;/em&gt; branch at this url &lt;em&gt;&lt;a href=&#34;http://127.0.0.1/remote/test_repo_web/testing/index.html&#34;&gt;here&lt;/a&gt;&lt;/em&gt; .
 We can use this method to make our code viewable on the web if the code is web based stuff.
@@ -509,17 +384,17 @@ out(A) -&amp;gt;
     &lt;/code&gt;
 &lt;/pre&gt;
 This will expand into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;table&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bgcolor=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;grey&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&amp;gt;&lt;/span&gt; 1 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&amp;gt;&lt;/span&gt; 2 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&amp;gt;&lt;/span&gt; 3 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;colspan=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; 444 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;table bgcolor=&#34;grey&#34;&gt;
+&lt;tr&gt;
+&lt;td&gt; 1 &lt;/td&gt;
+&lt;td&gt; 2 &lt;/td&gt;
+&lt;td&gt; 3 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan=&#34;3&#34;&gt; 444 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 
 Another example below which will generate a list of headers sent with a request in yaws using erlang is seen below
 &lt;pre&gt;
@@ -536,27 +411,27 @@ out(A) -&amp;gt;
 &lt;/pre&gt;
 The &lt;em&gt;list:map(a,b)&lt;/em&gt; stuff in there is like a loop going through all the headers and generating li elements out of the header sent in the request.
 The above code will expand into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;The headers passed to us were:&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/h4&amp;gt;&amp;lt;hr&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Connection: keep-alive&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Host: localhost:8004&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Accept-Language: en-US,en;q=0.8&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Accept-Encoding: gzip, deflate, sdch&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Upgrade-Insecure-Requests: 1&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Cache-Control: max-age=0&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;The headers passed to us were:&lt;/h4&gt;&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Connection: keep-alive&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Host: localhost:8004&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accept-Language: en-US,en;q=0.8&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accept-Encoding: gzip, deflate, sdch&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Upgrade-Insecure-Requests: 1&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cache-Control: max-age=0&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;
 
 I know the syntax is a bit foreign :) but bear with me . In both examples the power of the language was used to generate the html.
 this makes expressing sometimes very complex logic easy while keeping input data seperate from content.&lt;/p&gt;
@@ -612,15 +487,15 @@ Elm is statically typed so does type checking at compile time. one nice thing it
 Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen. This results in very fast rendering speeds :).&lt;/p&gt;
 
 &lt;p&gt;At the end the above elm view code will turn into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;input&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;placeholder=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Name&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;0&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;+&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;0&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div&gt;
+	&lt;input type=&#34;text&#34; placeholder=&#34;Name&#34;&gt;
+	&lt;button&gt;-&lt;/button&gt;
+	&lt;div&gt;0&lt;/div&gt;
+	&lt;button&gt;+&lt;/button&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;button&gt;0&lt;/button&gt;
+&lt;/div&gt;
 
 pretty neat huh.you also have the power of the
 elm language at your disposal to do any computation,testing you want before outputting html.html elements are are also just functions so
@@ -652,11 +527,11 @@ you can do some really fancy stuff in there especially if you combine it with li
 this is a very simple example but it does have all the advantages like ease of testing,separation of data from content,power of js to create components.&lt;/p&gt;
 
 &lt;p&gt;This will expand into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;main&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;h1&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;My first app&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;A button&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;main&gt;
+    &lt;h1 class=&#34;title&#34;&gt;My first app&lt;/h1&gt;
+    &lt;button&gt;A button&lt;/button&gt;
+&lt;/main&gt;
 &lt;/p&gt;
 
 &lt;h1 id=&#34;summing-up&#34;&gt;Summing up&lt;/h1&gt;
@@ -679,7 +554,7 @@ the compiler/debugger of the language is also at your disposal.elm is super at t
     <item>
       <title>Parsing iso8583 messages Part 2</title>
       <link>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</link>
-      <pubDate>Sun, 01 Jan 2017 10:00:26 +0000</pubDate>
+      <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate>
       
       <guid>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</guid>
       <description>&lt;p&gt;Today we will be showing how to  extract the various components out of an iso string.

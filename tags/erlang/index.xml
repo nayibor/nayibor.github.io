@@ -28,182 +28,6 @@
     </item>
     
     <item>
-      <title>Connect to odbc data source from erlang</title>
-      <link>https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/</link>
-      <pubDate>Wed, 03 May 2017 10:54:24 +0200</pubDate>
-      
-      <guid>https://nayibor.github.io/post/6fcadcda39fbd89ce1be0dc8a8d1191d/</guid>
-      <description>
-
-&lt;p&gt;Today we are going to talk about how to connect to an odbc data source from Erlang.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Open_Database_Connectivity&#34;&gt;Odbc&lt;/a&gt; is a Microsoft standard for connecting to a relational database.By using odbc you can have access to different databases example mssql,oracle,mysql,excel,dbase,Access as well as some others.
-The design of odbc aimed to make it independent of the database management system.&lt;/p&gt;
-
-&lt;p&gt;ODBC accomplishes DBMS independence by using an ODBC driver as a translation layer between the application and the DBMS. The application uses ODBC functions through an ODBC driver manager with which it is linked, and the driver passes the query to the DBMS.&lt;/p&gt;
-
-&lt;p&gt;We are now going to learn how to make erlang and odbc talk together like a happy couple :).&lt;/p&gt;
-
-&lt;p&gt;Lets hit the road!!.&lt;/p&gt;
-
-&lt;h3 id=&#34;setups-needed&#34;&gt;Setups needed&lt;/h3&gt;
-
-&lt;p&gt;I am using an Ubuntu Linux environment specifically &lt;code&gt;trusty&lt;/code&gt; on an &lt;code&gt;amd64&lt;/code&gt; box so this tutorial is geared towards  that platform.&lt;/p&gt;
-
-&lt;p&gt;The general things listed below to check are however quite similar for other platforms (windows,Solaris,UNIX,etc..)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Install and setup driver for the database&lt;/li&gt;
-&lt;li&gt;Setup environmental variables,paths,configurations&lt;/li&gt;
-&lt;li&gt;Use erlang odbc application to talk to db !!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;install-and-setup-driver-for-the-database&#34;&gt;Install and setup driver for the database&lt;/h3&gt;
-
-&lt;p&gt;You first need to make sure you have  the header files which are necessary for compiling your driver.
-They are&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;sql.h&lt;/li&gt;
-&lt;li&gt;sqlext.h&lt;/li&gt;
-&lt;li&gt;sqltypes.h&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ubuntu by default has the odbc library files in the &lt;code&gt;unixodbc&lt;/code&gt; package but not the header file required for compilation,development etc&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;You can install both header files plus library files using the below bash command.You will need sudo rights to do the below&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo apt-get update
-sudo apt-get install unixodbc unixodbc-dev
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;After this you can now install the odbc driver of your choice.
-Two popular ones are &lt;a href=&#34;http://www.iodbc.org/&#34;&gt;iodbc&lt;/a&gt; and &lt;a href=&#34;http://www.freetds.org/&#34;&gt;freetds&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Freetds in particular  enables you to connect to sybase and mssql databases.&lt;/p&gt;
-
-&lt;p&gt;We will be using freetds in this tutorial .&lt;/p&gt;
-
-&lt;p&gt;We will now install freedtds,freetds drivers and freetds command line utilities   with the below command&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo apt-get install freetds-dev freetds-bin tdsodbc
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;After the installation we are now ready to configure freedtds for use as an odbc data source.&lt;/p&gt;
-
-&lt;h3 id=&#34;setup-environmental-variables-paths-configurations&#34;&gt;Setup environmental variables,paths,configurations&lt;/h3&gt;
-
-&lt;p&gt;Open &lt;code&gt;/etc/odbcinst.ini&lt;/code&gt; using an editor of your choice.&lt;/p&gt;
-
-&lt;p&gt;You now have to create an entry for the driver you just installed like below.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##details for freetds driver&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;freetds_driver&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Description&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; odbc connection driver
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Driver&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; /usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Setup&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; /usr/lib/x86_64-linux-gnu/odbc/libtdsS.so
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;UsageCount&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 1
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Depending on your platform architecture (x86,x84,etc&amp;hellip;) the driver and setup path  may change .
-They will most likely look like with &lt;code&gt;/usr/lib/x86|x84|amd64|etc../odbc/...&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;You next have to create an entry for your database you want to connect to in the freetds configuration file
-Open &lt;code&gt;/etc/freetds/freetds.conf&lt;/code&gt; using an editor of your choice.
-There are examples in the file which will direct you on the format of the configuration.
-You now create an entry like below for your database at the bottom of the file.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;# Details for database server&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;mssql_server&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;
-        &lt;span style=&#34;color: #f8f8f2&#34;&gt;host&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 192.168.0.5
-        &lt;span style=&#34;color: #f8f8f2&#34;&gt;port&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 1433
-        tds &lt;span style=&#34;color: #f8f8f2&#34;&gt;version&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 4.2
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Last but not the least you now create a dns entry that applications can now use as a data source name  in your odbc.ini file
-Open &lt;code&gt;/etc/odbc.ini&lt;/code&gt; using an editor of your choice.
-Add an entry for your  database(my_db) with freedts as the driver with a specific server name&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;##details for odbc dns entry&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;mssql&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Description&lt;/span&gt;             &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; MSSQL Server
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Driver&lt;/span&gt;                  &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; freetds_driver 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Database&lt;/span&gt;                &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; my_db
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;ServerName&lt;/span&gt;              &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; mssql_server
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;TDS_Version&lt;/span&gt;             &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; 4.2
-&lt;/pre&gt;&lt;/div&gt;
-
-The driver and the server name are what you configured earlier in &lt;code&gt;/etc/freetds/freetds.conf&lt;/code&gt; and &lt;code&gt;/etc/odbcinst.ini&lt;/code&gt;`.&lt;/p&gt;
-
-&lt;p&gt;The driver version must also match what is in the &lt;code&gt;freedtds.conf&lt;/code&gt; file&lt;/p&gt;
-
-&lt;p&gt;To test connection use isql.You should see the isql repl.&lt;br /&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;isql mssql sa &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;weakpass&amp;#39;&lt;/span&gt;
-+---------------------------------------+
-| Connected!                            |
-|                                       |
-| sql-statement                         |
-| &lt;span style=&#34;color: #f8f8f2&#34;&gt;help&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;tablename&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;                      |
-| quit                                  |
-|                                       |
-+---------------------------------------+
-SQL&amp;gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h3 id=&#34;use-erlang-odbc-application-to-talk-to-db&#34;&gt;Use erlang odbc application to talk to db !!&lt;/h3&gt;
-
-&lt;p&gt;We are now ready to use erlang with odbc but a few things first ): ..&lt;/p&gt;
-
-&lt;p&gt;From the erlang docs for odbc it says&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The odbc is made up of c code and erlang.
-The C code is delivered as a precompiled executable for windows, solaris and linux (SLES10) in the commercial build.
-In the open source distribution it is built the same way as all other application using configure and make.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So you should have configured erlang succesful with odbc or have the precompile binary before you can use it .
- An example below for configuration on my box
- &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;  &lt;span style=&#34;color: #75715e&#34;&gt;##where path could be /usr/include/ or anywhere where sql.h and sqlext.h header file are found.&lt;/span&gt;
-  ./configure --with-odbc&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;/usr/include/
-  
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Assuming odbc was successfully installed with erlang you can now start the odbc application ,make connections to your db and execute queries.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;%%sample to make connections,execute statements in repl&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;start&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;().&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;ok&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{ok,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Ref}&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;connect&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;DSN=mssql;UID=sa;PWD=weakpass&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[]).&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;{ok,&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;342&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sql_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(Ref,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;CREATE TABLE EMPLOYEE (NR integer,&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;FIRSTNAME char varying(20), LASTNAME char varying(20), GENDER char(1),&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;PRIMARY KEY(NR))&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;).&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;{updated,undefined}&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sql_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(Ref,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;INSERT INTO EMPLOYEE VALUES(1, &amp;#39;Jane&amp;#39;, &amp;#39;Doe&amp;#39;, &amp;#39;F&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;).&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;{updated,&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;odbc:&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sql_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(Ref,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;SELECT * FROM EMPLOYEE&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;).&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;{selected,[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;NR&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;FIRSTNAME&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;LASTNAME&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;GENDER&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;],&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;[{&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Jane&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Doe&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;F&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;]}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;You may experience some surprises based on the capabilities of the specific odbc driver you are using .
-some may be support/no support for paging,scrollable cursors etc..&lt;/p&gt;
-
-&lt;p&gt;Some other gotchas are also well documented here also &lt;a href=&#34;http://www2.erlangcentral.org/wiki/?title=Erlang_ODBC_Tips&#34;&gt;Odbc Tips&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Till next time have fun with erlang and odbc !!!!!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Programming languages as web template languages</title>
       <link>https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
@@ -288,17 +112,17 @@ out(A) -&amp;gt;
     &lt;/code&gt;
 &lt;/pre&gt;
 This will expand into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;table&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bgcolor=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;grey&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&amp;gt;&lt;/span&gt; 1 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&amp;gt;&lt;/span&gt; 2 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&amp;gt;&lt;/span&gt; 3 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;colspan=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; 444 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;table bgcolor=&#34;grey&#34;&gt;
+&lt;tr&gt;
+&lt;td&gt; 1 &lt;/td&gt;
+&lt;td&gt; 2 &lt;/td&gt;
+&lt;td&gt; 3 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan=&#34;3&#34;&gt; 444 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 
 Another example below which will generate a list of headers sent with a request in yaws using erlang is seen below
 &lt;pre&gt;
@@ -315,27 +139,27 @@ out(A) -&amp;gt;
 &lt;/pre&gt;
 The &lt;em&gt;list:map(a,b)&lt;/em&gt; stuff in there is like a loop going through all the headers and generating li elements out of the header sent in the request.
 The above code will expand into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;The headers passed to us were:&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/h4&amp;gt;&amp;lt;hr&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Connection: keep-alive&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Host: localhost:8004&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Accept-Language: en-US,en;q=0.8&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Accept-Encoding: gzip, deflate, sdch&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Upgrade-Insecure-Requests: 1&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Cache-Control: max-age=0&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;The headers passed to us were:&lt;/h4&gt;&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Connection: keep-alive&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Host: localhost:8004&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accept-Language: en-US,en;q=0.8&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accept-Encoding: gzip, deflate, sdch&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Upgrade-Insecure-Requests: 1&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cache-Control: max-age=0&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;
 
 I know the syntax is a bit foreign :) but bear with me . In both examples the power of the language was used to generate the html.
 this makes expressing sometimes very complex logic easy while keeping input data seperate from content.&lt;/p&gt;
@@ -391,15 +215,15 @@ Elm is statically typed so does type checking at compile time. one nice thing it
 Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen. This results in very fast rendering speeds :).&lt;/p&gt;
 
 &lt;p&gt;At the end the above elm view code will turn into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;input&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;placeholder=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Name&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;0&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;+&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;0&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div&gt;
+	&lt;input type=&#34;text&#34; placeholder=&#34;Name&#34;&gt;
+	&lt;button&gt;-&lt;/button&gt;
+	&lt;div&gt;0&lt;/div&gt;
+	&lt;button&gt;+&lt;/button&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;button&gt;0&lt;/button&gt;
+&lt;/div&gt;
 
 pretty neat huh.you also have the power of the
 elm language at your disposal to do any computation,testing you want before outputting html.html elements are are also just functions so
@@ -431,11 +255,11 @@ you can do some really fancy stuff in there especially if you combine it with li
 this is a very simple example but it does have all the advantages like ease of testing,separation of data from content,power of js to create components.&lt;/p&gt;
 
 &lt;p&gt;This will expand into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;main&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;h1&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;My first app&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;A button&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;main&gt;
+    &lt;h1 class=&#34;title&#34;&gt;My first app&lt;/h1&gt;
+    &lt;button&gt;A button&lt;/button&gt;
+&lt;/main&gt;
 &lt;/p&gt;
 
 &lt;h1 id=&#34;summing-up&#34;&gt;Summing up&lt;/h1&gt;
@@ -458,7 +282,7 @@ the compiler/debugger of the language is also at your disposal.elm is super at t
     <item>
       <title>Parsing iso8583 messages Part 2</title>
       <link>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</link>
-      <pubDate>Sun, 01 Jan 2017 10:00:26 +0000</pubDate>
+      <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate>
       
       <guid>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</guid>
       <description>&lt;p&gt;Today we will be showing how to  extract the various components out of an iso string.

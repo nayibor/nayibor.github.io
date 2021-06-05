@@ -71,7 +71,7 @@
         },
         "datePublished": "2017-04-09",
         "description": "",
-        "wordCount":  1352 
+        "wordCount":  1316 
     }
     </script>
 
@@ -121,7 +121,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 
   			<header class="post-header">
   				<span class="post-meta">
-						<span class="post-date">9 Apr 2017</span> <span class="reading-time">| <span class="estimated-reading-time">7 min.</span> (<span class="word-count">1352</span> words)</span></span>
+						<span class="post-date">9 Apr 2017</span> <span class="reading-time">| <span class="estimated-reading-time">7 min.</span> (<span class="word-count">1316</span> words)</span></span>
   				</span>
   				<div class="clear"></div>
   				<h1 class="post-title">Programming languages as web template languages</h1>
@@ -207,17 +207,17 @@ out(A) -&gt;
     </code>
 </pre>
 This will expand into the html below
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;table</span> <span style="color: #a6e22e">bgcolor=</span><span style="color: #e6db74">&quot;grey&quot;</span><span style="color: #f92672">&gt;</span>
-<span style="color: #f92672">&lt;tr&gt;</span>
-<span style="color: #f92672">&lt;td&gt;</span> 1 <span style="color: #f92672">&lt;/td&gt;</span>
-<span style="color: #f92672">&lt;td&gt;</span> 2 <span style="color: #f92672">&lt;/td&gt;</span>
-<span style="color: #f92672">&lt;td&gt;</span> 3 <span style="color: #f92672">&lt;/td&gt;</span>
-<span style="color: #f92672">&lt;/tr&gt;</span>
-<span style="color: #f92672">&lt;tr&gt;</span>
-<span style="color: #f92672">&lt;td</span> <span style="color: #a6e22e">colspan=</span><span style="color: #e6db74">&quot;3&quot;</span><span style="color: #f92672">&gt;</span> 444 <span style="color: #f92672">&lt;/td&gt;</span>
-<span style="color: #f92672">&lt;/tr&gt;</span>
-<span style="color: #f92672">&lt;/table&gt;</span>
-</pre></div>
+
+<table bgcolor="grey">
+<tr>
+<td> 1 </td>
+<td> 2 </td>
+<td> 3 </td>
+</tr>
+<tr>
+<td colspan="3"> 444 </td>
+</tr>
+</table>
 
 Another example below which will generate a list of headers sent with a request in yaws using erlang is seen below
 <pre>
@@ -234,27 +234,27 @@ out(A) -&gt;
 </pre>
 The <em>list:map(a,b)</em> stuff in there is like a loop going through all the headers and generating li elements out of the header sent in the request.
 The above code will expand into the html below
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;h4&gt;</span>The headers passed to us were:<span style="color: #f92672">&lt;/h4&gt;&lt;hr</span> <span style="color: #f92672">/&gt;</span>
-<span style="color: #f92672">&lt;ol&gt;</span>
-<span style="color: #f92672">&lt;li&gt;</span>
-<span style="color: #f92672">&lt;p&gt;</span>Connection: keep-alive<span style="color: #f92672">&lt;/p&gt;&lt;/li&gt;</span>
-<span style="color: #f92672">&lt;li&gt;</span>
-<span style="color: #f92672">&lt;p&gt;</span>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8<span style="color: #f92672">&lt;/p&gt;&lt;/li&gt;</span>
-<span style="color: #f92672">&lt;li&gt;</span>
-<span style="color: #f92672">&lt;p&gt;</span>Host: localhost:8004<span style="color: #f92672">&lt;/p&gt;&lt;/li&gt;</span>
-<span style="color: #f92672">&lt;li&gt;</span>
-<span style="color: #f92672">&lt;p&gt;</span>User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36<span style="color: #f92672">&lt;/p&gt;&lt;/li&gt;</span>
-<span style="color: #f92672">&lt;li&gt;</span>
-<span style="color: #f92672">&lt;p&gt;</span>Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)<span style="color: #f92672">&lt;/p&gt;&lt;/li&gt;</span>
-<span style="color: #f92672">&lt;li&gt;</span>
-<span style="color: #f92672">&lt;p&gt;</span>Accept-Language: en-US,en;q=0.8<span style="color: #f92672">&lt;/p&gt;&lt;/li&gt;</span>
-<span style="color: #f92672">&lt;li&gt;</span>
-<span style="color: #f92672">&lt;p&gt;</span>Accept-Encoding: gzip, deflate, sdch<span style="color: #f92672">&lt;/p&gt;&lt;/li&gt;</span>
-<span style="color: #f92672">&lt;li&gt;</span>
-<span style="color: #f92672">&lt;p&gt;</span>Upgrade-Insecure-Requests: 1<span style="color: #f92672">&lt;/p&gt;&lt;/li&gt;</span>
-<span style="color: #f92672">&lt;li&gt;</span>
-<span style="color: #f92672">&lt;p&gt;</span>Cache-Control: max-age=0<span style="color: #f92672">&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</span>
-</pre></div>
+
+<h4>The headers passed to us were:</h4><hr />
+<ol>
+<li>
+<p>Connection: keep-alive</p></li>
+<li>
+<p>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</p></li>
+<li>
+<p>Host: localhost:8004</p></li>
+<li>
+<p>User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36</p></li>
+<li>
+<p>Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)</p></li>
+<li>
+<p>Accept-Language: en-US,en;q=0.8</p></li>
+<li>
+<p>Accept-Encoding: gzip, deflate, sdch</p></li>
+<li>
+<p>Upgrade-Insecure-Requests: 1</p></li>
+<li>
+<p>Cache-Control: max-age=0</p></li></ol>
 
 I know the syntax is a bit foreign :) but bear with me . In both examples the power of the language was used to generate the html.
 this makes expressing sometimes very complex logic easy while keeping input data seperate from content.</p>
@@ -310,15 +310,15 @@ Elm is statically typed so does type checking at compile time. one nice thing it
 Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen. This results in very fast rendering speeds :).</p>
 
 <p>At the end the above elm view code will turn into the html below
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;div&gt;</span>
-	<span style="color: #f92672">&lt;input</span> <span style="color: #a6e22e">type=</span><span style="color: #e6db74">&quot;text&quot;</span> <span style="color: #a6e22e">placeholder=</span><span style="color: #e6db74">&quot;Name&quot;</span><span style="color: #f92672">&gt;</span>
-	<span style="color: #f92672">&lt;button&gt;</span>-<span style="color: #f92672">&lt;/button&gt;</span>
-	<span style="color: #f92672">&lt;div&gt;</span>0<span style="color: #f92672">&lt;/div&gt;</span>
-	<span style="color: #f92672">&lt;button&gt;</span>+<span style="color: #f92672">&lt;/button&gt;</span>
-	<span style="color: #f92672">&lt;div&gt;&lt;/div&gt;</span>
-	<span style="color: #f92672">&lt;button&gt;</span>0<span style="color: #f92672">&lt;/button&gt;</span>
-<span style="color: #f92672">&lt;/div&gt;</span>
-</pre></div>
+
+<div>
+	<input type="text" placeholder="Name">
+	<button>-</button>
+	<div>0</div>
+	<button>+</button>
+	<div></div>
+	<button>0</button>
+</div>
 
 pretty neat huh.you also have the power of the
 elm language at your disposal to do any computation,testing you want before outputting html.html elements are are also just functions so
@@ -350,11 +350,11 @@ you can do some really fancy stuff in there especially if you combine it with li
 this is a very simple example but it does have all the advantages like ease of testing,separation of data from content,power of js to create components.</p>
 
 <p>This will expand into the html below
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;main&gt;</span>
-    <span style="color: #f92672">&lt;h1</span> <span style="color: #a6e22e">class=</span><span style="color: #e6db74">&quot;title&quot;</span><span style="color: #f92672">&gt;</span>My first app<span style="color: #f92672">&lt;/h1&gt;</span>
-    <span style="color: #f92672">&lt;button&gt;</span>A button<span style="color: #f92672">&lt;/button&gt;</span>
-<span style="color: #f92672">&lt;/main&gt;</span>
-</pre></div>
+
+<main>
+    <h1 class="title">My first app</h1>
+    <button>A button</button>
+</main>
 </p>
 
 <h1 id="summing-up">Summing up</h1>
@@ -453,7 +453,7 @@ the compiler/debugger of the language is also at your disposal.elm is super at t
 
 			<nav class="post-nav">
 				
-					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/1cfc17a4d52eacf94391cdb49d5fe5f2/">
+					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/">
 						<section class="post-nav-teaser">
 							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
 							<span class="post-nav-info">

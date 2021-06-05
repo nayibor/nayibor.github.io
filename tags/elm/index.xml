@@ -93,17 +93,17 @@ out(A) -&amp;gt;
     &lt;/code&gt;
 &lt;/pre&gt;
 This will expand into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;table&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bgcolor=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;grey&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&amp;gt;&lt;/span&gt; 1 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&amp;gt;&lt;/span&gt; 2 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&amp;gt;&lt;/span&gt; 3 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;td&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;colspan=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; 444 &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;table bgcolor=&#34;grey&#34;&gt;
+&lt;tr&gt;
+&lt;td&gt; 1 &lt;/td&gt;
+&lt;td&gt; 2 &lt;/td&gt;
+&lt;td&gt; 3 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan=&#34;3&#34;&gt; 444 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 
 Another example below which will generate a list of headers sent with a request in yaws using erlang is seen below
 &lt;pre&gt;
@@ -120,27 +120,27 @@ out(A) -&amp;gt;
 &lt;/pre&gt;
 The &lt;em&gt;list:map(a,b)&lt;/em&gt; stuff in there is like a loop going through all the headers and generating li elements out of the header sent in the request.
 The above code will expand into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;The headers passed to us were:&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/h4&amp;gt;&amp;lt;hr&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Connection: keep-alive&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Host: localhost:8004&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Accept-Language: en-US,en;q=0.8&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Accept-Encoding: gzip, deflate, sdch&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Upgrade-Insecure-Requests: 1&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Cache-Control: max-age=0&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;The headers passed to us were:&lt;/h4&gt;&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Connection: keep-alive&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Host: localhost:8004&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accept-Language: en-US,en;q=0.8&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accept-Encoding: gzip, deflate, sdch&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Upgrade-Insecure-Requests: 1&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cache-Control: max-age=0&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;
 
 I know the syntax is a bit foreign :) but bear with me . In both examples the power of the language was used to generate the html.
 this makes expressing sometimes very complex logic easy while keeping input data seperate from content.&lt;/p&gt;
@@ -196,15 +196,15 @@ Elm is statically typed so does type checking at compile time. one nice thing it
 Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen. This results in very fast rendering speeds :).&lt;/p&gt;
 
 &lt;p&gt;At the end the above elm view code will turn into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;input&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;placeholder=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Name&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;0&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;+&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;0&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div&gt;
+	&lt;input type=&#34;text&#34; placeholder=&#34;Name&#34;&gt;
+	&lt;button&gt;-&lt;/button&gt;
+	&lt;div&gt;0&lt;/div&gt;
+	&lt;button&gt;+&lt;/button&gt;
+	&lt;div&gt;&lt;/div&gt;
+	&lt;button&gt;0&lt;/button&gt;
+&lt;/div&gt;
 
 pretty neat huh.you also have the power of the
 elm language at your disposal to do any computation,testing you want before outputting html.html elements are are also just functions so
@@ -236,11 +236,11 @@ you can do some really fancy stuff in there especially if you combine it with li
 this is a very simple example but it does have all the advantages like ease of testing,separation of data from content,power of js to create components.&lt;/p&gt;
 
 &lt;p&gt;This will expand into the html below
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;main&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;h1&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;My first app&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;A button&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;main&gt;
+    &lt;h1 class=&#34;title&#34;&gt;My first app&lt;/h1&gt;
+    &lt;button&gt;A button&lt;/button&gt;
+&lt;/main&gt;
 &lt;/p&gt;
 
 &lt;h1 id=&#34;summing-up&#34;&gt;Summing up&lt;/h1&gt;

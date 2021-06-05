@@ -12,8 +12,8 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Deploying code with git and apache &middot;  Code Musings" />
-        <meta property="og:site_name" content="Code Musings" />
+        <meta property="og:title" content=" Deploying code with git and apache &middot;  Nuku&#39;s blog" />
+        <meta property="og:site_name" content="Nuku&#39;s blog" />
         <meta property="og:url" content="https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/" />
 
     
@@ -31,7 +31,7 @@
         <meta name="twitter:url" content="https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/" />
     
 
-        <title> Deploying code with git and apache &middot;  Code Musings</title>
+        <title> Deploying code with git and apache &middot;  Nuku&#39;s blog</title>
 
         <link rel="preload" href="/js/main.js" as="script" />
         <link rel="preload" href="/css/main.css" as="style" />
@@ -49,7 +49,7 @@
         
 
     
-        <link href="https://nayibor.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Code Musings" />
+        <link href="https://nayibor.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Nuku&#39;s blog" />
     
 
     
@@ -67,7 +67,7 @@
         },
         "datePublished": "2017-04-25",
         "description": "",
-        "wordCount":  1378 
+        "wordCount":  1370 
     }
     </script>
 
@@ -117,7 +117,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 
   			<header class="post-header">
   				<span class="post-meta">
-						<span class="post-date">25 Apr 2017</span> <span class="reading-time">| <span class="estimated-reading-time">7 min.</span> (<span class="word-count">1378</span> words)</span></span>
+						<span class="post-date">25 Apr 2017</span> <span class="reading-time">| <span class="estimated-reading-time">7 min.</span> (<span class="word-count">1370</span> words)</span></span>
   				</span>
   				<div class="clear"></div>
   				<h1 class="post-title">Deploying code with git and apache</h1>
@@ -149,17 +149,17 @@ which is usually on a remote machine with a git repo available.</p>
 
 <p>Assuming we want to create the  local repo in <em>/opt/git/local/</em> and the remote repo in <em>/opt/git/remote/test_repo.git</em>
 We use the commands below
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">##for local</span>
-<span style="color: #f8f8f2">cd</span> /opt/git/
-mkdir <span style="color: #f8f8f2">local</span>
-<span style="color: #f8f8f2">cd local</span>
+
+##for local
+cd /opt/git/
+mkdir local
+cd local
 git init
-<span style="color: #75715e">##for remote</span>
-<span style="color: #f8f8f2">cd</span> /opt/git/
+##for remote
+cd /opt/git/
 mkdir remote
-<span style="color: #f8f8f2">cd </span>remote
-git init --bare --shared<span style="color: #f92672">=</span>group test_repo.git
-</pre></div>
+cd remote
+git init --bare --shared=group test_repo.git
 </p>
 
 <p>The flag <em>- -bare</em> create an empty repository with no content.
@@ -167,9 +167,9 @@ The <em>- -shared=group</em> flag also creates a git repository which will be sh
 
 <p>We now have to enable pushing to the remote git repository else valid users won&rsquo;t be able to push to the git repository.
 We use the commands below to enabling pushing
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">cd</span> /opt/git/remote/test_repo.git
-git config --file config http.receivepack <span style="color: #f8f8f2">true</span>
-</pre></div>
+
+cd /opt/git/remote/test_repo.git
+git config --file config http.receivepack true
 
 We now need to create what is called a <em>git hook</em>.</p>
 
@@ -187,49 +187,49 @@ and make it executable so it can be run after a git push.</p>
 
 <p>We will then paste in our shell script to move our code to the web root of our box.
 We use the code below
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">##renames post-receive sampe script to post-receive </span>
+
+##renames post-receive sampe script to post-receive 
 mv /opt/git/remote/test_repo.git/hooks/post-receive.sample /opt/git/remote/test_repo.git/hooks/post-receive
-<span style="color: #75715e">##makes it executable</span>
+##makes it executable
 chmod u+x /opt/git/remote/test_repo.git/hooks/post-receive
-</pre></div>
 
 We now paste in our shell script below into <em>post-receive</em> to move our content to the web root after the push is done.</p>
 
-<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">#!/bin/bash</span>
+<p>
+#!/bin/bash
 
-<span style="color: #f8f8f2">unset </span>GIT_INDEX_FILE
-<span style="color: #75715e">##the target below should have been created already in our web root else we will get an error </span>
-<span style="color: #75715e">## although the push will succed</span>
-<span style="color: #f8f8f2">TARGET</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/var/www/html/remote/test_repo_web&quot;</span>
-<span style="color: #f8f8f2">GIT_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/opt/git/remote/test_repo.git/&quot;</span>
-<span style="color: #75715e">##this can be http or https depending on whether you are using a http/https</span>
-<span style="color: #f8f8f2">UAT_BRANCH_PATH</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;http://127.0.0.1/remote/test_repo_web&quot;</span>
+unset GIT_INDEX_FILE
+##the target below should have been created already in our web root else we will get an error 
+## although the push will succed
+TARGET="/var/www/html/remote/test_repo_web"
+GIT_DIR="/opt/git/remote/test_repo.git/"
+##this can be http or https depending on whether you are using a http/https
+UAT_BRANCH_PATH="http://127.0.0.1/remote/test_repo_web"
 
-<span style="color: #75715e">##this short script creates a new directory where branches can be checked out to</span>
-<span style="color: #75715e">##if branch directory does not exist it is  created and data is checked in there </span>
-<span style="color: #75715e">##some checks will have to be done if branch conforms to naming conventions</span>
+##this short script creates a new directory where branches can be checked out to
+##if branch directory does not exist it is  created and data is checked in there 
+##some checks will have to be done if branch conforms to naming conventions
 
-<span style="color: #66d9ef">while </span><span style="color: #f8f8f2">read </span>oldrev newrev ref
-<span style="color: #66d9ef">do</span>
-<span style="color: #66d9ef">        </span>
-<span style="color: #66d9ef">        </span><span style="color: #f8f8f2">IN</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$ref</span>
-        <span style="color: #f8f8f2">BRANCH_NAME</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>git rev-parse --symbolic --abbrev-ref <span style="color: #f8f8f2">$ref</span><span style="color: #66d9ef">)</span>
-        <span style="color: #f8f8f2">BRANCH</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$TARGET</span>/<span style="color: #f8f8f2">$BRANCH_NAME</span>     
-        <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;branch is ${BRANCH_NAME}&quot;</span>
-        <span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> ! -d <span style="color: #e6db74">&quot;$BRANCH&quot;</span> <span style="color: #f92672">]</span>; <span style="color: #66d9ef">then</span>
-<span style="color: #66d9ef">                </span><span style="color: #f8f8f2">echo</span>  <span style="color: #e6db74">&quot;Creating branch directory&quot;</span>
-                mkdir   <span style="color: #f8f8f2">$BRANCH</span>
-                <span style="color: #f8f8f2">echo</span>  <span style="color: #e6db74">&quot;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&quot;</span>
-                <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&quot;</span>
-                git --work-tree<span style="color: #f92672">=</span><span style="color: #f8f8f2">$BRANCH</span> --git-dir<span style="color: #f92672">=</span><span style="color: #f8f8f2">$GIT_DIR</span> checkout -f <span style="color: #f8f8f2">$BRANCH_NAME</span>
-        <span style="color: #66d9ef">else</span>
-<span style="color: #66d9ef">                </span><span style="color: #f8f8f2">echo</span>  <span style="color: #e6db74">&quot;Branch exists. skipping creation&quot;</span>
-                <span style="color: #f8f8f2">echo</span>  <span style="color: #e6db74">&quot;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&quot;</span>
-                <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&quot;</span>               
-                git --work-tree<span style="color: #f92672">=</span><span style="color: #f8f8f2">$BRANCH</span> --git-dir<span style="color: #f92672">=</span><span style="color: #f8f8f2">$GIT_DIR</span> checkout -f <span style="color: #f8f8f2">$BRANCH_NAME</span>
-        <span style="color: #66d9ef">fi</span>
-<span style="color: #66d9ef">done</span>
-</pre></div>
+while read oldrev newrev ref
+do
+        
+        IN=$ref
+        BRANCH_NAME=$(git rev-parse --symbolic --abbrev-ref $ref)
+        BRANCH=$TARGET/$BRANCH_NAME     
+        echo "branch is ${BRANCH_NAME}"
+        if [ ! -d "$BRANCH" ]; then
+                echo  "Creating branch directory"
+                mkdir   $BRANCH
+                echo  "Ref $ref received. Deploying ${BRANCH_NAME} branch to uat..."
+                echo "Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes"
+                git --work-tree=$BRANCH --git-dir=$GIT_DIR checkout -f $BRANCH_NAME
+        else
+                echo  "Branch exists. skipping creation"
+                echo  "Ref $ref received. Deploying ${BRANCH_NAME} branch to uat..."
+                echo "Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes"               
+                git --work-tree=$BRANCH --git-dir=$GIT_DIR checkout -f $BRANCH_NAME
+        fi
+done
 
 the basic thing which gets done here is that for every change from our local repo which is pushed to remote
 the code in the branch is checked out to  <em>test_repo_web/branch_name</em> and can be viewed at
@@ -244,9 +244,8 @@ Cool huuh ?? .</p>
 <p>Assuming you dont have apache installed, you have to install it for your os distribution first before continuing.
 After installing apache you have to enable some modules which are needed for our purpose.
 We will use the command below to enable the modules we need
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"> 
-sudo a2enmod cgi <span style="color: #f8f8f2">alias </span>env auth_digest
-</pre></div>
+ 
+sudo a2enmod cgi alias env auth_digest
 
 this enables the following modules with their respecive uses</p>
 
@@ -263,39 +262,39 @@ We basically need to pass environmental variables and pass them to the <em>git-h
 
 <p>After enabling the above modules,we now need to creat an apache configuration file for git .
 So we creat an apache config file for git,insert comands in and make sure that apache loads it when its starting.<br />
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">touch /etc/apache2/git.conf
-</pre></div>
+
+touch /etc/apache2/git.conf
 
 We then put the following content in it .
 The various uses of the various segments are added as comments in the configuration below.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">#environmental variables for git-http-backend</span>
-<span style="color: #75715e">#also tells apache to run the git-http-backend as the handler for anything coming into </span>
-<span style="color: #75715e">#the /git/ path your web server</span>
+
+#environmental variables for git-http-backend
+#also tells apache to run the git-http-backend as the handler for anything coming into 
+#the /git/ path your web server
  
 SetEnv GIT_PROJECT_ROOT /opt/git/remote/
 SetEnv GIT_HTTP_EXPORT_ALL
 ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
 
-<span style="color: #75715e">##tells apache to allow requests to this path which contains git commands</span>
-&lt;Directory <span style="color: #e6db74">&quot;/usr/lib/git-core*&quot;</span>&gt;
+##tells apache to allow requests to this path which contains git commands
+<Directory "/usr/lib/git-core*">
 Options +ExecCGI +Indexes
 Require all granted
-&lt;/Directory&gt;
+</Directory>
 
-<span style="color: #75715e">#tells apache to ask for authentication before allowing  pushing</span>
-<span style="color: #75715e">#it will use the /opt/git/.htpasswd file for authentication</span>
-&lt;LocationMatch <span style="color: #e6db74">&quot;^/git/.*/git-receive-pack$&quot;</span>&gt;
+#tells apache to ask for authentication before allowing  pushing
+#it will use the /opt/git/.htpasswd file for authentication
+<LocationMatch "^/git/.*/git-receive-pack$">
 AuthType Digest
-AuthName <span style="color: #e6db74">&quot;Git Access&quot;</span>
+AuthName "Git Access"
 AuthUserFile /opt/git/.htpasswd
 Require valid-user
-&lt;/LocationMatch&gt;
-</pre></div>
+</LocationMatch>
 
 We then execute the commands below in <em>/etc/apache2.conf</em> so the conf file gets loaded and also restart apache so the enabled modules are loaded
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">sudo <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;Include /etc/apache2/git.conf&quot;</span> &gt;&gt; /etc/apache2/apache2.conf
+
+sudo echo "Include /etc/apache2/git.conf" >> /etc/apache2/apache2.conf
 sudo apache2 restart
-</pre></div>
 </p>
 
 <h3 id="setup-authentication">Setup authentication</h3>
@@ -303,12 +302,12 @@ sudo apache2 restart
 <p>We next need to setup authentication so the whole world cant push to our git repository.
 We partly did that by setting up the AuthUserFile but we now have to create the physical file and put users in it .
 we do the following
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">##create auth file </span>
+
+##create auth file 
 touch /opt/git/.htpasswd
-<span style="color: #75715e">##add users</span>
-htdigest  /opt/git/.htpasswd <span style="color: #e6db74">&quot;Git Access&quot;</span> <span style="color: #f8f8f2">test</span>
-<span style="color: #75715e">##enter password when prompted</span>
-</pre></div>
+##add users
+htdigest  /opt/git/.htpasswd "Git Access" test
+##enter password when prompted
 
 This sets up git to use the password file for authentication when a git push is being made.
 You can add as many users as possible to the file as well as edit the password of the existin users using the htdigest command.</p>
@@ -318,17 +317,17 @@ You can add as many users as possible to the file as well as edit the password o
 <p>Now we are ready to make some changes to our local repo .
 after the changes are made,we will be able to view the changes cuz the branch will have been moved to the web root.
 Exampe if we were to  execute the following  commands below in our local repo
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">cd</span> /opt/git/local/
+
+cd /opt/git/local/
 git remote add origin http://127.0.0.1/git/test_repo.git
 git checkout -b testing
 touch index.html
-<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;&lt;div&gt;It works!!&lt;/div&gt;&quot;</span> &gt;&gt; index.html
+echo "<div>It works!!</div>" >> index.html
 git add index.html
 git commit
 git push -u origin testing
-<span style="color: #75715e">##ask for username and password here password here.. </span>
-<span style="color: #75715e">## enter test and the password you used earlier </span>
-</pre></div>
+##ask for username and password here password here.. 
+## enter test and the password you used earlier 
 
 we can access the <em>testing</em> branch at this url <em><a href="http://127.0.0.1/remote/test_repo_web/testing/index.html">here</a></em> .
 We can use this method to make our code viewable on the web if the code is web based stuff.
@@ -361,22 +360,43 @@ We can also use this to push code to a seperate folder if we dont want the code 
   				</div>
   			</footer>
 
-  			<aside class="post-comments">
+  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="" data-url="https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/"/>
+<aside class="post-comments">
     
     
-
 <div id="disqus_thread"></div>
 <script type="text/javascript">
+     
+    
+    var disq_var = document.getElementById('disq_variables');
+    var disqus_shortname = 'https-nayibor-github-io';
+    var disqus_identifier = disq_var.getAttribute('data-ident');
+    var disqus_url = disq_var.getAttribute('data-url');
+	var disqus_config = function () { 
+	  this.language = "en";
+	};
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+     
+    var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                this.page.identifier = newIdentifier;
+                this.page.url = newUrl;
+                this.page.title = newTitle;
+                this.language = newLanguage;
+            }
+        });
+    };
 
 
 
 
-(function() { 
-var d = document, s = d.createElement('script');
-s.src = 'https://https-nayibor-github-io.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
@@ -387,6 +407,16 @@ s.setAttribute('data-timestamp', +new Date());
 			</div>
 
 			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/c33083b29ef6e62daebc9459653f84b9/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Library for parsing iso8583 messages in erlang</h4>
+								<p class="post-nav-excerpt">library for parsing iso8583 financial messages in erlang/elixir&hellip;</p>
+							</span>
+						</section>
+					</a>
 				
 				
 					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">

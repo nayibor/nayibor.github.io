@@ -30,7 +30,7 @@
     <item>
       <title>Parsing iso8583 messages Part 2</title>
       <link>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</link>
-      <pubDate>Sun, 01 Jan 2017 10:00:26 +0000</pubDate>
+      <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate>
       
       <guid>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</guid>
       <description>&lt;p&gt;Today we will be showing how to  extract the various components out of an iso string.
