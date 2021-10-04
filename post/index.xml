@@ -6,8 +6,30 @@
     <description>Recent content in Posts on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Jun 2021 10:54:24 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 04 Oct 2021 10:54:24 +0200</lastBuildDate>
     <atom:link href="https://nayibor.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Talking to outside world from Elixir</title>
+      <link>https://nayibor.github.io/post/meetup%20talk/</link>
+      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/post/meetup%20talk/</guid>
+      <description>&lt;p&gt;&lt;br&gt;I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir.
+&lt;br&gt;The ecosystem for talking to the outside world from beam systems has a lot of options.
+&lt;br&gt;Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang.
+&lt;br&gt;ziglang was interesting not only for creating nifs
+&lt;br&gt;but also as a possible future replacement for writing simple,fast,safe code
+&lt;br&gt;This is the talk as well as a video about why to use zig to write nifs
+&lt;br&gt;enjoy !!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=DMc9A6My3Sk&#34;&gt;Talking to the outside world talk&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=fIxNEILcNGM&#34;&gt;Zigler: Elixir FFIs with Zig - Isaac Yonemoto&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Conference and Community Building</title>
