@@ -1,8 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en-us">
 
     <head>
-	<meta name="generator" content="Hugo 0.18.1" />
 	
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
@@ -12,21 +12,34 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Nuku&#39;s blog" />
+        <meta property="og:title" content=" Erlang Binary Pattern Matching &middot;  Nuku&#39;s blog" />
         <meta property="og:site_name" content="Nuku&#39;s blog" />
-        <meta property="og:url" content="https://nayibor.github.io/" />
+        <meta property="og:url" content="https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/" />
 
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2023-01-03T10:54:24&#43;02:00" />
+        <meta property="og:article:tag" content="erlang" />
+        <meta property="og:article:tag" content="pattern matching" />
+        <meta property="og:article:tag" content="bit syntax" />
+        <meta property="og:article:tag" content="music" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Erlang Binary Pattern Matching" />
+        <meta name="twitter:description" content="Bit Syntax in erlang" />
+        <meta name="twitter:url" content="https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/" />
     
 
-        <title> Nuku&#39;s blog</title>
+        <title> Erlang Binary Pattern Matching &middot;  Nuku&#39;s blog</title>
 
         <link rel="preload" href="/js/main.js" as="script" />
         <link rel="preload" href="/css/main.css" as="style" />
 
     
-        <meta name="description" content="" />
+        <meta name="description" content="Bit Syntax in erlang" />
     
 
         <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
@@ -38,12 +51,27 @@
         
 
     
-
-    
         <link href="https://nayibor.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Nuku&#39;s blog" />
     
-        <link rel="canonical" href="https://nayibor.github.io/" />
 
+    
+        <link rel="canonical" href="https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/" />
+
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Erlang Binary Pattern Matching",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2023-01-03",
+        "description": "Bit Syntax in erlang",
+        "wordCount":  236 
+    }
+    </script>
 
 
     
@@ -72,242 +100,163 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
               </a>
             </div>
             <div class="nav-menu">
-              <a class="rss" href="https://nayibor.github.io/index.xml">
+              <a class="rss" href="">
                 <i class="icon-rss"></i>
               </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
                 
                 
             </div>
           </nav>
 
 
-	<header id="header" class="header has-cover">
+<main class="content" role="main">
+	<article class="post">
 		<div class="inner">
-			<a class="header-title" href="https://nayibor.github.io/">
-				<h1 class="header-name">Nuku&#39;s blog</h1>
-				
-					<span class="header-description">observations and insights on the sofware journey</span>
-				
-			</a>
-		</div>
+
+			<div id="push">
+
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">3 Jan 2023</span> <span class="reading-time">| <span class="estimated-reading-time">2 min.</span> (<span class="word-count">236</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">Erlang Binary Pattern Matching</h1>
+  			</header>
+
+  			<section class="post-content">
+  				<p><br>hello everyone and happy new year to one and all!!.
+<br>hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year.
+<br>i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get
+the various metadata and parts of an audio file either over the network being streamed or a file on disk
+<br>Erlang and erlang related languages(<a href="https://elixir-lang.org/">Elixir</a>,<a href="https://lfe.io/">Lfe</a>,<a href="https://luerl.org/">Luerl</a>)
+have this short and nifty way of unpacking this data out and getting the various sections efficiently and also with a small bit of code
+it takes a little bit of getting used to but its very powerful none the less</p>
+
+<pre><code class="language-erlang">get_audio_parts_wav(File_path)-&gt;
+	{ok, Audio_binary} = file:read_file(File_path),
+	&lt;&lt;Chunk_id:4/binary,ChunkSize:32/integer-little,Format:4/binary,
+	Subchunkid:4/binary,Subcsize:32/integer-little,Audio_format:16/integer-little,
+	Number_channels:16/integer-little,SamplesPerSecond:32/integer-little,
+	ByteRate:32/integer-little,BlockAlign:16/integer-little,
+	BitsPerSample:16/integer-little,
+	SubChunkTwo_id:4/binary,ChunkTwoSize:32/integer-little,
+	PcmData:ChunkTwoSize/binary,_/binary&gt;&gt; = Audio_binary,
+	TotalSeconds = floor(ChunkSize/ByteRate),
+	Minutes = floor(TotalSeconds/60),
+	Seconds = TotalSeconds rem 60,
+	[{chunk_id,Chunk_id},{chunk_size,ChunkSize},{format,Format},
+	{subchunkid,Subchunkid},{subchunksize,Subcsize},{audio_format,Audio_format},
+	 {number_channels,Number_channels},{samplespersecond,SamplesPerSecond},
+	 {byterate,ByteRate},{blockalign,BlockAlign},{bitspersample,BitsPerSample},
+	 {subchunktwoid,SubChunkTwo_id},{chunktwosize,ChunkTwoSize},{pcm_data,PcmData},
+	 {minutes,Minutes},{seconds,Seconds},{total_seconds,TotalSeconds}
+	].
 		
-		<div class="header-cover blured-image" style="background-color: #9D9FA6; background-image: url(/images/cover.png)" data-src="cover.png"></div>
-		
-	</header>
+</code></pre>
 
-	<div id="post-index" class="container">
+<p>this piece of code above will get all the metadata/pcm data about an mp3 file.
+the various sections can be integers,floats,text,binary which can be spliced out.
+the endianess can be also put into the equation as seen above.
+I broke the code down for clarity sake but the part of the code for the dissassembly
+can be done in just 2 or 3 lines of code.pretty cool !!!.
+try putting this code in a file,compile and try it out.</p>
 
-		<main class="content" role="main">
+  			</section>
 
-			<div class="post-list">
-				<div id="push">
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+            
+                <a href="https://nayibor.github.io//tags/erlang/">erlang</a>
+            
+                <a href="https://nayibor.github.io//tags/pattern-matching/">pattern matching</a>
+            
+                <a href="https://nayibor.github.io//tags/bit-syntax/">bit syntax</a>
+            
+                <a href="https://nayibor.github.io//tags/music/">music</a>
+            
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Erlang%20Binary%20Pattern%20Matching&url=https%3a%2f%2fnayibor.github.io%2fpost%2f0b6a4bece0b54c9c4aed38228bf8ff8d%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnayibor.github.io%2fpost%2f0b6a4bece0b54c9c4aed38228bf8ff8d%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fnayibor.github.io%2fpost%2f0b6a4bece0b54c9c4aed38228bf8ff8d%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
 
-			
+  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="" data-url="https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/"/>
+<aside class="post-comments">
+    
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    
+    var disq_var = document.getElementById('disq_variables');
+    var disqus_shortname = 'https-nayibor-github-io';
+    var disqus_identifier = disq_var.getAttribute('data-ident');
+    var disqus_url = disq_var.getAttribute('data-url');
+	var disqus_config = function () { 
+	  this.language = "en";
+	};
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+     
+    var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                this.page.identifier = newIdentifier;
+                this.page.url = newUrl;
+                this.page.title = newTitle;
+                this.language = newLanguage;
+            }
+        });
+    };
 
-			
-			  
-<article class="post">
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/"><img src="images/patterns.jpg" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">3 Jan 2023</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/">Erlang Binary Pattern Matching</a></h2>
-		<p class="post-excerpt">Bit Syntax in erlang&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
 
-			
-			  
-<article class="post">
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/meetup%20talk/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/meetup%20talk/"><img src="images/communication.jpg" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">4 Oct 2021</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/meetup%20talk/">Talking to outside world from Elixir</a></h2>
-		<p class="post-excerpt">meetup talk&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/meetup%20talk/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
 
-			
-			  
-<article class="post">
 
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/"><img src="images/ubuntu.jpg" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">4 Jun 2021</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/">Conference and Community Building</a></h2>
-		<p class="post-excerpt">conferences in times of covid and community building&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-			  
-<article class="post">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/c33083b29ef6e62daebc9459653f84b9/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">1 Jun 2020</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/c33083b29ef6e62daebc9459653f84b9/">Library for parsing iso8583 messages in erlang</a></h2>
-		<p class="post-excerpt">library for parsing iso8583 financial messages in erlang/elixir&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/c33083b29ef6e62daebc9459653f84b9/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-			  
-<article class="post">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/"><img src="images/feather.png" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">25 Apr 2017</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/">Deploying code with git and apache</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-			  
-<article class="post featured">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">9 Apr 2017</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">Programming languages as web template languages</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-			  
-<article class="post">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">22 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/">Parsing iso8583 messages Part 2</a></h2>
-		<p class="post-excerpt">parsing iso8583 messages using erlang&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-			  
-<article class="post">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/"></a>
-		
-		<span class="post-meta">
-			<span class="post-date">12 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/">Parsing iso8583 messages Part 1</a></h2>
-		<p class="post-excerpt">parsing iso8583 messages using erlang&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-			  
-<article class="post">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/"><img src="images/iso_message.jpg" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">5 Dec 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/">Iso8583  message structure</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-			  
-<article class="post">
-
-	<div class="inner">
-		<a class="post-link" href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/"></a>
-		
-		<figure class="post-image">
-			<a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/"><img src="images/backbone.png" alt="" /></a>
-		</figure>
-		
-		<span class="post-meta">
-			<span class="post-date">3 Jul 2016</span>
-		</span>
-		<h2 class="post-title"><a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/">Pagination using backbone.js and underscore template</a></h2>
-		<p class="post-excerpt">&hellip;</p>
-		<span class="post-more"><a href="https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/">Read More <i class="icon-arrow-right"></i></a></span>
-	</div>
-</article>
-
-			
-
-				</div>
 			</div>
 
-			<nav id="pagination" class="pagination" role="pagination">
-	<div class="inner">
-	
-		<span class="pagination-info">Page 1 of 2</span>
-	
-	  <a class="pagination-item pagination-prev" href="/page/2/"><span>Older Posts</span> <i class="icon-arrow-right"></i></a>
-	
-		<div class="clear"></div>
-	</div>
-</nav>
+			<nav class="post-nav">
+				
+				
+					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/post/meetup%20talk/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Talking to outside world from Elixir</h4>
+								<p class="post-nav-excerpt">meetup talk&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
 
-
-		</main>
-
-	</div>
+		</div>
+	</article>
+</main>
 
 				<div id="body-class" style="display: none;"></div>
 				<footer id="footer">
@@ -318,6 +267,16 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 				</footer>
 				
 				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        
+    </div>
+</div>
+
 
 				<div class="overlay"></div>
 			</div>

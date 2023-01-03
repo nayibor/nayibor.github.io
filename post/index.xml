@@ -6,8 +6,53 @@
     <description>Recent content in Posts on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Oct 2021 10:54:24 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 03 Jan 2023 10:54:24 +0200</lastBuildDate>
     <atom:link href="https://nayibor.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Erlang Binary Pattern Matching</title>
+      <link>https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
+      <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
+      <description>&lt;p&gt;&lt;br&gt;hello everyone and happy new year to one and all!!.
+&lt;br&gt;hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year.
+&lt;br&gt;i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get
+the various metadata and parts of an audio file either over the network being streamed or a file on disk
+&lt;br&gt;Erlang and erlang related languages(&lt;a href=&#34;https://elixir-lang.org/&#34;&gt;Elixir&lt;/a&gt;,&lt;a href=&#34;https://lfe.io/&#34;&gt;Lfe&lt;/a&gt;,&lt;a href=&#34;https://luerl.org/&#34;&gt;Luerl&lt;/a&gt;)
+have this short and nifty way of unpacking this data out and getting the various sections efficiently and also with a small bit of code
+it takes a little bit of getting used to but its very powerful none the less&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-erlang&#34;&gt;get_audio_parts_wav(File_path)-&amp;gt;
+	{ok, Audio_binary} = file:read_file(File_path),
+	&amp;lt;&amp;lt;Chunk_id:4/binary,ChunkSize:32/integer-little,Format:4/binary,
+	Subchunkid:4/binary,Subcsize:32/integer-little,Audio_format:16/integer-little,
+	Number_channels:16/integer-little,SamplesPerSecond:32/integer-little,
+	ByteRate:32/integer-little,BlockAlign:16/integer-little,
+	BitsPerSample:16/integer-little,
+	SubChunkTwo_id:4/binary,ChunkTwoSize:32/integer-little,
+	PcmData:ChunkTwoSize/binary,_/binary&amp;gt;&amp;gt; = Audio_binary,
+	TotalSeconds = floor(ChunkSize/ByteRate),
+	Minutes = floor(TotalSeconds/60),
+	Seconds = TotalSeconds rem 60,
+	[{chunk_id,Chunk_id},{chunk_size,ChunkSize},{format,Format},
+	{subchunkid,Subchunkid},{subchunksize,Subcsize},{audio_format,Audio_format},
+	 {number_channels,Number_channels},{samplespersecond,SamplesPerSecond},
+	 {byterate,ByteRate},{blockalign,BlockAlign},{bitspersample,BitsPerSample},
+	 {subchunktwoid,SubChunkTwo_id},{chunktwosize,ChunkTwoSize},{pcm_data,PcmData},
+	 {minutes,Minutes},{seconds,Seconds},{total_seconds,TotalSeconds}
+	].
+		
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;this piece of code above will get all the metadata/pcm data about an mp3 file.
+the various sections can be integers,floats,text,binary which can be spliced out.
+the endianess can be also put into the equation as seen above.
+I broke the code down for clarity sake but the part of the code for the dissassembly
+can be done in just 2 or 3 lines of code.pretty cool !!!.
+try putting this code in a file,compile and try it out.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Talking to outside world from Elixir</title>
