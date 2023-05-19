@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>grasshopper code on Nuku&#39;s blog</title>
+    <link>https://nayibor.github.io/tags/grasshopper-code/</link>
+    <description>Recent content in grasshopper code on Nuku&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 May 2023 10:54:24 +0200</lastBuildDate>
+    
+	<atom:link href="https://nayibor.github.io/tags/grasshopper-code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coding In Elm</title>
+      <link>https://nayibor.github.io/post/a7d70805678f89e1f89430c3237d0b1a/</link>
+      <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/post/a7d70805678f89e1f89430c3237d0b1a/</guid>
+      <description>Hi All.Hope you are all good.
+Recently i had the chance to rewrite some sections of code i had written in javascript over to elm and wanted to share my experience with it.
+I had been experiencing an issue where the screen content was being updated too quickly causing the screen to become unresponsive
+Elm is a static functional programming language which is mostly used on the frontend which boasts having no runtime exceptions.</description>
+    </item>
+    
+  </channel>
+</rss>

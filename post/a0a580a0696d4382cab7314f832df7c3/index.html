@@ -67,7 +67,7 @@
         },
         "datePublished": "2015-08-11",
         "description": "",
-        "wordCount":  290 
+        "wordCount":  77 
     }
     </script>
 
@@ -117,91 +117,54 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 
   			<header class="post-header">
   				<span class="post-meta">
-						<span class="post-date">11 Aug 2015</span> <span class="reading-time">| <span class="estimated-reading-time">2 min.</span> (<span class="word-count">290</span> words)</span></span>
+						<span class="post-date">11 Aug 2015</span> <span class="reading-time">| <span class="estimated-reading-time">1 min.</span> (<span class="word-count">77</span> words)</span></span>
   				</span>
   				<div class="clear"></div>
   				<h1 class="post-title">Cakephp 2.6.7  rawQuery bug</h1>
   			</header>
 
   			<section class="post-content">
-  				<p>Small observation i had with cakephp 2.6.7 .</p><p>I was trying to write a query with <a href="http://cakephp.org/">cakephp</a> and&nbsp; noticed that the query was not <br></p><p>being sent to the server for processing .</p><p>I was using the rawQuery method and not the orm&nbsp; methods like find etc...<br></p><p>Query is <br></p><blockquote><p> $query=" SELECT id,stock_available FROM products WHERE &nbsp;(id = ? and stock_available &gt;= ?)or &nbsp; (id &nbsp;= ? and stock_available &gt;= ?) FOR UPDATE";<br> $query_params=array(1,50,2,30);<br> $response = $this-&gt;Product-&gt;getDataSource()-&gt;rawQuery($query,$query_params);</p></blockquote><p>It was because the&nbsp; <a href="https://github.com/cakephp/cakephp/blob/2.7/lib/Cake/Model/Datasource/DboSource.php#L397-L436">rawQuery</a> method&nbsp; was missing an extra option which was <br></p><p>preventing the query from being run&nbsp; due&nbsp; to&nbsp; confusion in this section <br></p><blockquote><p>
-
- &nbsp; &nbsp; &nbsp;       return $this-&gt;execute($sql, $params); &nbsp; &nbsp;
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp;&nbsp; <br></p></blockquote><p>This was accepting two parameters instead of three and due to this was <br></p><p>mistaking the $params value for the options value thus query was not run .<br></p><p>query was being run as <br></p><blockquote><p>public function rawQuery($sql, $params = array()) {
-
- &nbsp; &nbsp;
-
-
-
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp; &nbsp;<br>
-
- &nbsp; &nbsp; &nbsp;       $this-&gt;took = $this-&gt;numRows = false;
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp; &nbsp; 
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp; &nbsp;<br><b>
-
- &nbsp; &nbsp; &nbsp;       return $this-&gt;execute($sql, $params); &nbsp; &nbsp;
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp; &nbsp;</b><br>
-
- &nbsp; &nbsp; &nbsp;   }<br></p></blockquote><p>Instead of <br></p><blockquote><p>public function rawQuery($sql, $params = array()) {
-
- &nbsp; &nbsp;
-
-
-
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp; &nbsp;<br>
-
- &nbsp; &nbsp; &nbsp;       $this-&gt;took = $this-&gt;numRows = false;
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp;&nbsp; <br><b>
-
- &nbsp; &nbsp; &nbsp;       return $this-&gt;execute($sql, array(), $params); &nbsp; &nbsp;
-
- &nbsp; &nbsp;
-
- &nbsp; &nbsp;
- &nbsp; &nbsp; &nbsp;&nbsp; </b><br>
-
- &nbsp; &nbsp; &nbsp;   }</p></blockquote><p>It has subsequently been fixed .</p><p>Issue is at this <a href="https://github.com/cakephp/cakephp/issues/6992/">link</a> . <br></p>
+  				<!-- raw HTML omitted -->
+<p>     		return $this-&gt;execute($sql, $params);    </p>
+<p>   </p>
+<p>   
+       <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->This was accepting two parameters instead of three and due to this was <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->mistaking the $params value for the options value thus query was not run .<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->query was being run as <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->public function rawQuery($sql, $params = array()) {</p>
+<p>   </p>
+<p>   </p>
+<p>   </p>
+<p>   
+       <!-- raw HTML omitted --></p>
+<p>      		$this-&gt;took = $this-&gt;numRows = false;</p>
+<p>   </p>
+<p>   </p>
+<p>   
+       </p>
+<p>   </p>
+<p>   
+       <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>     		return $this-&gt;execute($sql, $params);    </p>
+<p>   </p>
+<p>   
+       <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>      	}<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Instead of <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->public function rawQuery($sql, $params = array()) {</p>
+<p>   </p>
+<p>   </p>
+<p>   </p>
+<p>   
+       <!-- raw HTML omitted --></p>
+<p>      		$this-&gt;took = $this-&gt;numRows = false;</p>
+<p>   </p>
+<p>   </p>
+<p>   
+        </p>
+<p>   </p>
+<p>   
+       <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>     		return $this-&gt;execute($sql, array(), $params);    </p>
+<p>   </p>
+<p>   
+       <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>      	}<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->It has subsequently been fixed .<!-- raw HTML omitted --><!-- raw HTML omitted -->Issue is at this <!-- raw HTML omitted -->link<!-- raw HTML omitted --> . <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 
   			</section>
 
@@ -228,7 +191,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
   				</div>
   			</footer>
 
-  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="" data-url="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/"/>
+  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="a0a580a0696d4382cab7314f832df7c3" data-url="https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/"/>
 <aside class="post-comments">
     
     
@@ -309,7 +272,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
         <a class="menu-close" data-action="toc" data-target="toc"></a>
     </div>
     <div id="toc" class="menu-list">
-        
+        <nav id="TableOfContents"></nav>
     </div>
 </div>
 

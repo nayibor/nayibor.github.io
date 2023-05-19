@@ -68,7 +68,7 @@
         },
         "datePublished": "2016-12-22",
         "description": "parsing iso8583 messages using erlang",
-        "wordCount":  1403 
+        "wordCount":  472 
     }
     </script>
 
@@ -118,7 +118,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 
   			<header class="post-header">
   				<span class="post-meta">
-						<span class="post-date">22 Dec 2016</span> <span class="reading-time">| <span class="estimated-reading-time">7 min.</span> (<span class="word-count">1403</span> words)</span></span>
+						<span class="post-date">22 Dec 2016</span> <span class="reading-time">| <span class="estimated-reading-time">3 min.</span> (<span class="word-count">472</span> words)</span></span>
   				</span>
   				<div class="clear"></div>
   				<h1 class="post-title">Parsing iso8583 messages Part 2</h1>
@@ -126,273 +126,65 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 
   			<section class="post-content">
   				<p>Today we will be showing how to  extract the various components out of an iso string.
-<br>
+<!-- raw HTML omitted -->
 The combination of a tcp server as well as code to extract the  iso message components
 and send it for further processing is what is popularly called an interface server in payment processing .
-</br>
-Specifically the components we are interested in are
-<ul>
-<li>message type indicator also known as mti</li>
-<li>bitmap</li>
-<li>data elements</li>
-</ul>
- The code snippets  used for this post is in this  git &nbsp;<a href="https://github.com/nayibor/iso_process_tut_repo"><i>repository</i></a>.
- Also the 1993 ascii protocol will be used here as well as erlang  programming language for the code explanations . So git clone the repository,cd to <strong>iso_process_tut_repo</strong> and fire up your erlang vm and lets begin !!.
-<p>Consider the message below<br></p><p><b>1200F230040102B000000000000004000000</b></p><p><b>1048468112122012340000100000001107221800</b></p><p><b>000001161204171926FABCDE123ABD06414243</b></p><p><b>000termid1210Community106A5DFGR1112341234234</b></p><p>
-the iso message in this case is an ascii string(erlang has no concept of strings just a list of unicode points).
-The function below is what processes the messages and returns a map containing the various fields of the message as well the mti and bitmap
-<blockquote>
-    <p>
--spec process_message([{list | binary,pos_integer()}])-&gt;map().<br />
-    </p>
-    <p>
-        process_message({binary,Rest})-&gt;
-    </p>
-</blockquote><br />
-the first statement converts the string to a binary.
-Binary strings or binaries store data in a more space efficient manner and has more efficient functions for handling large binary data.
-<blockquote>
-    <p>
-        Bin_message = erlang:list_to_binary(Rest),%%this gives &lt;&lt;&ldquo;01581200F230040102B&hellip;&rdquo;&gt;&gt;
-    </p>
-</blockquote><br />
-the next step is to find the mti which is made up of the first 4 digits.We do that and then store the mti along with with some metadata in a map.
-the <strong>?MTI_SIZE</strong> is macro which is defined at the top of the file  and is equal to 4.<br />
-<blockquote>
-    <p>
-        Mti = binary:part(Bin_message,0,?MTI_SIZE),%%this gives &lt;&lt;&ldquo;1200&rdquo;&gt;&gt;
-    </p><p>
-        Mti_Data_Element = maps:from_list([{ftype,ans},{fld_no,0},{name,&lt;&lt;&ldquo;Mti&rdquo;&gt;&gt;},{val_binary_form,Mti}]),
-    </p>
-    <p>
-        %%this gives #{fld_no =&gt; 0,ftype =&gt; ans,name =&gt; &lt;&lt;&ldquo;Mti&rdquo;&gt;&gt;,val_binary_form =&gt; &lt;&lt;&ldquo;1200&rdquo;&gt;&gt;}<br />
-    </p>
-</blockquote></p>
-
+<!-- raw HTML omitted -->
+Specifically the components we are interested in are</p>
+<!-- raw HTML omitted -->
 <p>the next step is to get the bitmap which is a hexadecimal(base 16
 number)which starts from the fifth  digit and is either 8 or 16 in
 size.
-<br>
+<!-- raw HTML omitted -->
 The bitmap tell us which data elements exist in the message.
 the bitmap is either a <strong>primary bitmap</strong> or a <strong>secondary bitmap</strong>.
 the first bit in a bitmap tell us whether the secondary bitmap exists.
 the bitmap is either an 8 byte(primary) or 16 byte(secondary) hexadecimal which when converted to base 2 shows the presence or absence of fields from 1 to 128.
 Each bit in a primary/secondary bitmap shows the presence/absence of a data element.
-<br>
+<!-- raw HTML omitted -->
 Each digit when converted into base 2 and left padded to a max of 4 digits with zero represents the presence or absence of 4 data elements.
 For example the bitmap <strong>4210001102C04804</strong> is <strong>0100001000010000000000000001000100000010110000000100100000000100</strong> in base 2.
-<br>
+<!-- raw HTML omitted -->
 this means Fields 2, 7, 12, 28, 32, 39, 41, 42, 50, 53, 62 are present and there is no secondary bitmap since bit 1 is 0.
-<br>
+<!-- raw HTML omitted -->
 Find below code sections for getting the bitmap out of our message as
-explained above from
-<blockquote>
-    <p>
-        Fthdig = binary:part(Bin_message,4,1),%%this gives F
-    </p>
-</blockquote>
-to<br />
-<blockquote>
-    <p>
-        Bitmap_transaction = &lt;&lt; &lt;&lt; (convert_base_pad(One,4,&lt;&lt;&ldquo;0&rdquo;&gt;&gt;)):4/binary &gt;&gt;  || &lt;<a href="One:1/binary">One:1/binary</a>&gt; &lt;= Bitmap_Segment &gt;&gt;,
-        %%this gives &lt;&lt;&ldquo;111100100011000000000100000000010&hellip;&rdquo;&gt;&gt;
-    </p><br />
-</blockquote>
-the next three statements creates a map which contains the bitmap and
-the mti .
-<br>The next step is to get the data elements which is the actual
-content of the message itself and contains info like</p>
-
+explained above from</p>
+<!-- raw HTML omitted -->
 <ul>
 <li>transaction amount</li>
 <li>currency</li>
 <li>transaction type</li>
 </ul>
-
 <p>the start_index calculation tells us  to start processing the binary
 string at a particular position.Since the primary bitmap is always sent
 with every message and the secondary bitmap is optional we start the
 processing from the point of the  secondary bitmap .
-<br>
+<!-- raw HTML omitted -->
 Of importance to note is the <strong>get_spec_field</strong> function which contains
 info about every data element.The function returns info such as</p>
-
 <ul>
 <li>maximum field length</li>
 <li>field type</li>
 <li>whether field is fixed length or variable length</li>
 <li>header length if field has a header</li>
 </ul>
-
 <p>Variable length fields have a header which shows how long the field is
 even though the field may have a maximum length .
-<br>You could say this is the erlang representation of the iso93 asci
+<!-- raw HTML omitted -->You could say this is the erlang representation of the iso93 asci
 spec.This also makes it quite easy to modify the spec if some fields
 change.</p>
-
 <p>the fold_bin function is a custom function which kind of works like a
 list fold. In this case instead of a list it takes a binary,accepts a
 fun for processing the binary and processes the binary until the
 binary is of size zero .there is also an accumilator variable in there
-just like with a list fold .
-<blockquote>
-    <p>
-        fold_bin(_Fun, Accum, &lt;&lt;&gt;&gt;) -&gt; Accum;
-    </p><p>
-        fold_bin(Fun, Accum, Bin) -&gt;
-    </p><p>
-            {NewBin, NewAccum} = Fun(Bin, Accum),
-    </p><p>
-            fold_bin(Fun, NewAccum, NewBin).
-    </p><br />
-</blockquote><br />
-The reason for this is because we will be passing the bitmap as the
-input element with the iso message also being passed as an input but as an accumulator
-in this case.The bitmap of course represents the presence or absence of a field .
-<br>If a field is present then we extract the data element out
-of the iso message because the iso message will be available on every
-iteration and then move on.If the field is not present we move on to the
-next element anyway .
-<br>The fold_bin segment which gets the data elements and puts them in
-a map works like this in its simplified form<br />
-<blockquote>
-    <p>
-        <strong>OutData=fold_bin(
-        fun
-        <br>(Bitmap,
-        {Data_for_use_in,Index_start_in,Current_index_in,Map_out_list_in})
-        when X =:= &lt;&lt;&ldquo;1&rdquo;&gt;&gt; -&gt;</strong>
-    </p><p>
-        in this case field exists
-        <br>
-        Data_for_use_in = Iso Message as input in fold_bin function
-        <br>
-        Index_start_in = Position we are in in iso message which
-        corresponds to a specific start position for data element
-        <br>
-        Current_index_in = current data element
-        <br>
-        Map_out_list_in = accumulator for data elements
-        <br>
-        statement to extract data elements based on field
-        length,maximum length etc follow..
-    </p><p>
-        <strong>{Rest_bin,{Data_for_use_in,New_Index,Fld_num_out,NewMap}};</strong>
-        <br>
-        %%output which contains NewMap which contains the data element
-        <br>
-        Rest_bin =  bitmap which contains presence/absence of
-        data elements yet to be processed
-        <br>
-        Data_for_use_in = Iso Message as input in fold_bin function
-        <br>
-        New_Index = Position we are in in iso message which
-        corresponds to a specific start position for next data element
-        <br>
-        Fld_num_out = next data element<br />
-        <br>
-        Also New_Index is the position of the next element so we know
-        where in the binary to start processing the next date element and Fld_num_out
-        is the fld_num which we will use for getting the spec for a
-        field using the <strong>get_spec_field</strong> function<br />
-    </p>
-    <p>
-        <strong>(Bitmap,
-        {Data_for_use_in,Index_start_in,Current_index_in,Map_out_list_in})
-        when X =:= &lt;&lt;&ldquo;0&rdquo;&gt;&gt; -&gt;</strong>
-    </p><p>
-        in this case field does not exist
-        <br>
-        &hellip;statement to extract data elements based on field
-        length,maximum length etc..
-    </p><p>
-        <strong>{Rest_bin,{Data_for_use_in,New_Index,Fld_num_out,NewMap}};</strong>
-        <br>
-    </p><p>
-        <strong>end,
-        {Bin_message,Start_index,1,Map_Data_Element},Bitmap_transaction),</strong>
-        <br>
-        %%
-        Bin_message = Iso Message
-        <br>
-        Start_index = is used to tell where to start processing the
-        binary from ,
-        <br>
-        1  = this tells us we are starting from field 1
-        <br>
-        Map_Data_Element = the accumulator for the data elements
-        where each data element is added this accumulator as a map
-        with some metadata about the data element also added
-    </p>
-</blockquote>
-   At each iteration as we are going through the iso message there is
-   a calculation which is done to find out metadata about the data element .
-   This metadata will give us the header length of the field or if
-   even the field has a header .After we get the header  or not we
-   then get to calculate the actual message and its starting and
-   ending points .
-   <br>
-    After the data element is obtained it is put in the output map
-    along with some metadata about the data element.
-    <br><br />
-    Please browse through the source code to better understand the
-    code as well as how to get the various data elements if my explanation
-    is not enough .
-    <br>
-    There is also a function on how to do the above with strings.
-<blockquote>
-    <p>
-        process_message({list,Rest})-&gt;<br />
-    </p>
-</blockquote><br />
-    As i said earlier binaries occupy less space and has more
-    efficient functions for processing but you can browse through the
-    code to get a better idea of processing the message but using
-    string functions .
-    <br>
-    To test it out by sending sample iso messages open the erlang
-    shell and compile the iso_process with <strong>c(iso_process)</strong>.You can
-    then send iso messages by first starting the server with
-<blockquote>
-    <p> iso_process:start_iso_server().</p>
-</blockquote><br />
-afterwhich you can send iso messages with
-<blockquote>
-    <p> iso_process:send(&ldquo;01581200F230040102B00000000000000400000010&rdquo;</p>
-</blockquote>
-<blockquote>
-    <p>
-    &ldquo;48468112122012340000100000001107221800000001161204171926FA&rdquo;
-    </p>
-</blockquote>
-<blockquote>
-    <p>
-    &ldquo;BCDE123ABD06414243000termid1210Community106A5DFGR1112341234234&rdquo;).
-    </p>
-</blockquote>
-Note that the iso message must be preceded by length of the message
-so in this case <strong>0158</strong> was the length of the message and was added to
-the message when the message was being sent.
-<br></p>
-
+just like with a list fold .</p>
+<!-- raw HTML omitted -->
 <p>Alternatively there is a java file <em>Test_java_client.java</em> which you can
 use to edit and send messages to the iso server example.
-<br>
+<!-- raw HTML omitted -->
 After editing the various iso fields in the file you can then compile
-the file using
- <blockquote>
-    <p>
-    javac -cp .:jpos-2.0.7-SNAPSHOT.jar Test_java_client.java
-    </p>
-</blockquote>
-and send the message to the erlang iso server which should have been
-started using
- <blockquote>
-    <p>
-    java -Xbootclasspath/p:jpos-2.0.7-SNAPSHOT.jar Test_java_client 8002
-    </p>
-</blockquote>
-This is where i wind down.</p>
+the file using</p>
+<!-- raw HTML omitted -->
 
   			</section>
 
@@ -421,7 +213,7 @@ This is where i wind down.</p>
   				</div>
   			</footer>
 
-  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="" data-url="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/"/>
+  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="4948d52595d68beab6dd3a919db6d115" data-url="https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/"/>
 <aside class="post-comments">
     
     
@@ -512,7 +304,7 @@ This is where i wind down.</p>
         <a class="menu-close" data-action="toc" data-target="toc"></a>
     </div>
     <div id="toc" class="menu-list">
-        
+        <nav id="TableOfContents"></nav>
     </div>
 </div>
 

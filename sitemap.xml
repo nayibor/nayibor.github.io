@@ -1,5 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://nayibor.github.io/post/a7d70805678f89e1f89430c3237d0b1a/</loc>
+    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/elm/</loc>
+    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/functional-programming/</loc>
+    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/grasshopper-code/</loc>
+    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/</loc>
+    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/post/</loc>
+    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/</loc>
+    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/bit-syntax/</loc>
+    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/erlang/</loc>
+    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
+  </url>
   
   <url>
     <loc>https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</loc>
@@ -7,13 +53,68 @@
   </url>
   
   <url>
-    <loc>https://nayibor.github.io/post/meetup%20talk/</loc>
+    <loc>https://nayibor.github.io/tags/music/</loc>
+    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/pattern-matching/</loc>
+    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/community-building/</loc>
     <lastmod>2021-10-04T10:54:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/</loc>
+    <loc>https://nayibor.github.io/tags/elixirkenya/</loc>
+    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/meetup/</loc>
+    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/networking/</loc>
+    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/online-learning/</loc>
+    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/post/meetup-talk/</loc>
+    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/ziglang/</loc>
+    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/conference/</loc>
     <lastmod>2021-06-04T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/post/conference-experience-and-starting-a-community/</loc>
+    <lastmod>2021-06-04T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/erlang-binary-processing/</loc>
+    <lastmod>2020-06-01T00:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/iso8583/</loc>
+    <lastmod>2020-06-01T00:54:24+02:00</lastmod>
   </url>
   
   <url>
@@ -22,12 +123,42 @@
   </url>
   
   <url>
-    <loc>https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/</loc>
+    <loc>https://nayibor.github.io/tags/apache2/</loc>
     <lastmod>2017-04-25T10:54:24+02:00</lastmod>
   </url>
   
   <url>
+    <loc>https://nayibor.github.io/post/deploying-code-with-git-and-apache/</loc>
+    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/git/</loc>
+    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/javascript/</loc>
+    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/mithril/</loc>
+    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/</loc>
+    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/templating/</loc>
+    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/yaws/</loc>
     <lastmod>2017-04-09T20:52:24+02:00</lastmod>
   </url>
   
@@ -47,7 +178,32 @@
   </url>
   
   <url>
+    <loc>https://nayibor.github.io/tags/payments/</loc>
+    <lastmod>2016-12-05T07:55:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/backbone/</loc>
+    <lastmod>2016-07-03T02:41:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/cakephp/</loc>
+    <lastmod>2016-07-03T02:41:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/pagination/</loc>
+    <lastmod>2016-07-03T02:41:08+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/</loc>
+    <lastmod>2016-07-03T02:41:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nayibor.github.io/tags/underscore/</loc>
     <lastmod>2016-07-03T02:41:08+00:00</lastmod>
   </url>
   
@@ -57,176 +213,12 @@
   </url>
   
   <url>
-    <loc>https://nayibor.github.io/tags/apache2/</loc>
-    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/backbone/</loc>
-    <lastmod>2016-07-03T02:41:08+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/bit-syntax/</loc>
-    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/cakephp/</loc>
-    <lastmod>2016-07-03T02:41:08+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/community-building/</loc>
-    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/conference/</loc>
-    <lastmod>2021-06-04T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/elixirkenya/</loc>
-    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/elm/</loc>
-    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/erlang/</loc>
-    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/erlang-binary-processing/</loc>
-    <lastmod>2020-06-01T00:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/git/</loc>
-    <lastmod>2017-04-25T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/iso8583/</loc>
-    <lastmod>2020-06-01T00:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/javascript/</loc>
-    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/meetup/</loc>
-    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/mithril/</loc>
-    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/music/</loc>
-    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/networking/</loc>
-    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/</loc>
-    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/online-learning/</loc>
-    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/pagination/</loc>
-    <lastmod>2016-07-03T02:41:08+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/pattern-matching/</loc>
-    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/payments/</loc>
-    <lastmod>2016-12-05T07:55:57+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://nayibor.github.io/tags/php/</loc>
     <lastmod>2015-08-11T13:42:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nayibor.github.io/post/</loc>
-    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/templating/</loc>
-    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/underscore/</loc>
-    <lastmod>2016-07-03T02:41:08+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/yaws/</loc>
-    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nayibor.github.io/tags/ziglang/</loc>
-    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
-    <priority>0</priority>
+    <loc>https://nayibor.github.io/categories/</loc>
   </url>
   
 </urlset>

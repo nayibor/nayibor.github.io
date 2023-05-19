@@ -1,85 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Online Learning on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/tags/online-learning/index.xml</link>
-    <description>Recent content in Online Learning on Nuku&#39;s blog</description>
+    <title>online learning on Nuku&#39;s blog</title>
+    <link>https://nayibor.github.io/tags/online-learning/</link>
+    <description>Recent content in online learning on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://nayibor.github.io/tags/online-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Oct 2021 10:54:24 +0200</lastBuildDate>
+    
+	<atom:link href="https://nayibor.github.io/tags/online-learning/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Talking to outside world from Elixir</title>
-      <link>https://nayibor.github.io/post/meetup%20talk/</link>
+      <link>https://nayibor.github.io/post/meetup-talk/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/meetup%20talk/</guid>
-      <description>&lt;p&gt;&lt;br&gt;I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir.
-&lt;br&gt;The ecosystem for talking to the outside world from beam systems has a lot of options.
-&lt;br&gt;Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang.
-&lt;br&gt;ziglang was interesting not only for creating nifs
-&lt;br&gt;but also as a possible future replacement for writing simple,fast,safe code
-&lt;br&gt;This is the talk as well as a video about why to use zig to write nifs
-&lt;br&gt;enjoy !!&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=DMc9A6My3Sk&#34;&gt;Talking to the outside world talk&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=fIxNEILcNGM&#34;&gt;Zigler: Elixir FFIs with Zig - Isaac Yonemoto&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>https://nayibor.github.io/post/meetup-talk/</guid>
+      <description>I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir. The ecosystem for talking to the outside world from beam systems has a lot of options. Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang. ziglang was interesting not only for creating nifs but also as a possible future replacement for writing simple,fast,safe code This is the talk as well as a video about why to use zig to write nifs enjoy !</description>
     </item>
     
     <item>
       <title>Conference and Community Building</title>
-      <link>https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/</link>
+      <link>https://nayibor.github.io/post/conference-experience-and-starting-a-community/</link>
       <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/</guid>
-      <description>
-
-&lt;p&gt;&lt;br&gt;Conferences/communities are a great way for everyone to network and learn something new.
-&lt;br&gt;the effect of the pandemic on how these events are organized has been interesting.
-&lt;br&gt;its made people have to innovate around the organization of events.
-&lt;br&gt;there have been some positives out of this as well as some negatives
-&lt;br&gt;i have attended three erlang/elixir online conferences(two of my best languages)  so far this year and its been interesting
-&lt;br&gt;the positives/negatives as well as what the future may bring&lt;/p&gt;
-
-&lt;h1 id=&#34;postives&#34;&gt;Postives&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;you have access to the whole world basically for your event if you do the correct marketing since everyone is/was stuck at home&lt;/li&gt;
-&lt;li&gt;People are more confortable with the idea of having conferences online due to the pandemic&lt;/li&gt;
-&lt;li&gt;People can have access to your event from the comfort of their homes/mobile phones which makes it more convenient&lt;/li&gt;
-&lt;li&gt;They wont have to spend large sums of money travelling to your event destination&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;negatives&#34;&gt;Negatives&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the experience of meeting people in 3d,travelling to a new city,not to mention the fact that most communication  happens by body language
-makes you wonder if the experience could have been better face to face&lt;/li&gt;
-&lt;li&gt;screen fatigue can be very real and having to spend long amounts of time focusing and listening to people talk can be draining
-this can be solved by taking  virtual cofee breaks :) in between talks
-&lt;br&gt;there are some apps also like &lt;a href=&#34;https://www.toucan.events/&#34;&gt;toucan&lt;/a&gt; which have an interesting twist around interactivity and i found their virtual lounge
-idea quite interesting&lt;/li&gt;
-&lt;li&gt;interactivity in the case of sponsors or people who want to demo their products may be less effective/interactive but this can be debatable depending on the product of course&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
-
-&lt;p&gt;Well as they say time will tell if online conferences can be made better/more interactive.
- &lt;br&gt;We will also see if virtual reality or other tech can make the experience more interactive.
- &lt;br&gt;Willl we go back to meeting in person completely after the pandemic becomes bearable or  online conferences/learning is here to stay and
- has a market share
- &lt;br&gt;we will see.whats your opinion.give me your thoughts in the comments below&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;ps&lt;/h3&gt;
- &lt;br&gt;i am setting  up a beam(&lt;a href=&#34;https://www.erlang.org/&#34;&gt;erlang&lt;/a&gt;,&lt;a href=&#34;https://elixir-lang.org/&#34;&gt;elixir&lt;/a&gt;,&lt;a href=&#34;https://lfe.io/&#34;&gt;lfe&lt;/a&gt;,etc&amp;hellip;) community in accra
-  called beam ghana
- &lt;br&gt;if you are interested in any of the above languages or want to learn about programming/entreprenuership feel free to join/contribute
- &lt;br&gt; halla me at &lt;a href=&#34;https://twitter.com/nayibor&#34;&gt;@nayibor&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>https://nayibor.github.io/post/conference-experience-and-starting-a-community/</guid>
+      <description>Conferences/communities are a great way for everyone to network and learn something new. the effect of the pandemic on how these events are organized has been interesting. its made people have to innovate around the organization of events. there have been some positives out of this as well as some negatives i have attended three erlang/elixir online conferences(two of my best languages) so far this year and its been interesting the positives/negatives as well as what the future may bring</description>
     </item>
     
   </channel>

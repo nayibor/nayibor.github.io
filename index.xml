@@ -1,13 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/index.xml</link>
+    <link>https://nayibor.github.io/</link>
     <description>Recent content on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Jan 2023 10:54:24 +0200</lastBuildDate>
-    <atom:link href="https://nayibor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 May 2023 10:54:24 +0200</lastBuildDate>
+    
+	<atom:link href="https://nayibor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coding In Elm</title>
+      <link>https://nayibor.github.io/post/a7d70805678f89e1f89430c3237d0b1a/</link>
+      <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
+      
+      <guid>https://nayibor.github.io/post/a7d70805678f89e1f89430c3237d0b1a/</guid>
+      <description>Hi All.Hope you are all good.
+Recently i had the chance to rewrite some sections of code i had written in javascript over to elm and wanted to share my experience with it.
+I had been experiencing an issue where the screen content was being updated too quickly causing the screen to become unresponsive
+Elm is a static functional programming language which is mostly used on the frontend which boasts having no runtime exceptions.</description>
+    </item>
     
     <item>
       <title>Erlang Binary Pattern Matching</title>
@@ -15,117 +29,25 @@
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
       
       <guid>https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
-      <description>&lt;p&gt;&lt;br&gt;hello everyone and happy new year to one and all!!.
-&lt;br&gt;hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year.
-&lt;br&gt;i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get
-the various metadata and parts of an audio file either over the network being streamed or a file on disk
-&lt;br&gt;Erlang and erlang related languages(&lt;a href=&#34;https://elixir-lang.org/&#34;&gt;Elixir&lt;/a&gt;,&lt;a href=&#34;https://lfe.io/&#34;&gt;Lfe&lt;/a&gt;,&lt;a href=&#34;https://luerl.org/&#34;&gt;Luerl&lt;/a&gt;)
-have this short and nifty way of unpacking this data out and getting the various sections efficiently and also with a small bit of code
-it takes a little bit of getting used to but its very powerful none the less&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-erlang&#34;&gt;get_audio_parts_wav(File_path)-&amp;gt;
-	{ok, Audio_binary} = file:read_file(File_path),
-	&amp;lt;&amp;lt;Chunk_id:4/binary,ChunkSize:32/integer-little,Format:4/binary,
-	Subchunkid:4/binary,Subcsize:32/integer-little,Audio_format:16/integer-little,
-	Number_channels:16/integer-little,SamplesPerSecond:32/integer-little,
-	ByteRate:32/integer-little,BlockAlign:16/integer-little,
-	BitsPerSample:16/integer-little,
-	SubChunkTwo_id:4/binary,ChunkTwoSize:32/integer-little,
-	PcmData:ChunkTwoSize/binary,_/binary&amp;gt;&amp;gt; = Audio_binary,
-	TotalSeconds = floor(ChunkSize/ByteRate),
-	Minutes = floor(TotalSeconds/60),
-	Seconds = TotalSeconds rem 60,
-	[{chunk_id,Chunk_id},{chunk_size,ChunkSize},{format,Format},
-	{subchunkid,Subchunkid},{subchunksize,Subcsize},{audio_format,Audio_format},
-	 {number_channels,Number_channels},{samplespersecond,SamplesPerSecond},
-	 {byterate,ByteRate},{blockalign,BlockAlign},{bitspersample,BitsPerSample},
-	 {subchunktwoid,SubChunkTwo_id},{chunktwosize,ChunkTwoSize},{pcm_data,PcmData},
-	 {minutes,Minutes},{seconds,Seconds},{total_seconds,TotalSeconds}
-	].
-		
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;this piece of code above will get all the metadata/pcm data about an mp3 file.
-the various sections can be integers,floats,text,binary which can be spliced out.
-the endianess can be also put into the equation as seen above.
-I broke the code down for clarity sake but the part of the code for the dissassembly
-can be done in just 2 or 3 lines of code.pretty cool !!!.
-try putting this code in a file,compile and try it out.&lt;/p&gt;
-</description>
+      <description>hello everyone and happy new year to one and all!!. hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year. i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get the various metadata and parts of an audio file either over the network being streamed or a file on disk Erlang and erlang related languages(Elixir,Lfe,Luerl) have this short and nifty way of unpacking this data out and getting the various sections efficiently and also with a small bit of code it takes a little bit of getting used to but its very powerful none the less</description>
     </item>
     
     <item>
       <title>Talking to outside world from Elixir</title>
-      <link>https://nayibor.github.io/post/meetup%20talk/</link>
+      <link>https://nayibor.github.io/post/meetup-talk/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/meetup%20talk/</guid>
-      <description>&lt;p&gt;&lt;br&gt;I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir.
-&lt;br&gt;The ecosystem for talking to the outside world from beam systems has a lot of options.
-&lt;br&gt;Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang.
-&lt;br&gt;ziglang was interesting not only for creating nifs
-&lt;br&gt;but also as a possible future replacement for writing simple,fast,safe code
-&lt;br&gt;This is the talk as well as a video about why to use zig to write nifs
-&lt;br&gt;enjoy !!&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=DMc9A6My3Sk&#34;&gt;Talking to the outside world talk&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=fIxNEILcNGM&#34;&gt;Zigler: Elixir FFIs with Zig - Isaac Yonemoto&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>https://nayibor.github.io/post/meetup-talk/</guid>
+      <description>I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir. The ecosystem for talking to the outside world from beam systems has a lot of options. Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang. ziglang was interesting not only for creating nifs but also as a possible future replacement for writing simple,fast,safe code This is the talk as well as a video about why to use zig to write nifs enjoy !</description>
     </item>
     
     <item>
       <title>Conference and Community Building</title>
-      <link>https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/</link>
+      <link>https://nayibor.github.io/post/conference-experience-and-starting-a-community/</link>
       <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/conference%20experience%20and%20starting%20a%20community/</guid>
-      <description>
-
-&lt;p&gt;&lt;br&gt;Conferences/communities are a great way for everyone to network and learn something new.
-&lt;br&gt;the effect of the pandemic on how these events are organized has been interesting.
-&lt;br&gt;its made people have to innovate around the organization of events.
-&lt;br&gt;there have been some positives out of this as well as some negatives
-&lt;br&gt;i have attended three erlang/elixir online conferences(two of my best languages)  so far this year and its been interesting
-&lt;br&gt;the positives/negatives as well as what the future may bring&lt;/p&gt;
-
-&lt;h1 id=&#34;postives&#34;&gt;Postives&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;you have access to the whole world basically for your event if you do the correct marketing since everyone is/was stuck at home&lt;/li&gt;
-&lt;li&gt;People are more confortable with the idea of having conferences online due to the pandemic&lt;/li&gt;
-&lt;li&gt;People can have access to your event from the comfort of their homes/mobile phones which makes it more convenient&lt;/li&gt;
-&lt;li&gt;They wont have to spend large sums of money travelling to your event destination&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;negatives&#34;&gt;Negatives&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the experience of meeting people in 3d,travelling to a new city,not to mention the fact that most communication  happens by body language
-makes you wonder if the experience could have been better face to face&lt;/li&gt;
-&lt;li&gt;screen fatigue can be very real and having to spend long amounts of time focusing and listening to people talk can be draining
-this can be solved by taking  virtual cofee breaks :) in between talks
-&lt;br&gt;there are some apps also like &lt;a href=&#34;https://www.toucan.events/&#34;&gt;toucan&lt;/a&gt; which have an interesting twist around interactivity and i found their virtual lounge
-idea quite interesting&lt;/li&gt;
-&lt;li&gt;interactivity in the case of sponsors or people who want to demo their products may be less effective/interactive but this can be debatable depending on the product of course&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
-
-&lt;p&gt;Well as they say time will tell if online conferences can be made better/more interactive.
- &lt;br&gt;We will also see if virtual reality or other tech can make the experience more interactive.
- &lt;br&gt;Willl we go back to meeting in person completely after the pandemic becomes bearable or  online conferences/learning is here to stay and
- has a market share
- &lt;br&gt;we will see.whats your opinion.give me your thoughts in the comments below&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;ps&lt;/h3&gt;
- &lt;br&gt;i am setting  up a beam(&lt;a href=&#34;https://www.erlang.org/&#34;&gt;erlang&lt;/a&gt;,&lt;a href=&#34;https://elixir-lang.org/&#34;&gt;elixir&lt;/a&gt;,&lt;a href=&#34;https://lfe.io/&#34;&gt;lfe&lt;/a&gt;,etc&amp;hellip;) community in accra
-  called beam ghana
- &lt;br&gt;if you are interested in any of the above languages or want to learn about programming/entreprenuership feel free to join/contribute
- &lt;br&gt; halla me at &lt;a href=&#34;https://twitter.com/nayibor&#34;&gt;@nayibor&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>https://nayibor.github.io/post/conference-experience-and-starting-a-community/</guid>
+      <description>Conferences/communities are a great way for everyone to network and learn something new. the effect of the pandemic on how these events are organized has been interesting. its made people have to innovate around the organization of events. there have been some positives out of this as well as some negatives i have attended three erlang/elixir online conferences(two of my best languages) so far this year and its been interesting the positives/negatives as well as what the future may bring</description>
     </item>
     
     <item>
@@ -134,236 +56,18 @@ idea quite interesting&lt;/li&gt;
       <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
       
       <guid>https://nayibor.github.io/post/c33083b29ef6e62daebc9459653f84b9/</guid>
-      <description>&lt;p&gt;i have been working on  an iso8583 parsing library.
-&lt;br&gt;its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages.
-&lt;br&gt;this library can be used for packing and unpacking iso8583 financial messages.
-&lt;br&gt;It accepts a specification file which contains info about fields,mti,bitmap for your messages.
-&lt;br&gt;The specification has info such as header length for various fields,padding info for fields,etc&amp;hellip;
-&lt;br&gt;This specification information is then used for packing/unpacking iso8583 formatted messages.
-&lt;br&gt;you will mostly be using the pack/unpack functions plus setting up specification files.
-&lt;br&gt;it can be found on hex at &lt;a href=&#34;https://hex.pm/packages/iso8583_erl&#34;&gt;iso8583_erl&lt;/a&gt; or here &lt;a href=&#34;https://github.com/nayibor/iso8583_erl&#34;&gt;iso8583_erl&lt;/a&gt;
-&lt;br&gt;you can find info for using it at the github url.
-&lt;br&gt;take it out for a spin and let me know how you find it !!.&lt;/p&gt;
-</description>
+      <description>i have been working on an iso8583 parsing library. its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages. this library can be used for packing and unpacking iso8583 financial messages. It accepts a specification file which contains info about fields,mti,bitmap for your messages. The specification has info such as header length for various fields,padding info for fields,etc&amp;hellip; This specification information is then used for packing/unpacking iso8583 formatted messages.</description>
     </item>
     
     <item>
       <title>Deploying code with git and apache</title>
-      <link>https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/</link>
+      <link>https://nayibor.github.io/post/deploying-code-with-git-and-apache/</link>
       <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/</guid>
-      <description>
-
-&lt;p&gt;Today we are going to talk about how to deploy our code to our testing server or production server using git/apache.
-In this scenario git will be taking the place of the tradional method of using ftp servers to upload code to a server.&lt;/p&gt;
-
-&lt;p&gt;We will get to know how to&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;configure a remote git repository so it checks out data to a web root location&lt;/li&gt;
-&lt;li&gt;configure apache and create an apache conf file that will enable communication between the git repository and apache&lt;/li&gt;
-&lt;li&gt;setup authenticaton in apache for git events&lt;/li&gt;
-&lt;li&gt;push to remote repository and see files in web root&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Let&amp;rsquo;s hit the road!!!&lt;/p&gt;
-
-&lt;h3 id=&#34;configure-remote-git-repository&#34;&gt;Configure remote git repository&lt;/h3&gt;
-
-&lt;p&gt;We first need to create an empty remote git repository on the remote box we want to push changes to using apache.
-For the sake of this post the local/remote repositories can be on the same local machine but the distinction has to be
-made betweeen local repository(where u store your local work/code) and remote repo(remote repo where u push after working)
-which is usually on a remote machine with a git repo available.&lt;/p&gt;
-
-&lt;p&gt;Assuming we want to create the  local repo in &lt;em&gt;/opt/git/local/&lt;/em&gt; and the remote repo in &lt;em&gt;/opt/git/remote/test_repo.git&lt;/em&gt;
-We use the commands below
-
-##for local
-cd /opt/git/
-mkdir local
-cd local
-git init
-##for remote
-cd /opt/git/
-mkdir remote
-cd remote
-git init --bare --shared=group test_repo.git
-&lt;/p&gt;
-
-&lt;p&gt;The flag &lt;em&gt;- -bare&lt;/em&gt; create an empty repository with no content.
-The &lt;em&gt;- -shared=group&lt;/em&gt; flag also creates a git repository which will be shared among many users.&lt;/p&gt;
-
-&lt;p&gt;We now have to enable pushing to the remote git repository else valid users won&amp;rsquo;t be able to push to the git repository.
-We use the commands below to enabling pushing
-
-cd /opt/git/remote/test_repo.git
-git config --file config http.receivepack true
-
-We now need to create what is called a &lt;em&gt;git hook&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;A git hook is a script which can perform some action when some event occurs.
-They are stored in the .git/hooks/ directory of your git repository.
-They are executed at various stages when using git such  as when a  push,commit,merge ,etc is done ..&lt;/p&gt;
-
-&lt;p&gt;There are &lt;em&gt;client side hooks&lt;/em&gt; as well as &lt;em&gt;server side hooks&lt;/em&gt;.
-Client side hooks are used on the local repository and server side hooks on the remote repository.&lt;br /&gt;
-We will be using the &lt;em&gt;post-receive&lt;/em&gt; hook which is a server side hook which gets run after the push is done.
-This script can’t stop the push process, but the client doesn’t disconnect until it has completed, so be careful if you try to do anything that may take a long time.&lt;/p&gt;
-
-&lt;p&gt;We will rename the &lt;em&gt;post-receive.sample&lt;/em&gt; to &lt;em&gt;post-receive&lt;/em&gt; in the &lt;em&gt;/opt/git/remote/test_repo.git/hooks/&lt;/em&gt; folder
-and make it executable so it can be run after a git push.&lt;/p&gt;
-
-&lt;p&gt;We will then paste in our shell script to move our code to the web root of our box.
-We use the code below
-
-##renames post-receive sampe script to post-receive 
-mv /opt/git/remote/test_repo.git/hooks/post-receive.sample /opt/git/remote/test_repo.git/hooks/post-receive
-##makes it executable
-chmod u+x /opt/git/remote/test_repo.git/hooks/post-receive
-
-We now paste in our shell script below into &lt;em&gt;post-receive&lt;/em&gt; to move our content to the web root after the push is done.&lt;/p&gt;
-
-&lt;p&gt;
-#!/bin/bash
-
-unset GIT_INDEX_FILE
-##the target below should have been created already in our web root else we will get an error 
-## although the push will succed
-TARGET=&#34;/var/www/html/remote/test_repo_web&#34;
-GIT_DIR=&#34;/opt/git/remote/test_repo.git/&#34;
-##this can be http or https depending on whether you are using a http/https
-UAT_BRANCH_PATH=&#34;http://127.0.0.1/remote/test_repo_web&#34;
-
-##this short script creates a new directory where branches can be checked out to
-##if branch directory does not exist it is  created and data is checked in there 
-##some checks will have to be done if branch conforms to naming conventions
-
-while read oldrev newrev ref
-do
-        
-        IN=$ref
-        BRANCH_NAME=$(git rev-parse --symbolic --abbrev-ref $ref)
-        BRANCH=$TARGET/$BRANCH_NAME     
-        echo &#34;branch is ${BRANCH_NAME}&#34;
-        if [ ! -d &#34;$BRANCH&#34; ]; then
-                echo  &#34;Creating branch directory&#34;
-                mkdir   $BRANCH
-                echo  &#34;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&#34;
-                echo &#34;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&#34;
-                git --work-tree=$BRANCH --git-dir=$GIT_DIR checkout -f $BRANCH_NAME
-        else
-                echo  &#34;Branch exists. skipping creation&#34;
-                echo  &#34;Ref $ref received. Deploying ${BRANCH_NAME} branch to uat...&#34;
-                echo &#34;Go to ${UAT_BRANCH_PATH}/${BRANCH_NAME} to view/review changes&#34;               
-                git --work-tree=$BRANCH --git-dir=$GIT_DIR checkout -f $BRANCH_NAME
-        fi
-done
-
-the basic thing which gets done here is that for every change from our local repo which is pushed to remote
-the code in the branch is checked out to  &lt;em&gt;test_repo_web/branch_name&lt;/em&gt; and can be viewed at
-&lt;em&gt;&lt;a href=&#34;http://127.0.0.1/remote/test_repo_web/branch_name&#34;&gt;here&lt;/a&gt;&lt;/em&gt;.
-It actually overwrites the content in the branch with the new content in the push.
-Cool huuh ?? .&lt;/p&gt;
-
-&lt;p&gt;Thats it for git !! . Next is apache.&lt;/p&gt;
-
-&lt;h3 id=&#34;configure-apache&#34;&gt;Configure apache&lt;/h3&gt;
-
-&lt;p&gt;Assuming you dont have apache installed, you have to install it for your os distribution first before continuing.
-After installing apache you have to enable some modules which are needed for our purpose.
-We will use the command below to enable the modules we need
- 
-sudo a2enmod cgi alias env auth_digest
-
-this enables the following modules with their respecive uses&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;cgi&lt;/em&gt; module allows apache to communicate with the cgi script &lt;em&gt;git-http-backend&lt;/em&gt; which is
-is a simple CGI program to serve the contents of a Git repository to Git clients
-accessing the repository over &lt;em&gt;http://&lt;/em&gt; and &lt;em&gt;https://&lt;/em&gt; protocols.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;alias&lt;/em&gt; module allow for manipulation and control of URLs as requests arrive at the server.
-This is necessary becuase we will be setting up patterns which identify requests as git requests&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;env&lt;/em&gt; allows control of the environment that will be provided to CGI scripts and SSI pages.
-We basically need to pass environmental variables and pass them to the &lt;em&gt;git-http-backend&lt;/em&gt; cgi script&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;auth_digest&lt;/em&gt; module enables us to setup authentication using md5 digests stored in password files.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;After enabling the above modules,we now need to creat an apache configuration file for git .
-So we creat an apache config file for git,insert comands in and make sure that apache loads it when its starting.&lt;br /&gt;
-
-touch /etc/apache2/git.conf
-
-We then put the following content in it .
-The various uses of the various segments are added as comments in the configuration below.
-
-#environmental variables for git-http-backend
-#also tells apache to run the git-http-backend as the handler for anything coming into 
-#the /git/ path your web server
- 
-SetEnv GIT_PROJECT_ROOT /opt/git/remote/
-SetEnv GIT_HTTP_EXPORT_ALL
-ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
-
-##tells apache to allow requests to this path which contains git commands
-&lt;Directory &#34;/usr/lib/git-core*&#34;&gt;
-Options +ExecCGI +Indexes
-Require all granted
-&lt;/Directory&gt;
-
-#tells apache to ask for authentication before allowing  pushing
-#it will use the /opt/git/.htpasswd file for authentication
-&lt;LocationMatch &#34;^/git/.*/git-receive-pack$&#34;&gt;
-AuthType Digest
-AuthName &#34;Git Access&#34;
-AuthUserFile /opt/git/.htpasswd
-Require valid-user
-&lt;/LocationMatch&gt;
-
-We then execute the commands below in &lt;em&gt;/etc/apache2.conf&lt;/em&gt; so the conf file gets loaded and also restart apache so the enabled modules are loaded
-
-sudo echo &#34;Include /etc/apache2/git.conf&#34; &gt;&gt; /etc/apache2/apache2.conf
-sudo apache2 restart
-&lt;/p&gt;
-
-&lt;h3 id=&#34;setup-authentication&#34;&gt;Setup authentication&lt;/h3&gt;
-
-&lt;p&gt;We next need to setup authentication so the whole world cant push to our git repository.
-We partly did that by setting up the AuthUserFile but we now have to create the physical file and put users in it .
-we do the following
-
-##create auth file 
-touch /opt/git/.htpasswd
-##add users
-htdigest  /opt/git/.htpasswd &#34;Git Access&#34; test
-##enter password when prompted
-
-This sets up git to use the password file for authentication when a git push is being made.
-You can add as many users as possible to the file as well as edit the password of the existin users using the htdigest command.&lt;/p&gt;
-
-&lt;h3 id=&#34;push-to-remote-repository-and-view-files-through-browser&#34;&gt;Push to remote repository and view files through browser&lt;/h3&gt;
-
-&lt;p&gt;Now we are ready to make some changes to our local repo .
-after the changes are made,we will be able to view the changes cuz the branch will have been moved to the web root.
-Exampe if we were to  execute the following  commands below in our local repo
-
-cd /opt/git/local/
-git remote add origin http://127.0.0.1/git/test_repo.git
-git checkout -b testing
-touch index.html
-echo &#34;&lt;div&gt;It works!!&lt;/div&gt;&#34; &gt;&gt; index.html
-git add index.html
-git commit
-git push -u origin testing
-##ask for username and password here password here.. 
-## enter test and the password you used earlier 
-
-we can access the &lt;em&gt;testing&lt;/em&gt; branch at this url &lt;em&gt;&lt;a href=&#34;http://127.0.0.1/remote/test_repo_web/testing/index.html&#34;&gt;here&lt;/a&gt;&lt;/em&gt; .
-We can use this method to make our code viewable on the web if the code is web based stuff.
-We can also use this to push code to a seperate folder if we dont want the code to be viewable on the web.&lt;/p&gt;
-
-&lt;p&gt;Either way with a little creativity we can do some nice stuff with git.&lt;/p&gt;
-</description>
+      <guid>https://nayibor.github.io/post/deploying-code-with-git-and-apache/</guid>
+      <description>Today we are going to talk about how to deploy our code to our testing server or production server using git/apache. In this scenario git will be taking the place of the tradional method of using ftp servers to upload code to a server.
+We will get to know how to
+ configure a remote git repository so it checks out data to a web root location configure apache and create an apache conf file that will enable communication between the git repository and apache setup authenticaton in apache for git events push to remote repository and see files in web root  Let&amp;rsquo;s hit the road!</description>
     </item>
     
     <item>
@@ -372,250 +76,10 @@ We can also use this to push code to a seperate folder if we dont want the code 
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
       
       <guid>https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/</guid>
-      <description>
-
-&lt;p&gt;Web templating languages!!. Don&amp;rsquo;t we love em.
-&lt;div&gt;
-&lt;img src=&#34;https://nayibor.github.io/images/underscore.png&#34; alt=&#34;underscore&#34; /&gt;
-&lt;img src=&#34;https://nayibor.github.io/images/handlebars_logo.png&#34; alt=&#34;handlerbars&#34; /&gt;
-&lt;img src=&#34;https://nayibor.github.io/images/mustache.png&#34; alt=&#34;mustache&#34; /&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;Every one has their favourite but a common denominator among them all is that they make our work as web developers
-easier by giving us separation of concerns between data and content as well as lots of other &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system#Motivations_and_typical_uses&#34;&gt;advantages&lt;/a&gt;.
-A fancy term for web templating languages is a web template system.&lt;/p&gt;
-
-&lt;p&gt;From Wikipedia a &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system&#34;&gt;Web template system&lt;/a&gt; is defined as&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;A web template system uses a template processor to combine web templates to form finished web pages,
-possibly using some data source to customize the pages or present a large amount of content on similar-looking pages&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;a simple JavaScript example using &lt;a href=&#34;https://github.com/janl/mustache.js&#34;&gt;mustach&lt;/a&gt; is seen below
-&lt;pre&gt;
-    &lt;code class=&#34;javascript&#34;&gt;
-        var view = {
-          title: &amp;ldquo;Joe&amp;rdquo;,
-          calc: function () {
-            return 2 + 4;
-          }
-        };
-        &amp;gt; var output = Mustache.render(&amp;ldquo;{{title}} spends {{calc}}&amp;rdquo;, view);
-        &amp;gt; console.log(output)
-        &amp;gt; Joe spends 6
-    &lt;/code&gt;
-&lt;/pre&gt;
-However today we are having a different take on templating i.e. libraries,frameworks  which generate content without mixing html with the template system.
-These frameworks,libraries rather have helper functions which are used for generating various dom elements without mixing in html with template logic.
-&lt;!--&lt;pre&gt;
-    &lt;code class=&#34;javascript&#34;&gt;
-var output = Mustache.render(“&lt;label&gt;{{title}} spends {{calc}}&lt;/label&gt;”, view);
-    &lt;/code&gt;
-&lt;/pre&gt;
---&gt;&lt;/p&gt;
-
-&lt;p&gt;We will be giving basic examples from the following three languages,frameworks.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;yaws &lt;a href=&#34;http://yaws.hyber.org/dynamic.yaws&#34;&gt;ehtml&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;elm &lt;a href=&#34;https://guide.elm-lang.org/architecture/user_input/buttons.html&#34;&gt;views&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;mitril.js &lt;a href=&#34;https://mithril.js.org/#components&#34;&gt;components&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;yaws-ehtml&#34;&gt;yaws ehtml&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://yaws.hyber.org/&#34;&gt;Yaws&lt;/a&gt; is a high performance web server written using the erlang programming language.It has a handy way of generating html using erlang called ehtml .
-Using ehtml, erlang terms can be used directly to represent html code which will be sent to the browser.An example below&lt;br /&gt;
-&lt;pre&gt;
-    &lt;code class=&#34;erlang&#34;&gt;
-out(A) -&amp;gt;
-    {ehtml,
-        {table, [{bgcolor, grey}],
-            [
-                {tr, [],
-                    [
-                        {td, [], &amp;ldquo;1&amp;rdquo;},
-                        {td, [], &amp;ldquo;2&amp;rdquo;},
-                        {td, [], &amp;ldquo;3&amp;rdquo;}
-                    ]
-                },
-                {tr, [],
-                    [
-                        {td,[{colspan, &amp;ldquo;3&amp;rdquo;}], &amp;ldquo;444&amp;rdquo;}
-                    ]
-                }
-            ]
-        }
-    }.
-    &lt;/code&gt;
-&lt;/pre&gt;
-This will expand into the html below
-
-&lt;table bgcolor=&#34;grey&#34;&gt;
-&lt;tr&gt;
-&lt;td&gt; 1 &lt;/td&gt;
-&lt;td&gt; 2 &lt;/td&gt;
-&lt;td&gt; 3 &lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td colspan=&#34;3&#34;&gt; 444 &lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-
-Another example below which will generate a list of headers sent with a request in yaws using erlang is seen below
-&lt;pre&gt;
-    &lt;code class=&#34;erlang&#34;&gt;
-out(A) -&amp;gt;
-    H = yaws_api:reformat_header(A#arg.headers),%%list containing headers
-    {ehtml,
-    [
-        {h4,[], &amp;ldquo;The headers passed to us were:&amp;ldquo;},
-        {hr},
-        {ol, [],lists:map(fun(S) -&amp;gt; {li,[], {p,[],S}} end,H)}
-    ]}.
-    &lt;/code&gt;
-&lt;/pre&gt;
-The &lt;em&gt;list:map(a,b)&lt;/em&gt; stuff in there is like a loop going through all the headers and generating li elements out of the header sent in the request.
-The above code will expand into the html below
-
-&lt;h4&gt;The headers passed to us were:&lt;/h4&gt;&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Connection: keep-alive&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Host: localhost:8004&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Accept-Language: en-US,en;q=0.8&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Accept-Encoding: gzip, deflate, sdch&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Upgrade-Insecure-Requests: 1&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Cache-Control: max-age=0&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;
-
-I know the syntax is a bit foreign :) but bear with me . In both examples the power of the language was used to generate the html.
-this makes expressing sometimes very complex logic easy while keeping input data seperate from content.&lt;/p&gt;
-
-&lt;h1 id=&#34;elm-views&#34;&gt;elm views&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://elm-lang.org/&#34;&gt;Elm&lt;/a&gt; is a functional language that compiles to javascript .You can do some really cool front end stuff  with elm but for the purposes of this post we will concentrate on how  a view (html output) is created in elm. An example below of code for creating html output in elm is given below
-&lt;pre&gt;
-    &lt;code class=&#34;elm&#34;&gt;
-view : Model -&amp;gt; Html Msg
-view model =
-  div []
-    [
-      input  [ type_ &amp;ldquo;text&amp;rdquo;, placeholder &amp;ldquo;Name&amp;rdquo;] []
-    , button [ onClick Decrement ] [ text &amp;ldquo;-&amp;rdquo; ]
-    , div [] [ text (toString model) ]
-    , button [ onClick Increment ] [ text &amp;ldquo;+&amp;rdquo; ]
-    , div [] [ text &amp;ldquo;&amp;rdquo; ]
-    , button [ onClick Reset ] [ text &amp;ldquo;0&amp;rdquo; ]
-    ]
-    &lt;/code&gt;
-&lt;/pre&gt;&lt;/p&gt;
-
-&lt;p&gt;the code below is called a type annotation which is similar to defining types in function headers in more object oriented languages like java.
-&lt;pre&gt;
-    &lt;code class=&#34;elm&#34;&gt;
-view : Model -&amp;gt; Html Msg
-    &lt;/code&gt;
-&lt;/pre&gt;
-it means view is a function which accepts a Model type and returns an Html Msg value.
-This means that it is a chunk of HTML that can produce Msg values.
-kind of like this in java.
-&lt;pre&gt;
-    &lt;code class=&#34;java&#34;&gt;
-public static &lt;Msg&gt; Html&lt;Msg&gt; view (model Data ){&amp;hellip;}
-    &lt;/code&gt;
-&lt;/pre&gt;&lt;/p&gt;
-
-&lt;p&gt;Back to the elm example.&lt;/p&gt;
-
-&lt;p&gt;Notice how the data is used as input to the html element generation and event functions(&lt;em&gt;input&lt;/em&gt;,&lt;em&gt;button&lt;/em&gt;,&lt;em&gt;div&lt;/em&gt;,&lt;em&gt;onClick&lt;/em&gt;).
-In html generation the general pattern is that the functions(dom elements) accept as the first parameter a list of attributes and
-then a list of child nodes or inner html value as the second parameter.&lt;/p&gt;
-
-&lt;p&gt;So the first div above has no attributes but has child nodes.
-the first input element has a list representing attributes(i.e. the type=text and placeholder=Name).
-the text function can be used for putting  values into the tags and is the innerhtml in the parent div tag .
-The value of &lt;em&gt;model&lt;/em&gt; which contains the state of the application in this case is &lt;em&gt;0&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;the text function accepts only strings as a parameter  so 0 has to converted to &amp;ldquo;0&amp;rdquo; else there will be an error thrown.
-&lt;em&gt;(toString model)&lt;/em&gt; just means turn 0 into a string and give us the result of that computation.
-Elm is statically typed so does type checking at compile time. one nice thing it also has is &lt;a href=&#34;https://en.wikipedia.org/wiki/Type_inference&#34;&gt;type inference&lt;/a&gt; which basically means it can infer types without type annotations.
-Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen. This results in very fast rendering speeds :).&lt;/p&gt;
-
-&lt;p&gt;At the end the above elm view code will turn into the html below
-
-&lt;div&gt;
-	&lt;input type=&#34;text&#34; placeholder=&#34;Name&#34;&gt;
-	&lt;button&gt;-&lt;/button&gt;
-	&lt;div&gt;0&lt;/div&gt;
-	&lt;button&gt;+&lt;/button&gt;
-	&lt;div&gt;&lt;/div&gt;
-	&lt;button&gt;0&lt;/button&gt;
-&lt;/div&gt;
-
-pretty neat huh.you also have the power of the
-elm language at your disposal to do any computation,testing you want before outputting html.html elements are are also just functions so
-you can create reusable html elements and use them anywhere you want while  still respecting the separation of data and content.&lt;/p&gt;
-
-&lt;h1 id=&#34;mithril-js-components&#34;&gt;mithril.js components&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://mithril.js.org/&#34;&gt;Mithril&lt;/a&gt; is a modern client-side Javascript framework for building Single Page Applications.
-you can also do some cool stuff with it too but we will be concentrating on the way components are created using javascript in this case.
-An example below of code for creating a component is given below
-&lt;pre&gt;
-    &lt;code class=&#34;javascript&#34;&gt;
-var Hello = {
-    view: function() {
-        return m(&amp;ldquo;main&amp;rdquo;, [
-            m(&amp;ldquo;h1&amp;rdquo;, {class: &amp;ldquo;title&amp;rdquo;}, &amp;ldquo;My first app&amp;rdquo;),
-            m(&amp;ldquo;button&amp;rdquo;, &amp;ldquo;A button&amp;rdquo;),
-        ])
-    }
-};
-m.mount(root, Hello);//to activate the content
-    &lt;/code&gt;
-&lt;/pre&gt;
-A Mithril component is just an object with a view function.
-As usual the code is a variant of a function accepting a list of attributes and a list of child nodes or an inner html value.
-The &lt;em&gt;m(a,b)&lt;/em&gt; is a function for which the first parameter is a list of attributes , the second parameter being a list of child nodes or an inner html value.
-mithril.js also does some virtual dom diffing under the hood so it renders html quite quickly also.
-you can do some really fancy stuff in there especially if you combine it with libraries like &lt;a href=&#34;http://ramdajs.com/&#34;&gt;rambda&lt;/a&gt; for component creation.
-this is a very simple example but it does have all the advantages like ease of testing,separation of data from content,power of js to create components.&lt;/p&gt;
-
-&lt;p&gt;This will expand into the html below
-
-&lt;main&gt;
-    &lt;h1 class=&#34;title&#34;&gt;My first app&lt;/h1&gt;
-    &lt;button&gt;A button&lt;/button&gt;
-&lt;/main&gt;
-&lt;/p&gt;
-
-&lt;h1 id=&#34;summing-up&#34;&gt;Summing up&lt;/h1&gt;
-
-&lt;p&gt;Programming languages which are used as template languages are in a lot of ways very powerful and they enhance templating by&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;making available all  the power of a  programming language to be used in generating templates&lt;/li&gt;
-&lt;li&gt;reduced learning curve since no special syntax has to be learnt to create templates&lt;/li&gt;
-&lt;li&gt;its easier to  debug and find errors when creating  components/html because html/components are all functions
-the compiler/debugger of the language is also at your disposal.elm is super at this :)&lt;/li&gt;
-&lt;li&gt;separation of data from view is very easy .the data mostly become input to the component generation functions&lt;/li&gt;
-&lt;li&gt;rapid and more flexible development due to familiarity with language (this however depends on the capability of the language in question)&lt;/li&gt;
-&lt;li&gt;standards compliance made easier.no more looking for that div hidden somewhere which is breaking all the html code :)&lt;/li&gt;
-&lt;li&gt;not constrained by how the template engine does stuff.logic-less,logic,small template library functions etc&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Web templating languages!!. Don&amp;rsquo;t we love em.
+Every one has their favourite but a common denominator among them all is that they make our work as web developers easier by giving us separation of concerns between data and content as well as lots of other advantages. A fancy term for web templating languages is a web template system.
+From Wikipedia a Web template system is defined as
+ A web template system uses a template processor to combine web templates to form finished web pages, possibly using some data source to customize the pages or present a large amount of content on similar-looking pages</description>
     </item>
     
     <item>
@@ -624,275 +88,8 @@ the compiler/debugger of the language is also at your disposal.elm is super at t
       <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate>
       
       <guid>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</guid>
-      <description>&lt;p&gt;Today we will be showing how to  extract the various components out of an iso string.
-&lt;br&gt;
-The combination of a tcp server as well as code to extract the  iso message components
-and send it for further processing is what is popularly called an interface server in payment processing .
-&lt;/br&gt;
-Specifically the components we are interested in are
-&lt;ul&gt;
-&lt;li&gt;message type indicator also known as mti&lt;/li&gt;
-&lt;li&gt;bitmap&lt;/li&gt;
-&lt;li&gt;data elements&lt;/li&gt;
-&lt;/ul&gt;
- The code snippets  used for this post is in this  git &amp;nbsp;&lt;a href=&#34;https://github.com/nayibor/iso_process_tut_repo&#34;&gt;&lt;i&gt;repository&lt;/i&gt;&lt;/a&gt;.
- Also the 1993 ascii protocol will be used here as well as erlang  programming language for the code explanations . So git clone the repository,cd to &lt;strong&gt;iso_process_tut_repo&lt;/strong&gt; and fire up your erlang vm and lets begin !!.
-&lt;p&gt;Consider the message below&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;1200F230040102B000000000000004000000&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;1048468112122012340000100000001107221800&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;000001161204171926FABCDE123ABD06414243&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;000termid1210Community106A5DFGR1112341234234&lt;/b&gt;&lt;/p&gt;&lt;p&gt;
-the iso message in this case is an ascii string(erlang has no concept of strings just a list of unicode points).
-The function below is what processes the messages and returns a map containing the various fields of the message as well the mti and bitmap
-&lt;blockquote&gt;
-    &lt;p&gt;
--spec process_message([{list | binary,pos_integer()}])-&amp;gt;map().&lt;br /&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-        process_message({binary,Rest})-&amp;gt;
-    &lt;/p&gt;
-&lt;/blockquote&gt;&lt;br /&gt;
-the first statement converts the string to a binary.
-Binary strings or binaries store data in a more space efficient manner and has more efficient functions for handling large binary data.
-&lt;blockquote&gt;
-    &lt;p&gt;
-        Bin_message = erlang:list_to_binary(Rest),%%this gives &amp;lt;&amp;lt;&amp;ldquo;01581200F230040102B&amp;hellip;&amp;rdquo;&amp;gt;&amp;gt;
-    &lt;/p&gt;
-&lt;/blockquote&gt;&lt;br /&gt;
-the next step is to find the mti which is made up of the first 4 digits.We do that and then store the mti along with with some metadata in a map.
-the &lt;strong&gt;?MTI_SIZE&lt;/strong&gt; is macro which is defined at the top of the file  and is equal to 4.&lt;br /&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;
-        Mti = binary:part(Bin_message,0,?MTI_SIZE),%%this gives &amp;lt;&amp;lt;&amp;ldquo;1200&amp;rdquo;&amp;gt;&amp;gt;
-    &lt;/p&gt;&lt;p&gt;
-        Mti_Data_Element = maps:from_list([{ftype,ans},{fld_no,0},{name,&amp;lt;&amp;lt;&amp;ldquo;Mti&amp;rdquo;&amp;gt;&amp;gt;},{val_binary_form,Mti}]),
-    &lt;/p&gt;
-    &lt;p&gt;
-        %%this gives #{fld_no =&amp;gt; 0,ftype =&amp;gt; ans,name =&amp;gt; &amp;lt;&amp;lt;&amp;ldquo;Mti&amp;rdquo;&amp;gt;&amp;gt;,val_binary_form =&amp;gt; &amp;lt;&amp;lt;&amp;ldquo;1200&amp;rdquo;&amp;gt;&amp;gt;}&lt;br /&gt;
-    &lt;/p&gt;
-&lt;/blockquote&gt;&lt;/p&gt;
-
-&lt;p&gt;the next step is to get the bitmap which is a hexadecimal(base 16
-number)which starts from the fifth  digit and is either 8 or 16 in
-size.
-&lt;br&gt;
-The bitmap tell us which data elements exist in the message.
-the bitmap is either a &lt;strong&gt;primary bitmap&lt;/strong&gt; or a &lt;strong&gt;secondary bitmap&lt;/strong&gt;.
-the first bit in a bitmap tell us whether the secondary bitmap exists.
-the bitmap is either an 8 byte(primary) or 16 byte(secondary) hexadecimal which when converted to base 2 shows the presence or absence of fields from 1 to 128.
-Each bit in a primary/secondary bitmap shows the presence/absence of a data element.
-&lt;br&gt;
-Each digit when converted into base 2 and left padded to a max of 4 digits with zero represents the presence or absence of 4 data elements.
-For example the bitmap &lt;strong&gt;4210001102C04804&lt;/strong&gt; is &lt;strong&gt;0100001000010000000000000001000100000010110000000100100000000100&lt;/strong&gt; in base 2.
-&lt;br&gt;
-this means Fields 2, 7, 12, 28, 32, 39, 41, 42, 50, 53, 62 are present and there is no secondary bitmap since bit 1 is 0.
-&lt;br&gt;
-Find below code sections for getting the bitmap out of our message as
-explained above from
-&lt;blockquote&gt;
-    &lt;p&gt;
-        Fthdig = binary:part(Bin_message,4,1),%%this gives F
-    &lt;/p&gt;
-&lt;/blockquote&gt;
-to&lt;br /&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;
-        Bitmap_transaction = &amp;lt;&amp;lt; &amp;lt;&amp;lt; (convert_base_pad(One,4,&amp;lt;&amp;lt;&amp;ldquo;0&amp;rdquo;&amp;gt;&amp;gt;)):4/binary &amp;gt;&amp;gt;  || &amp;lt;&lt;a href=&#34;One:1/binary&#34;&gt;One:1/binary&lt;/a&gt;&amp;gt; &amp;lt;= Bitmap_Segment &amp;gt;&amp;gt;,
-        %%this gives &amp;lt;&amp;lt;&amp;ldquo;111100100011000000000100000000010&amp;hellip;&amp;rdquo;&amp;gt;&amp;gt;
-    &lt;/p&gt;&lt;br /&gt;
-&lt;/blockquote&gt;
-the next three statements creates a map which contains the bitmap and
-the mti .
-&lt;br&gt;The next step is to get the data elements which is the actual
-content of the message itself and contains info like&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;transaction amount&lt;/li&gt;
-&lt;li&gt;currency&lt;/li&gt;
-&lt;li&gt;transaction type&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;the start_index calculation tells us  to start processing the binary
-string at a particular position.Since the primary bitmap is always sent
-with every message and the secondary bitmap is optional we start the
-processing from the point of the  secondary bitmap .
-&lt;br&gt;
-Of importance to note is the &lt;strong&gt;get_spec_field&lt;/strong&gt; function which contains
-info about every data element.The function returns info such as&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;maximum field length&lt;/li&gt;
-&lt;li&gt;field type&lt;/li&gt;
-&lt;li&gt;whether field is fixed length or variable length&lt;/li&gt;
-&lt;li&gt;header length if field has a header&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Variable length fields have a header which shows how long the field is
-even though the field may have a maximum length .
-&lt;br&gt;You could say this is the erlang representation of the iso93 asci
-spec.This also makes it quite easy to modify the spec if some fields
-change.&lt;/p&gt;
-
-&lt;p&gt;the fold_bin function is a custom function which kind of works like a
-list fold. In this case instead of a list it takes a binary,accepts a
-fun for processing the binary and processes the binary until the
-binary is of size zero .there is also an accumilator variable in there
-just like with a list fold .
-&lt;blockquote&gt;
-    &lt;p&gt;
-        fold_bin(_Fun, Accum, &amp;lt;&amp;lt;&amp;gt;&amp;gt;) -&amp;gt; Accum;
-    &lt;/p&gt;&lt;p&gt;
-        fold_bin(Fun, Accum, Bin) -&amp;gt;
-    &lt;/p&gt;&lt;p&gt;
-            {NewBin, NewAccum} = Fun(Bin, Accum),
-    &lt;/p&gt;&lt;p&gt;
-            fold_bin(Fun, NewAccum, NewBin).
-    &lt;/p&gt;&lt;br /&gt;
-&lt;/blockquote&gt;&lt;br /&gt;
-The reason for this is because we will be passing the bitmap as the
-input element with the iso message also being passed as an input but as an accumulator
-in this case.The bitmap of course represents the presence or absence of a field .
-&lt;br&gt;If a field is present then we extract the data element out
-of the iso message because the iso message will be available on every
-iteration and then move on.If the field is not present we move on to the
-next element anyway .
-&lt;br&gt;The fold_bin segment which gets the data elements and puts them in
-a map works like this in its simplified form&lt;br /&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;
-        &lt;strong&gt;OutData=fold_bin(
-        fun
-        &lt;br&gt;(Bitmap,
-        {Data_for_use_in,Index_start_in,Current_index_in,Map_out_list_in})
-        when X =:= &amp;lt;&amp;lt;&amp;ldquo;1&amp;rdquo;&amp;gt;&amp;gt; -&amp;gt;&lt;/strong&gt;
-    &lt;/p&gt;&lt;p&gt;
-        in this case field exists
-        &lt;br&gt;
-        Data_for_use_in = Iso Message as input in fold_bin function
-        &lt;br&gt;
-        Index_start_in = Position we are in in iso message which
-        corresponds to a specific start position for data element
-        &lt;br&gt;
-        Current_index_in = current data element
-        &lt;br&gt;
-        Map_out_list_in = accumulator for data elements
-        &lt;br&gt;
-        statement to extract data elements based on field
-        length,maximum length etc follow..
-    &lt;/p&gt;&lt;p&gt;
-        &lt;strong&gt;{Rest_bin,{Data_for_use_in,New_Index,Fld_num_out,NewMap}};&lt;/strong&gt;
-        &lt;br&gt;
-        %%output which contains NewMap which contains the data element
-        &lt;br&gt;
-        Rest_bin =  bitmap which contains presence/absence of
-        data elements yet to be processed
-        &lt;br&gt;
-        Data_for_use_in = Iso Message as input in fold_bin function
-        &lt;br&gt;
-        New_Index = Position we are in in iso message which
-        corresponds to a specific start position for next data element
-        &lt;br&gt;
-        Fld_num_out = next data element&lt;br /&gt;
-        &lt;br&gt;
-        Also New_Index is the position of the next element so we know
-        where in the binary to start processing the next date element and Fld_num_out
-        is the fld_num which we will use for getting the spec for a
-        field using the &lt;strong&gt;get_spec_field&lt;/strong&gt; function&lt;br /&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-        &lt;strong&gt;(Bitmap,
-        {Data_for_use_in,Index_start_in,Current_index_in,Map_out_list_in})
-        when X =:= &amp;lt;&amp;lt;&amp;ldquo;0&amp;rdquo;&amp;gt;&amp;gt; -&amp;gt;&lt;/strong&gt;
-    &lt;/p&gt;&lt;p&gt;
-        in this case field does not exist
-        &lt;br&gt;
-        &amp;hellip;statement to extract data elements based on field
-        length,maximum length etc..
-    &lt;/p&gt;&lt;p&gt;
-        &lt;strong&gt;{Rest_bin,{Data_for_use_in,New_Index,Fld_num_out,NewMap}};&lt;/strong&gt;
-        &lt;br&gt;
-    &lt;/p&gt;&lt;p&gt;
-        &lt;strong&gt;end,
-        {Bin_message,Start_index,1,Map_Data_Element},Bitmap_transaction),&lt;/strong&gt;
-        &lt;br&gt;
-        %%
-        Bin_message = Iso Message
-        &lt;br&gt;
-        Start_index = is used to tell where to start processing the
-        binary from ,
-        &lt;br&gt;
-        1  = this tells us we are starting from field 1
-        &lt;br&gt;
-        Map_Data_Element = the accumulator for the data elements
-        where each data element is added this accumulator as a map
-        with some metadata about the data element also added
-    &lt;/p&gt;
-&lt;/blockquote&gt;
-   At each iteration as we are going through the iso message there is
-   a calculation which is done to find out metadata about the data element .
-   This metadata will give us the header length of the field or if
-   even the field has a header .After we get the header  or not we
-   then get to calculate the actual message and its starting and
-   ending points .
-   &lt;br&gt;
-    After the data element is obtained it is put in the output map
-    along with some metadata about the data element.
-    &lt;br&gt;&lt;br /&gt;
-    Please browse through the source code to better understand the
-    code as well as how to get the various data elements if my explanation
-    is not enough .
-    &lt;br&gt;
-    There is also a function on how to do the above with strings.
-&lt;blockquote&gt;
-    &lt;p&gt;
-        process_message({list,Rest})-&amp;gt;&lt;br /&gt;
-    &lt;/p&gt;
-&lt;/blockquote&gt;&lt;br /&gt;
-    As i said earlier binaries occupy less space and has more
-    efficient functions for processing but you can browse through the
-    code to get a better idea of processing the message but using
-    string functions .
-    &lt;br&gt;
-    To test it out by sending sample iso messages open the erlang
-    shell and compile the iso_process with &lt;strong&gt;c(iso_process)&lt;/strong&gt;.You can
-    then send iso messages by first starting the server with
-&lt;blockquote&gt;
-    &lt;p&gt; iso_process:start_iso_server().&lt;/p&gt;
-&lt;/blockquote&gt;&lt;br /&gt;
-afterwhich you can send iso messages with
-&lt;blockquote&gt;
-    &lt;p&gt; iso_process:send(&amp;ldquo;01581200F230040102B00000000000000400000010&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;
-    &amp;ldquo;48468112122012340000100000001107221800000001161204171926FA&amp;rdquo;
-    &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;
-    &amp;ldquo;BCDE123ABD06414243000termid1210Community106A5DFGR1112341234234&amp;rdquo;).
-    &lt;/p&gt;
-&lt;/blockquote&gt;
-Note that the iso message must be preceded by length of the message
-so in this case &lt;strong&gt;0158&lt;/strong&gt; was the length of the message and was added to
-the message when the message was being sent.
-&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;Alternatively there is a java file &lt;em&gt;Test_java_client.java&lt;/em&gt; which you can
-use to edit and send messages to the iso server example.
-&lt;br&gt;
-After editing the various iso fields in the file you can then compile
-the file using
- &lt;blockquote&gt;
-    &lt;p&gt;
-    javac -cp .:jpos-2.0.7-SNAPSHOT.jar Test_java_client.java
-    &lt;/p&gt;
-&lt;/blockquote&gt;
-and send the message to the erlang iso server which should have been
-started using
- &lt;blockquote&gt;
-    &lt;p&gt;
-    java -Xbootclasspath/p:jpos-2.0.7-SNAPSHOT.jar Test_java_client 8002
-    &lt;/p&gt;
-&lt;/blockquote&gt;
-This is where i wind down.&lt;/p&gt;
-</description>
+      <description>Today we will be showing how to extract the various components out of an iso string. The combination of a tcp server as well as code to extract the iso message components and send it for further processing is what is popularly called an interface server in payment processing . Specifically the components we are interested in are
+the next step is to get the bitmap which is a hexadecimal(base 16 number)which starts from the fifth digit and is either 8 or 16 in size.</description>
     </item>
     
     <item>
@@ -901,8 +98,7 @@ This is where i wind down.&lt;/p&gt;
       <pubDate>Mon, 12 Dec 2016 07:57:26 +0000</pubDate>
       
       <guid>https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/</guid>
-      <description>&lt;p&gt;Today we are going to talk about creating a tcp server to &amp;nbsp;parse iso messages using erlang . This tutorial explains the very basic of creating tcp servers in erlang . there are better specialized &amp;nbsp;libraries out there (&lt;a href=&#34;https://github.com/ninenines/ranch&#34;&gt;ranch&lt;/a&gt;) for creating tcp servers and pools of them but this is very basic and we need just a simple tcp server to show how to process incoming iso messages .&amp;nbsp;&lt;br&gt;&lt;/p&gt;&lt;p&gt;We will be using the 1993 iso8583 ascii protocol format .&lt;br&gt;I covered this in a previous post(&lt;a href=&#34;https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/&#34;&gt;here&lt;/a&gt;) so you can go there to get a basic summary of iso8583 . knowledge of this protocol and also erlang would help &amp;nbsp;.&lt;/p&gt;&lt;p&gt;to install erlang go &lt;a href=&#34;http://www.erlang.org/downloads&#34;&gt;here&lt;/a&gt;&amp;nbsp;.&amp;nbsp;&lt;/p&gt;&lt;p&gt;the files for the example is contained in this git &amp;nbsp;&lt;a href=&#34;https://github.com/nayibor/iso_process_tut_repo&#34;&gt;&lt;i&gt;repository&lt;/i&gt;&lt;/a&gt; &amp;nbsp;.&amp;nbsp;&lt;/p&gt;&lt;p&gt;Lets hit the road !!&lt;br&gt;&lt;/p&gt;&lt;h2&gt;Creating a basic tcp server in erlang&lt;/h2&gt;&lt;p&gt;lets look at the iso_process.erl file and the portions where the tcp server is created .&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;%% @doc this part is for starting the iso server &lt;br&gt;-spec start_iso_server()-&amp;gt;[pid()] | {error,term()}. &lt;br&gt;start_iso_server()-&amp;gt; ....&lt;br&gt;&lt;/p&gt;&lt;p&gt;%% @doc this part is for listener socket&lt;br&gt;-spec loop_listen(port())-&amp;gt;[port()] | {error,term()} | fun(). &lt;br&gt;loop_listen(Listen_socket)-&amp;gt;....&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;the start_iso_server function and the loop_listen function are responsible for creating the tcp server and erlang processes for handling client connection .&lt;/p&gt;&lt;p&gt;the {ok,Listen} = gen_tcp:listen(...) in &lt;b&gt;start_iso_server&lt;/b&gt; function creates the tcp listener socket and sets up pattern matching so if the listener socket &amp;nbsp;is created successfully the code goes on succesfully else it stops if there is an error(eg.. if port is being used by another program) .&amp;nbsp;&lt;/p&gt;&lt;p&gt;note that because the messages will be coming as strings and also because we want to process only one message at a time we use &lt;b&gt;[list, {packet, 0},{active, once}]&lt;/b&gt; options .strings are represented as lists in erlang so list is in there . the {packet,0} option also tells us to allow messages to flow without breaking it up .&lt;/p&gt;&lt;p&gt;&amp;nbsp;the&lt;b&gt; loop_listen&lt;/b&gt; function&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;%% @doc this part is for listener socket&lt;br&gt;-spec loop_listen(port())-&amp;gt;[port()] | {error,term()} | fun(). &lt;br&gt;loop_listen(Listen_socket)-&amp;gt;...&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&amp;nbsp;is &amp;nbsp;what waits for connections from clients and independently deal with each client connection while the loop_receive is what is responsible for sending/receiving data from clients .&lt;br&gt;&lt;/p&gt;&lt;p&gt;the &lt;b&gt;loop_receive &lt;/b&gt;function&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;%% @doc this part is for the acceptor socket &lt;br&gt;-spec loop_receive(port(),[])-&amp;gt;[pos_integer()] | {error,term()} | fun().        &lt;br&gt;loop_receive(Socket,Isom)-&amp;gt;...&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&amp;nbsp;is the function which receives communicates with clients . i.e. sends and receives data in this case iso messages from clients .&lt;/p&gt;&lt;p&gt;for every iso string(string = header+iso message) sent &amp;nbsp; a check is first done to get the header which contains the size of the iso message messsage itself . the size of the message in the header is then used to calculate &amp;nbsp;how many more bits needs to be streamed to get the whole message in . the iso string is streamed until the whole message is obtained after which it is processed with this function&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;                               Response_message = process_message(Rest),&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;TO run the program do a git clone of the &lt;a href=&#34;https://github.com/nayibor/iso_process_tut_repo&#34;&gt;repo&lt;/a&gt;&amp;nbsp;.&lt;/p&gt;&lt;p&gt;cd to the&amp;nbsp;iso_process_tut_repo folder .&lt;/p&gt;&lt;p&gt;after that log into the erlang shell(erl or werl in windows) and run c(iso_process).&lt;/p&gt;&lt;p&gt;this compiles iso_process.erl module .&lt;/p&gt;&lt;p&gt;&amp;nbsp;then run iso_process.start_iso_server() whch starts the tcp server .&lt;/p&gt;&lt;p&gt;to send messages to server run iso_process:send_message(Message) .&lt;/p&gt;&lt;p&gt;eg .&amp;nbsp;&lt;/p&gt;&lt;p&gt;iso_process:send_message(”&lt;/p&gt;&lt;p&gt;012912007230040102B000001012312313122&lt;/p&gt;&lt;p&gt;0123400001000000011072218000000011612&lt;/p&gt;&lt;p&gt;12081731FABCDE123ABD06414243000termi&lt;/p&gt;&lt;p&gt;d1210Community106A5DFGR”).&lt;/p&gt;&lt;p&gt;you should see a print out of the isomessage showing the various fields .&lt;/p&gt;&lt;p&gt;we will go into how the message is processed and the mti,bitmap,data elements are obtained from the message in the next post as well as how to use jpos to send the messages so we learn a little about both jpos and message processing . neat huh . see u later for that !!!&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
@@ -911,8 +107,7 @@ This is where i wind down.&lt;/p&gt;
       <pubDate>Mon, 05 Dec 2016 07:55:57 +0000</pubDate>
       
       <guid>https://nayibor.github.io/post/ddf349de5c9c5cf29af2e17bc71724b8/</guid>
-      <description>&lt;p&gt;alloha.&lt;br&gt;at last i have been able to get my lazy behind to write a blog post on this .&lt;/p&gt;&lt;p&gt;About time :) .&lt;br&gt;This will be the first in a series about parsing iso8583 financial messages &amp;nbsp;using erlang .&lt;br&gt;we will get to know &lt;br&gt;about iso8583 and the message structure,&lt;br&gt;receiving iso 8583 messages over the wire using erlang tcp server and parsing the message .&amp;nbsp;&lt;br&gt;parsing those messages in various formats(text(acii),binary,custom format).&lt;/p&gt;&lt;p&gt;Here we go .&lt;/p&gt;&lt;h2&gt;First off what is iso8583 ?&lt;/h2&gt;&lt;p&gt;Simply put it is a protocol which specificies the content of financial transaction done with payment cards in the form of request/response messages as well as info on how to process the financial transaction.&lt;/p&gt;&lt;p&gt;more general info can be found on the wikipedia page about it &lt;a href=&#34;https://en.wikipedia.org/wiki/ISO_8583&#34;&gt;here&lt;/a&gt; .&lt;/p&gt;&lt;h2&gt;What are the components of an iso &amp;nbsp;message ?&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;optional header . optional zero padded header showing size of message.header size is known in advance by receipient and is specified by sender .Usually contains size of message ony but may contain size of header + size of message . An &amp;nbsp;example of a header is 0158 which means the content of the message(mti+bitmap+data elements) is 158 bytes&amp;nbsp;&lt;/li&gt;&lt;li&gt;mti(message type indicator). A 4 digit &amp;nbsp;number showing info about the message . each digit shows some info about the message . &lt;br&gt;example of an mti is 1200 meaning with the meaning below .&lt;br&gt;1 - first digit is message version - 1 message class means 1993 version &lt;br&gt;2 - second digit specifies the message class(purpose of message) &amp;nbsp;eg. authorization,reversal.etc.. 2 means financial message&lt;br&gt;0 - third digit specifies message function(how the message should flow within system) -eg. requests,advices,etc.. &amp;nbsp;0 means request&lt;br&gt;0 - fourth digit specifies message origin (where is the message coming from ) eg. from acquirer,issue etc.. 0 means acquirer&lt;/li&gt;&lt;li&gt;bitmap(primary or secondary).A 16/32 hexadecimal number showing the presence or absence of data elements . a bitmap can be a primary or a secondary bitmap . &lt;br&gt;primary means presence of &amp;nbsp;fields from 1-64 .&lt;br&gt;secondary means the presence of presence of fields greater than 64 means 64-128 .&lt;br&gt;the bitmap has to be converted from hex form to binary form where each binary digit represent presence or absence of a data element .if &amp;nbsp;if the first digit of the bitmap in binary form is 1 it means bitmap has fields greater than 64 which makes it a secondary bitmap .&lt;br&gt;An example of a bitmap is F230040102B000000000000004000000 meaning fields 1,2,3,4,7,11,12,22,32,39,41,43,44,102 are present and bitmap is a secondary bitmap due to fields greater than 64 being present .&lt;br&gt;&lt;/li&gt;&lt;li&gt;data elements . These are the &amp;nbsp;actual contents of &amp;nbsp;the financial message such as the amount of the transaction,currecy,transaction type(balance enquiry,withdrawal,etc..),card number . &lt;br&gt;there are 128 data elements from 1-128 .&amp;nbsp;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;What variants of iso messages are available?&lt;/h2&gt;&lt;p&gt;There are a few differnt variants of the iso8583 messaging format but &amp;nbsp;the most common ones are (1987 format/1993 format /2003 format ).&lt;br&gt;the specification of &amp;nbsp;the various variants specify &amp;nbsp;the position of the various data elements &amp;nbsp;as well as what format the message will be transmitted in .&lt;br&gt;proprietery/custom ones also exist based on the above ones which may be cusom format agreed to be used between two parties or internal format for one party. &amp;nbsp;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;How are messages processed ?&lt;/h2&gt;&lt;p&gt;Financial messages consist of request/response messages are sent between two entities to process financial transactions &amp;nbsp; .&lt;br&gt;a tcp connection or other connection type(UDP, X.25, SDLC, SNA,ASYNC, QTP, SSL, HTTP,custom) is opened between the two entities . &lt;br&gt;Some handshake mechanism may be done to prepare both parties for sending messages &amp;nbsp; .&lt;br&gt;Messages are sent consisting of a request/response message .&lt;br&gt;Depending on connection type a persistant connection may be kept open or a connection may be closed and reopened later for subsequent messages to be sent and received.&lt;/p&gt;&lt;h2&gt;What to keep in mind when processing messages ? &lt;/h2&gt;&lt;ul&gt;&lt;li&gt;Message format (ascii,binary,custom format).eg 1993 acii,1993 binary.in what format the message will be transmitted in as well as rules to encode/decode the message .&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li&gt;Wire protocol (TCP/IP,UDP, X.25, SDLC, SNA,ASYNC, QTP, SSL, HTTP,custom protocol )how a message is transmitted over the wire.&lt;br&gt;&lt;/li&gt;&lt;li&gt;Message flow (e.g., send request for authorization, wait for response, retransmit, reversal).Various states the message may be in .&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li&gt;Optional beginning and ending headers &amp;nbsp;showing size of message and/or headers themeselves .&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;Enough talking . An example please ???&lt;/h2&gt;&lt;p&gt;The assumption is that we are using iso 1992 iso8583 ascii specification for specifying message rules for encoding decoding messages .the specification will also show the data type of a field(number,string,hex,etc..),where it is variable length or not or whether it has an optional padding or not . &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;We will deconstruct the iso message below &amp;nbsp;as an example and show the optional header,mti,bitmap,data elements in the message . &lt;br&gt;the optional header will be assumed to be 4 bytes long excluding the size of the header itself.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Consider the iso message below&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;01581200F230040102B000000000000004000000&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;1048468112122012340000100000001107221800&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;000001161204171926FABCDE123ABD06414243&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;000termid1210Community106A5DFGR1112341234234&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;this is &amp;nbsp;breakdown of the message below from left to right&lt;/p&gt;&lt;ul&gt;&lt;li&gt;0158 -&amp;gt; header length(4 byte or digit header). this show the length of the message is 158 digits excluding the header&lt;br&gt;&lt;/li&gt;&lt;li&gt;1200 -&amp;gt; mti&lt;br&gt;&lt;/li&gt;&lt;li&gt;F230040102B000000000000004000000 -&amp;gt; fld 1 bitmap(secondary in this case cuz F converted into 4 digit binary number is 1111 meaning bitmap contains secondary &amp;nbsp;)&lt;br&gt;&lt;/li&gt;&lt;li&gt;104846811212 -&amp;gt; fld 2 primary account number(prefix header showing length of fld 2 is is 10 digits)&lt;br&gt;&lt;/li&gt;&lt;li&gt;201234 -&amp;gt; fld3 processing code&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li&gt;000010000000 -&amp;gt; fld 4 transaction amount&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li&gt;1107221800 -&amp;gt; fld 7 Transmission date &amp;amp; time&lt;br&gt;&lt;/li&gt;&lt;li&gt;000001 -&amp;gt; fld 11 rrn&lt;br&gt;&lt;/li&gt;&lt;li&gt;161204171926 -&amp;gt; fld 12 time local transaction&lt;br&gt;&lt;/li&gt;&lt;li&gt;FABCDE123ABD -&amp;gt; fld 22 pos data code&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li&gt;06414243 -&amp;gt; fld 32 Acquiring institution identification code(prefix header showing length of fld32 is 6 digits)&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li&gt;000 &amp;nbsp;-&amp;gt; fld 39 response code&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li&gt;termid12 -&amp;gt; &amp;nbsp;fld 41 terminal id&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li&gt;10Community1 -&amp;gt; &amp;nbsp;fld 43 location data(prefix header showing length of fld43 is 10 digits)&lt;br&gt;&lt;/li&gt;&lt;li&gt;06A5DFGR -&amp;gt; fld 44 additional response code (prefix header showing length of fld32 is 6 digits)&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li&gt;1112341234234 -&amp;gt; fld 102 account number&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;this is a short summary of the basics of iso .&lt;/p&gt;&lt;p&gt;more info can be on the wikipedia page if you want to delve more deeply into it .&lt;/p&gt;&lt;p&gt;next post will be about using erlang to extract the various component (mti,bitmap,data elements) out of a message using a spec .&amp;nbsp;&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
@@ -921,8 +116,7 @@ This is where i wind down.&lt;/p&gt;
       <pubDate>Sun, 03 Jul 2016 02:41:08 +0000</pubDate>
       
       <guid>https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/</guid>
-      <description>&lt;p&gt;this post will talk about how to create a pagination area for pagination using backbone.js and underscore templates.&lt;/p&gt;&lt;p&gt;you will need to have the pagination object available on the client side in the following form before its passed to the model object.this could have been request as &amp;nbsp;part of a collection request &amp;nbsp;which had been done to get fresh data about a collection . subfields can be created for the pagination parts .&lt;/p&gt;&lt;p&gt;//sample pagintation info &amp;nbsp;returned from controller function will be passed as an &amp;nbsp; &amp;nbsp; arguement when the view is being created for the PaginateView&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;//cakephp controller example below&amp;nbsp;&lt;/b&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;class ProductController extends AppController {&lt;br&gt;public $name = &#39;Product&#39;;&lt;/p&gt;&lt;p&gt;public function products(){&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;$products = $this-&amp;gt;paginate(&#39;Product&#39;); &amp;nbsp;&lt;br&gt;$paginate_data=array();&lt;br&gt;$paginate_data[&#39;page&#39;]=$this-&amp;gt;request-&amp;gt;params[&#39;paging&#39;][&#39;Product&#39;][&#39;page&#39;];&lt;br&gt;$paginate_data[&#39;pageCount&#39;]=$this-&amp;gt;request-&amp;gt;params[&#39;paging&#39;][&#39;Product&#39;][&#39;pageCount&#39;];&lt;br&gt;$paginate_data[&#39;prevPage&#39;]=$this-&amp;gt;request-&amp;gt;params[&#39;paging&#39;][&#39;Product&#39;][&#39;prevPage&#39;];&lt;br&gt;$paginate_data[&#39;nextPage&#39;]=$this-&amp;gt;request-&amp;gt;params[&#39;paging&#39;][&#39;Product&#39;][&#39;nextPage&#39;];&lt;br&gt;//for putting the product info retrieved int a form which can be used for the backbone collection &lt;br&gt;//on the front end        &lt;br&gt;$response_array=array();&lt;br&gt;foreach($products as $val){         &lt;br&gt;response_array[]=$val[&#39;Product&#39;];&lt;br&gt;};&lt;br&gt;echo json_encode(array(&#34;pagination&#34;=&amp;gt;$paginate_data,&#34;products&#34;=&amp;gt;$response_array));&lt;br&gt;exit();&lt;/p&gt;&lt;p&gt;}}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;//sample pagination model with default setup&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&amp;nbsp;var PageModel = Backbone.Model.extend({&amp;nbsp;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;   defaults: {&lt;br&gt;query :’null,&lt;br&gt;    pagination : null,&lt;br&gt;  url:”http://localhost/Product/products/”&lt;br&gt;}&amp;nbsp;});&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;//sample view for pagination item&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;var PaginateView= Backbone.View.extend({&lt;br&gt;   tagname:&#39;div&#39;,&lt;br&gt;  id:&#39;page_div&#39;,&lt;br&gt;  model:PageModel,&lt;br&gt;    template: _.template($(&#39;#paginate_tmpl&#39;).html()),&lt;br&gt;   render:function(){              &lt;br&gt;    var pass_data={&lt;br&gt;     query:this.model.get(&#39;query&#39;),&lt;br&gt;  url:this.model.get(&#39;url&#39;),&lt;br&gt;  paginate:this.model.get(&#39;pagination&#39;)&lt;br&gt;   };&lt;br&gt; &amp;nbsp; &amp;nbsp; var html = this.template(pass_data);&lt;br&gt; &amp;nbsp; &amp;nbsp; this.$el.html(html);&lt;br&gt; &amp;nbsp; &amp;nbsp; return this;&lt;br&gt;     }&lt;br&gt;   });&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;//sample creation of a pagination view with data returned from server as arguement&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;var pagination_data={&lt;br&gt;page:2,&lt;br&gt;pageCount:10,&lt;br&gt;prevPage:1,&lt;br&gt;nextPage:3&lt;br&gt;};&lt;br&gt;var query_data=&#34;a=1&amp;amp;b=2&amp;amp;c=3&#34;;&lt;br&gt;var url_data=$(&#34;#product_list_url&#34;).val();&lt;br&gt;var page = new PaginateView({model:new PageModel({query:query_data,url:url_data,pagination:pagination_data})});&lt;/p&gt;&lt;p&gt;&lt;b&gt;//lastly pagination underscore template&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;this example works &amp;nbsp;for (first,previous,next,last)pagination type and cycling inbtween them&lt;br&gt;paginate template does some calculations using the page,pageCount,prevPage,nextPage to determine current page &lt;br&gt;and show it and hide links for the others&amp;nbsp;&lt;br&gt;you will have to use your own css here to style links&lt;/p&gt;&lt;p&gt;&amp;lt;!--&lt;/p&gt;&lt;p&gt;this template is a template for pagination &lt;br&gt;combination of underscore tempate&lt;br&gt;--&amp;gt;&lt;/p&gt;&lt;p&gt;&amp;lt;script type=&#34;text/template&#34; id=&#34;paginate_tmpl&#34;&amp;gt;&lt;/p&gt;&lt;p&gt;&amp;lt;%&lt;br&gt;//for first page of &amp;nbsp;multiple page&amp;nbsp;resultset&lt;br&gt;if(paginate.page!=paginate.pageCount &amp;amp;&amp;amp; paginate.page==1 &amp;amp;&amp;amp; !paginate.prevPage &amp;amp;&amp;amp; paginate.nextPage) &amp;nbsp;{ &amp;nbsp; &amp;nbsp;&lt;br&gt;%&amp;gt;&lt;/p&gt;&lt;p&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;&amp;lt;&amp;lt; previous &amp;lt;/span&amp;gt;&lt;br&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;&amp;lt;a href=&#34;&amp;lt;%= url+&#34;?page=&#34;+(paginate.page+1)+&#34;&amp;amp;&#34;+query %&amp;gt;&#34;&amp;gt;next &amp;gt;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&lt;br&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;&amp;lt;a href=&#34;&amp;lt;%= url+&#34;?page=&#34;+(paginate.pageCount)+&#34;&amp;amp;&#34;+query %&amp;gt;&#34; rel=&#34;last&#34;&amp;gt;last &amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&lt;/p&gt;&lt;p&gt;&amp;lt;%&lt;br&gt;//for pages &amp;gt; current page but less than pageCount&lt;br&gt;}else if(paginate.page &amp;gt; 1 &amp;amp;&amp;amp; paginate.page &amp;lt; paginate.pageCount){ &amp;nbsp; &lt;br&gt;%&amp;gt;&lt;/p&gt;&lt;p&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;&amp;lt;a href=&#34;&amp;lt;%= url+&#34;?page=1&#34;+&#34;&amp;amp;&#34;+query %&amp;gt;&#34;&amp;gt;&amp;lt; first&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&lt;br&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;&amp;lt;a href=&#34;&amp;lt;%= url+&#34;?page=&#34;+(paginate.page-1)+&#34;&amp;amp;&#34;+query %&amp;gt;&#34; rel=&#34;previous&#34;&amp;gt;&amp;lt;&amp;lt; previous&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&lt;br&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;&amp;lt;a href=&#34;&amp;lt;%= url+&#34;?page=&#34;+(paginate.page+1)+&#34;&amp;amp;&#34;+query %&amp;gt;&#34; rel=&#34;next&#34;&amp;gt;next &amp;gt;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&lt;br&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;&amp;lt;a href=&#34;&amp;lt;%= url+&#34;?page=&#34;+paginate.pageCount+&#34;&amp;amp;&#34;+query %&amp;gt;&#34; rel=&#34;last&#34;&amp;gt;last &amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&lt;/p&gt;&lt;p&gt;&amp;lt;%&lt;br&gt;//for a single page resultset&lt;br&gt;}else if(paginate.page==paginate.pageCount &amp;amp;&amp;amp; !paginate.nextPage &amp;amp;&amp;amp; !paginate.prevPage){ &amp;nbsp; &amp;nbsp;&lt;br&gt;%&amp;gt;&lt;br&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;&amp;lt;&amp;lt; previous&amp;lt;/span&amp;gt; &amp;nbsp;&lt;br&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;next &amp;gt;&amp;gt;&amp;lt;/span&amp;gt; &amp;nbsp;&lt;/p&gt;&lt;p&gt;&amp;lt;% &lt;br&gt;//for last page of multi page resultset&amp;nbsp;&lt;br&gt;}else if(paginate.page==paginate.pageCount &amp;amp;&amp;amp; !paginate.nextPage &amp;amp;&amp;amp; paginate.prevPage){ &amp;nbsp; &lt;br&gt;%&amp;gt;&lt;/p&gt;&lt;p&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;&amp;lt;a href=&#34;&amp;lt;%= url+&#34;?&#34;+query %&amp;gt;&#34;&amp;gt;&amp;lt; first&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&lt;br&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;&amp;lt;a href=&#34;&amp;lt;%= url+&#34;?page=&#34;+(paginate.page-1)+&#34;&amp;amp;&#34;+query %&amp;gt;&#34;&amp;gt;&amp;lt;&amp;lt; previous&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&lt;br&gt;&amp;lt;span class=&#34;pglink&#34;&amp;gt;next &amp;gt;&amp;lt;/span&amp;gt; &amp;nbsp;&lt;br&gt;&amp;lt;% &amp;nbsp; &lt;br&gt;}                     &amp;nbsp; &lt;br&gt;%&amp;gt;&lt;br&gt;&amp;lt;/script&amp;gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;you can play around with the template and also the data returned from your controller to change the data returned to create more complex templates with more jump links .&lt;/p&gt;&lt;p&gt;this was just a starting point to show a sample underscore,backbone pagination template .&lt;/p&gt;&lt;p&gt;code &amp;nbsp;for tutorial can be found at this &lt;a href=&#34;https://bitbucket.org/nayibor/cake_backbone_pagination&#34;&gt;repo&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
@@ -931,85 +125,9 @@ This is where i wind down.&lt;/p&gt;
       <pubDate>Tue, 11 Aug 2015 13:42:38 +0000</pubDate>
       
       <guid>https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/</guid>
-      <description>&lt;p&gt;Small observation i had with cakephp 2.6.7 .&lt;/p&gt;&lt;p&gt;I was trying to write a query with &lt;a href=&#34;http://cakephp.org/&#34;&gt;cakephp&lt;/a&gt; and&amp;nbsp; noticed that the query was not &lt;br&gt;&lt;/p&gt;&lt;p&gt;being sent to the server for processing .&lt;/p&gt;&lt;p&gt;I was using the rawQuery method and not the orm&amp;nbsp; methods like find etc...&lt;br&gt;&lt;/p&gt;&lt;p&gt;Query is &lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt; $query=&#34; SELECT id,stock_available FROM products WHERE &amp;nbsp;(id = ? and stock_available &amp;gt;= ?)or &amp;nbsp; (id &amp;nbsp;= ? and stock_available &amp;gt;= ?) FOR UPDATE&#34;;&lt;br&gt; $query_params=array(1,50,2,30);&lt;br&gt; $response = $this-&amp;gt;Product-&amp;gt;getDataSource()-&amp;gt;rawQuery($query,$query_params);&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;It was because the&amp;nbsp; &lt;a href=&#34;https://github.com/cakephp/cakephp/blob/2.7/lib/Cake/Model/Datasource/DboSource.php#L397-L436&#34;&gt;rawQuery&lt;/a&gt; method&amp;nbsp; was missing an extra option which was &lt;br&gt;&lt;/p&gt;&lt;p&gt;preventing the query from being run&amp;nbsp; due&amp;nbsp; to&amp;nbsp; confusion in this section &lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;
-
- &amp;nbsp; &amp;nbsp; &amp;nbsp;       return $this-&amp;gt;execute($sql, $params); &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
- &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;This was accepting two parameters instead of three and due to this was &lt;br&gt;&lt;/p&gt;&lt;p&gt;mistaking the $params value for the options value thus query was not run .&lt;br&gt;&lt;/p&gt;&lt;p&gt;query was being run as &lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;public function rawQuery($sql, $params = array()) {
-
- &amp;nbsp; &amp;nbsp;
-
-
-
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
-
- &amp;nbsp; &amp;nbsp; &amp;nbsp;       $this-&amp;gt;took = $this-&amp;gt;numRows = false;
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;&lt;b&gt;
-
- &amp;nbsp; &amp;nbsp; &amp;nbsp;       return $this-&amp;gt;execute($sql, $params); &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/b&gt;&lt;br&gt;
-
- &amp;nbsp; &amp;nbsp; &amp;nbsp;   }&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;Instead of &lt;br&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;public function rawQuery($sql, $params = array()) {
-
- &amp;nbsp; &amp;nbsp;
-
-
-
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
-
- &amp;nbsp; &amp;nbsp; &amp;nbsp;       $this-&amp;gt;took = $this-&amp;gt;numRows = false;
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
- &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &lt;br&gt;&lt;b&gt;
-
- &amp;nbsp; &amp;nbsp; &amp;nbsp;       return $this-&amp;gt;execute($sql, array(), $params); &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
-
- &amp;nbsp; &amp;nbsp;
- &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; &lt;/b&gt;&lt;br&gt;
-
- &amp;nbsp; &amp;nbsp; &amp;nbsp;   }&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;It has subsequently been fixed .&lt;/p&gt;&lt;p&gt;Issue is at this &lt;a href=&#34;https://github.com/cakephp/cakephp/issues/6992/&#34;&gt;link&lt;/a&gt; . &lt;br&gt;&lt;/p&gt;
-</description>
+      <description>return $this-&amp;gt;execute($sql, $params);   This was accepting two parameters instead of three and due to this was mistaking the $params value for the options value thus query was not run .query was being run as public function rawQuery($sql, $params = array()) {
+     $this-&amp;gt;took = $this-&amp;gt;numRows = false;
+      return $this-&amp;gt;execute($sql, $params);    }Instead of public function rawQuery($sql, $params = array()) {</description>
     </item>
     
   </channel>

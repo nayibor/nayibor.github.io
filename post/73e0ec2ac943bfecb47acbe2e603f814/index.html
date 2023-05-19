@@ -67,7 +67,7 @@
         },
         "datePublished": "2016-12-12",
         "description": "parsing iso8583 messages using erlang",
-        "wordCount":  605 
+        "wordCount":  0 
     }
     </script>
 
@@ -117,14 +117,14 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 
   			<header class="post-header">
   				<span class="post-meta">
-						<span class="post-date">12 Dec 2016</span> <span class="reading-time">| <span class="estimated-reading-time">3 min.</span> (<span class="word-count">605</span> words)</span></span>
+						<span class="post-date">12 Dec 2016</span> <span class="reading-time">| <span class="estimated-reading-time">0 min.</span> (<span class="word-count">0</span> words)</span></span>
   				</span>
   				<div class="clear"></div>
   				<h1 class="post-title">Parsing iso8583 messages Part 1</h1>
   			</header>
 
   			<section class="post-content">
-  				<p>Today we are going to talk about creating a tcp server to &nbsp;parse iso messages using erlang . This tutorial explains the very basic of creating tcp servers in erlang . there are better specialized &nbsp;libraries out there (<a href="https://github.com/ninenines/ranch">ranch</a>) for creating tcp servers and pools of them but this is very basic and we need just a simple tcp server to show how to process incoming iso messages .&nbsp;<br></p><p>We will be using the 1993 iso8583 ascii protocol format .<br>I covered this in a previous post(<a href="/post/ddf349de5c9c5cf29af2e17bc71724b8/">here</a>) so you can go there to get a basic summary of iso8583 . knowledge of this protocol and also erlang would help &nbsp;.</p><p>to install erlang go <a href="http://www.erlang.org/downloads">here</a>&nbsp;.&nbsp;</p><p>the files for the example is contained in this git &nbsp;<a href="https://github.com/nayibor/iso_process_tut_repo"><i>repository</i></a> &nbsp;.&nbsp;</p><p>Lets hit the road !!<br></p><h2>Creating a basic tcp server in erlang</h2><p>lets look at the iso_process.erl file and the portions where the tcp server is created .</p><blockquote><p>%% @doc this part is for starting the iso server <br>-spec start_iso_server()-&gt;[pid()] | {error,term()}. <br>start_iso_server()-&gt; ....<br></p><p>%% @doc this part is for listener socket<br>-spec loop_listen(port())-&gt;[port()] | {error,term()} | fun(). <br>loop_listen(Listen_socket)-&gt;....</p></blockquote><p>the start_iso_server function and the loop_listen function are responsible for creating the tcp server and erlang processes for handling client connection .</p><p>the {ok,Listen} = gen_tcp:listen(...) in <b>start_iso_server</b> function creates the tcp listener socket and sets up pattern matching so if the listener socket &nbsp;is created successfully the code goes on succesfully else it stops if there is an error(eg.. if port is being used by another program) .&nbsp;</p><p>note that because the messages will be coming as strings and also because we want to process only one message at a time we use <b>[list, {packet, 0},{active, once}]</b> options .strings are represented as lists in erlang so list is in there . the {packet,0} option also tells us to allow messages to flow without breaking it up .</p><p>&nbsp;the<b> loop_listen</b> function</p><blockquote><p>%% @doc this part is for listener socket<br>-spec loop_listen(port())-&gt;[port()] | {error,term()} | fun(). <br>loop_listen(Listen_socket)-&gt;...</p></blockquote><p>&nbsp;is &nbsp;what waits for connections from clients and independently deal with each client connection while the loop_receive is what is responsible for sending/receiving data from clients .<br></p><p>the <b>loop_receive </b>function</p><blockquote><p>%% @doc this part is for the acceptor socket <br>-spec loop_receive(port(),[])-&gt;[pos_integer()] | {error,term()} | fun().        <br>loop_receive(Socket,Isom)-&gt;...</p></blockquote><p>&nbsp;is the function which receives communicates with clients . i.e. sends and receives data in this case iso messages from clients .</p><p>for every iso string(string = header+iso message) sent &nbsp; a check is first done to get the header which contains the size of the iso message messsage itself . the size of the message in the header is then used to calculate &nbsp;how many more bits needs to be streamed to get the whole message in . the iso string is streamed until the whole message is obtained after which it is processed with this function</p><blockquote><p>                               Response_message = process_message(Rest),<br></p></blockquote><p>TO run the program do a git clone of the <a href="https://github.com/nayibor/iso_process_tut_repo">repo</a>&nbsp;.</p><p>cd to the&nbsp;iso_process_tut_repo folder .</p><p>after that log into the erlang shell(erl or werl in windows) and run c(iso_process).</p><p>this compiles iso_process.erl module .</p><p>&nbsp;then run iso_process.start_iso_server() whch starts the tcp server .</p><p>to send messages to server run iso_process:send_message(Message) .</p><p>eg .&nbsp;</p><p>iso_process:send_message(”</p><p>012912007230040102B000001012312313122</p><p>0123400001000000011072218000000011612</p><p>12081731FABCDE123ABD06414243000termi</p><p>d1210Community106A5DFGR”).</p><p>you should see a print out of the isomessage showing the various fields .</p><p>we will go into how the message is processed and the mti,bitmap,data elements are obtained from the message in the next post as well as how to use jpos to send the messages so we learn a little about both jpos and message processing . neat huh . see u later for that !!!</p>
+  				<!-- raw HTML omitted -->
 
   			</section>
 
@@ -151,7 +151,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
   				</div>
   			</footer>
 
-  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="" data-url="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/"/>
+  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="73e0ec2ac943bfecb47acbe2e603f814" data-url="https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/"/>
 <aside class="post-comments">
     
     
@@ -242,7 +242,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
         <a class="menu-close" data-action="toc" data-target="toc"></a>
     </div>
     <div id="toc" class="menu-list">
-        
+        <nav id="TableOfContents"></nav>
     </div>
 </div>
 

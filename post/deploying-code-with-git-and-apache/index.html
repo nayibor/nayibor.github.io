@@ -169,7 +169,7 @@ This script can’t stop the push process, but the client doesn’t disconnect u
 and make it executable so it can be run after a git push.</p>
 <p>We will then paste in our shell script to move our code to the web root of our box.
 We use the code below
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">##renames post-receive sampe script to post-receive </span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">##renames post-receive sampe script to post-receive</span> 
 mv /opt/git/remote/test_repo.git/hooks/post-receive.sample /opt/git/remote/test_repo.git/hooks/post-receive
 <span style="color:#75715e">##makes it executable</span>
 chmod u+x /opt/git/remote/test_repo.git/hooks/post-receive</code></pre></div>
@@ -177,7 +177,7 @@ We now paste in our shell script below into <em>post-receive</em> to move our co
 <p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
 unset GIT_INDEX_FILE
-<span style="color:#75715e">##the target below should have been created already in our web root else we will get an error </span>
+<span style="color:#75715e">##the target below should have been created already in our web root else we will get an error</span> 
 <span style="color:#75715e">## although the push will succed</span>
 TARGET<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/www/html/remote/test_repo_web&#34;</span>
 GIT_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/opt/git/remote/test_repo.git/&#34;</span>
@@ -185,7 +185,7 @@ GIT_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/opt
 UAT_BRANCH_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://127.0.0.1/remote/test_repo_web&#34;</span>
 
 <span style="color:#75715e">##this short script creates a new directory where branches can be checked out to</span>
-<span style="color:#75715e">##if branch directory does not exist it is  created and data is checked in there </span>
+<span style="color:#75715e">##if branch directory does not exist it is  created and data is checked in there</span> 
 <span style="color:#75715e">##some checks will have to be done if branch conforms to naming conventions</span>
 
 <span style="color:#66d9ef">while</span> read oldrev newrev ref
@@ -237,7 +237,7 @@ So we creat an apache config file for git,insert comands in and make sure that a
 We then put the following content in it .
 The various uses of the various segments are added as comments in the configuration below.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#environmental variables for git-http-backend</span>
-<span style="color:#75715e">#also tells apache to run the git-http-backend as the handler for anything coming into </span>
+<span style="color:#75715e">#also tells apache to run the git-http-backend as the handler for anything coming into</span> 
 <span style="color:#75715e">#the /git/ path your web server</span>
  
 SetEnv GIT_PROJECT_ROOT /opt/git/remote/
@@ -265,7 +265,7 @@ sudo apache2 restart</code></pre></div></p>
 <p>We next need to setup authentication so the whole world cant push to our git repository.
 We partly did that by setting up the AuthUserFile but we now have to create the physical file and put users in it .
 we do the following
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">##create auth file </span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">##create auth file</span> 
 touch /opt/git/.htpasswd
 <span style="color:#75715e">##add users</span>
 htdigest  /opt/git/.htpasswd <span style="color:#e6db74">&#34;Git Access&#34;</span> test
@@ -284,8 +284,8 @@ echo <span style="color:#e6db74">&#34;&lt;div&gt;It works!!&lt;/div&gt;&#34;</sp
 git add index.html
 git commit
 git push -u origin testing
-<span style="color:#75715e">##ask for username and password here password here.. </span>
-<span style="color:#75715e">## enter test and the password you used earlier </span></code></pre></div>
+<span style="color:#75715e">##ask for username and password here password here..</span> 
+<span style="color:#75715e">## enter test and the password you used earlier</span> </code></pre></div>
 we can access the <em>testing</em> branch at this url <em><a href="http://127.0.0.1/remote/test_repo_web/testing/index.html">here</a></em> .
 We can use this method to make our code viewable on the web if the code is web based stuff.
 We can also use this to push code to a seperate folder if we dont want the code to be viewable on the web.</p>
@@ -363,6 +363,16 @@ We can also use this to push code to a seperate folder if we dont want the code 
 			</div>
 
 			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/c33083b29ef6e62daebc9459653f84b9/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Library for parsing iso8583 messages in erlang</h4>
+								<p class="post-nav-excerpt">library for parsing iso8583 financial messages in erlang/elixir&hellip;</p>
+							</span>
+						</section>
+					</a>
 				
 				
 					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/">

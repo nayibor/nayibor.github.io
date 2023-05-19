@@ -71,7 +71,7 @@
         },
         "datePublished": "2017-04-09",
         "description": "",
-        "wordCount":  1316 
+        "wordCount":  1153 
     }
     </script>
 
@@ -121,246 +121,134 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 
   			<header class="post-header">
   				<span class="post-meta">
-						<span class="post-date">9 Apr 2017</span> <span class="reading-time">| <span class="estimated-reading-time">7 min.</span> (<span class="word-count">1316</span> words)</span></span>
+						<span class="post-date">9 Apr 2017</span> <span class="reading-time">| <span class="estimated-reading-time">6 min.</span> (<span class="word-count">1153</span> words)</span></span>
   				</span>
   				<div class="clear"></div>
   				<h1 class="post-title">Programming languages as web template languages</h1>
   			</header>
 
   			<section class="post-content">
-  				
-
-<p>Web templating languages!!. Don&rsquo;t we love em.
-<div>
-<img src="/images/underscore.png" alt="underscore" />
-<img src="/images/handlebars_logo.png" alt="handlerbars" />
-<img src="/images/mustache.png" alt="mustache" />
-</div></p>
-
+  				<p>Web templating languages!!. Don&rsquo;t we love em.</p>
+<!-- raw HTML omitted -->
 <p>Every one has their favourite but a common denominator among them all is that they make our work as web developers
 easier by giving us separation of concerns between data and content as well as lots of other <a href="https://en.wikipedia.org/wiki/Web_template_system#Motivations_and_typical_uses">advantages</a>.
 A fancy term for web templating languages is a web template system.</p>
-
 <p>From Wikipedia a <a href="https://en.wikipedia.org/wiki/Web_template_system">Web template system</a> is defined as</p>
-
 <blockquote>
 <p>A web template system uses a template processor to combine web templates to form finished web pages,
 possibly using some data source to customize the pages or present a large amount of content on similar-looking pages</p>
 </blockquote>
-
-<p>a simple JavaScript example using <a href="https://github.com/janl/mustache.js">mustach</a> is seen below
-<pre>
-    <code class="javascript">
-        var view = {
-          title: &ldquo;Joe&rdquo;,
-          calc: function () {
-            return 2 + 4;
-          }
-        };
-        &gt; var output = Mustache.render(&ldquo;{{title}} spends {{calc}}&rdquo;, view);
-        &gt; console.log(output)
-        &gt; Joe spends 6
-    </code>
-</pre>
-However today we are having a different take on templating i.e. libraries,frameworks  which generate content without mixing html with the template system.
-These frameworks,libraries rather have helper functions which are used for generating various dom elements without mixing in html with template logic.
-<!--<pre>
-    <code class="javascript">
-var output = Mustache.render(“<label>{{title}} spends {{calc}}</label>”, view);
-    </code>
-</pre>
---></p>
-
+<p>a simple JavaScript example using <a href="https://github.com/janl/mustache.js">mustach</a> is seen below</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>However today we are having a different take on templating i.e. libraries,frameworks  which generate content without mixing html with the template system.
+These frameworks,libraries rather have helper functions which are used for generating various dom elements without mixing in html with template logic.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>We will be giving basic examples from the following three languages,frameworks.</p>
-
 <ul>
 <li>yaws <a href="http://yaws.hyber.org/dynamic.yaws">ehtml</a></li>
 <li>elm <a href="https://guide.elm-lang.org/architecture/user_input/buttons.html">views</a></li>
 <li>mitril.js <a href="https://mithril.js.org/#components">components</a></li>
 </ul>
-
 <h1 id="yaws-ehtml">yaws ehtml</h1>
-
 <p><a href="http://yaws.hyber.org/">Yaws</a> is a high performance web server written using the erlang programming language.It has a handy way of generating html using erlang called ehtml .
-Using ehtml, erlang terms can be used directly to represent html code which will be sent to the browser.An example below<br />
-<pre>
-    <code class="erlang">
-out(A) -&gt;
-    {ehtml,
-        {table, [{bgcolor, grey}],
-            [
-                {tr, [],
-                    [
-                        {td, [], &ldquo;1&rdquo;},
-                        {td, [], &ldquo;2&rdquo;},
-                        {td, [], &ldquo;3&rdquo;}
-                    ]
-                },
-                {tr, [],
-                    [
-                        {td,[{colspan, &ldquo;3&rdquo;}], &ldquo;444&rdquo;}
-                    ]
-                }
-            ]
-        }
-    }.
-    </code>
-</pre>
-This will expand into the html below
-
-<table bgcolor="grey">
-<tr>
-<td> 1 </td>
-<td> 2 </td>
-<td> 3 </td>
-</tr>
-<tr>
-<td colspan="3"> 444 </td>
-</tr>
-</table>
-
-Another example below which will generate a list of headers sent with a request in yaws using erlang is seen below
-<pre>
-    <code class="erlang">
-out(A) -&gt;
-    H = yaws_api:reformat_header(A#arg.headers),%%list containing headers
-    {ehtml,
-    [
-        {h4,[], &ldquo;The headers passed to us were:&ldquo;},
-        {hr},
-        {ol, [],lists:map(fun(S) -&gt; {li,[], {p,[],S}} end,H)}
-    ]}.
-    </code>
-</pre>
-The <em>list:map(a,b)</em> stuff in there is like a loop going through all the headers and generating li elements out of the header sent in the request.
+Using ehtml, erlang terms can be used directly to represent html code which will be sent to the browser.An example below</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>This will expand into the html below
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">bgcolor</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;grey&#34;</span>&gt;
+&lt;<span style="color:#f92672">tr</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt; 1 &lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt; 2 &lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt; 3 &lt;/<span style="color:#f92672">td</span>&gt;
+&lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;<span style="color:#f92672">tr</span>&gt;
+&lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span>&gt; 444 &lt;/<span style="color:#f92672">td</span>&gt;
+&lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;</code></pre></div>
+Another example below which will generate a list of headers sent with a request in yaws using erlang is seen below</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The <em>list:map(a,b)</em> stuff in there is like a loop going through all the headers and generating li elements out of the header sent in the request.
 The above code will expand into the html below
-
-<h4>The headers passed to us were:</h4><hr />
-<ol>
-<li>
-<p>Connection: keep-alive</p></li>
-<li>
-<p>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</p></li>
-<li>
-<p>Host: localhost:8004</p></li>
-<li>
-<p>User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36</p></li>
-<li>
-<p>Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)</p></li>
-<li>
-<p>Accept-Language: en-US,en;q=0.8</p></li>
-<li>
-<p>Accept-Encoding: gzip, deflate, sdch</p></li>
-<li>
-<p>Upgrade-Insecure-Requests: 1</p></li>
-<li>
-<p>Cache-Control: max-age=0</p></li></ol>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;The headers passed to us were:&lt;/<span style="color:#f92672">h4</span>&gt;&lt;<span style="color:#f92672">hr</span> /&gt;
+&lt;<span style="color:#f92672">ol</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Connection: keep-alive&lt;/<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&lt;/<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Host: localhost:8004&lt;/<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/53.0.2785.143 Chrome/53.0.2785.143 Safari/537.36&lt;/<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Cookie: AZY65UYNYALKSDJ=nonode@nohost-101318251358486025453327098776478182566; __utma=111872281.971381288.1489266346.1489266346.1489266346.1; __utmz=111872281.1489266346.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)&lt;/<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Accept-Language: en-US,en;q=0.8&lt;/<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Accept-Encoding: gzip, deflate, sdch&lt;/<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Upgrade-Insecure-Requests: 1&lt;/<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Cache-Control: max-age=0&lt;/<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;&lt;/<span style="color:#f92672">ol</span>&gt;</code></pre></div>
 I know the syntax is a bit foreign :) but bear with me . In both examples the power of the language was used to generate the html.
 this makes expressing sometimes very complex logic easy while keeping input data seperate from content.</p>
-
 <h1 id="elm-views">elm views</h1>
-
-<p><a href="http://elm-lang.org/">Elm</a> is a functional language that compiles to javascript .You can do some really cool front end stuff  with elm but for the purposes of this post we will concentrate on how  a view (html output) is created in elm. An example below of code for creating html output in elm is given below
-<pre>
-    <code class="elm">
-view : Model -&gt; Html Msg
-view model =
-  div []
-    [
-      input  [ type_ &ldquo;text&rdquo;, placeholder &ldquo;Name&rdquo;] []
-    , button [ onClick Decrement ] [ text &ldquo;-&rdquo; ]
-    , div [] [ text (toString model) ]
-    , button [ onClick Increment ] [ text &ldquo;+&rdquo; ]
-    , div [] [ text &ldquo;&rdquo; ]
-    , button [ onClick Reset ] [ text &ldquo;0&rdquo; ]
-    ]
-    </code>
-</pre></p>
-
-<p>the code below is called a type annotation which is similar to defining types in function headers in more object oriented languages like java.
-<pre>
-    <code class="elm">
-view : Model -&gt; Html Msg
-    </code>
-</pre>
-it means view is a function which accepts a Model type and returns an Html Msg value.
+<p><a href="http://elm-lang.org/">Elm</a> is a functional language that compiles to javascript .You can do some really cool front end stuff  with elm but for the purposes of this post we will concentrate on how  a view (html output) is created in elm. An example below of code for creating html output in elm is given below</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>the code below is called a type annotation which is similar to defining types in function headers in more object oriented languages like java.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>it means view is a function which accepts a Model type and returns an Html Msg value.
 This means that it is a chunk of HTML that can produce Msg values.
-kind of like this in java.
-<pre>
-    <code class="java">
-public static <Msg> Html<Msg> view (model Data ){&hellip;}
-    </code>
-</pre></p>
-
+kind of like this in java.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Back to the elm example.</p>
-
 <p>Notice how the data is used as input to the html element generation and event functions(<em>input</em>,<em>button</em>,<em>div</em>,<em>onClick</em>).
 In html generation the general pattern is that the functions(dom elements) accept as the first parameter a list of attributes and
 then a list of child nodes or inner html value as the second parameter.</p>
-
 <p>So the first div above has no attributes but has child nodes.
 the first input element has a list representing attributes(i.e. the type=text and placeholder=Name).
 the text function can be used for putting  values into the tags and is the innerhtml in the parent div tag .
 The value of <em>model</em> which contains the state of the application in this case is <em>0</em>.</p>
-
 <p>the text function accepts only strings as a parameter  so 0 has to converted to &ldquo;0&rdquo; else there will be an error thrown.
 <em>(toString model)</em> just means turn 0 into a string and give us the result of that computation.
 Elm is statically typed so does type checking at compile time. one nice thing it also has is <a href="https://en.wikipedia.org/wiki/Type_inference">type inference</a> which basically means it can infer types without type annotations.
 Elm  generated html also does does some virtual dom stuff internally before content is redrawn on screen. This results in very fast rendering speeds :).</p>
-
 <p>At the end the above elm view code will turn into the html below
-
-<div>
-	<input type="text" placeholder="Name">
-	<button>-</button>
-	<div>0</div>
-	<button>+</button>
-	<div></div>
-	<button>0</button>
-</div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span>&gt;
+	&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>&gt;
+	&lt;<span style="color:#f92672">button</span>&gt;-&lt;/<span style="color:#f92672">button</span>&gt;
+	&lt;<span style="color:#f92672">div</span>&gt;0&lt;/<span style="color:#f92672">div</span>&gt;
+	&lt;<span style="color:#f92672">button</span>&gt;+&lt;/<span style="color:#f92672">button</span>&gt;
+	&lt;<span style="color:#f92672">div</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+	&lt;<span style="color:#f92672">button</span>&gt;0&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
 pretty neat huh.you also have the power of the
 elm language at your disposal to do any computation,testing you want before outputting html.html elements are are also just functions so
 you can create reusable html elements and use them anywhere you want while  still respecting the separation of data and content.</p>
-
-<h1 id="mithril-js-components">mithril.js components</h1>
-
+<h1 id="mithriljs-components">mithril.js components</h1>
 <p><a href="https://mithril.js.org/">Mithril</a> is a modern client-side Javascript framework for building Single Page Applications.
 you can also do some cool stuff with it too but we will be concentrating on the way components are created using javascript in this case.
-An example below of code for creating a component is given below
-<pre>
-    <code class="javascript">
-var Hello = {
-    view: function() {
-        return m(&ldquo;main&rdquo;, [
-            m(&ldquo;h1&rdquo;, {class: &ldquo;title&rdquo;}, &ldquo;My first app&rdquo;),
-            m(&ldquo;button&rdquo;, &ldquo;A button&rdquo;),
-        ])
-    }
-};
-m.mount(root, Hello);//to activate the content
-    </code>
-</pre>
-A Mithril component is just an object with a view function.
+An example below of code for creating a component is given below</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>A Mithril component is just an object with a view function.
 As usual the code is a variant of a function accepting a list of attributes and a list of child nodes or an inner html value.
 The <em>m(a,b)</em> is a function for which the first parameter is a list of attributes , the second parameter being a list of child nodes or an inner html value.
 mithril.js also does some virtual dom diffing under the hood so it renders html quite quickly also.
 you can do some really fancy stuff in there especially if you combine it with libraries like <a href="http://ramdajs.com/">rambda</a> for component creation.
 this is a very simple example but it does have all the advantages like ease of testing,separation of data from content,power of js to create components.</p>
-
 <p>This will expand into the html below
-
-<main>
-    <h1 class="title">My first app</h1>
-    <button>A button</button>
-</main>
-</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">main</span>&gt;
+    &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;My first app&lt;/<span style="color:#f92672">h1</span>&gt;
+    &lt;<span style="color:#f92672">button</span>&gt;A button&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">main</span>&gt;</code></pre></div></p>
 <h1 id="summing-up">Summing up</h1>
-
 <p>Programming languages which are used as template languages are in a lot of ways very powerful and they enhance templating by</p>
-
 <ul>
 <li>making available all  the power of a  programming language to be used in generating templates</li>
 <li>reduced learning curve since no special syntax has to be learnt to create templates</li>
@@ -405,7 +293,7 @@ the compiler/debugger of the language is also at your disposal.elm is super at t
   				</div>
   			</footer>
 
-  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="" data-url="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/"/>
+  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="0cbce1a3a305b158373f04c7e4c579dc" data-url="https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/"/>
 <aside class="post-comments">
     
     
@@ -453,7 +341,7 @@ the compiler/debugger of the language is also at your disposal.elm is super at t
 
 			<nav class="post-nav">
 				
-					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/Deploying%20code%20with%20git%20and%20apache/">
+					<a class="post-nav-item post-nav-next" href="https://nayibor.github.io/post/deploying-code-with-git-and-apache/">
 						<section class="post-nav-teaser">
 							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
 							<span class="post-nav-info">
@@ -496,14 +384,7 @@ the compiler/debugger of the language is also at your disposal.elm is super at t
         <a class="menu-close" data-action="toc" data-target="toc"></a>
     </div>
     <div id="toc" class="menu-list">
-        <nav id="TableOfContents">
-<ul>
-<li><a href="#yaws-ehtml">yaws ehtml</a></li>
-<li><a href="#elm-views">elm views</a></li>
-<li><a href="#mithril-js-components">mithril.js components</a></li>
-<li><a href="#summing-up">Summing up</a></li>
-</ul>
-</nav>
+        <nav id="TableOfContents"></nav>
     </div>
 </div>
 
