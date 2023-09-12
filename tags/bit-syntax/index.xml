@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bit syntax on Nukus Blog</title>
-    <link>nayibor.github.io/tags/bit-syntax/</link>
+    <link>https://nayibor.github.io/tags/bit-syntax/</link>
     <description>Recent content in bit syntax on Nukus Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Tue, 03 Jan 2023 10:54:24 +0200</lastBuildDate><atom:link href="nayibor.github.io/tags/bit-syntax/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jan 2023 10:54:24 +0200</lastBuildDate><atom:link href="https://nayibor.github.io/tags/bit-syntax/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Erlang Binary Pattern Matching</title>
-      <link>nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
+      <link>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
+      <guid>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
       <description>hello everyone and happy new year to one and all!!. hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year.
 i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get the various metadata and parts of an audio file either over the network being streamed or a file on disk</description>
     </item>

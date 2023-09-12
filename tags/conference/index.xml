@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>conference on Nukus Blog</title>
-    <link>nayibor.github.io/tags/conference/</link>
+    <link>https://nayibor.github.io/tags/conference/</link>
     <description>Recent content in conference on Nukus Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Fri, 04 Jun 2021 10:54:24 +0200</lastBuildDate><atom:link href="nayibor.github.io/tags/conference/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Jun 2021 10:54:24 +0200</lastBuildDate><atom:link href="https://nayibor.github.io/tags/conference/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conference and Community Building</title>
-      <link>nayibor.github.io/posts/conference-experience-and-starting-a-community/</link>
+      <link>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</link>
       <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/conference-experience-and-starting-a-community/</guid>
+      <guid>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</guid>
       <description>Conferences/communities are a great way for everyone to network and learn something new. the effect of the pandemic on how these events are organized has been interesting. its made people have to innovate around the organization of events. there have been some positives out of this as well as some negatives i have attended three erlang/elixir online conferences(two of my best languages) so far this year and its been interesting the positives/negatives as well as what the future may bring</description>
     </item>
     

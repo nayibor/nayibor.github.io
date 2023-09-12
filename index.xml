@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nukus Blog</title>
-    <link>nayibor.github.io/</link>
+    <link>https://nayibor.github.io/</link>
     <description>Recent content on Nukus Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Fri, 12 May 2023 10:54:24 +0200</lastBuildDate><atom:link href="nayibor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 May 2023 10:54:24 +0200</lastBuildDate><atom:link href="https://nayibor.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coding In Elm-lang</title>
-      <link>nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</link>
+      <link>https://nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</link>
       <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</guid>
+      <guid>https://nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</guid>
       <description>Hi All.Hope you are all good.
 Recently i had the chance to rewrite some sections of code i had written in javascript over to elm and wanted to share my experience with it.
 I had been experiencing an issue where a web dashboard which was being used for monitoring of a service was receiving information too quickly thus causing the dashboard to become unresponsive.
@@ -23,49 +23,49 @@ the use case seemed like a good fit for elm where i had to rewrite a specific se
     
     <item>
       <title>Erlang Binary Pattern Matching</title>
-      <link>nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
+      <link>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
+      <guid>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
       <description>hello everyone and happy new year to one and all!!. hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year.
 i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get the various metadata and parts of an audio file either over the network being streamed or a file on disk</description>
     </item>
     
     <item>
       <title>Talking to outside world from Elixir</title>
-      <link>nayibor.github.io/posts/meetup-talk/</link>
+      <link>https://nayibor.github.io/posts/meetup-talk/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/meetup-talk/</guid>
+      <guid>https://nayibor.github.io/posts/meetup-talk/</guid>
       <description>I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir. The ecosystem for talking to the outside world from beam systems has a lot of options. Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang. ziglang was interesting not only for creating nifs but also as a possible future replacement for writing simple,fast,safe code This is the talk as well as a video about why to use zig to write nifs enjoy !</description>
     </item>
     
     <item>
       <title>Conference and Community Building</title>
-      <link>nayibor.github.io/posts/conference-experience-and-starting-a-community/</link>
+      <link>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</link>
       <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/conference-experience-and-starting-a-community/</guid>
+      <guid>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</guid>
       <description>Conferences/communities are a great way for everyone to network and learn something new. the effect of the pandemic on how these events are organized has been interesting. its made people have to innovate around the organization of events. there have been some positives out of this as well as some negatives i have attended three erlang/elixir online conferences(two of my best languages) so far this year and its been interesting the positives/negatives as well as what the future may bring</description>
     </item>
     
     <item>
       <title>Library for parsing iso8583 messages in erlang</title>
-      <link>nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</link>
+      <link>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</link>
       <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</guid>
-      <description>i have been working on an iso8583 parsing library.
+      <guid>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</guid>
+      <description>i have been working on an iso8583 parsing library for time.
 its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages. this library can be used for packing and unpacking iso8583 financial messages.
 It accepts a specification file which contains info about fields,mti,bitmap for your messages. The specification has info such as header length for various fields,padding info for fields,etc&amp;hellip; This specification information is then used for packing/unpacking iso8583 formatted messages.</description>
     </item>
     
     <item>
       <title>Deploying code with git and apache</title>
-      <link>nayibor.github.io/posts/deploying-code-with-git-and-apache/</link>
+      <link>https://nayibor.github.io/posts/deploying-code-with-git-and-apache/</link>
       <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/deploying-code-with-git-and-apache/</guid>
+      <guid>https://nayibor.github.io/posts/deploying-code-with-git-and-apache/</guid>
       <description>Today we are going to talk about how to deploy our code to our testing server or production server using git/apache. In this scenario git will be taking the place of the tradional method of using ftp servers to upload code to a server.
 We will get to know how to
 configure a remote git repository so it checks out data to a web root location configure apache and create an apache conf file that will enable communication between the git repository and apache setup authenticaton in apache for git events push to remote repository and see files in web root Let&amp;rsquo;s hit the road!</description>
@@ -73,10 +73,10 @@ configure a remote git repository so it checks out data to a web root location c
     
     <item>
       <title>Programming languages as web template languages</title>
-      <link>nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</link>
+      <link>https://nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</guid>
+      <guid>https://nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</guid>
       <description>Web templating languages!!. Don&amp;rsquo;t we love em.
 Every one has their favourite but a common denominator among them all is that they make our work as web developers easier by giving us separation of concerns between data and content as well as lots of other advantages. A fancy term for web templating languages is a web template system.
 From Wikipedia a Web template system is defined as
@@ -85,30 +85,30 @@ A web template system uses a template processor to combine web templates to form
     
     <item>
       <title>Parsing iso8583 messages Part 2</title>
-      <link>nayibor.github.io/posts/4948d52595d68beab6dd3a919db6d115/</link>
+      <link>https://nayibor.github.io/posts/4948d52595d68beab6dd3a919db6d115/</link>
       <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/4948d52595d68beab6dd3a919db6d115/</guid>
+      <guid>https://nayibor.github.io/posts/4948d52595d68beab6dd3a919db6d115/</guid>
       <description>Today we will be showing how to extract the various components out of an iso string. The combination of a tcp server as well as code to extract the iso message components and send it for further processing is what is popularly called an interface server in payment processing . Specifically the components we are interested in are
 message type indicator also known as mti bitmap data elements The code snippets used for this post is in this git repository.</description>
     </item>
     
     <item>
       <title>Parsing iso8583 messages Part 1</title>
-      <link>nayibor.github.io/posts/73e0ec2ac943bfecb47acbe2e603f814/</link>
+      <link>https://nayibor.github.io/posts/73e0ec2ac943bfecb47acbe2e603f814/</link>
       <pubDate>Mon, 12 Dec 2016 07:57:26 +0000</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/73e0ec2ac943bfecb47acbe2e603f814/</guid>
+      <guid>https://nayibor.github.io/posts/73e0ec2ac943bfecb47acbe2e603f814/</guid>
       <description>Today we are going to talk about creating a tcp server to parse iso messages using erlang .
 This tutorial explains the very basic of creating tcp servers in erlang . there are better specialized libraries out there (ranch) for creating tcp servers and pools of them but this is very basic and we need just a simple tcp server to show how to process incoming iso messages . We will be using the 1993 iso8583 ascii protocol format.</description>
     </item>
     
     <item>
       <title>Iso8583  message structure</title>
-      <link>nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/</link>
+      <link>https://nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/</link>
       <pubDate>Mon, 05 Dec 2016 07:55:57 +0000</pubDate>
       <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/</guid>
+      <guid>https://nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/</guid>
       <description>alloha.
 at last i have been able to get my lazy behind to write a blog post on this.
 About time :).
