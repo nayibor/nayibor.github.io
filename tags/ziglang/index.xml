@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ziglang on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/blog/tags/ziglang/</link>
-    <description>Recent content in ziglang on Nuku&#39;s blog</description>
+    <title>ziglang on Nukus Blog</title>
+    <link>nayibor.github.io/tags/ziglang/</link>
+    <description>Recent content in ziglang on Nukus Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Oct 2021 10:54:24 +0200</lastBuildDate>
-    
-	<atom:link href="https://nayibor.github.io/blog/tags/ziglang/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
+    <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
+    <lastBuildDate>Mon, 04 Oct 2021 10:54:24 +0200</lastBuildDate><atom:link href="nayibor.github.io/tags/ziglang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Talking to outside world from Elixir</title>
-      <link>https://nayibor.github.io/blog/post/meetup-talk/</link>
+      <link>nayibor.github.io/posts/meetup-talk/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
-      
-      <guid>https://nayibor.github.io/blog/post/meetup-talk/</guid>
+      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>nayibor.github.io/posts/meetup-talk/</guid>
       <description>I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir. The ecosystem for talking to the outside world from beam systems has a lot of options. Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang. ziglang was interesting not only for creating nifs but also as a possible future replacement for writing simple,fast,safe code This is the talk as well as a video about why to use zig to write nifs enjoy !</description>
     </item>
     

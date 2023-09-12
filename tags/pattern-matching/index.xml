@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pattern matching on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/blog/tags/pattern-matching/</link>
-    <description>Recent content in pattern matching on Nuku&#39;s blog</description>
+    <title>pattern matching on Nukus Blog</title>
+    <link>nayibor.github.io/tags/pattern-matching/</link>
+    <description>Recent content in pattern matching on Nukus Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Jan 2023 10:54:24 +0200</lastBuildDate>
-    
-	<atom:link href="https://nayibor.github.io/blog/tags/pattern-matching/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
+    <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
+    <lastBuildDate>Tue, 03 Jan 2023 10:54:24 +0200</lastBuildDate><atom:link href="nayibor.github.io/tags/pattern-matching/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Erlang Binary Pattern Matching</title>
-      <link>https://nayibor.github.io/blog/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
+      <link>nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
-      
-      <guid>https://nayibor.github.io/blog/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
-      <description>hello everyone and happy new year to one and all!!. hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year. i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get the various metadata and parts of an audio file either over the network being streamed or a file on disk Erlang and erlang related languages(Elixir,Lfe,Luerl) have this short and nifty way of unpacking this data out and getting the various sections efficiently and also with a small bit of code it takes a little bit of getting used to but its very powerful none the less</description>
+      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
+      <description>hello everyone and happy new year to one and all!!. hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year.
+i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get the various metadata and parts of an audio file either over the network being streamed or a file on disk</description>
     </item>
     
   </channel>

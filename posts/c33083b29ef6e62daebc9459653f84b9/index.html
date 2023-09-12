@@ -1,264 +1,359 @@
-
 <!DOCTYPE html>
-<html lang="en-us">
-
-    <head>
-	
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
-
-
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-        <meta property="og:title" content=" Library for parsing iso8583 messages in erlang &middot;  Nuku&#39;s blog" />
-        <meta property="og:site_name" content="Nuku&#39;s blog" />
-        <meta property="og:url" content="https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/" />
-
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
     
-        <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2020-06-01T00:54:24&#43;02:00" />
-        <meta property="og:article:tag" content="erlang" />
-        <meta property="og:article:tag" content="iso8583" />
-        <meta property="og:article:tag" content="erlang binary processing" />
-        
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@" />
-        <meta name="twitter:creator" content="@" />
-        <meta name="twitter:title" content="Library for parsing iso8583 messages in erlang" />
-        <meta name="twitter:description" content="library for parsing iso8583 financial messages in erlang/elixir" />
-        <meta name="twitter:url" content="https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/" />
+
+<title>Library for parsing iso8583 messages in erlang - Nukus Blog</title>
+<meta name="description" content="library for parsing iso8583 financial messages in erlang/elixir">
+
+<meta name="author" content="Nuku Ameyibor"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Nukus Blog",
     
-
-        <title> Library for parsing iso8583 messages in erlang &middot;  Nuku&#39;s blog</title>
-
-        <link rel="preload" href="/js/main.js" as="script" />
-        <link rel="preload" href="/css/main.css" as="style" />
-
-    
-        <meta name="description" content="library for parsing iso8583 financial messages in erlang/elixir" />
-    
-
-        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
-        <meta name="HandheldFriendly" content="True" />
-        <meta name="MobileOptimized" content="320" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        
-        
-
-    
-        <link href="https://nayibor.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Nuku&#39;s blog" />
-    
-
-    
-        <link rel="canonical" href="https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/" />
-
-
-    <script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "headline": "Library for parsing iso8583 messages in erlang",
-        "author": {
-            "@type": "Person",
-            "name": "http://profiles.google.com/?rel=author"
-        },
-        "datePublished": "2020-06-01",
-        "description": "library for parsing iso8583 financial messages in erlang\/elixir",
-        "wordCount":  123 
+    "url": "nayibor.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "nayibor.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "nayibor.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "nayibor.github.io\/posts\/c33083b29ef6e62daebc9459653f84b9\/",
+          "name": "Library for parsing iso8583 messages in erlang"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Nuku Ameyibor"
+  },
+  "headline": "Library for parsing iso8583 messages in erlang",
+  "description" : "library for parsing iso8583 financial messages in erlang\/elixir",
+  "inLanguage" : "en",
+  "wordCount":  96 ,
+  "datePublished" : "2020-06-01T00:54:24",
+  "dateModified" : "2020-06-01T00:54:24",
+  "image" : "nayibor.github.io",
+  "keywords" : [ "erlang, iso8583, erlang binary processing" ],
+  "mainEntityOfPage" : "nayibor.github.io\/posts\/c33083b29ef6e62daebc9459653f84b9\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "nayibor.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "nayibor.github.io",
+        "height" :  60 ,
+        "width" :  60
     }
-    </script>
+  }
+}
+</script>
+
+<meta property="og:url" content="nayibor.github.io/nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nukus Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" nayibor.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="nayibor.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="nayibor.github.io/favicon/favicon-16x16.png">
 
 
+<meta name="generator" content="Hugo 0.118.2"><link rel="alternate" href="nayibor.github.io/index.xml" type="application/rss+xml" title="Nukus Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="nayibor.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="nayibor.github.io/css/dark.css"><link rel="stylesheet" href="nayibor.github.io/css/syntax.css"><link rel="stylesheet" href="nayibor.github.io/css/codeblock.css">
+
+
+
+
+
+
+
+  </head>
+  <body>
     
-    <script type="text/javascript">
-    
-    
-    </script>
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="nayibor.github.io">Nukus Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
     
 
-    <style>
-html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,figure,footer,header,main,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figure{margin:1em 40px}a{background-color:transparent;-webkit-text-decoration-skip:objects}img{border-style:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:300;src:local("Merriweather Sans Light"),local(MerriweatherSans-Light),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowY_zIojJi0m4a5Z6tRh6itY.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:400;src:local("Merriweather Sans Regular"),local(MerriweatherSans-Regular),url(//fonts.gstatic.com/s/merriweathersans/v5/AKu1CjQ4qnV8MUltkAX3sL2aU247V0zTzydO4RoO9Ok.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:700;src:local("Merriweather Sans Bold"),local(MerriweatherSans-Bold),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowQfd-b-I5PxxcmB4_-MNcqw.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:800;src:local("Merriweather Sans ExtraBold"),local(MerriweatherSans-ExtraBold),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowWT7sFQ1Iz1BbpcuCPlgc9Q.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:300;src:local("Merriweather Sans Light Italic"),local(MerriweatherSans-LightItalic),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVX9UU5BmOJGkLxUCVv5VXdc.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:400;src:local("Merriweather Sans Italic"),local(MerriweatherSans-Italic),url(//fonts.gstatic.com/s/merriweathersans/v5/3Mz4hOHzs2npRMG3B1ascf0KIgDhPIHb_R-SWdtqte8.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:700;src:local("Merriweather Sans Bold Italic"),local(MerriweatherSans-BoldItalic),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVYM8pfYvjMoOxygpzLVILAs.woff) format("woff")}@font-face{font-family:'icons';src:url(/fonts/icons.eot?9273991);src:url(/fonts/icons.eot?9273991#iefix) format("embedded-opentype"),url(/fonts/icons.woff?9273991) format("woff"),url(/fonts/icons.ttf?9273991) format("truetype"),url(/fonts/icons.svg?9273991#icons) format("svg");font-weight:400;font-style:normal}[class^="icon-"]:before{font-family:"icons";font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-arrow-right:before{content:'\e807'}.icon-rss:before{content:'\e808'}body{font:300 1em / 1.5em 'Merriweather Sans',sans-serif;color:#595B66}a{color:inherit;text-decoration:none;font-weight:400}h1,h2{text-rendering:optimizeLegibility;color:#1F2026}h2 a{font-weight:inherit}h1{font-size:2em;line-height:1em;margin:2em 0 -.5em}h2{font-size:1.75em;line-height:1.143em;margin:2.286em 0 -.571em}p{margin:2em auto}i{font-weight:400;font-style:italic;color:#363740}img{display:block;max-width:100%;height:auto;margin:2.5em auto}body{background:#fff}.inner{max-width:48em;margin:0 auto;padding:0 1em}#wrapper{position:relative;box-sizing:border-box;width:100%;min-height:100vh;padding-bottom:6em;background:#F2F3F5}#push{transform:translate3d(0,0,0);transform-style:preserve-3d;opacity:1}#nav{position:relative;background:#fff;z-index:70;transform:translate3d(0,0,0);transform-style:preserve-3d;opacity:1}#nav:after{clear:both;content:'';display:table}#nav .nav-logo{float:left;height:2em;padding:1em;max-width:50%}#nav .nav-logo img{width:auto;max-width:none;height:2em;margin:0;border-radius:5px}#nav .nav-menu{float:right}#nav .nav-menu:after{clear:both;content:'';display:table}#nav .nav-menu a{display:block;width:1em;height:1em;line-height:1em;padding:1.5em;text-align:center;float:left}#nav .nav-menu a i:before{margin:auto}.overlay{display:none;position:fixed;left:0;top:0;width:100%;height:100%;z-index:80;display:none}.overlay:before{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:#1F2026;opacity:0;transform-style:preserve-3d}#header{position:relative;padding:4em 0}#header .inner{position:relative;z-index:2}#header .header-title{display:block;text-align:center}#header .header-name{font-weight:700;letter-spacing:-1px;display:block;line-height:1em;font-size:2em;text-decoration:none;color:#1F2026;padding:0;margin:0}#header.has-cover .header-name{color:#fff}#header .header-description{display:block;margin:1em auto 0;color:#9D9FA6;position:relative;font-weight:300}#header .header-description:after{content:'';position:absolute;height:1px;width:100px;margin-left:-50px;left:50%;top:-.5em;background:#D4D5D9}#header.has-cover .header-description{color:#fff}#header.has-cover .header-description:after{background:#fff}#header .header-cover{position:absolute;width:100%;height:100%;top:0;left:0;margin-top:-4em;padding:4em 0;background:no-repeat fixed center 100% / cover;z-index:1}#header .header-cover:before{content:'';position:absolute;width:100%;height:100%;left:0;top:0;background:rgba(0,0,0,0.2)}#header .header-cover:after{content:'';position:absolute;width:100%;left:0;bottom:0;border-bottom:4px solid #36D995}#footer{position:absolute;width:100%;left:0;bottom:0;font-size:.75em;line-height:1.334em;background:#1F2026;color:#737580;z-index:20;transform:translate3d(0,0,0);transform-style:preserve-3d;opacity:1}#footer a{color:#9D9FA6;font-weight:400}#footer .credits{text-align:center;font-size:.75em;line-height:1.334em;padding:2.667em;overflow:auto}#footer .credits span{display:block}#footer .credits .credits-theme{float:left}#footer .credits .credits-software{float:right}.post{position:relative;z-index:20}.post .post-image{display:block;margin:0;padding:0}.post .post-image img{display:block;width:100%;height:auto;margin:0;padding:0}.post .post-meta{display:block;font-size:.75em;line-height:1.334em;font-weight:400;margin-bottom:1.334em}.post .post-title{position:relative;color:#000;font-size:2em;line-height:1.375em;font-weight:800;text-indent:-1px;margin:.25em 0 .75em}.post .post-title:before{content:'';position:absolute;left:0;bottom:-.334em;width:1em;margin-bottom:-2px;border-bottom:4px solid #36D995}.post .post-title a{text-decoration:none;color:inherit;font-weight:inherit}#post-index{position:relative;max-width:1200px;margin:0 auto 4em;padding:.5em;z-index:10}@keyframes fade{0%{transform:translate3d(0,3em,0);opacity:0}100%{transform:translate3d(0,0,0);opacity:1}}.post-list{position:relative}.post-list .post{float:left;width:33.3%;transform:translate3d(0,3em,0);transform-style:preserve-3d;opacity:0;animation:fade ease-out .5s forwards;animation-delay:1.4s}@media only screen and (max-width: 50em){.post-list .post{width:49.9%}}@media only screen and (max-width: 30em){.post-list .post{width:100%;float:none}}.post-list .post:nth-child(1){animation-delay:.1s}.post-list .post:nth-child(2){animation-delay:.2s}.post-list .post:nth-child(3){animation-delay:.3s}.post-list .post:nth-child(4){animation-delay:.4s}.post-list .post:nth-child(5){animation-delay:.5s}.post-list .post:nth-child(6){animation-delay:.6s}.post-list .post:nth-child(7){animation-delay:.7s}.post-list .post:nth-child(8){animation-delay:.8s}.post-list .post:nth-child(9){animation-delay:.9s}.post-list .post .inner{padding:2em;margin:.5em;max-width:none;background:#fff;box-sizing:border-box;transform:scale(1);transform-style:preserve-3d}@media only screen and (max-width: 50em){.post-list .post .inner{padding:1em}}.post-list .post .post-link{position:absolute;left:0;top:0;width:100%;height:100%;z-index:10}.post-list .post .post-image{position:relative;margin:-2em -2em 0;overflow:hidden;background:#36D995}@media only screen and (max-width: 50em){.post-list .post .post-image{margin:-1em -1em 0}}.post-list .post .post-image img{transform:scale(1);transform-style:preserve-3d;opacity:1}.post-list .post .post-image:after{content:'';position:absolute;left:-5%;bottom:-2.5em;width:110%;height:4em;background:#fff;border-top:4px solid #36D995;box-shadow:0 0 2em rgba(0,0,0,0.2);transform:rotate(5deg)}.post-list .post .post-title{font-size:1.5em;line-height:1.167em}.post-list .post .post-excerpt{margin:0}.post-list .post .post-more{display:block;margin-top:1.5em}.post-list .post .post-more a{display:inline-block;font-size:.875em;line-height:1.143em;font-weight:400;color:#363740}.post-list .post .post-more a i{color:#2DB77E}.pagination{min-height:3em;margin:4em auto 2em;padding:0;position:relative}.pagination .pagination-item{position:relative;display:block;height:3em;line-height:3em;padding:0 1em;text-align:center;text-decoration:none;font-weight:700;color:#363740;border:1px solid #36D995;border-radius:4em;z-index:60}.pagination .pagination-item i{position:relative}@media only screen and (max-width: 30em){.pagination .pagination-item{width:4em;height:4em;line-height:4em;margin-top:-.5em;padding:0!important}.pagination .pagination-item i{font-size:1.5em}.pagination .pagination-item>span{display:none}}.pagination .pagination-prev{float:right}.pagination .pagination-prev i{right:-.05em}.pagination .pagination-info{display:block;left:0;top:0;height:3em;line-height:3em;position:absolute;text-align:center;width:100%;z-index:50;color:#9D9FA6}#loader-wrapper{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}#loader{display:block;position:relative;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;border:3px solid transparent;border-top-color:#36D995;animation:spin 2s linear infinite}#loader:before{content:"";position:absolute;top:5px;left:5px;right:5px;bottom:5px;border-radius:50%;border:3px solid transparent;border-top-color:#2DB77E;animation:spin 3s linear infinite}#loader:after{content:"";position:absolute;top:15px;left:15px;right:15px;bottom:15px;border-radius:50%;border:3px solid transparent;border-top-color:#D4D5D9;animation:spin 1.5s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-</style>
 
 
-    </head>
-    <body class="home-template">
-      <div id="loader-wrapper">
-        <div id="loader"></div>
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="posts-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Library for parsing iso8583 messages in erlang
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              
+            </div>
+          </div>
+        </div>
       </div>
-      <section id="wrapper" style="display: none;">
-        <div id="ajax-container">
-          <nav id="nav" class="nav">
-            <div class="nav-logo">
-              <a href="https://nayibor.github.io/">
-      			  
-              </a>
-            </div>
-            <div class="nav-menu">
-              <a class="rss" href="">
-                <i class="icon-rss"></i>
-              </a>
-                
-                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
-                
-                
-            </div>
-          </nav>
+    </div>
+  </div>
+</header>
 
 
-<main class="content" role="main">
-	<article class="post">
-		<div class="inner">
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
 
-			<div id="push">
-
-  			<header class="post-header">
-  				<span class="post-meta">
-						<span class="post-date">1 Jun 2020</span> <span class="reading-time">| <span class="estimated-reading-time">1 min.</span> (<span class="word-count">123</span> words)</span></span>
-  				</span>
-  				<div class="clear"></div>
-  				<h1 class="post-title">Library for parsing iso8583 messages in erlang</h1>
-  			</header>
-
-  			<section class="post-content">
-  				<p>i have been working on  an iso8583 parsing library.
-<!-- raw HTML omitted -->its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages.
-<!-- raw HTML omitted -->this library can be used for packing and unpacking iso8583 financial messages.
-<!-- raw HTML omitted -->It accepts a specification file which contains info about fields,mti,bitmap for your messages.
+      <div class="card-image card-image-blog p-0">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p>i have been working on  an iso8583 parsing library.</p>
+<p><!-- raw HTML omitted -->its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages.
+<!-- raw HTML omitted -->this library can be used for packing and unpacking iso8583 financial messages.</p>
+<p><!-- raw HTML omitted -->It accepts a specification file which contains info about fields,mti,bitmap for your messages.
 <!-- raw HTML omitted -->The specification has info such as header length for various fields,padding info for fields,etc&hellip;
-<!-- raw HTML omitted -->This specification information is then used for packing/unpacking iso8583 formatted messages.
-<!-- raw HTML omitted -->you will mostly be using the pack/unpack functions plus setting up specification files.
-<!-- raw HTML omitted -->it can be found on hex at <a href="https://hex.pm/packages/iso8583_erl">iso8583_erl</a> or here <a href="https://github.com/nayibor/iso8583_erl">iso8583_erl</a>
-<!-- raw HTML omitted -->you can find info for using it at the github url.
+<!-- raw HTML omitted -->This specification information is then used for packing/unpacking iso8583 formatted messages.</p>
+<p><!-- raw HTML omitted -->it can be found on <a href="https://hex.pm/packages/iso8583_erl">hex</a> or <a href="https://github.com/nayibor/iso8583_erl">github</a>
 <!-- raw HTML omitted -->take it out for a spin and let me know how you find it !!.</p>
 
-  			</section>
-
-  			<footer class="post-footer">
-  				<div class="post-tags">
-            
-            
-                <a href="https://nayibor.github.io//tags/erlang/">erlang</a>
-            
-                <a href="https://nayibor.github.io//tags/iso8583/">iso8583</a>
-            
-                <a href="https://nayibor.github.io//tags/erlang-binary-processing/">erlang binary processing</a>
-            
-            
-  				</div>
-  				<div class="post-share">
-  					<a class="icon-twitter" href="https://twitter.com/share?text=Library%20for%20parsing%20iso8583%20messages%20in%20erlang&url=https%3a%2f%2fnayibor.github.io%2fposts%2fc33083b29ef6e62daebc9459653f84b9%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-  						<span>Twitter</span>
-  					</a>
-  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnayibor.github.io%2fposts%2fc33083b29ef6e62daebc9459653f84b9%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-  						<span>Facebook</span>
-  					</a>
-  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fnayibor.github.io%2fposts%2fc33083b29ef6e62daebc9459653f84b9%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-  						<span>Google+</span>
-  					</a>
-  				</div>
-  			</footer>
-
-  			<input type="hidden" id="disq_variables" name="disq_variables" data-ident="c33083b29ef6e62daebc9459653f84b9" data-url="https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/"/>
-<aside class="post-comments">
-    
-    
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-     
-    
-    var disq_var = document.getElementById('disq_variables');
-    var disqus_shortname = 'https-nayibor-github-io';
-    var disqus_identifier = disq_var.getAttribute('data-ident');
-    var disqus_url = disq_var.getAttribute('data-url');
-	var disqus_config = function () { 
-	  this.language = "en";
-	};
-     
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-     
-    var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
-        DISQUS.reset({
-            reload: true,
-            config: function () {
-                this.page.identifier = newIdentifier;
-                this.page.url = newUrl;
-                this.page.title = newTitle;
-                this.language = newLanguage;
-            }
-        });
-    };
-
-
-
-
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-    
-</aside>
-
-
-			</div>
-
-			<nav class="post-nav">
-				
-				
-					<a class="post-nav-item post-nav-prev" href="https://nayibor.github.io/posts/deploying-code-with-git-and-apache/">
-						<section class="post-nav-teaser">
-							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
-							<span class="post-nav-info">
-								<h4 class="post-nav-title">Deploying code with git and apache</h4>
-								<p class="post-nav-excerpt">&hellip;</p>
-							</span>
-						</section>
-					</a>
-				
-				<div class="clear"></div>
-			</nav>
-
-		</div>
-	</article>
-</main>
-
-				<div id="body-class" style="display: none;"></div>
-				<footer id="footer">
-					<section class="credits">
-						<span class="credits-theme">Theme <a href="https://github.com/zenithar/hugo-theme-bleak" target="_blank" rel="nofollow">Bleak</a> by <a href="http://zutrinken.com" target="_blank" rel="nofollow">zutrinken</a></span>
-						<span class="credits-software">Published with <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a></span>
-					</section>
-				</footer>
-				
-				
-<div id="tocMenu" data-target="toc">
-    <div class="menu-header">
-        <span class="menu-label">Menu</span>
-        <a class="menu-close" data-action="toc" data-target="toc"></a>
+      </article>
     </div>
-    <div id="toc" class="menu-list">
-        <nav id="TableOfContents"></nav>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
     </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="nayibor.github.io/tags/erlang/">erlang</a>
+            
+              <a href="nayibor.github.io/tags/iso8583/">iso8583</a>
+            
+              <a href="nayibor.github.io/tags/erlang-binary-processing/">erlang binary processing</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            
+          </div>
+          </div>
+                   
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="nayibor.github.io/posts/deploying-code-with-git-and-apache/"
+              data-toggle="tooltip" data-placement="top" title="Deploying code with git and apache">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+          <li class="list-group-item ms-auto b-0">
+            <a type="button" class="btn btn-dark" role="button" href="nayibor.github.io/posts/conference-experience-and-starting-a-community/"
+              data-toggle="tooltip" data-placement="top" title="Conference and Community Building">Next Post
+              &rarr;</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+      </div>
+    </div>
+
+    
+    
+    
+
+  </div>
+</div>
 </div>
 
-
-				<div class="overlay"></div>
-			</div>
-		</section>
-
-    <script async src="/js/main.js"></script>
+    
 
 
+<footer>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
 
-  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
-</body>
+          
+          <li>
+            <a href="mailto:nayibor@gmail.com" title="Email me" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-envelope"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/nayibor" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          <a href="https://nayibor.github.io/">Nuku Ameyibor</a>
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2023
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="nayibor.github.io">Nukus Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script><script src="nayibor.github.io/js/dark-mode.js"></script>
+    
+  </body>
 </html>
 

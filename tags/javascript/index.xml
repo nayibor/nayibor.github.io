@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>javascript on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/blog/tags/javascript/</link>
-    <description>Recent content in javascript on Nuku&#39;s blog</description>
+    <title>javascript on Nukus Blog</title>
+    <link>nayibor.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on Nukus Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Apr 2017 20:52:24 +0200</lastBuildDate>
-    
-	<atom:link href="https://nayibor.github.io/blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
+    <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
+    <lastBuildDate>Sun, 09 Apr 2017 20:52:24 +0200</lastBuildDate><atom:link href="nayibor.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Programming languages as web template languages</title>
-      <link>https://nayibor.github.io/blog/post/0cbce1a3a305b158373f04c7e4c579dc/</link>
+      <link>nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
-      
-      <guid>https://nayibor.github.io/blog/post/0cbce1a3a305b158373f04c7e4c579dc/</guid>
+      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</guid>
       <description>Web templating languages!!. Don&amp;rsquo;t we love em.
 Every one has their favourite but a common denominator among them all is that they make our work as web developers easier by giving us separation of concerns between data and content as well as lots of other advantages. A fancy term for web templating languages is a web template system.
 From Wikipedia a Web template system is defined as
- A web template system uses a template processor to combine web templates to form finished web pages, possibly using some data source to customize the pages or present a large amount of content on similar-looking pages</description>
+A web template system uses a template processor to combine web templates to form finished web pages, possibly using some data source to customize the pages or present a large amount of content on similar-looking pages</description>
     </item>
     
   </channel>
