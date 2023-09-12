@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>music on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/tags/music/</link>
+    <link>https://nayibor.github.io/blog/tags/music/</link>
     <description>Recent content in music on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 03 Jan 2023 10:54:24 +0200</lastBuildDate>
     
-	<atom:link href="https://nayibor.github.io/tags/music/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nayibor.github.io/blog/tags/music/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Erlang Binary Pattern Matching</title>
-      <link>https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
+      <link>https://nayibor.github.io/blog/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
+      <guid>https://nayibor.github.io/blog/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
       <description>hello everyone and happy new year to one and all!!. hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year. i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get the various metadata and parts of an audio file either over the network being streamed or a file on disk Erlang and erlang related languages(Elixir,Lfe,Luerl) have this short and nifty way of unpacking this data out and getting the various sections efficiently and also with a small bit of code it takes a little bit of getting used to but its very powerful none the less</description>
     </item>
     

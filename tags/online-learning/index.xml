@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>online learning on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/tags/online-learning/</link>
+    <link>https://nayibor.github.io/blog/tags/online-learning/</link>
     <description>Recent content in online learning on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Oct 2021 10:54:24 +0200</lastBuildDate>
     
-	<atom:link href="https://nayibor.github.io/tags/online-learning/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nayibor.github.io/blog/tags/online-learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Talking to outside world from Elixir</title>
-      <link>https://nayibor.github.io/post/meetup-talk/</link>
+      <link>https://nayibor.github.io/blog/post/meetup-talk/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/meetup-talk/</guid>
+      <guid>https://nayibor.github.io/blog/post/meetup-talk/</guid>
       <description>I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir. The ecosystem for talking to the outside world from beam systems has a lot of options. Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang. ziglang was interesting not only for creating nifs but also as a possible future replacement for writing simple,fast,safe code This is the talk as well as a video about why to use zig to write nifs enjoy !</description>
     </item>
     
     <item>
       <title>Conference and Community Building</title>
-      <link>https://nayibor.github.io/post/conference-experience-and-starting-a-community/</link>
+      <link>https://nayibor.github.io/blog/post/conference-experience-and-starting-a-community/</link>
       <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/conference-experience-and-starting-a-community/</guid>
+      <guid>https://nayibor.github.io/blog/post/conference-experience-and-starting-a-community/</guid>
       <description>Conferences/communities are a great way for everyone to network and learn something new. the effect of the pandemic on how these events are organized has been interesting. its made people have to innovate around the organization of events. there have been some positives out of this as well as some negatives i have attended three erlang/elixir online conferences(two of my best languages) so far this year and its been interesting the positives/negatives as well as what the future may bring</description>
     </item>
     

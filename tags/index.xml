@@ -2,264 +2,264 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/tags/</link>
+    <link>https://nayibor.github.io/blog/tags/</link>
     <description>Recent content in Tags on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 May 2023 10:54:24 +0200</lastBuildDate>
     
-	<atom:link href="https://nayibor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nayibor.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>elm</title>
-      <link>https://nayibor.github.io/tags/elm/</link>
+      <link>https://nayibor.github.io/blog/tags/elm/</link>
       <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/elm/</guid>
+      <guid>https://nayibor.github.io/blog/tags/elm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>functional programming</title>
-      <link>https://nayibor.github.io/tags/functional-programming/</link>
+      <link>https://nayibor.github.io/blog/tags/functional-programming/</link>
       <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/functional-programming/</guid>
+      <guid>https://nayibor.github.io/blog/tags/functional-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>grasshopper code</title>
-      <link>https://nayibor.github.io/tags/grasshopper-code/</link>
+      <link>https://nayibor.github.io/blog/tags/grasshopper-code/</link>
       <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/grasshopper-code/</guid>
+      <guid>https://nayibor.github.io/blog/tags/grasshopper-code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bit syntax</title>
-      <link>https://nayibor.github.io/tags/bit-syntax/</link>
+      <link>https://nayibor.github.io/blog/tags/bit-syntax/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/bit-syntax/</guid>
+      <guid>https://nayibor.github.io/blog/tags/bit-syntax/</guid>
       <description></description>
     </item>
     
     <item>
       <title>erlang</title>
-      <link>https://nayibor.github.io/tags/erlang/</link>
+      <link>https://nayibor.github.io/blog/tags/erlang/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/erlang/</guid>
+      <guid>https://nayibor.github.io/blog/tags/erlang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>music</title>
-      <link>https://nayibor.github.io/tags/music/</link>
+      <link>https://nayibor.github.io/blog/tags/music/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/music/</guid>
+      <guid>https://nayibor.github.io/blog/tags/music/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pattern matching</title>
-      <link>https://nayibor.github.io/tags/pattern-matching/</link>
+      <link>https://nayibor.github.io/blog/tags/pattern-matching/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/pattern-matching/</guid>
+      <guid>https://nayibor.github.io/blog/tags/pattern-matching/</guid>
       <description></description>
     </item>
     
     <item>
       <title>community building</title>
-      <link>https://nayibor.github.io/tags/community-building/</link>
+      <link>https://nayibor.github.io/blog/tags/community-building/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/community-building/</guid>
+      <guid>https://nayibor.github.io/blog/tags/community-building/</guid>
       <description></description>
     </item>
     
     <item>
       <title>elixirkenya</title>
-      <link>https://nayibor.github.io/tags/elixirkenya/</link>
+      <link>https://nayibor.github.io/blog/tags/elixirkenya/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/elixirkenya/</guid>
+      <guid>https://nayibor.github.io/blog/tags/elixirkenya/</guid>
       <description></description>
     </item>
     
     <item>
       <title>meetup</title>
-      <link>https://nayibor.github.io/tags/meetup/</link>
+      <link>https://nayibor.github.io/blog/tags/meetup/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/meetup/</guid>
+      <guid>https://nayibor.github.io/blog/tags/meetup/</guid>
       <description></description>
     </item>
     
     <item>
       <title>networking</title>
-      <link>https://nayibor.github.io/tags/networking/</link>
+      <link>https://nayibor.github.io/blog/tags/networking/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/networking/</guid>
+      <guid>https://nayibor.github.io/blog/tags/networking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>online learning</title>
-      <link>https://nayibor.github.io/tags/online-learning/</link>
+      <link>https://nayibor.github.io/blog/tags/online-learning/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/online-learning/</guid>
+      <guid>https://nayibor.github.io/blog/tags/online-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ziglang</title>
-      <link>https://nayibor.github.io/tags/ziglang/</link>
+      <link>https://nayibor.github.io/blog/tags/ziglang/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/ziglang/</guid>
+      <guid>https://nayibor.github.io/blog/tags/ziglang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>conference</title>
-      <link>https://nayibor.github.io/tags/conference/</link>
+      <link>https://nayibor.github.io/blog/tags/conference/</link>
       <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/conference/</guid>
+      <guid>https://nayibor.github.io/blog/tags/conference/</guid>
       <description></description>
     </item>
     
     <item>
       <title>erlang binary processing</title>
-      <link>https://nayibor.github.io/tags/erlang-binary-processing/</link>
+      <link>https://nayibor.github.io/blog/tags/erlang-binary-processing/</link>
       <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/erlang-binary-processing/</guid>
+      <guid>https://nayibor.github.io/blog/tags/erlang-binary-processing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iso8583</title>
-      <link>https://nayibor.github.io/tags/iso8583/</link>
+      <link>https://nayibor.github.io/blog/tags/iso8583/</link>
       <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/iso8583/</guid>
+      <guid>https://nayibor.github.io/blog/tags/iso8583/</guid>
       <description></description>
     </item>
     
     <item>
       <title>apache2</title>
-      <link>https://nayibor.github.io/tags/apache2/</link>
+      <link>https://nayibor.github.io/blog/tags/apache2/</link>
       <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/apache2/</guid>
+      <guid>https://nayibor.github.io/blog/tags/apache2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://nayibor.github.io/tags/git/</link>
+      <link>https://nayibor.github.io/blog/tags/git/</link>
       <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/git/</guid>
+      <guid>https://nayibor.github.io/blog/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>https://nayibor.github.io/tags/javascript/</link>
+      <link>https://nayibor.github.io/blog/tags/javascript/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/javascript/</guid>
+      <guid>https://nayibor.github.io/blog/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mithril</title>
-      <link>https://nayibor.github.io/tags/mithril/</link>
+      <link>https://nayibor.github.io/blog/tags/mithril/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/mithril/</guid>
+      <guid>https://nayibor.github.io/blog/tags/mithril/</guid>
       <description></description>
     </item>
     
     <item>
       <title>templating</title>
-      <link>https://nayibor.github.io/tags/templating/</link>
+      <link>https://nayibor.github.io/blog/tags/templating/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/templating/</guid>
+      <guid>https://nayibor.github.io/blog/tags/templating/</guid>
       <description></description>
     </item>
     
     <item>
       <title>yaws</title>
-      <link>https://nayibor.github.io/tags/yaws/</link>
+      <link>https://nayibor.github.io/blog/tags/yaws/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/tags/yaws/</guid>
+      <guid>https://nayibor.github.io/blog/tags/yaws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>payments</title>
-      <link>https://nayibor.github.io/tags/payments/</link>
+      <link>https://nayibor.github.io/blog/tags/payments/</link>
       <pubDate>Mon, 05 Dec 2016 07:55:57 +0000</pubDate>
       
-      <guid>https://nayibor.github.io/tags/payments/</guid>
+      <guid>https://nayibor.github.io/blog/tags/payments/</guid>
       <description></description>
     </item>
     
     <item>
       <title>backbone</title>
-      <link>https://nayibor.github.io/tags/backbone/</link>
+      <link>https://nayibor.github.io/blog/tags/backbone/</link>
       <pubDate>Sun, 03 Jul 2016 02:41:08 +0000</pubDate>
       
-      <guid>https://nayibor.github.io/tags/backbone/</guid>
+      <guid>https://nayibor.github.io/blog/tags/backbone/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cakephp</title>
-      <link>https://nayibor.github.io/tags/cakephp/</link>
+      <link>https://nayibor.github.io/blog/tags/cakephp/</link>
       <pubDate>Sun, 03 Jul 2016 02:41:08 +0000</pubDate>
       
-      <guid>https://nayibor.github.io/tags/cakephp/</guid>
+      <guid>https://nayibor.github.io/blog/tags/cakephp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pagination</title>
-      <link>https://nayibor.github.io/tags/pagination/</link>
+      <link>https://nayibor.github.io/blog/tags/pagination/</link>
       <pubDate>Sun, 03 Jul 2016 02:41:08 +0000</pubDate>
       
-      <guid>https://nayibor.github.io/tags/pagination/</guid>
+      <guid>https://nayibor.github.io/blog/tags/pagination/</guid>
       <description></description>
     </item>
     
     <item>
       <title>underscore</title>
-      <link>https://nayibor.github.io/tags/underscore/</link>
+      <link>https://nayibor.github.io/blog/tags/underscore/</link>
       <pubDate>Sun, 03 Jul 2016 02:41:08 +0000</pubDate>
       
-      <guid>https://nayibor.github.io/tags/underscore/</guid>
+      <guid>https://nayibor.github.io/blog/tags/underscore/</guid>
       <description></description>
     </item>
     
     <item>
       <title>php</title>
-      <link>https://nayibor.github.io/tags/php/</link>
+      <link>https://nayibor.github.io/blog/tags/php/</link>
       <pubDate>Tue, 11 Aug 2015 13:42:38 +0000</pubDate>
       
-      <guid>https://nayibor.github.io/tags/php/</guid>
+      <guid>https://nayibor.github.io/blog/tags/php/</guid>
       <description></description>
     </item>
     

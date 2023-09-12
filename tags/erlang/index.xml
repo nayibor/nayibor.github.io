@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>erlang on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/tags/erlang/</link>
+    <link>https://nayibor.github.io/blog/tags/erlang/</link>
     <description>Recent content in erlang on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 03 Jan 2023 10:54:24 +0200</lastBuildDate>
     
-	<atom:link href="https://nayibor.github.io/tags/erlang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nayibor.github.io/blog/tags/erlang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Erlang Binary Pattern Matching</title>
-      <link>https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
+      <link>https://nayibor.github.io/blog/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
+      <guid>https://nayibor.github.io/blog/post/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
       <description>hello everyone and happy new year to one and all!!. hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year. i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get the various metadata and parts of an audio file either over the network being streamed or a file on disk Erlang and erlang related languages(Elixir,Lfe,Luerl) have this short and nifty way of unpacking this data out and getting the various sections efficiently and also with a small bit of code it takes a little bit of getting used to but its very powerful none the less</description>
     </item>
     
     <item>
       <title>Library for parsing iso8583 messages in erlang</title>
-      <link>https://nayibor.github.io/post/c33083b29ef6e62daebc9459653f84b9/</link>
+      <link>https://nayibor.github.io/blog/post/c33083b29ef6e62daebc9459653f84b9/</link>
       <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/c33083b29ef6e62daebc9459653f84b9/</guid>
+      <guid>https://nayibor.github.io/blog/post/c33083b29ef6e62daebc9459653f84b9/</guid>
       <description>i have been working on an iso8583 parsing library. its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages. this library can be used for packing and unpacking iso8583 financial messages. It accepts a specification file which contains info about fields,mti,bitmap for your messages. The specification has info such as header length for various fields,padding info for fields,etc&amp;hellip; This specification information is then used for packing/unpacking iso8583 formatted messages.</description>
     </item>
     
     <item>
       <title>Programming languages as web template languages</title>
-      <link>https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/</link>
+      <link>https://nayibor.github.io/blog/post/0cbce1a3a305b158373f04c7e4c579dc/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/</guid>
+      <guid>https://nayibor.github.io/blog/post/0cbce1a3a305b158373f04c7e4c579dc/</guid>
       <description>Web templating languages!!. Don&amp;rsquo;t we love em.
 Every one has their favourite but a common denominator among them all is that they make our work as web developers easier by giving us separation of concerns between data and content as well as lots of other advantages. A fancy term for web templating languages is a web template system.
 From Wikipedia a Web template system is defined as
@@ -43,20 +43,20 @@ From Wikipedia a Web template system is defined as
     
     <item>
       <title>Parsing iso8583 messages Part 2</title>
-      <link>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</link>
+      <link>https://nayibor.github.io/blog/post/4948d52595d68beab6dd3a919db6d115/</link>
       <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/4948d52595d68beab6dd3a919db6d115/</guid>
+      <guid>https://nayibor.github.io/blog/post/4948d52595d68beab6dd3a919db6d115/</guid>
       <description>Today we will be showing how to extract the various components out of an iso string. The combination of a tcp server as well as code to extract the iso message components and send it for further processing is what is popularly called an interface server in payment processing . Specifically the components we are interested in are
 the next step is to get the bitmap which is a hexadecimal(base 16 number)which starts from the fifth digit and is either 8 or 16 in size.</description>
     </item>
     
     <item>
       <title>Parsing iso8583 messages Part 1</title>
-      <link>https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/</link>
+      <link>https://nayibor.github.io/blog/post/73e0ec2ac943bfecb47acbe2e603f814/</link>
       <pubDate>Mon, 12 Dec 2016 07:57:26 +0000</pubDate>
       
-      <guid>https://nayibor.github.io/post/73e0ec2ac943bfecb47acbe2e603f814/</guid>
+      <guid>https://nayibor.github.io/blog/post/73e0ec2ac943bfecb47acbe2e603f814/</guid>
       <description></description>
     </item>
     

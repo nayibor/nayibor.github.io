@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/tags/git/</link>
+    <link>https://nayibor.github.io/blog/tags/git/</link>
     <description>Recent content in git on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Apr 2017 10:54:24 +0200</lastBuildDate>
     
-	<atom:link href="https://nayibor.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nayibor.github.io/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Deploying code with git and apache</title>
-      <link>https://nayibor.github.io/post/deploying-code-with-git-and-apache/</link>
+      <link>https://nayibor.github.io/blog/post/deploying-code-with-git-and-apache/</link>
       <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/deploying-code-with-git-and-apache/</guid>
+      <guid>https://nayibor.github.io/blog/post/deploying-code-with-git-and-apache/</guid>
       <description>Today we are going to talk about how to deploy our code to our testing server or production server using git/apache. In this scenario git will be taking the place of the tradional method of using ftp servers to upload code to a server.
 We will get to know how to
  configure a remote git repository so it checks out data to a web root location configure apache and create an apache conf file that will enable communication between the git repository and apache setup authenticaton in apache for git events push to remote repository and see files in web root  Let&amp;rsquo;s hit the road!</description>

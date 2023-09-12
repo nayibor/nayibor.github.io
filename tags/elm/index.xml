@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>elm on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/tags/elm/</link>
+    <link>https://nayibor.github.io/blog/tags/elm/</link>
     <description>Recent content in elm on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 May 2023 10:54:24 +0200</lastBuildDate>
     
-	<atom:link href="https://nayibor.github.io/tags/elm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nayibor.github.io/blog/tags/elm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Coding In Elm</title>
-      <link>https://nayibor.github.io/post/a7d70805678f89e1f89430c3237d0b1a/</link>
+      <title>Coding In Elm-lang</title>
+      <link>https://nayibor.github.io/blog/post/a7d70805678f89e1f89430c3237d0b1a/</link>
       <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/a7d70805678f89e1f89430c3237d0b1a/</guid>
+      <guid>https://nayibor.github.io/blog/post/a7d70805678f89e1f89430c3237d0b1a/</guid>
       <description>Hi All.Hope you are all good.
 Recently i had the chance to rewrite some sections of code i had written in javascript over to elm and wanted to share my experience with it.
-I had been experiencing an issue where the screen content was being updated too quickly causing the screen to become unresponsive
-Elm is a static functional programming language which is mostly used on the frontend which boasts having no runtime exceptions.</description>
+I had been experiencing an issue where a web dashboard which was being used for monitoring of a service was receiving information too quickly thus causing the dashboard to become unresponsive.
+the use case seemed like a good fit for elm where i had to rewrite a specific section of the dashboard so i decided to try out elm for this use case and see how it goes</description>
     </item>
     
     <item>
       <title>Programming languages as web template languages</title>
-      <link>https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/</link>
+      <link>https://nayibor.github.io/blog/post/0cbce1a3a305b158373f04c7e4c579dc/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
       
-      <guid>https://nayibor.github.io/post/0cbce1a3a305b158373f04c7e4c579dc/</guid>
+      <guid>https://nayibor.github.io/blog/post/0cbce1a3a305b158373f04c7e4c579dc/</guid>
       <description>Web templating languages!!. Don&amp;rsquo;t we love em.
 Every one has their favourite but a common denominator among them all is that they make our work as web developers easier by giving us separation of concerns between data and content as well as lots of other advantages. A fancy term for web templating languages is a web template system.
 From Wikipedia a Web template system is defined as

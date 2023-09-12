@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pagination on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/tags/pagination/</link>
+    <link>https://nayibor.github.io/blog/tags/pagination/</link>
     <description>Recent content in pagination on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 03 Jul 2016 02:41:08 +0000</lastBuildDate>
     
-	<atom:link href="https://nayibor.github.io/tags/pagination/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nayibor.github.io/blog/tags/pagination/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pagination using backbone.js and underscore template</title>
-      <link>https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/</link>
+      <link>https://nayibor.github.io/blog/post/f60a18aff854a9e6a287de1898f22a62/</link>
       <pubDate>Sun, 03 Jul 2016 02:41:08 +0000</pubDate>
       
-      <guid>https://nayibor.github.io/post/f60a18aff854a9e6a287de1898f22a62/</guid>
+      <guid>https://nayibor.github.io/blog/post/f60a18aff854a9e6a287de1898f22a62/</guid>
       <description></description>
     </item>
     

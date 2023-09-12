@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>php on Nuku&#39;s blog</title>
-    <link>https://nayibor.github.io/tags/php/</link>
+    <link>https://nayibor.github.io/blog/tags/php/</link>
     <description>Recent content in php on Nuku&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 Aug 2015 13:42:38 +0000</lastBuildDate>
     
-	<atom:link href="https://nayibor.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nayibor.github.io/blog/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cakephp 2.6.7  rawQuery bug</title>
-      <link>https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/</link>
+      <link>https://nayibor.github.io/blog/post/a0a580a0696d4382cab7314f832df7c3/</link>
       <pubDate>Tue, 11 Aug 2015 13:42:38 +0000</pubDate>
       
-      <guid>https://nayibor.github.io/post/a0a580a0696d4382cab7314f832df7c3/</guid>
+      <guid>https://nayibor.github.io/blog/post/a0a580a0696d4382cab7314f832df7c3/</guid>
       <description>return $this-&amp;gt;execute($sql, $params);   This was accepting two parameters instead of three and due to this was mistaking the $params value for the options value thus query was not run .query was being run as public function rawQuery($sql, $params = array()) {
      $this-&amp;gt;took = $this-&amp;gt;numRows = false;
       return $this-&amp;gt;execute($sql, $params);    }Instead of public function rawQuery($sql, $params = array()) {</description>
