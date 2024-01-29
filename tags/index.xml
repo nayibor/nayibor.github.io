@@ -8,213 +8,196 @@
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Fri, 12 May 2023 10:54:24 +0200</lastBuildDate><atom:link href="https://nayibor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Jan 2024 15:05:45 +0000</lastBuildDate>
+    <atom:link href="https://nayibor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>elm</title>
-      <link>https://nayibor.github.io/tags/elm/</link>
-      <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/elm/</guid>
+      <title>credit cards</title>
+      <link>https://nayibor.github.io/tags/credit-cards/</link>
+      <pubDate>Mon, 22 Jan 2024 15:05:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/credit-cards/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>functional programming</title>
-      <link>https://nayibor.github.io/tags/functional-programming/</link>
-      <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/functional-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>grasshopper code</title>
-      <link>https://nayibor.github.io/tags/grasshopper-code/</link>
-      <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/grasshopper-code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bit syntax</title>
-      <link>https://nayibor.github.io/tags/bit-syntax/</link>
-      <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/bit-syntax/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>erlang</title>
       <link>https://nayibor.github.io/tags/erlang/</link>
-      <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Mon, 22 Jan 2024 15:05:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/erlang/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>music</title>
-      <link>https://nayibor.github.io/tags/music/</link>
-      <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/music/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pattern matching</title>
-      <link>https://nayibor.github.io/tags/pattern-matching/</link>
-      <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/pattern-matching/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>community building</title>
-      <link>https://nayibor.github.io/tags/community-building/</link>
-      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/community-building/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>elixirkenya</title>
-      <link>https://nayibor.github.io/tags/elixirkenya/</link>
-      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/elixirkenya/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>meetup</title>
-      <link>https://nayibor.github.io/tags/meetup/</link>
-      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/meetup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>networking</title>
-      <link>https://nayibor.github.io/tags/networking/</link>
-      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/networking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>online learning</title>
-      <link>https://nayibor.github.io/tags/online-learning/</link>
-      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/online-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ziglang</title>
-      <link>https://nayibor.github.io/tags/ziglang/</link>
-      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/ziglang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>conference</title>
-      <link>https://nayibor.github.io/tags/conference/</link>
-      <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/tags/conference/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>erlang binary processing</title>
       <link>https://nayibor.github.io/tags/erlang-binary-processing/</link>
-      <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Mon, 22 Jan 2024 15:05:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/erlang-binary-processing/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>functional programming</title>
+      <link>https://nayibor.github.io/tags/functional-programming/</link>
+      <pubDate>Mon, 22 Jan 2024 15:05:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/functional-programming/</guid>
+      <description></description>
+    </item>
     <item>
       <title>iso8583</title>
       <link>https://nayibor.github.io/tags/iso8583/</link>
-      <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Mon, 22 Jan 2024 15:05:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/iso8583/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>payment cards</title>
+      <link>https://nayibor.github.io/tags/payment-cards/</link>
+      <pubDate>Mon, 22 Jan 2024 15:05:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/payment-cards/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>elm</title>
+      <link>https://nayibor.github.io/tags/elm/</link>
+      <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/elm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>grasshopper code</title>
+      <link>https://nayibor.github.io/tags/grasshopper-code/</link>
+      <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/grasshopper-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>bit syntax</title>
+      <link>https://nayibor.github.io/tags/bit-syntax/</link>
+      <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/bit-syntax/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>music</title>
+      <link>https://nayibor.github.io/tags/music/</link>
+      <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/music/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pattern matching</title>
+      <link>https://nayibor.github.io/tags/pattern-matching/</link>
+      <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/pattern-matching/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>community building</title>
+      <link>https://nayibor.github.io/tags/community-building/</link>
+      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/community-building/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>elixir</title>
+      <link>https://nayibor.github.io/tags/elixir/</link>
+      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/elixir/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>elixirkenya</title>
+      <link>https://nayibor.github.io/tags/elixirkenya/</link>
+      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/elixirkenya/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>meetup</title>
+      <link>https://nayibor.github.io/tags/meetup/</link>
+      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/meetup/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>networking</title>
+      <link>https://nayibor.github.io/tags/networking/</link>
+      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>online learning</title>
+      <link>https://nayibor.github.io/tags/online-learning/</link>
+      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/online-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ziglang</title>
+      <link>https://nayibor.github.io/tags/ziglang/</link>
+      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/ziglang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>conference</title>
+      <link>https://nayibor.github.io/tags/conference/</link>
+      <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/conference/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>debit cards</title>
+      <link>https://nayibor.github.io/tags/debit-cards/</link>
+      <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/debit-cards/</guid>
+      <description></description>
+    </item>
     <item>
       <title>apache2</title>
       <link>https://nayibor.github.io/tags/apache2/</link>
-      <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/apache2/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>git</title>
       <link>https://nayibor.github.io/tags/git/</link>
-      <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/git/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>javascript</title>
       <link>https://nayibor.github.io/tags/javascript/</link>
-      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>mithril</title>
       <link>https://nayibor.github.io/tags/mithril/</link>
-      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/mithril/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>templating</title>
       <link>https://nayibor.github.io/tags/templating/</link>
-      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/templating/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>yaws</title>
       <link>https://nayibor.github.io/tags/yaws/</link>
-      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/yaws/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>payments</title>
       <link>https://nayibor.github.io/tags/payments/</link>
-      <pubDate>Mon, 05 Dec 2016 07:55:57 +0000</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Mon, 05 Dec 2016 07:55:57 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/payments/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

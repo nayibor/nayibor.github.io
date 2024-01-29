@@ -8,20 +8,14 @@
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Mon, 05 Dec 2016 07:55:57 +0000</lastBuildDate><atom:link href="https://nayibor.github.io/tags/payments/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Dec 2016 07:55:57 +0000</lastBuildDate>
+    <atom:link href="https://nayibor.github.io/tags/payments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Iso8583  message structure</title>
       <link>https://nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/</link>
-      <pubDate>Mon, 05 Dec 2016 07:55:57 +0000</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Mon, 05 Dec 2016 07:55:57 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/</guid>
-      <description>alloha.
-at last i have been able to get my lazy behind to write a blog post on this.
-About time :).
-This will be the first in a series about parsing iso8583 financial messages using erlang.
-we will get to know
-about iso8583 and the message structure receiving iso 8583 messages over the wire using erlang tcp server and parsing the message . parsing those messages in various formats(text(acii),binary,custom format).</description>
+      <description>alloha.&#xA;at last i have been able to get my lazy behind to write a blog post on this.&#xA;About time :).&#xA;This will be the first in a series about parsing iso8583 financial messages using erlang.&#xA;we will get to know&#xA;about iso8583 and the message structure receiving iso 8583 messages over the wire using erlang tcp server and parsing the message . parsing those messages in various formats(text(acii),binary,custom format).</description>
     </item>
-    
   </channel>
 </rss>

@@ -89,7 +89,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="https://nayibor.github.io/favicon/favicon-16x16.png">
 
 
-<meta name="generator" content="Hugo 0.118.2"><link rel="alternate" href="https://nayibor.github.io/index.xml" type="application/rss+xml" title="Nukus Blog">
+<meta name="generator" content="Hugo 0.122.0"><link rel="alternate" href="https://nayibor.github.io/index.xml" type="application/rss+xml" title="Nukus Blog">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://nayibor.github.io/css/main.css">
@@ -410,10 +410,10 @@ the message when the message was being sent.</p>
 use to edit and send messages to the iso server example.</p>
 <p>After editing the various iso fields in the file you can then compile
 the file using</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>	javac <span style="color:#f92672">-</span>cp <span style="color:#f92672">.:</span>jpos<span style="color:#f92672">-</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">7</span><span style="color:#f92672">-</span>SNAPSHOT<span style="color:#f92672">.</span><span style="color:#a6e22e">jar</span> Test_java_client<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>	javac <span style="color:#f92672">-</span>cp .:jpos<span style="color:#f92672">-</span>2.<span style="color:#a6e22e">0</span>.<span style="color:#a6e22e">7</span><span style="color:#f92672">-</span>SNAPSHOT.<span style="color:#a6e22e">jar</span> Test_java_client.<span style="color:#a6e22e">java</span>
 </span></span></code></pre></div><p>and send the message to the erlang iso server which should have been
 started using</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>	java <span style="color:#f92672">-</span>Xbootclasspath<span style="color:#f92672">/</span>p<span style="color:#f92672">:</span>jpos<span style="color:#f92672">-</span>2<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">7</span><span style="color:#f92672">-</span>SNAPSHOT<span style="color:#f92672">.</span><span style="color:#a6e22e">jar</span> Test_java_client 8002
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>	java <span style="color:#f92672">-</span>Xbootclasspath<span style="color:#f92672">/</span>p:jpos<span style="color:#f92672">-</span>2.<span style="color:#a6e22e">0</span>.<span style="color:#a6e22e">7</span><span style="color:#f92672">-</span>SNAPSHOT.<span style="color:#a6e22e">jar</span> Test_java_client 8002
 </span></span></code></pre></div><p>This is where i wind down.</p>
 
       </article>
@@ -548,7 +548,7 @@ started using</p>
 
           &nbsp;&bull;&nbsp;&copy;
           
-          2023
+          2024
           
 
           

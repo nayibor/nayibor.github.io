@@ -8,39 +8,35 @@
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Fri, 12 May 2023 10:54:24 +0200</lastBuildDate><atom:link href="https://nayibor.github.io/tags/functional-programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Jan 2024 15:05:45 +0000</lastBuildDate>
+    <atom:link href="https://nayibor.github.io/tags/functional-programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using iso8583_erl Erlang Library</title>
+      <link>https://nayibor.github.io/posts/using-iso8583_erl-library/</link>
+      <pubDate>Mon, 22 Jan 2024 15:05:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/posts/using-iso8583_erl-library/</guid>
+      <description>i have been working on an iso8583 library and decided to write a post about it.&#xA;I have also used the library in three projects over the years so code is production ready and battle tested.&#xA;iso8583 is a payment card messaging protocol and in some ways a dsl for describing how to send and receive payment card transactions from a sender to a receiver.&#xA;the sender can be an atm,pos device,website,application,etc.</description>
+    </item>
     <item>
       <title>Coding In Elm-lang</title>
       <link>https://nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</link>
-      <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</guid>
-      <description>Hi All.Hope you are all good.
-Recently i had the chance to rewrite some sections of code i had written in javascript over to elm and wanted to share my experience with it.
-I had been experiencing an issue where a web dashboard which was being used for monitoring of a service was receiving information too quickly thus causing the dashboard to become unresponsive.
-the use case seemed like a good fit for elm where i had to rewrite a specific section of the dashboard so i decided to try out elm for this use case and see how it goes</description>
+      <description>Hi All.Hope you are all good.&#xA;Recently i had the chance to rewrite some sections of code i had written in javascript over to elm and wanted to share my experience with it.&#xA;I had been experiencing an issue where a web dashboard which was being used for monitoring of a service was receiving information too quickly thus causing the dashboard to become unresponsive.&#xA;the use case seemed like a good fit for elm where i had to rewrite a specific section of the dashboard so i decided to try out elm for this use case and see how it goes</description>
     </item>
-    
     <item>
       <title>Erlang Binary Pattern Matching</title>
       <link>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
-      <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
-      <description>hello everyone and happy new year to one and all!!. hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year.
-i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get the various metadata and parts of an audio file either over the network being streamed or a file on disk</description>
+      <description>hello everyone and happy new year to one and all!!. hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year.&#xA;i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get the various metadata and parts of an audio file either over the network being streamed or a file on disk</description>
     </item>
-    
     <item>
       <title>Library for parsing iso8583 messages in erlang</title>
       <link>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</link>
-      <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</guid>
-      <description>i have been working on an iso8583 parsing library for time.
-its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages. this library can be used for packing and unpacking iso8583 financial messages.
-It accepts a specification file which contains info about fields,mti,bitmap for your messages. The specification has info such as header length for various fields,padding info for fields,etc&amp;hellip; This specification information is then used for packing/unpacking iso8583 formatted messages.</description>
+      <description>i have been working on an iso8583 payment card parsing library for time.&#xA;its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages. this library can be used for packing and unpacking iso8583 financial messages.&#xA;It accepts a specification file which contains info about fields,mti,bitmap for your messages. The specification has info such as header length for various fields,padding info for fields,etc&amp;hellip; This specification information is then used for packing/unpacking iso8583 formatted payment card messages.</description>
     </item>
-    
   </channel>
 </rss>

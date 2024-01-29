@@ -7,6 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
-    <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster><atom:link href="https://nayibor.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
+    <atom:link href="https://nayibor.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

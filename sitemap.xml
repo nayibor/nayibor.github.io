@@ -2,31 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nayibor.github.io/tags/credit-cards/</loc>
+    <lastmod>2024-01-22T15:05:45+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/erlang/</loc>
+    <lastmod>2024-01-22T15:05:45+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/erlang-binary-processing/</loc>
+    <lastmod>2024-01-22T15:05:45+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/functional-programming/</loc>
+    <lastmod>2024-01-22T15:05:45+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/iso8583/</loc>
+    <lastmod>2024-01-22T15:05:45+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/</loc>
+    <lastmod>2024-01-22T15:05:45+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/payment-cards/</loc>
+    <lastmod>2024-01-22T15:05:45+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/posts/</loc>
+    <lastmod>2024-01-22T15:05:45+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/</loc>
+    <lastmod>2024-01-22T15:05:45+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/posts/using-iso8583_erl-library/</loc>
+    <lastmod>2024-01-22T15:05:45+00:00</lastmod>
+  </url><url>
     <loc>https://nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</loc>
     <lastmod>2023-05-12T10:54:24+02:00</lastmod>
   </url><url>
     <loc>https://nayibor.github.io/tags/elm/</loc>
     <lastmod>2023-05-12T10:54:24+02:00</lastmod>
   </url><url>
-    <loc>https://nayibor.github.io/tags/functional-programming/</loc>
-    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
-  </url><url>
     <loc>https://nayibor.github.io/tags/grasshopper-code/</loc>
     <lastmod>2023-05-12T10:54:24+02:00</lastmod>
   </url><url>
-    <loc>https://nayibor.github.io/</loc>
-    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/posts/</loc>
-    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/tags/</loc>
-    <lastmod>2023-05-12T10:54:24+02:00</lastmod>
-  </url><url>
     <loc>https://nayibor.github.io/tags/bit-syntax/</loc>
-    <lastmod>2023-01-03T10:54:24+02:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/tags/erlang/</loc>
     <lastmod>2023-01-03T10:54:24+02:00</lastmod>
   </url><url>
     <loc>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</loc>
@@ -39,6 +54,9 @@
     <lastmod>2023-01-03T10:54:24+02:00</lastmod>
   </url><url>
     <loc>https://nayibor.github.io/tags/community-building/</loc>
+    <lastmod>2021-10-04T10:54:24+02:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/elixir/</loc>
     <lastmod>2021-10-04T10:54:24+02:00</lastmod>
   </url><url>
     <loc>https://nayibor.github.io/tags/elixirkenya/</loc>
@@ -65,10 +83,7 @@
     <loc>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</loc>
     <lastmod>2021-06-04T10:54:24+02:00</lastmod>
   </url><url>
-    <loc>https://nayibor.github.io/tags/erlang-binary-processing/</loc>
-    <lastmod>2020-06-01T00:54:24+02:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/tags/iso8583/</loc>
+    <loc>https://nayibor.github.io/tags/debit-cards/</loc>
     <lastmod>2020-06-01T00:54:24+02:00</lastmod>
   </url><url>
     <loc>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</loc>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Using iso8583_erl Erlang Library - Nukus Blog</title>
+<meta name="description" content="processing payment card messages">
+
+<meta name="author" content="Nuku Ameyibor"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Nukus Blog",
+    
+    "url": "https:\/\/nayibor.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/nayibor.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/nayibor.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/nayibor.github.io\/posts\/using-iso8583_erl-library\/",
+          "name": "Using iso8583 erl erlang library"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Nuku Ameyibor"
+  },
+  "headline": "Using iso8583_erl Erlang Library",
+  "description" : "processing payment card messages",
+  "inLanguage" : "en",
+  "wordCount":  686 ,
+  "datePublished" : "2024-01-22T15:05:45",
+  "dateModified" : "2024-01-22T15:05:45",
+  "image" : "https:\/\/nayibor.github.io",
+  "keywords" : [ "erlang, iso8583, erlang binary processing, functional programming, payment cards, payment-cards, credit cards" ],
+  "mainEntityOfPage" : "https:\/\/nayibor.github.io\/posts\/using-iso8583_erl-library\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/nayibor.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/nayibor.github.io",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://nayibor.github.io/images/iso_message.jpg">
+<meta property="og:url" content="https://nayibor.github.io/posts/using-iso8583_erl-library/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nukus Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://nayibor.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nayibor.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nayibor.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.122.0"><link rel="alternate" href="https://nayibor.github.io/index.xml" type="application/rss+xml" title="Nukus Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://nayibor.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://nayibor.github.io/css/dark.css"><link rel="stylesheet" href="https://nayibor.github.io/css/syntax.css"><link rel="stylesheet" href="https://nayibor.github.io/css/codeblock.css">
+
+
+
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://nayibor.github.io">Nukus Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="posts-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Using iso8583_erl Erlang Library
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/images/iso_message.jpg" alt="Using iso8583_erl Erlang Library" class="rounded img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p>i have been working on an iso8583 <a href="https://github.com/nayibor/iso8583_erl">library</a> and decided to write a post about it.</p>
+<p>I have also used the library in three projects over the years so code is production ready and battle tested.</p>
+<p>iso8583 is a payment card messaging protocol and in some ways a dsl for describing how to send and receive payment card transactions from a sender to a receiver.</p>
+<p>the sender can be an atm,pos device,website,application,etc.. and the receiver an application,card processor like visa,mastercard etc.</p>
+<p>The library accepts a specification file which contains info about payment card data for your messages.The specification has info such as header length for various fields,padding info for fields,etc&hellip; This info is then used for packing and unpacking the payment card messages.</p>
+<p>Library can be used mostly with ascii messages or hex formatted messages.</p>
+<p><strong>usage</strong></p>
+<p>to use library you can use add the dependancy in mix.exs or rebar.config like below</p>
+<p>mix.exs</p>
+<p><code>{:iso8583_erl, &quot;~&gt; 0.4.0&quot;}</code></p>
+<p>rebar.config</p>
+<p><code>{iso8583_erl, &quot;0.4.0&quot;}</code></p>
+<p><strong>quickstart</strong></p>
+<p>the library is used by first loading a specification file after which you can pack and unpack data based on the specification file</p>
+<p>a sample specification file can be found <a href="https://github.com/nayibor/iso8583_erl/blob/master/test/iso8583_erl_SUITE_data/custom.cfg">here</a></p>
+<p>Using erlang code below loading a specification file found in the root directory.</p>
+<p><code>Spec = iso8583_erl:load_specification(&quot;custom.cfg&quot;),</code></p>
+<p>if specification file is found in <code>priv</code> directory as is common to erlang, path will be
+<code>code:priv_dir(iso8583_erl)++&quot;/custom.cfg&quot;</code> and if other path is used for specification,
+path has be put in there</p>
+<p>For adding a message type indicator or mti you can do the following</p>
+<p><code>{ok,First_map} = iso8583_erl:set_mti(maps:new(),&lt;&lt;&quot;0200&quot;&gt;&gt;),</code></p>
+<p>For adding payment card fields from 1 to 128 you can do the following</p>
+<p><code>{ok,Second_map} = iso8583_erl:set_field(First_map,3,&lt;&lt;&quot;000102&quot;&gt;&gt;), %%Processing code</code></p>
+<p><code>{ok,Third_map} = iso8583_erl:set_field(Second_map,4,&lt;&lt;&quot;123456789012&quot;&gt;&gt;),    %%Amount Transaction</code></p>
+<p><code>{ok,Fourth_map} = iso8583_erl:set_field(Third_map,5,&lt;&lt;&quot;123456789012&quot;&gt;&gt;),   %%Amount Settlement</code></p>
+<p>As you can probably tell the code updates a map internally.</p>
+<p>To set multiple fields you can do this</p>
+<p><code>Map_send_list = iso8583_erl:set_field_list([{mti,&lt;&lt;&quot;0200&quot;&gt;&gt;},{3,&lt;&lt;&quot;000102&quot;&gt;&gt;},{4,&lt;&lt;&quot;4.5&quot;&gt;&gt;},{5,&lt;&lt;&quot;5000&quot;&gt;&gt;},{102,&lt;&lt;&quot;123413243&quot;&gt;&gt;},{103,&lt;&lt;&quot;12897979987&quot;&gt;&gt;}]),</code></p>
+<p>To pack the data so it can be sent to the respondent the following can be done
+<code>[Mti,Bitmap_final_bit,Fields_list] = iso8583_erl:pack(Map_send_list,Specification)</code></p>
+<p>This packs the message and adds the various headers and paddings for the various fields.It also
+generates the bitmap for the message.</p>
+<p>The result is an iolist which contains the mti,bitmap and the formatted field list.</p>
+<p>Usually when using the iso08583 protocol, a size header is appended to the message showing the total size of the message.This is so
+the receiver can know when processing a message when the whole message has been received.</p>
+<p>There are functions in the library <code>iso8583_erl:get_send/2</code> which calculates the size of the message and zerofills it to the
+number of bytes which the message size can be so a message with a length of 500 words where the max size is 4 bytes will be 0500</p>
+<p><code>Iso_Message = iso8583_erl:pack(Map_send_list,Specification),</code></p>
+<p><code>Final_size = iso8583_erl:get_size_send(Iso_Message,Bheader),</code></p>
+<p><code>%%Bheader is maximum size of header containing message size</code></p>
+<p><code>Final = [Final_size,Iso_Response],  %%appending size of message</code></p>
+<p><code>ok = gen_tcp:send(Socket,Final), %%sending with socket</code></p>
+<p>To unpack the data on the other side  you first get the first <code>n</code> bytes which will have the size of the message.
+In our case the first <code>n</code> bytes which contain the size of the message is <code>4</code> so the size of the message will be in
+the first 4 bytes.The size will depend on the number of fields and  the sizes of the various message fields.</p>
+<p>After getting the whole data out at the receiver end and also  processing to get the message length out of the mix,you can unpack it
+by first loading the specification just like in the packing side and then run the unpack command.</p>
+<p><strong>unpacking on the receiving side</strong></p>
+<p>The unpack command upacks the formatted message based on the specification and then creates a map holding the mti,bitmap,
+and the various fields all in a map</p>
+<p><code>Specification = iso8583_erl:load_specification(&quot;custom.cfg&quot;),</code></p>
+<p><code>Map_data = iso8583_erl:unpack(Final,Specification)</code></p>
+<p>you can then get the individual fields by pattern matching like so</p>
+<p><code>#{3 =&gt; Field_three,4 =&gt; Field_four,bit =&gt; Bitmap,mti =&gt; Mti} = Map_data,</code></p>
+<p>you can also get the various fields by using <code>iso8583_erl:get_field/2</code> functions.</p>
+<p><code>{ok,Field_four} = iso8583_erl:get_field(4,Map_data)</code></p>
+<p>There is a github <a href="https://github.com/nayibor/iso8583_echo_server">project</a> which contains a whole application showing the use of the iso8583_erl library.</p>
+<p>Happy hacking and let me know if you see any bugs</p>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://nayibor.github.io/tags/erlang/">erlang</a>
+            
+              <a href="https://nayibor.github.io/tags/iso8583/">iso8583</a>
+            
+              <a href="https://nayibor.github.io/tags/erlang-binary-processing/">erlang binary processing</a>
+            
+              <a href="https://nayibor.github.io/tags/functional-programming/">functional programming</a>
+            
+              <a href="https://nayibor.github.io/tags/payment-cards/">payment cards</a>
+            
+              <a href="https://nayibor.github.io/tags/payment-cards/">payment-cards</a>
+            
+              <a href="https://nayibor.github.io/tags/credit-cards/">credit cards</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            
+          </div>
+          </div>
+                   
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/"
+              data-toggle="tooltip" data-placement="top" title="Coding In Elm-lang">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="mailto:nayibor@gmail.com" title="Email me" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-envelope"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/nayibor" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          <a href="https://nayibor.github.io/">Nuku Ameyibor</a>
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2024
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://nayibor.github.io">Nukus Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script><script src="https://nayibor.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+

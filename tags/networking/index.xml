@@ -8,24 +8,21 @@
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Mon, 04 Oct 2021 10:54:24 +0200</lastBuildDate><atom:link href="https://nayibor.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Oct 2021 10:54:24 +0200</lastBuildDate>
+    <atom:link href="https://nayibor.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Talking to outside world from Elixir</title>
       <link>https://nayibor.github.io/posts/meetup-talk/</link>
-      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/meetup-talk/</guid>
       <description>I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir. The ecosystem for talking to the outside world from beam systems has a lot of options. Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang. ziglang was interesting not only for creating nifs but also as a possible future replacement for writing simple,fast,safe code This is the talk as well as a video about why to use zig to write nifs enjoy !</description>
     </item>
-    
     <item>
       <title>Conference and Community Building</title>
       <link>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</link>
-      <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate>
-      <author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</guid>
       <description>Conferences/communities are a great way for everyone to network and learn something new. the effect of the pandemic on how these events are organized has been interesting. its made people have to innovate around the organization of events. there have been some positives out of this as well as some negatives i have attended three erlang/elixir online conferences(two of my best languages) so far this year and its been interesting the positives/negatives as well as what the future may bring</description>
     </item>
-    
   </channel>
 </rss>
