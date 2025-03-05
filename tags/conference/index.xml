@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>conference on Nukus Blog</title>
+    <title>Conference on Nukus Blog</title>
     <link>https://nayibor.github.io/tags/conference/</link>
-    <description>Recent content in conference on Nukus Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Conference on Nukus Blog</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
@@ -15,7 +15,7 @@
       <link>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</link>
       <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</guid>
-      <description>Conferences/communities are a great way for everyone to network and learn something new. the effect of the pandemic on how these events are organized has been interesting. its made people have to innovate around the organization of events. there have been some positives out of this as well as some negatives i have attended three erlang/elixir online conferences(two of my best languages) so far this year and its been interesting the positives/negatives as well as what the future may bring</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Conferences/communities are a great way for everyone to network and learn something new.&#xA;&lt;!-- raw HTML omitted --&gt;the effect of the pandemic on how these events are organized has been interesting.&#xA;&lt;!-- raw HTML omitted --&gt;its made people have to innovate around the organization of events.&#xA;&lt;!-- raw HTML omitted --&gt;there have been some positives out of this as well as some negatives&#xA;&lt;!-- raw HTML omitted --&gt;i have attended three erlang/elixir online conferences(two of my best languages)  so far this year and its been interesting&#xA;&lt;!-- raw HTML omitted --&gt;the positives/negatives as well as what the future may bring&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

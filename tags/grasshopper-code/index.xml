@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>grasshopper code on Nukus Blog</title>
+    <title>Grasshopper Code on Nukus Blog</title>
     <link>https://nayibor.github.io/tags/grasshopper-code/</link>
-    <description>Recent content in grasshopper code on Nukus Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Grasshopper Code on Nukus Blog</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
@@ -15,7 +15,7 @@
       <link>https://nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</link>
       <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</guid>
-      <description>Hi All.Hope you are all good.&#xA;Recently i had the chance to rewrite some sections of code i had written in javascript over to elm and wanted to share my experience with it.&#xA;I had been experiencing an issue where a web dashboard which was being used for monitoring of a service was receiving information too quickly thus causing the dashboard to become unresponsive.&#xA;the use case seemed like a good fit for elm where i had to rewrite a specific section of the dashboard so i decided to try out elm for this use case and see how it goes</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Hi All.Hope you are all good.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Recently i had the chance to rewrite some sections of code i had written in javascript over to elm and wanted to share my experience with it.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;I had been experiencing an issue where a web dashboard which was being used for monitoring of a service was receiving information too quickly thus&#xA;causing the dashboard to become unresponsive.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

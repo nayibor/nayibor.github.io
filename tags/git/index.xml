@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on Nukus Blog</title>
+    <title>Git on Nukus Blog</title>
     <link>https://nayibor.github.io/tags/git/</link>
-    <description>Recent content in git on Nukus Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Git on Nukus Blog</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
@@ -15,7 +15,7 @@
       <link>https://nayibor.github.io/posts/deploying-code-with-git-and-apache/</link>
       <pubDate>Tue, 25 Apr 2017 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/deploying-code-with-git-and-apache/</guid>
-      <description>Today we are going to talk about how to deploy our code to our testing server or production server using git/apache. In this scenario git will be taking the place of the tradional method of using ftp servers to upload code to a server.&#xA;We will get to know how to&#xA;configure a remote git repository so it checks out data to a web root location configure apache and create an apache conf file that will enable communication between the git repository and apache setup authenticaton in apache for git events push to remote repository and see files in web root Let&amp;rsquo;s hit the road!</description>
+      <description>&lt;p&gt;Today we are going to talk about how to deploy our code to our testing server or production server using git/apache.&#xA;In this scenario git will be taking the place of the tradional method of using ftp servers to upload code to a server.&lt;/p&gt;&#xA;&lt;p&gt;We will get to know how to&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;configure a remote git repository so it checks out data to a web root location&lt;/li&gt;&#xA;&lt;li&gt;configure apache and create an apache conf file that will enable communication between the git repository and apache&lt;/li&gt;&#xA;&lt;li&gt;setup authenticaton in apache for git events&lt;/li&gt;&#xA;&lt;li&gt;push to remote repository and see files in web root&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s hit the road!!!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
