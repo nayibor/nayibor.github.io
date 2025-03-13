@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,14 +15,14 @@
     "@type": "WebSite",
     "name": "Nukus Blog",
     
-    "url": "http:\/\/localhost:1313\/"
+    "url": "https:\/\/nayibor.github.io\/"
 }
 </script><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Organization",
   "name": "",
-  "url": "http:\/\/localhost:1313\/"
+  "url": "https:\/\/nayibor.github.io\/"
   
   
   
@@ -37,14 +37,14 @@
         "@type": "ListItem",
         "position": 1,
         "item": {
-          "@id": "http:\/\/localhost:1313\/",
+          "@id": "https:\/\/nayibor.github.io\/",
           "name": "home"
         }
     },{
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "http:\/\/localhost:1313\/posts\/4948d52595d68beab6dd3a919db6d115\/",
+          "@id": "https:\/\/nayibor.github.io\/posts\/4948d52595d68beab6dd3a919db6d115\/",
           "name": "Parsing iso8583 messages part 2"
         }
     }]
@@ -59,18 +59,18 @@
   "headline": "Parsing iso8583 messages Part 2",
   "description" : "parsing iso8583 messages using erlang",
   "inLanguage" : "en",
-  "wordCount":  1401 ,
+  "wordCount":  1469 ,
   "datePublished" : "2016-12-22T10:54:24",
   "dateModified" : "2016-12-22T10:54:24",
-  "image" : "http:\/\/localhost:1313\/",
+  "image" : "https:\/\/nayibor.github.io\/",
   "keywords" : [ "erlang, iso8583, erlang binary processing" ],
-  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/4948d52595d68beab6dd3a919db6d115\/",
+  "mainEntityOfPage" : "https:\/\/nayibor.github.io\/posts\/4948d52595d68beab6dd3a919db6d115\/",
   "publisher" : {
     "@type": "Organization",
-    "name" : "http:\/\/localhost:1313\/",
+    "name" : "https:\/\/nayibor.github.io\/",
     "logo" : {
         "@type" : "ImageObject",
-        "url" : "http:\/\/localhost:1313\/",
+        "url" : "https:\/\/nayibor.github.io\/",
         "height" :  60 ,
         "width" :  60
     }
@@ -78,21 +78,21 @@
 }
 </script>
 
-<meta property="og:image" content="http://localhost:1313/images/iso_message.jpg">
-<meta property="og:url" content="http://localhost:1313/posts/4948d52595d68beab6dd3a919db6d115/">
+<meta property="og:image" content="https://nayibor.github.io/images/iso_message.jpg">
+<meta property="og:url" content="https://nayibor.github.io/posts/4948d52595d68beab6dd3a919db6d115/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nukus Blog">
    
-<link rel="apple-touch-icon" sizes="180x180" href=" http://localhost:1313/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href=" https://nayibor.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nayibor.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nayibor.github.io/favicon/favicon-16x16.png">
 
 
-<meta name="generator" content="Hugo 0.145.0"><link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Nukus Blog">
+<meta name="generator" content="Hugo 0.145.0"><link rel="alternate" href="https://nayibor.github.io/index.xml" type="application/rss+xml" title="Nukus Blog">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<link rel="stylesheet" href="http://localhost:1313/css/main.css">
-<link disabled id="dark-mode-theme" rel="stylesheet" href="http://localhost:1313/css/dark.css"><link rel="stylesheet" href="http://localhost:1313/css/syntax.css"><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css">
+<link rel="stylesheet" href="https://nayibor.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://nayibor.github.io/css/dark.css"><link rel="stylesheet" href="https://nayibor.github.io/css/syntax.css"><link rel="stylesheet" href="https://nayibor.github.io/css/codeblock.css">
 
 
 
@@ -110,7 +110,7 @@
       <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
         <div class="container">
           
-          <a class="navbar-brand fw-bold" href="http://localhost:1313/">Nukus Blog</a>
+          <a class="navbar-brand fw-bold" href="https://nayibor.github.io/">Nukus Blog</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -243,26 +243,63 @@ and send it for further processing is what is popularly called an interface serv
 <p>Also the 1993 ascii protocol will be used here as well as erlang  programming language for the code explanations .</p>
 <p>So do git clone the repository,cd to <strong>iso_process_tut_repo</strong> and fire up your erlang vm and lets begin !!.</p>
 <p>Consider the message below</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1200</span>F230040102B000000000000004000000
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">104846811212201234000010000000110722</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1800000001161204171926</span>FABCDE123ABD06
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">414243000</span>termid1210Community106A5DFG
-</span></span><span style="display:flex;"><span>R1112341234234
-</span></span></code></pre></div><p>the iso message in this case is an ascii string or an ansi iso8583 message.
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#2aa198">1200</span><span style="color:#268bd2">F230040102B000000000000004000000</span>
+</span></span><span style="display:flex;"><span><span style="color:#2aa198">104846811212201234000010000000110722</span>
+</span></span><span style="display:flex;"><span><span style="color:#2aa198">1800000001161204171926</span><span style="color:#268bd2">FABCDE123ABD06</span>
+</span></span><span style="display:flex;"><span><span style="color:#2aa198">414243000</span>termid1210Community106A5DFG
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">R1112341234234</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>the iso message in this case is an ascii string or an ansi iso8583 message.
 The function below is what processes the messages and returns a map containing the various fields of the message as well the mti and bitmap</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>-spec process_message([{list | binary,pos_integer()}])<span style="color:#f92672">-&gt;</span>map().			
-</span></span><span style="display:flex;"><span>		process_message({binary,Rest})<span style="color:#f92672">-&gt;</span> 
-</span></span></code></pre></div><p>the first statement converts the string to a binary.
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>-<span style="color:#cb4b16">spec</span> process_message([{list | binary,pos_integer()}])<span style="color:#719e07">-&gt;</span>map().			
+</span></span><span style="display:flex;"><span>		process_message({binary,<span style="color:#268bd2">Rest</span>})<span style="color:#719e07">-&gt;</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>the first statement converts the string to a binary.
 Binary strings or binaries store data in a more space efficient manner and has more efficient functions for handling large binary data.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		Bin_message <span style="color:#f92672">=</span> erlang:list_to_binary(Rest),
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">%%this gives &lt;&lt;&#34;01581200F230040102B...&#34;&gt;&gt;	
-</span></span></span></code></pre></div><p>the next step is to find the mti which is made up of the first 4 digits.We do that and then store the mti along with with some metadata in a map.
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		<span style="color:#268bd2">Bin_message</span> <span style="color:#719e07">=</span> erlang:<span style="color:#b58900">list_to_binary</span>(<span style="color:#268bd2">Rest</span>),
+</span></span><span style="display:flex;"><span>		<span style="color:#586e75">%%this gives &lt;&lt;&#34;01581200F230040102B...&#34;&gt;&gt;	
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>the next step is to find the mti which is made up of the first 4 digits.We do that and then store the mti along with with some metadata in a map.
 the <strong>?MTI_SIZE</strong> is macro which is defined at the top of the file  and is equal to 4.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		Mti <span style="color:#f92672">=</span> binary:<span style="color:#a6e22e">part</span>(Bin_message,<span style="color:#ae81ff">0</span>,<span style="color:#f92672">?</span>MTI_SIZE),<span style="color:#75715e">%%this gives &lt;&lt;&#34;1200&#34;&gt;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		Mti_Data_Element <span style="color:#f92672">=</span> maps:<span style="color:#a6e22e">from_list</span>([{ftype,ans},{fld_no,<span style="color:#ae81ff">0</span>},{name,<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;Mti&#34;</span><span style="color:#f92672">&gt;&gt;</span>},{val_binary_form,Mti}]),
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">%%this gives #{fld_no =&gt; 0,ftype =&gt; ans,name =&gt; &lt;&lt;&#34;Mti&#34;&gt;&gt;,val_binary_form =&gt; &lt;&lt;&#34;1200&#34;&gt;&gt;}			 
-</span></span></span></code></pre></div><p>the next step is to get the bitmap which is a hexadecimal(base 16
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		<span style="color:#268bd2">Mti</span> <span style="color:#719e07">=</span> binary:<span style="color:#268bd2">part</span>(<span style="color:#268bd2">Bin_message</span>,<span style="color:#2aa198">0</span>,<span style="color:#719e07">?</span><span style="color:#268bd2">MTI_SIZE</span>),<span style="color:#586e75">%%this gives &lt;&lt;&#34;1200&#34;&gt;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span>		<span style="color:#268bd2">Mti_Data_Element</span> <span style="color:#719e07">=</span> maps:<span style="color:#268bd2">from_list</span>([{ftype,ans},{fld_no,<span style="color:#2aa198">0</span>},{name,<span style="color:#719e07">&lt;&lt;</span><span style="color:#2aa198">&#34;Mti&#34;</span><span style="color:#719e07">&gt;&gt;</span>},{val_binary_form,<span style="color:#268bd2">Mti</span>}]),
+</span></span><span style="display:flex;"><span>		<span style="color:#586e75">%%this gives #{fld_no =&gt; 0,ftype =&gt; ans,name =&gt; &lt;&lt;&#34;Mti&#34;&gt;&gt;,val_binary_form =&gt; &lt;&lt;&#34;1200&#34;&gt;&gt;}			 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>the next step is to get the bitmap which is a hexadecimal(base 16
 number)which starts from the fifth  digit and is either 8 or 16 in
 size.</p>
 <p>The bitmap tell us which data elements exist in the message.</p>
@@ -275,11 +312,26 @@ For example the bitmap <strong>4210001102C04804</strong> is <strong>010000100001
 <p>this means Fields 2, 7, 12, 28, 32, 39, 41, 42, 50, 53, 62 are present and there is no secondary bitmap since bit 1 is 0.</p>
 <p>Find below code sections for getting the bitmap out of our message as
 explained above from</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		Fthdig <span style="color:#f92672">=</span> binary:<span style="color:#a6e22e">part</span>(Bin_message,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">1</span>),<span style="color:#75715e">%%this gives F
-</span></span></span></code></pre></div><p>to</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		Bitmap_transaction <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">&lt;&lt;</span> (convert_base_pad(One,<span style="color:#ae81ff">4</span>,<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">&gt;&gt;</span>)):<span style="color:#ae81ff">4</span><span style="color:#f92672">/</span>binary <span style="color:#f92672">&gt;&gt;</span>  || <span style="color:#f92672">&lt;&lt;</span>One:<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>binary<span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">&lt;=</span> Bitmap_Segment <span style="color:#f92672">&gt;&gt;</span>,
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">%%this gives &lt;&lt;&#34;111100100011000000000100000000010...&#34;&gt;&gt;
-</span></span></span></code></pre></div><p>the next three statements creates a map which contains the bitmap and
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		<span style="color:#268bd2">Fthdig</span> <span style="color:#719e07">=</span> binary:<span style="color:#268bd2">part</span>(<span style="color:#268bd2">Bin_message</span>,<span style="color:#2aa198">4</span>,<span style="color:#2aa198">1</span>),<span style="color:#586e75">%%this gives F
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>to</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		<span style="color:#268bd2">Bitmap_transaction</span> <span style="color:#719e07">=</span> <span style="color:#719e07">&lt;&lt;</span> <span style="color:#719e07">&lt;&lt;</span> (convert_base_pad(<span style="color:#268bd2">One</span>,<span style="color:#2aa198">4</span>,<span style="color:#719e07">&lt;&lt;</span><span style="color:#2aa198">&#34;0&#34;</span><span style="color:#719e07">&gt;&gt;</span>)):<span style="color:#2aa198">4</span><span style="color:#719e07">/</span>binary <span style="color:#719e07">&gt;&gt;</span>  || <span style="color:#719e07">&lt;&lt;</span><span style="color:#268bd2">One</span>:<span style="color:#2aa198">1</span><span style="color:#719e07">/</span>binary<span style="color:#719e07">&gt;&gt;</span> <span style="color:#719e07">&lt;=</span> <span style="color:#268bd2">Bitmap_Segment</span> <span style="color:#719e07">&gt;&gt;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#586e75">%%this gives &lt;&lt;&#34;111100100011000000000100000000010...&#34;&gt;&gt;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>the next three statements creates a map which contains the bitmap and
 the mti .</p>
 <p>The next step is to get the data elements which is the actual
 content of the message itself and contains info like</p>
@@ -310,11 +362,21 @@ list fold. In this case instead of a list it takes a binary,accepts a
 fun for processing the binary and processes the binary until the
 binary is of size zero .there is also an accumilator variable in there
 just like with a list fold .</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		fold_bin(_Fun, Accum, <span style="color:#f92672">&lt;&lt;&gt;&gt;</span>) <span style="color:#f92672">-&gt;</span> Accum;
-</span></span><span style="display:flex;"><span>		fold_bin(Fun, Accum, Bin) <span style="color:#f92672">-&gt;</span>
-</span></span><span style="display:flex;"><span>			{NewBin, NewAccum} <span style="color:#f92672">=</span> Fun(Bin, Accum),
-</span></span><span style="display:flex;"><span>			fold_bin(Fun, NewAccum, NewBin).	
-</span></span></code></pre></div><p>The reason for this is because we will be passing the bitmap as the
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		fold_bin(_<span style="color:#268bd2">Fun</span>, <span style="color:#268bd2">Accum</span>, <span style="color:#719e07">&lt;&lt;&gt;&gt;</span>) <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">Accum</span>;
+</span></span><span style="display:flex;"><span>		fold_bin(<span style="color:#268bd2">Fun</span>, <span style="color:#268bd2">Accum</span>, <span style="color:#268bd2">Bin</span>) <span style="color:#719e07">-&gt;</span>
+</span></span><span style="display:flex;"><span>			{<span style="color:#268bd2">NewBin</span>, <span style="color:#268bd2">NewAccum</span>} <span style="color:#719e07">=</span> <span style="color:#268bd2">Fun</span>(<span style="color:#268bd2">Bin</span>, <span style="color:#268bd2">Accum</span>),
+</span></span><span style="display:flex;"><span>			fold_bin(<span style="color:#268bd2">Fun</span>, <span style="color:#268bd2">NewAccum</span>, <span style="color:#268bd2">NewBin</span>).	
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The reason for this is because we will be passing the bitmap as the
 input element with the iso message also being passed as an input but as an accumulator
 in this case.The bitmap of course represents the presence or absence of a field .
 <!-- raw HTML omitted -->If a field is present then we extract the data element out
@@ -323,13 +385,25 @@ iteration and then move on.If the field is not present we move on to the
 next element anyway .
 <!-- raw HTML omitted -->The fold_bin segment which gets the data elements and puts them in
 a map works like this in its simplified form</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		OutData<span style="color:#f92672">=</span>fold_bin(
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">fun</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;</span>br<span style="color:#f92672">&gt;</span>(Bitmap, 
-</span></span><span style="display:flex;"><span>		{Data_for_use_in,Index_start_in,Current_index_in,Map_out_list_in}) 
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">when</span> X <span style="color:#f92672">=:=</span> <span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;&gt;</span>
-</span></span></code></pre></div><p>In this case the field exists</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#268bd2">OutData</span><span style="color:#719e07">=</span>fold_bin(
+</span></span><span style="display:flex;"><span>		<span style="color:#719e07">fun</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#719e07">&lt;</span>br<span style="color:#719e07">&gt;</span>(<span style="color:#268bd2">Bitmap</span>, 
+</span></span><span style="display:flex;"><span>		{<span style="color:#268bd2">Data_for_use_in</span>,<span style="color:#268bd2">Index_start_in</span>,<span style="color:#268bd2">Current_index_in</span>,<span style="color:#268bd2">Map_out_list_in</span>}) 
+</span></span><span style="display:flex;"><span>		<span style="color:#719e07">when</span> <span style="color:#268bd2">X</span> <span style="color:#719e07">=:=</span> <span style="color:#719e07">&lt;&lt;</span><span style="color:#2aa198">&#34;1&#34;</span><span style="color:#719e07">&gt;&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In this case the field exists</p>
 <p>Data_for_use_in = Iso Message as input in fold_bin function</p>
 <p>Index_start_in = Position we are in in iso message which
 corresponds to a specific start position for data element</p>
@@ -337,57 +411,133 @@ corresponds to a specific start position for data element</p>
 <p>Map_out_list_in = accumulator for data elements</p>
 <p>statement to extract data elements based on field
 length,maximum length etc follow..</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	{Rest_bin,{Data_for_use_in,New_Index,Fld_num_out,NewMap}};<span style="color:#f92672">**</span>
-</span></span></code></pre></div><p>%%output which contains NewMap which contains the data element</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		Rest_bin <span style="color:#f92672">=</span>  bitmap 
-</span></span></code></pre></div><p>which contains presence/absence of  data elements yet to be processed</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	{<span style="color:#268bd2">Rest_bin</span>,{<span style="color:#268bd2">Data_for_use_in</span>,<span style="color:#268bd2">New_Index</span>,<span style="color:#268bd2">Fld_num_out</span>,<span style="color:#268bd2">NewMap</span>}};<span style="color:#719e07">**</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>%%output which contains NewMap which contains the data element</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		<span style="color:#268bd2">Rest_bin</span> <span style="color:#719e07">=</span>  bitmap 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>which contains presence/absence of  data elements yet to be processed</p>
 <p>Data_for_use_in = Iso Message as input in fold_bin function</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		New_Index <span style="color:#f92672">=</span> Position 
-</span></span></code></pre></div><p>we are in in iso message which
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		<span style="color:#268bd2">New_Index</span> <span style="color:#719e07">=</span> <span style="color:#268bd2">Position</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>we are in in iso message which
 corresponds to a specific start position for next data element</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		Fld_num_out <span style="color:#f92672">=</span> next data element		  
-</span></span></code></pre></div><p>Also New_Index is the position of the next element so we know
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		<span style="color:#268bd2">Fld_num_out</span> <span style="color:#719e07">=</span> next data <span style="color:#b58900">element</span>		  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Also New_Index is the position of the next element so we know
 where in the binary to start processing the next date element and Fld_num_out
 is the fld_num which we will use for getting the spec for a
 field using the <strong>get_spec_field</strong> function</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		(Bitmap, 
-</span></span><span style="display:flex;"><span>	    {Data_for_use_in,Index_start_in,Current_index_in,Map_out_list_in}) 
-</span></span><span style="display:flex;"><span>	    <span style="color:#66d9ef">when</span> X <span style="color:#f92672">=:=</span> <span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">-&gt;**</span>
-</span></span></code></pre></div><p>In this case field does not exist &hellip;statement to extract data elements based on field
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>		(<span style="color:#268bd2">Bitmap</span>, 
+</span></span><span style="display:flex;"><span>	    {<span style="color:#268bd2">Data_for_use_in</span>,<span style="color:#268bd2">Index_start_in</span>,<span style="color:#268bd2">Current_index_in</span>,<span style="color:#268bd2">Map_out_list_in</span>}) 
+</span></span><span style="display:flex;"><span>	    <span style="color:#719e07">when</span> <span style="color:#268bd2">X</span> <span style="color:#719e07">=:=</span> <span style="color:#719e07">&lt;&lt;</span><span style="color:#2aa198">&#34;0&#34;</span><span style="color:#719e07">&gt;&gt;</span> <span style="color:#719e07">-&gt;**</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In this case field does not exist &hellip;statement to extract data elements based on field
 length,maximum length etc..</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	{Rest_bin,{Data_for_use_in,New_Index,Fld_num_out,NewMap}};<span style="color:#f92672">**</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">end</span>, 
-</span></span><span style="display:flex;"><span>	{Bin_message,Start_index,<span style="color:#ae81ff">1</span>,Map_Data_Element},Bitmap_transaction),<span style="color:#f92672">**</span>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	{<span style="color:#268bd2">Rest_bin</span>,{<span style="color:#268bd2">Data_for_use_in</span>,<span style="color:#268bd2">New_Index</span>,<span style="color:#268bd2">Fld_num_out</span>,<span style="color:#268bd2">NewMap</span>}};<span style="color:#719e07">**</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#719e07">end</span>, 
+</span></span><span style="display:flex;"><span>	{<span style="color:#268bd2">Bin_message</span>,<span style="color:#268bd2">Start_index</span>,<span style="color:#2aa198">1</span>,<span style="color:#268bd2">Map_Data_Element</span>},<span style="color:#268bd2">Bitmap_transaction</span>),<span style="color:#719e07">**</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">%%
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	Bin_message <span style="color:#f92672">=</span> Iso Message
-</span></span></code></pre></div><p>Start_index = is used to tell where to start processing the
+</span></span><span style="display:flex;"><span>	<span style="color:#586e75">%%
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span>	<span style="color:#268bd2">Bin_message</span> <span style="color:#719e07">=</span> <span style="color:#268bd2">Iso</span> <span style="color:#268bd2">Message</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Start_index = is used to tell where to start processing the
 binary from ,1  = this tells us we are starting from field 1</p>
 <p>Map_Data_Element = the accumulator for the data elements
 where each data element is added this accumulator as a map
 with some metadata about the data element also added</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>   At each iteration as we are going through the iso message there is 
-</span></span><span style="display:flex;"><span>   a calculation which is done to find out metadata about the data element .
-</span></span><span style="display:flex;"><span>   This metadata will give us the header length <span style="color:#66d9ef">of</span> the field <span style="color:#f92672">or</span> <span style="color:#66d9ef">if</span> 
-</span></span><span style="display:flex;"><span>   even the field has a header .After we get the header  <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> we 
-</span></span><span style="display:flex;"><span>   then get to calculate the actual message <span style="color:#f92672">and</span> its starting <span style="color:#f92672">and</span> 
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#268bd2">At</span> each iteration as we are going through the iso message there is 
+</span></span><span style="display:flex;"><span>   a calculation which is done to find out metadata about the data <span style="color:#b58900">element</span> .
+</span></span><span style="display:flex;"><span>   <span style="color:#268bd2">This</span> metadata will give us the header <span style="color:#b58900">length</span> <span style="color:#719e07">of</span> the field <span style="color:#719e07">or</span> <span style="color:#719e07">if</span> 
+</span></span><span style="display:flex;"><span>   even the field has a header .<span style="color:#268bd2">After</span> we <span style="color:#b58900">get</span> the header  <span style="color:#719e07">or</span> <span style="color:#719e07">not</span> we 
+</span></span><span style="display:flex;"><span>   then <span style="color:#b58900">get</span> to calculate the actual message <span style="color:#719e07">and</span> its starting <span style="color:#719e07">and</span> 
 </span></span><span style="display:flex;"><span>   ending points .
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	After the data element is obtained it is put in the output map 
-</span></span><span style="display:flex;"><span>	along with some metadata about the data element.
+</span></span><span style="display:flex;"><span>	<span style="color:#268bd2">After</span> the data <span style="color:#b58900">element</span> is obtained it is <span style="color:#b58900">put</span> in the output map 
+</span></span><span style="display:flex;"><span>	along with some metadata about the data <span style="color:#b58900">element</span>.
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	Please browse through the source code to better understand the
-</span></span><span style="display:flex;"><span>    code as well as how to get the various data elements <span style="color:#66d9ef">if</span> my explanation 
-</span></span><span style="display:flex;"><span>    is <span style="color:#f92672">not</span> enough . 
+</span></span><span style="display:flex;"><span>	<span style="color:#268bd2">Please</span> browse through the source code to better understand the
+</span></span><span style="display:flex;"><span>    code as well as how to <span style="color:#b58900">get</span> the various data elements <span style="color:#719e07">if</span> my explanation 
+</span></span><span style="display:flex;"><span>    is <span style="color:#719e07">not</span> enough . 
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    There is also a function on how to do the above with strings.
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">There</span> is also a function on how to do the above with strings.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	process_message({list,Rest})<span style="color:#f92672">-&gt;</span>		
-</span></span></code></pre></div><p>As i said earlier binaries occupy less space and has more
+</span></span><span style="display:flex;"><span>	process_message({list,<span style="color:#268bd2">Rest</span>})<span style="color:#719e07">-&gt;</span>		
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>As i said earlier binaries occupy less space and has more
 efficient functions for processing but you can browse through the
 code to get a better idea of processing the message but using
 string functions .
@@ -395,25 +545,69 @@ string functions .
 To test it out by sending sample iso messages open the erlang
 shell and compile the iso_process with <strong>c(iso_process)</strong>.You can
 then send iso messages by first starting the server with</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;</span>p<span style="color:#f92672">&gt;</span>	iso_process:<span style="color:#a6e22e">start_iso_server</span>().<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;</span>
-</span></span></code></pre></div><p>after which you can send iso messages with</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> iso_process:send(<span style="color:#e6db74">&#34;01581200F230040102B00000000000000400000010&#34;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;48468112122012340000100000001107221800000001161204171926FA&#34;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;BCDE123ABD06414243000termid1210Community106A5DFGR1112341234234&#34;</span>).
-</span></span></code></pre></div><p>Note that the iso message must be preceded by length of the message
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#719e07">&lt;</span>p<span style="color:#719e07">&gt;</span>	iso_process:<span style="color:#268bd2">start_iso_server</span>().<span style="color:#719e07">&lt;/</span>p<span style="color:#719e07">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>after which you can send iso messages with</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> iso_process:<span style="color:#b58900">send</span>(<span style="color:#2aa198">&#34;01581200F230040102B00000000000000400000010&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>	<span style="color:#2aa198">&#34;48468112122012340000100000001107221800000001161204171926FA&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>	<span style="color:#2aa198">&#34;BCDE123ABD06414243000termid1210Community106A5DFGR1112341234234&#34;</span>).
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Note that the iso message must be preceded by length of the message
 so in this case <strong>0158</strong> was the length of the message and was added to
 the message when the message was being sent.</p>
 <p>Alternatively there is a java file <em>Test_java_client.java</em> which you can
 use to edit and send messages to the iso server example.</p>
 <p>After editing the various iso fields in the file you can then compile
 the file using</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>	javac <span style="color:#f92672">-</span>cp .:jpos<span style="color:#f92672">-</span>2.<span style="color:#a6e22e">0</span>.<span style="color:#a6e22e">7</span><span style="color:#f92672">-</span>SNAPSHOT.<span style="color:#a6e22e">jar</span> Test_java_client.<span style="color:#a6e22e">java</span>
-</span></span></code></pre></div><p>and send the message to the erlang iso server which should have been
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>	javac <span style="color:#719e07">-</span>cp .:jpos<span style="color:#719e07">-</span>2.0.7<span style="color:#719e07">-</span>SNAPSHOT.jar Test_java_client.java
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>and send the message to the erlang iso server which should have been
 started using</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>	java <span style="color:#f92672">-</span>Xbootclasspath<span style="color:#f92672">/</span>p:jpos<span style="color:#f92672">-</span>2.<span style="color:#a6e22e">0</span>.<span style="color:#a6e22e">7</span><span style="color:#f92672">-</span>SNAPSHOT.<span style="color:#a6e22e">jar</span> Test_java_client 8002
-</span></span></code></pre></div><p>This is where i wind down.</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>	java <span style="color:#719e07">-</span>Xbootclasspath<span style="color:#719e07">/</span>p:jpos<span style="color:#719e07">-</span>2.0.7<span style="color:#719e07">-</span>SNAPSHOT.jar Test_java_client 8002
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This is where i wind down.</p>
 
       </article>
     </div>
@@ -427,11 +621,11 @@ started using</p>
         
           <div class="blog-tags">
             
-              <a href="http://localhost:1313//tags/erlang/">erlang</a>
+              <a href="https://nayibor.github.io//tags/erlang/">erlang</a>
             
-              <a href="http://localhost:1313//tags/iso8583/">iso8583</a>
+              <a href="https://nayibor.github.io//tags/iso8583/">iso8583</a>
             
-              <a href="http://localhost:1313//tags/erlang-binary-processing/">erlang binary processing</a>
+              <a href="https://nayibor.github.io//tags/erlang-binary-processing/">erlang binary processing</a>
             
           </div>
         
@@ -462,7 +656,7 @@ started using</p>
           
           <li class="list-group-item b-0">
 
-            <a type="button" class="btn btn-dark" role="button" href="http://localhost:1313/posts/73e0ec2ac943bfecb47acbe2e603f814/"
+            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/73e0ec2ac943bfecb47acbe2e603f814/"
               data-toggle="tooltip" data-placement="top" title="Parsing iso8583 messages Part 1">&larr;
               Previous Post</a>
           </li>
@@ -471,7 +665,7 @@ started using</p>
 
           
           <li class="list-group-item ms-auto b-0">
-            <a type="button" class="btn btn-dark" role="button" href="http://localhost:1313/posts/0cbce1a3a305b158373f04c7e4c579dc/"
+            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/"
               data-toggle="tooltip" data-placement="top" title="Programming languages as web template languages">Next Post
               &rarr;</a>
           </li>
@@ -532,7 +726,7 @@ started using</p>
 
           
           &nbsp;&bull;&nbsp;
-          <a href="http://localhost:1313/">Nukus Blog</a>
+          <a href="https://nayibor.github.io/">Nukus Blog</a>
           
         </p>
         
@@ -544,7 +738,7 @@ started using</p>
     </div>
   </div>
 </footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script><script src="http://localhost:1313/js/dark-mode.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script><script src="https://nayibor.github.io/js/dark-mode.js"></script>
 
     
   </body>

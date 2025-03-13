@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Live View on Nukus Blog</title>
-    <link>http://localhost:1313/tags/live-view/</link>
+    <link>https://nayibor.github.io/tags/live-view/</link>
     <description>Recent content in Live View on Nukus Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
     <lastBuildDate>Wed, 05 Mar 2025 12:22:49 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/live-view/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nayibor.github.io/tags/live-view/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Typst In Elixir</title>
-      <link>http://localhost:1313/posts/using-typist-elixir/</link>
+      <link>https://nayibor.github.io/posts/using-typist-elixir/</link>
       <pubDate>Wed, 05 Mar 2025 12:22:49 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>http://localhost:1313/posts/using-typist-elixir/</guid>
+      <guid>https://nayibor.github.io/posts/using-typist-elixir/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://typst.app&#34;&gt;Typst&lt;/a&gt; is an application which is used for creating pdf and images from typst files.&#xA;Typst has a custom templating syntax which it uses for constructing various page elements and it also has a scripting system  much like a programming language which enables you to do some really cool stuff.&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s written in rust which makes it quite performant and gives it some type safe guarantees.it has a packaging system which enables you to import other packages written by others into your typst project.it is also multiplatform as well.its similar to latex in what it does and its functionality.&lt;/p&gt;</description>
     </item>
   </channel>

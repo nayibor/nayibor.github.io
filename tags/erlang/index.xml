@@ -2,54 +2,54 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Erlang on Nukus Blog</title>
-    <link>http://localhost:1313/tags/erlang/</link>
+    <link>https://nayibor.github.io/tags/erlang/</link>
     <description>Recent content in Erlang on Nukus Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
     <lastBuildDate>Mon, 22 Jan 2024 15:05:45 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/erlang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nayibor.github.io/tags/erlang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using iso8583_erl Erlang Library</title>
-      <link>http://localhost:1313/posts/using-iso8583_erl-library/</link>
+      <link>https://nayibor.github.io/posts/using-iso8583_erl-library/</link>
       <pubDate>Mon, 22 Jan 2024 15:05:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>http://localhost:1313/posts/using-iso8583_erl-library/</guid>
+      <guid>https://nayibor.github.io/posts/using-iso8583_erl-library/</guid>
       <description>&lt;p&gt;i have been working on an iso8583 &lt;a href=&#34;https://github.com/nayibor/iso8583_erl&#34;&gt;library&lt;/a&gt; and decided to write a post about it.&lt;/p&gt;&#xA;&lt;p&gt;I have also used the library in three projects over the years so code is production ready and battle tested.&lt;/p&gt;&#xA;&lt;p&gt;iso8583 is a payment card messaging protocol and in some ways a dsl for describing how to send and receive payment card transactions from a sender to a receiver.&lt;/p&gt;&#xA;&lt;p&gt;the sender can be an atm,pos device,website,application,etc.. and the receiver an application,card processor like visa,mastercard etc.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Erlang Binary Pattern Matching</title>
-      <link>http://localhost:1313/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
+      <link>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>http://localhost:1313/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
+      <guid>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
       <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;hello everyone and happy new year to one and all!!.&#xA;&lt;!-- raw HTML omitted --&gt;hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get&#xA;the various metadata and parts of an audio file either over the network being streamed or a file on disk&lt;/p&gt;</description>
     </item>
     <item>
       <title>Library for parsing iso8583 messages in erlang</title>
-      <link>http://localhost:1313/posts/c33083b29ef6e62daebc9459653f84b9/</link>
+      <link>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</link>
       <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>http://localhost:1313/posts/c33083b29ef6e62daebc9459653f84b9/</guid>
+      <guid>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</guid>
       <description>&lt;p&gt;i have been working on  an iso8583 payment card parsing library for time.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages.&#xA;&lt;!-- raw HTML omitted --&gt;this library can be used for packing and unpacking iso8583 financial messages.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;It accepts a specification file which contains info about fields,mti,bitmap for your messages.&#xA;&lt;!-- raw HTML omitted --&gt;The specification has info such as header length for various fields,padding info for fields,etc&amp;hellip;&#xA;&lt;!-- raw HTML omitted --&gt;This specification information is then used for packing/unpacking iso8583 formatted payment card messages.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Programming languages as web template languages</title>
-      <link>http://localhost:1313/posts/0cbce1a3a305b158373f04c7e4c579dc/</link>
+      <link>https://nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>http://localhost:1313/posts/0cbce1a3a305b158373f04c7e4c579dc/</guid>
-      <description>&lt;p&gt;Web templating languages!!. Don&amp;rsquo;t we love em.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/underscore.png&#34; alt=&#34;underscore&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/handlebars_logo.png&#34; alt=&#34;handlerbars&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/mustache.png&#34; alt=&#34;mustache&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Every one has their favourite but a common denominator among them all is that they make our work as web developers&#xA;easier by giving us separation of concerns between data and content as well as lots of other &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system#Motivations_and_typical_uses&#34;&gt;advantages&lt;/a&gt;.&#xA;A fancy term for web templating languages is a web template system.&lt;/p&gt;&#xA;&lt;p&gt;From Wikipedia a &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system&#34;&gt;Web template system&lt;/a&gt; is defined as&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A web template system uses a template processor to combine web templates to form finished web pages,&#xA;possibly using some data source to customize the pages or present a large amount of content on similar-looking pages&lt;/p&gt;</description>
+      <guid>https://nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</guid>
+      <description>&lt;p&gt;Web templating languages!!. Don&amp;rsquo;t we love em.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://nayibor.github.io/images/underscore.png&#34; alt=&#34;underscore&#34;&gt;&#xA;&lt;img src=&#34;https://nayibor.github.io/images/handlebars_logo.png&#34; alt=&#34;handlerbars&#34;&gt;&#xA;&lt;img src=&#34;https://nayibor.github.io/images/mustache.png&#34; alt=&#34;mustache&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Every one has their favourite but a common denominator among them all is that they make our work as web developers&#xA;easier by giving us separation of concerns between data and content as well as lots of other &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system#Motivations_and_typical_uses&#34;&gt;advantages&lt;/a&gt;.&#xA;A fancy term for web templating languages is a web template system.&lt;/p&gt;&#xA;&lt;p&gt;From Wikipedia a &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system&#34;&gt;Web template system&lt;/a&gt; is defined as&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A web template system uses a template processor to combine web templates to form finished web pages,&#xA;possibly using some data source to customize the pages or present a large amount of content on similar-looking pages&lt;/p&gt;</description>
     </item>
     <item>
       <title>Parsing iso8583 messages Part 2</title>
-      <link>http://localhost:1313/posts/4948d52595d68beab6dd3a919db6d115/</link>
+      <link>https://nayibor.github.io/posts/4948d52595d68beab6dd3a919db6d115/</link>
       <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>http://localhost:1313/posts/4948d52595d68beab6dd3a919db6d115/</guid>
+      <guid>https://nayibor.github.io/posts/4948d52595d68beab6dd3a919db6d115/</guid>
       <description>&lt;p&gt;Today we will be showing how to  extract the various components out of an iso string.&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;The combination of a tcp server as well as code to extract the  iso message components&#xA;and send it for further processing is what is popularly called an interface server in payment processing .&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Specifically the components we are interested in are&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;message type indicator also known as mti&lt;/li&gt;&#xA;&lt;li&gt;bitmap&lt;/li&gt;&#xA;&lt;li&gt;data elements&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The code snippets  used for this post is in this  &lt;a href=&#34;https://github.com/nayibor/iso_process_tut_repo.git&#34;&gt;git&lt;/a&gt; repository.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Parsing iso8583 messages Part 1</title>
-      <link>http://localhost:1313/posts/73e0ec2ac943bfecb47acbe2e603f814/</link>
+      <link>https://nayibor.github.io/posts/73e0ec2ac943bfecb47acbe2e603f814/</link>
       <pubDate>Mon, 12 Dec 2016 07:57:26 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>http://localhost:1313/posts/73e0ec2ac943bfecb47acbe2e603f814/</guid>
+      <guid>https://nayibor.github.io/posts/73e0ec2ac943bfecb47acbe2e603f814/</guid>
       <description>&lt;p&gt;Today we are going to talk about creating a tcp server to  parse iso messages using erlang .&lt;/p&gt;&#xA;&lt;p&gt;This tutorial explains the very basic of creating tcp servers in erlang .&#xA;there are better specialized  libraries out there (&lt;!-- raw HTML omitted --&gt;ranch&lt;!-- raw HTML omitted --&gt;) for creating tcp servers and pools of them but this is very basic and we need just a simple tcp server to show how to process incoming iso messages . &lt;/p&gt;</description>
     </item>
   </channel>

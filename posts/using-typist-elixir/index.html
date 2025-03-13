@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,14 +15,14 @@
     "@type": "WebSite",
     "name": "Nukus Blog",
     
-    "url": "http:\/\/localhost:1313\/"
+    "url": "https:\/\/nayibor.github.io\/"
 }
 </script><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Organization",
   "name": "",
-  "url": "http:\/\/localhost:1313\/"
+  "url": "https:\/\/nayibor.github.io\/"
   
   
   
@@ -37,14 +37,14 @@
         "@type": "ListItem",
         "position": 1,
         "item": {
-          "@id": "http:\/\/localhost:1313\/",
+          "@id": "https:\/\/nayibor.github.io\/",
           "name": "home"
         }
     },{
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "http:\/\/localhost:1313\/posts\/using-typist-elixir\/",
+          "@id": "https:\/\/nayibor.github.io\/posts\/using-typist-elixir\/",
           "name": "Using typst in elixir"
         }
     }]
@@ -59,18 +59,18 @@
   "headline": "Using Typst In Elixir",
   "description" : "typsetting in elixir",
   "inLanguage" : "en",
-  "wordCount":  705 ,
+  "wordCount":  785 ,
   "datePublished" : "2025-03-05T12:22:49",
   "dateModified" : "2025-03-05T12:22:49",
-  "image" : "http:\/\/localhost:1313\/",
+  "image" : "https:\/\/nayibor.github.io\/",
   "keywords" : [ "elixir, typst, typesetting, live view" ],
-  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/using-typist-elixir\/",
+  "mainEntityOfPage" : "https:\/\/nayibor.github.io\/posts\/using-typist-elixir\/",
   "publisher" : {
     "@type": "Organization",
-    "name" : "http:\/\/localhost:1313\/",
+    "name" : "https:\/\/nayibor.github.io\/",
     "logo" : {
         "@type" : "ImageObject",
-        "url" : "http:\/\/localhost:1313\/",
+        "url" : "https:\/\/nayibor.github.io\/",
         "height" :  60 ,
         "width" :  60
     }
@@ -78,21 +78,21 @@
 }
 </script>
 
-<meta property="og:image" content="http://localhost:1313/images/typst.jpeg">
-<meta property="og:url" content="http://localhost:1313/posts/using-typist-elixir/">
+<meta property="og:image" content="https://nayibor.github.io/images/typst.jpeg">
+<meta property="og:url" content="https://nayibor.github.io/posts/using-typist-elixir/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nukus Blog">
    
-<link rel="apple-touch-icon" sizes="180x180" href=" http://localhost:1313/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href=" https://nayibor.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nayibor.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nayibor.github.io/favicon/favicon-16x16.png">
 
 
-<meta name="generator" content="Hugo 0.145.0"><link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Nukus Blog">
+<meta name="generator" content="Hugo 0.145.0"><link rel="alternate" href="https://nayibor.github.io/index.xml" type="application/rss+xml" title="Nukus Blog">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<link rel="stylesheet" href="http://localhost:1313/css/main.css">
-<link disabled id="dark-mode-theme" rel="stylesheet" href="http://localhost:1313/css/dark.css"><link rel="stylesheet" href="http://localhost:1313/css/syntax.css"><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css">
+<link rel="stylesheet" href="https://nayibor.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://nayibor.github.io/css/dark.css"><link rel="stylesheet" href="https://nayibor.github.io/css/syntax.css"><link rel="stylesheet" href="https://nayibor.github.io/css/codeblock.css">
 
 
 
@@ -110,7 +110,7 @@
       <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
         <div class="container">
           
-          <a class="navbar-brand fw-bold" href="http://localhost:1313/">Nukus Blog</a>
+          <a class="navbar-brand fw-bold" href="https://nayibor.github.io/">Nukus Blog</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -233,97 +233,231 @@ Typst has a custom templating syntax which it uses for constructing various page
 <p>It&rsquo;s written in rust which makes it quite performant and gives it some type safe guarantees.it has a packaging system which enables you to import other packages written by others into your typst project.it is also multiplatform as well.its similar to latex in what it does and its functionality.</p>
 <p>First of all let&rsquo;s create a new phoenix project to show its usage.This project will be a blog where we will have the ability to create,read,update,preview,download and delete blog posts.</p>
 <p>First we create a  new phoenix project</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>	mix phx<span style="color:#f92672">.</span>new typst_app
-</span></span></code></pre></div><p>After creating the  project,we  need to have the typst executable in the  priv folder of our phoenix app.We go to the typst <a href="https://github.com/typst/typst">github</a> page and follow the instructions for installation.</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>	mix phx<span style="color:#719e07">.</span>new typst_app
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>After creating the  project,we  need to have the typst executable in the  priv folder of our phoenix app.We go to the typst <a href="https://github.com/typst/typst">github</a> page and follow the instructions for installation.</p>
 <p>After installation of typst, we get the executable and then place it in the priv folder.I usually create a <code>priv/typst</code> folder and put the executable there.We also create two typst files and put them in the folder also.</p>
 <p>One is an api file(<code>main.typ</code>) and the other a template file(<code>blog.typ</code>) which contains the blog typst code.Seperation of the api file and the template typst files enables the template to be used in other scenarios and enables seperation of concern also.</p>
 <p><code>main.typ</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typst" data-lang="typst"><span style="display:flex;"><span><span style="color:#f92672">#import</span> sys.inputs.templatePath: blog-from-metadata
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>#import sys.inputs.templatePath: blog-from-metadata
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">#let</span> meta <span style="color:#f92672">=</span> json.<span style="color:#a6e22e">decode</span>(sys.inputs.blogJson)
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">#blog-from-metadata</span>(meta, apply-default-style: <span style="color:#66d9ef">true</span>)
-</span></span></code></pre></div><p><code>blog.typ</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typst" data-lang="typst"><span style="display:flex;"><span><span style="color:#66d9ef">#let</span> <span style="color:#a6e22e">format-session-matter</span>(blog-info) <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>#let meta = json.decode(sys.inputs.blogJson)
+</span></span><span style="display:flex;"><span>#blog-from-metadata(meta, apply-default-style: true)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>blog.typ</code></p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>#let format-session-matter(blog-info) = [
 </span></span><span style="display:flex;"><span>  = Blog Details
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">#line</span>(length: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>)
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">#v</span>(<span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>) 
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">*Id*</span>: #blog-info.id\
+</span></span><span style="display:flex;"><span>  #line(length: 100<span style="color:#586e75">%)
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span>  #v(1em) 
+</span></span><span style="display:flex;"><span>  *Id*: #blog-info.id<span style="color:#719e07">\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">*Title*</span>: #blog-info.title\	
+</span></span><span style="display:flex;"><span>  *Title*: #blog-info.title<span style="color:#719e07">\	</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>   <span style="font-weight:bold">*Body*</span>:
+</span></span><span style="display:flex;"><span>   *Body*:
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>   #blog-info.body\
+</span></span><span style="display:flex;"><span>   #blog-info.body<span style="color:#719e07">\</span>
 </span></span><span style="display:flex;"><span>  
 </span></span><span style="display:flex;"><span>]
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">#let</span> <span style="color:#a6e22e">blog-from-metadata</span>(metadata-dict, ..extra-blog-args) <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> meta <span style="color:#f92672">=</span> metadata-dict
+</span></span><span style="display:flex;"><span>#let blog-from-metadata(metadata-dict, ..extra-blog-args) = <span style="color:#b58900">{</span>
+</span></span><span style="display:flex;"><span>  let meta = metadata-dict
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//contains  code for displaying blog information</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> sessionmatter <span style="color:#f92672">=</span> <span style="color:#a6e22e">format-session-matter</span>(meta)
+</span></span><span style="display:flex;"><span>  //contains  code for displaying blog information
+</span></span><span style="display:flex;"><span>  let sessionmatter = format-session-matter(meta)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  sessionmatter
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> }
-</span></span></code></pre></div><p>We then run the generator for live view to generate some scaffolding and boilerplate code</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>	cd typst_app
-</span></span><span style="display:flex;"><span>	mix phx<span style="color:#f92672">.</span>gen<span style="color:#f92672">.</span>live <span style="color:#a6e22e">Blog</span> <span style="color:#a6e22e">Post</span> posts title<span style="color:#e6db74">:string</span> body<span style="color:#e6db74">:text</span>
-</span></span></code></pre></div><p>We are now going to add some endpoints for the preview/downloading and also for the preview modal.
+</span></span><span style="display:flex;"><span> <span style="color:#b58900">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We then run the generator for live view to generate some scaffolding and boilerplate code</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>	cd typst_app
+</span></span><span style="display:flex;"><span>	mix phx<span style="color:#719e07">.</span>gen<span style="color:#719e07">.</span>live <span style="color:#268bd2">Blog</span> <span style="color:#268bd2">Post</span> posts title<span style="color:#2aa198">:string</span> body<span style="color:#2aa198">:text</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We are now going to add some endpoints for the preview/downloading and also for the preview modal.
 We add the following endpoints th the <code>router.ex</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>    get <span style="color:#e6db74">&#34;/process_blog/:id/:type&#34;</span>, <span style="color:#a6e22e">PageController</span>, <span style="color:#e6db74">:process_blog</span>
-</span></span><span style="display:flex;"><span>    live <span style="color:#e6db74">&#34;/posts/:id/preview&#34;</span>, <span style="color:#a6e22e">PostLive.Index</span>, <span style="color:#e6db74">:preview</span>
-</span></span></code></pre></div><p>the first link enables you to process a blog based on the <code>id</code> and the <code>type</code>.the  <code>type</code> can be either view or download and enables you to view and download the pdf respectivity.
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>    get <span style="color:#2aa198">&#34;/process_blog/:id/:type&#34;</span>, <span style="color:#268bd2">PageController</span>, <span style="color:#2aa198">:process_blog</span>
+</span></span><span style="display:flex;"><span>    live <span style="color:#2aa198">&#34;/posts/:id/preview&#34;</span>, <span style="color:#268bd2">PostLive.Index</span>, <span style="color:#2aa198">:preview</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>the first link enables you to process a blog based on the <code>id</code> and the <code>type</code>.the  <code>type</code> can be either view or download and enables you to view and download the pdf respectivity.
 the second link enables you to preview the pdf in a modal.</p>
 <p>We  create an action in <code>TypstAppWeb.PostLive.Index</code> to process the <code>preview</code> action.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>  <span style="color:#66d9ef">defp</span> apply_action(socket, <span style="color:#e6db74">:preview</span>, %{<span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#f92672">=&gt;</span> id}) <span style="color:#66d9ef">do</span>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>  <span style="color:#268bd2">defp</span> apply_action(socket, <span style="color:#2aa198">:preview</span>, %{<span style="color:#2aa198">&#34;id&#34;</span> <span style="color:#719e07">=&gt;</span> id}) <span style="color:#719e07">do</span>
 </span></span><span style="display:flex;"><span>    socket
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">|&gt;</span> assign(<span style="color:#e6db74">:page_title</span>, <span style="color:#e6db74">&#34;Preview Post Pdf&#34;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">|&gt;</span> assign(<span style="color:#e6db74">:post</span>, <span style="color:#a6e22e">Blog</span><span style="color:#f92672">.</span>get_post!(id))
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p>We add a function <code>process_blog</code> in <code>TypstAppWeb.PageController</code> to enable us to get the blog information,encode to json which is acceptable to typst,shell out and execute the typst command for creating the pdf/png output file and send the generated file to the client.In my case i used the png for the preview and the pdf for the download option.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> process_blog(conn,%{<span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#f92672">=&gt;</span> id,<span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">=&gt;</span> type}) <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> <span style="color:#a6e22e">Blog</span><span style="color:#f92672">.</span>get_post!(id)
-</span></span><span style="display:flex;"><span>    jason_map <span style="color:#f92672">=</span> %{<span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#f92672">=&gt;</span> data<span style="color:#f92672">.</span>id,<span style="color:#e6db74">&#34;title&#34;</span> <span style="color:#f92672">=&gt;</span> data<span style="color:#f92672">.</span>title, <span style="color:#e6db74">&#34;body&#34;</span> <span style="color:#f92672">=&gt;</span> data<span style="color:#f92672">.</span>body}
-</span></span><span style="display:flex;"><span>    {<span style="color:#e6db74">:ok</span>,blog_data} <span style="color:#f92672">=</span> <span style="color:#a6e22e">Jason</span><span style="color:#f92672">.</span>encode(jason_map) 
-</span></span><span style="display:flex;"><span>    {disposition,format} <span style="color:#f92672">=</span> 
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">case</span> type <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;view&#34;</span> <span style="color:#f92672">-&gt;</span> {<span style="color:#e6db74">:inline</span>,<span style="color:#e6db74">&#34;png&#34;</span>}
-</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;download&#34;</span> <span style="color:#f92672">-&gt;</span> {<span style="color:#e6db74">:attachment</span>,<span style="color:#e6db74">&#34;pdf&#34;</span>}
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Blog </span><span style="color:#e6db74">#{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    path_typst <span style="color:#f92672">=</span> <span style="color:#a6e22e">Path</span><span style="color:#f92672">.</span>join([<span style="color:#e6db74">:code</span><span style="color:#f92672">.</span>priv_dir(<span style="color:#e6db74">:typst_app</span>),<span style="color:#e6db74">&#34;/typst/typst&#34;</span>] )    
-</span></span><span style="display:flex;"><span>    path_api <span style="color:#f92672">=</span> <span style="color:#a6e22e">Path</span><span style="color:#f92672">.</span>join([<span style="color:#e6db74">:code</span><span style="color:#f92672">.</span>priv_dir(<span style="color:#e6db74">:typst_app</span>),<span style="color:#e6db74">&#34;/typst/main.typ&#34;</span>] )
-</span></span><span style="display:flex;"><span>    path_template <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blog.typ&#34;</span>
-</span></span><span style="display:flex;"><span>    command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>path_typst<span style="color:#e6db74">}</span><span style="color:#e6db74"> compile  --input &#39;blogJson=</span><span style="color:#e6db74">#{</span>blog_data<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	--input &#39;templatePath=</span><span style="color:#e6db74">#{</span>path_template<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; -f </span><span style="color:#e6db74">#{</span>format<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">#{</span>path_api<span style="color:#e6db74">}</span><span style="color:#e6db74"> -&#34;</span>
-</span></span><span style="display:flex;"><span>    {result,code_result} <span style="color:#f92672">=</span> <span style="color:#a6e22e">System</span><span style="color:#f92672">.</span>cmd(<span style="color:#e6db74">&#34;sh&#34;</span>,[<span style="color:#e6db74">&#34;-c&#34;</span>,command])
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> code_result <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">0</span> <span style="color:#f92672">-&gt;</span> send_download(conn,{<span style="color:#e6db74">:binary</span>,result},<span style="color:#e6db74">content_type</span>: <span style="color:#e6db74">&#34;application/pdf&#34;</span>,
-</span></span><span style="display:flex;"><span>	       <span style="color:#e6db74">disposition</span>: disposition,<span style="color:#e6db74">filename</span>: filename )
-</span></span><span style="display:flex;"><span>      _ <span style="color:#f92672">-&gt;</span> text(conn,<span style="color:#e6db74">&#34;error generating pdf&#34;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">|&gt;</span> assign(<span style="color:#2aa198">:page_title</span>, <span style="color:#2aa198">&#34;Preview Post Pdf&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">|&gt;</span> assign(<span style="color:#2aa198">:post</span>, <span style="color:#268bd2">Blog</span><span style="color:#719e07">.</span>get_post!(id))
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We add a function <code>process_blog</code> in <code>TypstAppWeb.PageController</code> to enable us to get the blog information,encode to json which is acceptable to typst,shell out and execute the typst command for creating the pdf/png output file and send the generated file to the client.In my case i used the png for the preview and the pdf for the download option.</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>  <span style="color:#268bd2">def</span> process_blog(conn,%{<span style="color:#2aa198">&#34;id&#34;</span> <span style="color:#719e07">=&gt;</span> id,<span style="color:#2aa198">&#34;type&#34;</span> <span style="color:#719e07">=&gt;</span> type}) <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    data <span style="color:#719e07">=</span> <span style="color:#268bd2">Blog</span><span style="color:#719e07">.</span>get_post!(id)
+</span></span><span style="display:flex;"><span>    jason_map <span style="color:#719e07">=</span> %{<span style="color:#2aa198">&#34;id&#34;</span> <span style="color:#719e07">=&gt;</span> data<span style="color:#719e07">.</span>id,<span style="color:#2aa198">&#34;title&#34;</span> <span style="color:#719e07">=&gt;</span> data<span style="color:#719e07">.</span>title, <span style="color:#2aa198">&#34;body&#34;</span> <span style="color:#719e07">=&gt;</span> data<span style="color:#719e07">.</span>body}
+</span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">:ok</span>,blog_data} <span style="color:#719e07">=</span> <span style="color:#268bd2">Jason</span><span style="color:#719e07">.</span>encode(jason_map) 
+</span></span><span style="display:flex;"><span>    {disposition,format} <span style="color:#719e07">=</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#719e07">case</span> type <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>	  <span style="color:#2aa198">&#34;view&#34;</span> <span style="color:#719e07">-&gt;</span> {<span style="color:#2aa198">:inline</span>,<span style="color:#2aa198">&#34;png&#34;</span>}
+</span></span><span style="display:flex;"><span>	  <span style="color:#2aa198">&#34;download&#34;</span> <span style="color:#719e07">-&gt;</span> {<span style="color:#2aa198">:attachment</span>,<span style="color:#2aa198">&#34;pdf&#34;</span>}
+</span></span><span style="display:flex;"><span>      <span style="color:#719e07">end</span>
+</span></span><span style="display:flex;"><span>    filename <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;Blog </span><span style="color:#2aa198">#{</span>id<span style="color:#2aa198">}</span><span style="color:#2aa198">&#34;</span>
+</span></span><span style="display:flex;"><span>    path_typst <span style="color:#719e07">=</span> <span style="color:#268bd2">Path</span><span style="color:#719e07">.</span>join([<span style="color:#2aa198">:code</span><span style="color:#719e07">.</span>priv_dir(<span style="color:#2aa198">:typst_app</span>),<span style="color:#2aa198">&#34;/typst/typst&#34;</span>] ) 
+</span></span><span style="display:flex;"><span>    path_api <span style="color:#719e07">=</span> <span style="color:#268bd2">Path</span><span style="color:#719e07">.</span>join([<span style="color:#2aa198">:code</span><span style="color:#719e07">.</span>priv_dir(<span style="color:#2aa198">:typst_app</span>),<span style="color:#2aa198">&#34;/typst/main.typ&#34;</span>] )
+</span></span><span style="display:flex;"><span>    path_template <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;blog.typ&#34;</span>
+</span></span><span style="display:flex;"><span>    command <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;</span><span style="color:#2aa198">#{</span>path_typst<span style="color:#2aa198">}</span><span style="color:#2aa198"> compile  --input &#39;blogJson=</span><span style="color:#2aa198">#{</span>blog_data<span style="color:#2aa198">}</span><span style="color:#2aa198">&#39; 
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">	--input &#39;templatePath=</span><span style="color:#2aa198">#{</span>path_template<span style="color:#2aa198">}</span><span style="color:#2aa198">&#39; -f </span><span style="color:#2aa198">#{</span>format<span style="color:#2aa198">}</span><span style="color:#2aa198"> </span><span style="color:#2aa198">#{</span>path_api<span style="color:#2aa198">}</span><span style="color:#2aa198"> -&#34;</span>
+</span></span><span style="display:flex;"><span>    {result,code_result} <span style="color:#719e07">=</span> <span style="color:#268bd2">System</span><span style="color:#719e07">.</span>cmd(<span style="color:#2aa198">&#34;sh&#34;</span>,[<span style="color:#2aa198">&#34;-c&#34;</span>,command])
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">case</span> code_result <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#2aa198">0</span> <span style="color:#719e07">-&gt;</span> send_download(conn,{<span style="color:#2aa198">:binary</span>,result},<span style="color:#2aa198">content_type</span>: <span style="color:#2aa198">&#34;application/pdf&#34;</span>,
+</span></span><span style="display:flex;"><span>	       <span style="color:#2aa198">disposition</span>: disposition,<span style="color:#2aa198">filename</span>: filename )
+</span></span><span style="display:flex;"><span>      _ <span style="color:#719e07">-&gt;</span> text(conn,<span style="color:#2aa198">&#34;error generating pdf&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">end</span>
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p>We edit the <code>index.html.heex</code> file and add links after the edit link for previewing as well as downloading the blog as well.one is a patch and one is a normal href link.         .</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">:action</span> <span style="color:#e6db74">:let</span><span style="color:#f92672">=</span>{{_id, post}}<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#f92672">&lt;.</span>link patch<span style="color:#f92672">=</span>{<span style="color:#e6db74">~p&#34;/posts/</span><span style="color:#e6db74">#{</span>post<span style="color:#e6db74">}</span><span style="color:#e6db74">/preview&#34;</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Preview</span><span style="color:#f92672">&lt;/.</span>link<span style="color:#f92672">&gt;</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/</span><span style="color:#e6db74">:action</span><span style="color:#f92672">&gt;</span>    
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#e6db74">:action</span> <span style="color:#e6db74">:let</span><span style="color:#f92672">=</span>{{_id, post}}<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#f92672">&lt;.</span>link href<span style="color:#f92672">=</span>{<span style="color:#e6db74">~p&#34;/process_blog/</span><span style="color:#e6db74">#{</span>post<span style="color:#e6db74">}</span><span style="color:#e6db74">/download&#34;</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Download</span><span style="color:#f92672">&lt;/.</span>link<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/</span><span style="color:#e6db74">:action</span><span style="color:#f92672">&gt;</span> 
-</span></span></code></pre></div><p>We also add a modal component to <code>index.html.heex</code> to enable you to create a preview modal.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#f92672">&lt;.</span>modal <span style="color:#e6db74">:if</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">@live_action</span> <span style="color:#f92672">in</span> [<span style="color:#e6db74">:preview</span>]}  id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;preview-modal&#34;</span> show on_cancel<span style="color:#f92672">=</span>{<span style="color:#a6e22e">JS</span><span style="color:#f92672">.</span>patch(<span style="color:#e6db74">~p&#34;/posts&#34;</span>)}<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span>div<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;.</span>header<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>      {<span style="color:#a6e22e">@page_title</span>}
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#e6db74">:subtitle</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Use</span> this form to preview blog <span style="color:#75715e"># {@post.id}.&lt;/:subtitle&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/.</span>header<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>img class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;flex items-left justify-left&#34;</span> src<span style="color:#f92672">=</span>{<span style="color:#e6db74">~p&#34;/process_blog/</span><span style="color:#e6db74">#{</span><span style="color:#a6e22e">@post</span><span style="color:#f92672">.</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">/view&#34;</span>}  <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/.</span>modal<span style="color:#f92672">&gt;</span>
-</span></span></code></pre></div><p>Thats it.</p>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We edit the <code>index.html.heex</code> file and add links after the edit link for previewing as well as downloading the blog as well.one is a patch and one is a normal href link.         .</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#719e07">&lt;</span><span style="color:#2aa198">:action</span> <span style="color:#2aa198">:let</span><span style="color:#719e07">=</span>{{_id, post}}<span style="color:#719e07">&gt;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#719e07">&lt;.</span>link patch<span style="color:#719e07">=</span>{<span style="color:#2aa198">~p&#34;/posts/</span><span style="color:#2aa198">#{</span>post<span style="color:#2aa198">}</span><span style="color:#2aa198">/preview&#34;</span>}<span style="color:#719e07">&gt;</span><span style="color:#268bd2">Preview</span><span style="color:#719e07">&lt;/.</span>link<span style="color:#719e07">&gt;</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">&lt;/</span><span style="color:#2aa198">:action</span><span style="color:#719e07">&gt;</span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">&lt;</span><span style="color:#2aa198">:action</span> <span style="color:#2aa198">:let</span><span style="color:#719e07">=</span>{{_id, post}}<span style="color:#719e07">&gt;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#719e07">&lt;.</span>link href<span style="color:#719e07">=</span>{<span style="color:#2aa198">~p&#34;/process_blog/</span><span style="color:#2aa198">#{</span>post<span style="color:#2aa198">}</span><span style="color:#2aa198">/download&#34;</span>}<span style="color:#719e07">&gt;</span><span style="color:#268bd2">Download</span><span style="color:#719e07">&lt;/.</span>link<span style="color:#719e07">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">&lt;/</span><span style="color:#2aa198">:action</span><span style="color:#719e07">&gt;</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We also add a modal component to <code>index.html.heex</code> to enable you to create a preview modal.</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#719e07">&lt;.</span>modal <span style="color:#2aa198">:if</span><span style="color:#719e07">=</span>{@live_action <span style="color:#719e07">in</span> [<span style="color:#2aa198">:preview</span>]}  id<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;preview-modal&#34;</span> show 
+</span></span><span style="display:flex;"><span>  on_cancel<span style="color:#719e07">=</span>{<span style="color:#268bd2">JS</span><span style="color:#719e07">.</span>patch(<span style="color:#2aa198">~p&#34;/posts&#34;</span>)}<span style="color:#719e07">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">&lt;</span>div<span style="color:#719e07">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">&lt;.</span>header<span style="color:#719e07">&gt;</span>
+</span></span><span style="display:flex;"><span>      {@page_title}
+</span></span><span style="display:flex;"><span>      <span style="color:#719e07">&lt;</span><span style="color:#2aa198">:subtitle</span><span style="color:#719e07">&gt;</span><span style="color:#268bd2">Use</span> this form to preview blog <span style="color:#586e75"># {@post.id}.&lt;/:subtitle&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">&lt;/.</span>header<span style="color:#719e07">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">&lt;</span>img class<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;flex items-left justify-left&#34;</span> 
+</span></span><span style="display:flex;"><span>	src<span style="color:#719e07">=</span>{<span style="color:#2aa198">~p&#34;/process_blog/</span><span style="color:#2aa198">#{</span>@post<span style="color:#719e07">.</span>id<span style="color:#2aa198">}</span><span style="color:#2aa198">/view&#34;</span>}<span style="color:#719e07">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">&lt;/</span>div<span style="color:#719e07">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">&lt;/.</span>modal<span style="color:#719e07">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Thats it.This has been interesting.</p>
 <p><a href="https://typst.app">Typst</a> is an easy and useful tool for generating pdfs in elixir apps.
 I imagine it being used in conjuction with oban for generating receipts,invoices and other attachments.
 So have fun with it and you can also find the link to this example <a href="https://github.com/nayibor/typst_app">repo</a> here also.</p>
@@ -340,13 +474,13 @@ So have fun with it and you can also find the link to this example <a href="http
         
           <div class="blog-tags">
             
-              <a href="http://localhost:1313//tags/elixir/">elixir</a>
+              <a href="https://nayibor.github.io//tags/elixir/">elixir</a>
             
-              <a href="http://localhost:1313//tags/typst/">typst</a>
+              <a href="https://nayibor.github.io//tags/typst/">typst</a>
             
-              <a href="http://localhost:1313//tags/typesetting/">typesetting</a>
+              <a href="https://nayibor.github.io//tags/typesetting/">typesetting</a>
             
-              <a href="http://localhost:1313//tags/live-view/">live view</a>
+              <a href="https://nayibor.github.io//tags/live-view/">live view</a>
             
           </div>
         
@@ -377,7 +511,7 @@ So have fun with it and you can also find the link to this example <a href="http
           
           <li class="list-group-item b-0">
 
-            <a type="button" class="btn btn-dark" role="button" href="http://localhost:1313/posts/using-iso8583_erl-library/"
+            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/using-iso8583_erl-library/"
               data-toggle="tooltip" data-placement="top" title="Using iso8583_erl Erlang Library">&larr;
               Previous Post</a>
           </li>
@@ -441,7 +575,7 @@ So have fun with it and you can also find the link to this example <a href="http
 
           
           &nbsp;&bull;&nbsp;
-          <a href="http://localhost:1313/">Nukus Blog</a>
+          <a href="https://nayibor.github.io/">Nukus Blog</a>
           
         </p>
         
@@ -453,7 +587,7 @@ So have fun with it and you can also find the link to this example <a href="http
     </div>
   </div>
 </footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script><script src="http://localhost:1313/js/dark-mode.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script><script src="https://nayibor.github.io/js/dark-mode.js"></script>
 
     
   </body>

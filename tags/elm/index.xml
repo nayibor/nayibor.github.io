@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Elm on Nukus Blog</title>
-    <link>http://localhost:1313/tags/elm/</link>
+    <link>https://nayibor.github.io/tags/elm/</link>
     <description>Recent content in Elm on Nukus Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
     <lastBuildDate>Fri, 12 May 2023 10:54:24 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/elm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nayibor.github.io/tags/elm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coding In Elm-lang</title>
-      <link>http://localhost:1313/posts/a7d70805678f89e1f89430c3237d0b1a/</link>
+      <link>https://nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</link>
       <pubDate>Fri, 12 May 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>http://localhost:1313/posts/a7d70805678f89e1f89430c3237d0b1a/</guid>
+      <guid>https://nayibor.github.io/posts/a7d70805678f89e1f89430c3237d0b1a/</guid>
       <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Hi All.Hope you are all good.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Recently i had the chance to rewrite some sections of code i had written in javascript over to elm and wanted to share my experience with it.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;I had been experiencing an issue where a web dashboard which was being used for monitoring of a service was receiving information too quickly thus&#xA;causing the dashboard to become unresponsive.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Programming languages as web template languages</title>
-      <link>http://localhost:1313/posts/0cbce1a3a305b158373f04c7e4c579dc/</link>
+      <link>https://nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</link>
       <pubDate>Sun, 09 Apr 2017 20:52:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>http://localhost:1313/posts/0cbce1a3a305b158373f04c7e4c579dc/</guid>
-      <description>&lt;p&gt;Web templating languages!!. Don&amp;rsquo;t we love em.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/underscore.png&#34; alt=&#34;underscore&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/handlebars_logo.png&#34; alt=&#34;handlerbars&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/mustache.png&#34; alt=&#34;mustache&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Every one has their favourite but a common denominator among them all is that they make our work as web developers&#xA;easier by giving us separation of concerns between data and content as well as lots of other &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system#Motivations_and_typical_uses&#34;&gt;advantages&lt;/a&gt;.&#xA;A fancy term for web templating languages is a web template system.&lt;/p&gt;&#xA;&lt;p&gt;From Wikipedia a &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system&#34;&gt;Web template system&lt;/a&gt; is defined as&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A web template system uses a template processor to combine web templates to form finished web pages,&#xA;possibly using some data source to customize the pages or present a large amount of content on similar-looking pages&lt;/p&gt;</description>
+      <guid>https://nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</guid>
+      <description>&lt;p&gt;Web templating languages!!. Don&amp;rsquo;t we love em.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://nayibor.github.io/images/underscore.png&#34; alt=&#34;underscore&#34;&gt;&#xA;&lt;img src=&#34;https://nayibor.github.io/images/handlebars_logo.png&#34; alt=&#34;handlerbars&#34;&gt;&#xA;&lt;img src=&#34;https://nayibor.github.io/images/mustache.png&#34; alt=&#34;mustache&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Every one has their favourite but a common denominator among them all is that they make our work as web developers&#xA;easier by giving us separation of concerns between data and content as well as lots of other &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system#Motivations_and_typical_uses&#34;&gt;advantages&lt;/a&gt;.&#xA;A fancy term for web templating languages is a web template system.&lt;/p&gt;&#xA;&lt;p&gt;From Wikipedia a &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_template_system&#34;&gt;Web template system&lt;/a&gt; is defined as&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A web template system uses a template processor to combine web templates to form finished web pages,&#xA;possibly using some data source to customize the pages or present a large amount of content on similar-looking pages&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

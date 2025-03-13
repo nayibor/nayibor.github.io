@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Payments on Nukus Blog</title>
-    <link>http://localhost:1313/tags/payments/</link>
+    <link>https://nayibor.github.io/tags/payments/</link>
     <description>Recent content in Payments on Nukus Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
     <lastBuildDate>Mon, 05 Dec 2016 07:55:57 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/payments/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nayibor.github.io/tags/payments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Iso8583  message structure</title>
-      <link>http://localhost:1313/posts/ddf349de5c9c5cf29af2e17bc71724b8/</link>
+      <link>https://nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/</link>
       <pubDate>Mon, 05 Dec 2016 07:55:57 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>http://localhost:1313/posts/ddf349de5c9c5cf29af2e17bc71724b8/</guid>
+      <guid>https://nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/</guid>
       <description>&lt;p&gt;alloha.&lt;/p&gt;&#xA;&lt;p&gt;at last i have been able to get my lazy behind to write a blog post on this.&lt;/p&gt;&#xA;&lt;p&gt;About time :).&lt;/p&gt;&#xA;&lt;p&gt;This will be the first in a series about parsing iso8583 financial messages  using erlang.&lt;/p&gt;&#xA;&lt;p&gt;we will get to know&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;about iso8583 and the message structure&lt;/li&gt;&#xA;&lt;li&gt;receiving iso 8583 messages over the wire using erlang tcp server&lt;/li&gt;&#xA;&lt;li&gt;and parsing the message . &lt;!-- raw HTML omitted --&gt;parsing those messages in various formats(text(acii),binary,custom format).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Here we go.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,14 +15,14 @@
     "@type": "WebSite",
     "name": "Nukus Blog",
     
-    "url": "http:\/\/localhost:1313\/"
+    "url": "https:\/\/nayibor.github.io\/"
 }
 </script><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Organization",
   "name": "",
-  "url": "http:\/\/localhost:1313\/"
+  "url": "https:\/\/nayibor.github.io\/"
   
   
   
@@ -37,14 +37,14 @@
         "@type": "ListItem",
         "position": 1,
         "item": {
-          "@id": "http:\/\/localhost:1313\/",
+          "@id": "https:\/\/nayibor.github.io\/",
           "name": "home"
         }
     },{
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "http:\/\/localhost:1313\/posts\/73e0ec2ac943bfecb47acbe2e603f814\/",
+          "@id": "https:\/\/nayibor.github.io\/posts\/73e0ec2ac943bfecb47acbe2e603f814\/",
           "name": "Parsing iso8583 messages part 1"
         }
     }]
@@ -59,18 +59,18 @@
   "headline": "Parsing iso8583 messages Part 1",
   "description" : "parsing iso8583 messages using erlang",
   "inLanguage" : "en",
-  "wordCount":  496 ,
+  "wordCount":  515 ,
   "datePublished" : "2016-12-12T07:57:26",
   "dateModified" : "2016-12-12T07:57:26",
-  "image" : "http:\/\/localhost:1313\/",
+  "image" : "https:\/\/nayibor.github.io\/",
   "keywords" : [ "erlang, iso8583" ],
-  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/73e0ec2ac943bfecb47acbe2e603f814\/",
+  "mainEntityOfPage" : "https:\/\/nayibor.github.io\/posts\/73e0ec2ac943bfecb47acbe2e603f814\/",
   "publisher" : {
     "@type": "Organization",
-    "name" : "http:\/\/localhost:1313\/",
+    "name" : "https:\/\/nayibor.github.io\/",
     "logo" : {
         "@type" : "ImageObject",
-        "url" : "http:\/\/localhost:1313\/",
+        "url" : "https:\/\/nayibor.github.io\/",
         "height" :  60 ,
         "width" :  60
     }
@@ -78,21 +78,21 @@
 }
 </script>
 
-<meta property="og:image" content="http://localhost:1313/images/iso_message.jpg">
-<meta property="og:url" content="http://localhost:1313/posts/73e0ec2ac943bfecb47acbe2e603f814/">
+<meta property="og:image" content="https://nayibor.github.io/images/iso_message.jpg">
+<meta property="og:url" content="https://nayibor.github.io/posts/73e0ec2ac943bfecb47acbe2e603f814/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nukus Blog">
    
-<link rel="apple-touch-icon" sizes="180x180" href=" http://localhost:1313/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href=" https://nayibor.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nayibor.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nayibor.github.io/favicon/favicon-16x16.png">
 
 
-<meta name="generator" content="Hugo 0.145.0"><link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Nukus Blog">
+<meta name="generator" content="Hugo 0.145.0"><link rel="alternate" href="https://nayibor.github.io/index.xml" type="application/rss+xml" title="Nukus Blog">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<link rel="stylesheet" href="http://localhost:1313/css/main.css">
-<link disabled id="dark-mode-theme" rel="stylesheet" href="http://localhost:1313/css/dark.css"><link rel="stylesheet" href="http://localhost:1313/css/syntax.css"><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css">
+<link rel="stylesheet" href="https://nayibor.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://nayibor.github.io/css/dark.css"><link rel="stylesheet" href="https://nayibor.github.io/css/syntax.css"><link rel="stylesheet" href="https://nayibor.github.io/css/codeblock.css">
 
 
 
@@ -110,7 +110,7 @@
       <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
         <div class="container">
           
-          <a class="navbar-brand fw-bold" href="http://localhost:1313/">Nukus Blog</a>
+          <a class="navbar-brand fw-bold" href="https://nayibor.github.io/">Nukus Blog</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -239,47 +239,132 @@ knowledge of this protocol and also erlang would help  </p>
 Lets hit the road !!</p>
 <!-- raw HTML omitted -->
 <p>lets look at the iso_process.erl file and the portions where the tcp server is created</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span> <span style="color:#75715e">%% @doc this part is for starting the iso server 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> 
-</span></span><span style="display:flex;"><span> <span style="color:#f92672">&lt;</span>br<span style="color:#f92672">&gt;-</span>spec start_iso_server()<span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">&amp;</span>gt;[pid()] | {error,term()}.	<span style="color:#f92672">&lt;</span>br<span style="color:#f92672">&gt;</span>start_iso_server()<span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">&amp;</span>gt; ....<span style="color:#f92672">&lt;</span>br<span style="color:#f92672">&gt;&lt;/</span>p<span style="color:#f92672">&gt;&lt;</span>p<span style="color:#f92672">&gt;</span>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span> <span style="color:#586e75">%% @doc this part is for starting the iso server 
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span> 
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">&lt;</span>br<span style="color:#719e07">&gt;-</span>spec start_iso_server()<span style="color:#719e07">-</span>&amp;gt;[pid()] | {error,term()}.	<span style="color:#719e07">&lt;</span>br<span style="color:#719e07">&gt;</span>start_iso_server()<span style="color:#719e07">-</span>&amp;gt; ....<span style="color:#719e07">&lt;</span>br<span style="color:#719e07">&gt;&lt;/</span>p<span style="color:#719e07">&gt;&lt;</span>p<span style="color:#719e07">&gt;</span>
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span> <span style="color:#75715e">%% @doc this part is for listener socket
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> 
-</span></span><span style="display:flex;"><span> <span style="color:#f92672">&lt;</span>br<span style="color:#f92672">&gt;-</span>spec loop_listen(port())<span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">&amp;</span>gt;[port()] | {error,term()} | <span style="color:#66d9ef">fun</span>(). <span style="color:#f92672">&lt;</span>br<span style="color:#f92672">&gt;</span>loop_listen(Listen_socket)<span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">&amp;</span>gt;....<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;</span>
-</span></span></code></pre></div><p>the start_iso_server function and the loop_listen function are responsible for creating the tcp server and erlang processes for handling client connection .</p>
+</span></span><span style="display:flex;"><span> <span style="color:#586e75">%% @doc this part is for listener socket
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span> 
+</span></span><span style="display:flex;"><span> <span style="color:#719e07">&lt;</span>br<span style="color:#719e07">&gt;-</span>spec loop_listen(port())<span style="color:#719e07">-</span>&amp;gt;[port()] | {error,term()} | <span style="color:#719e07">fun</span>(). <span style="color:#719e07">&lt;</span>br<span style="color:#719e07">&gt;</span>loop_listen(<span style="color:#268bd2">Listen_socket</span>)<span style="color:#719e07">-</span>&amp;gt;....<span style="color:#719e07">&lt;/</span>p<span style="color:#719e07">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>the start_iso_server function and the loop_listen function are responsible for creating the tcp server and erlang processes for handling client connection .</p>
 <p>the</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>{ok,Listen} <span style="color:#f92672">=</span> gen_tcp:<span style="color:#a6e22e">listen</span>(...)
-</span></span></code></pre></div><p>in <!-- raw HTML omitted -->start_iso_server<!-- raw HTML omitted --> function creates the tcp listener socket and sets up pattern matching so if the listener socket  is created successfully the code goes on succesfully else it stops if there is an error(eg..if port is being used by another program).</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>{ok,<span style="color:#268bd2">Listen</span>} <span style="color:#719e07">=</span> gen_tcp:<span style="color:#268bd2">listen</span>(...)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>in <!-- raw HTML omitted -->start_iso_server<!-- raw HTML omitted --> function creates the tcp listener socket and sets up pattern matching so if the listener socket  is created successfully the code goes on succesfully else it stops if there is an error(eg..if port is being used by another program).</p>
 <p> 
 note that because the messages will be coming as strings and also because we want to process only one message at a time we use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>[list, {packet, <span style="color:#ae81ff">0</span>},{active, once}]
-</span></span></code></pre></div><p>options .
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>[list, {packet, <span style="color:#2aa198">0</span>},{active, once}]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>options .
 strings are represented as lists in erlang so list is in there .</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>the {packet,<span style="color:#ae81ff">0</span>} 
-</span></span></code></pre></div><p>option also tells us to allow messages to flow without breaking it up .<!-- raw HTML omitted --><!-- raw HTML omitted --> </p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>the {packet,<span style="color:#2aa198">0</span>} 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>option also tells us to allow messages to flow without breaking it up .<!-- raw HTML omitted --><!-- raw HTML omitted --> </p>
 <p>the<!-- raw HTML omitted --> loop_listen<!-- raw HTML omitted --> function<!-- raw HTML omitted --></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span><span style="color:#75715e">%% @doc this part is for listener socket
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>-spec loop_listen(port())<span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">&amp;</span>gt;[port()] | {error,term()} | <span style="color:#66d9ef">fun</span>(). <span style="color:#f92672">&lt;</span>br<span style="color:#f92672">&gt;</span>loop_listen(Listen_socket)
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span><span style="color:#586e75">%% @doc this part is for listener socket
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span>-<span style="color:#cb4b16">spec</span> loop_listen(port())<span style="color:#719e07">-</span>&amp;gt;[port()] | {error,term()} | <span style="color:#719e07">fun</span>(). <span style="color:#719e07">&lt;</span>br<span style="color:#719e07">&gt;</span>loop_listen(<span style="color:#268bd2">Listen_socket</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>the size of the message in the header is then used to calculate  </p>
 <p>how many more bits needs to be streamed to get the whole message in .</p>
 <p>the iso string is streamed until the whole message is obtained after which it is processed with this function<!-- raw HTML omitted --></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>Response_message <span style="color:#f92672">=</span> process_message(Rest)
-</span></span></code></pre></div><p>To run the program do a git clone of the repository</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>git clone https:<span style="color:#f92672">//</span>github.com<span style="color:#f92672">/</span>nayibor<span style="color:#f92672">/</span>iso_process_tut_repo.git
-</span></span></code></pre></div><p>cd to the iso_process_tut_repo folder.
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span><span style="color:#268bd2">Response_message</span> <span style="color:#719e07">=</span> process_message(<span style="color:#268bd2">Rest</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>To run the program do a git clone of the repository</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>git clone https:<span style="color:#719e07">//</span>github.com<span style="color:#719e07">/</span>nayibor<span style="color:#719e07">/</span>iso_process_tut_repo.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>cd to the iso_process_tut_repo folder.
 after that log into the erlang shell(erl or werl in windows) and run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span><span style="color:#a6e22e">c</span>(iso_process).
-</span></span></code></pre></div><p>this compiles iso_process.erl module.
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span><span style="color:#268bd2">c</span>(iso_process).
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>this compiles iso_process.erl module.
 then run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>   iso_process.start_iso_server() 
-</span></span></code></pre></div><p>whch starts the tcp server.</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>   iso_process.start_iso_server() 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>whch starts the tcp server.</p>
 <p>to send messages to server run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span> iso_process:<span style="color:#a6e22e">send_message</span>(Message).
-</span></span></code></pre></div><p>eg</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>iso_process:<span style="color:#a6e22e">send_message</span>(<span style="color:#960050;background-color:#1e0010">”</span><span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;&lt;</span>p<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">012912007230040102</span>B000001012312313122<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;&lt;</span>p<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0123400001000000011072218000000011612</span><span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;&lt;</span>p<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">12081731</span>FABCDE123ABD06414243000termi<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;&lt;</span>p<span style="color:#f92672">&gt;</span>d1210Community106A5DFGR<span style="color:#960050;background-color:#1e0010">”</span>).
-</span></span></code></pre></div><p>you should see a print out of the isomessage showing the various fields.</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span> iso_process:<span style="color:#268bd2">send_message</span>(<span style="color:#268bd2">Message</span>).
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>eg</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-erlang" data-lang="erlang"><span style="display:flex;"><span>iso_process:<span style="color:#268bd2">send_message</span>(”<span style="color:#719e07">&lt;/</span>p<span style="color:#719e07">&gt;&lt;</span>p<span style="color:#719e07">&gt;</span><span style="color:#2aa198">012912007230040102</span><span style="color:#268bd2">B000001012312313122</span><span style="color:#719e07">&lt;/</span>p<span style="color:#719e07">&gt;&lt;</span>p<span style="color:#719e07">&gt;</span><span style="color:#2aa198">0123400001000000011072218000000011612</span><span style="color:#719e07">&lt;/</span>p<span style="color:#719e07">&gt;&lt;</span>p<span style="color:#719e07">&gt;</span><span style="color:#2aa198">12081731</span><span style="color:#268bd2">FABCDE123ABD06414243000termi</span><span style="color:#719e07">&lt;/</span>p<span style="color:#719e07">&gt;&lt;</span>p<span style="color:#719e07">&gt;</span>d1210Community106A5DFGR”).
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>you should see a print out of the isomessage showing the various fields.</p>
 <p>we will go into how the message is processed and the mti,bitmap,data elements are obtained from the message in the next post as well as how to use jpos to send the messages so we learn a little about both jpos and message processing . neat huh . see u later for that !!!<!-- raw HTML omitted --></p>
 
       </article>
@@ -294,9 +379,9 @@ then run</p>
         
           <div class="blog-tags">
             
-              <a href="http://localhost:1313//tags/erlang/">erlang</a>
+              <a href="https://nayibor.github.io//tags/erlang/">erlang</a>
             
-              <a href="http://localhost:1313//tags/iso8583/">iso8583</a>
+              <a href="https://nayibor.github.io//tags/iso8583/">iso8583</a>
             
           </div>
         
@@ -327,7 +412,7 @@ then run</p>
           
           <li class="list-group-item b-0">
 
-            <a type="button" class="btn btn-dark" role="button" href="http://localhost:1313/posts/ddf349de5c9c5cf29af2e17bc71724b8/"
+            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/"
               data-toggle="tooltip" data-placement="top" title="Iso8583  message structure">&larr;
               Previous Post</a>
           </li>
@@ -336,7 +421,7 @@ then run</p>
 
           
           <li class="list-group-item ms-auto b-0">
-            <a type="button" class="btn btn-dark" role="button" href="http://localhost:1313/posts/4948d52595d68beab6dd3a919db6d115/"
+            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/4948d52595d68beab6dd3a919db6d115/"
               data-toggle="tooltip" data-placement="top" title="Parsing iso8583 messages Part 2">Next Post
               &rarr;</a>
           </li>
@@ -397,7 +482,7 @@ then run</p>
 
           
           &nbsp;&bull;&nbsp;
-          <a href="http://localhost:1313/">Nukus Blog</a>
+          <a href="https://nayibor.github.io/">Nukus Blog</a>
           
         </p>
         
@@ -409,7 +494,7 @@ then run</p>
     </div>
   </div>
 </footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script><script src="http://localhost:1313/js/dark-mode.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script><script src="https://nayibor.github.io/js/dark-mode.js"></script>
 
     
   </body>
