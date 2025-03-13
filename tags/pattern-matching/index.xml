@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pattern Matching on Nukus Blog</title>
-    <link>https://nayibor.github.io/tags/pattern-matching/</link>
+    <link>http://localhost:1313/tags/pattern-matching/</link>
     <description>Recent content in Pattern Matching on Nukus Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
     <lastBuildDate>Tue, 03 Jan 2023 10:54:24 +0200</lastBuildDate>
-    <atom:link href="https://nayibor.github.io/tags/pattern-matching/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/pattern-matching/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Erlang Binary Pattern Matching</title>
-      <link>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
+      <link>http://localhost:1313/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</link>
       <pubDate>Tue, 03 Jan 2023 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
+      <guid>http://localhost:1313/posts/0b6a4bece0b54c9c4aed38228bf8ff8d/</guid>
       <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;hello everyone and happy new year to one and all!!.&#xA;&lt;!-- raw HTML omitted --&gt;hope everyone had a very wondeful holiday filled with joy,happiness and wishing more positive happenings in this year.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;i worked on a small bit of code late last year which involved working with some audio data where i had to do some bit syntax and bit manipulation to get&#xA;the various metadata and parts of an audio file either over the network being streamed or a file on disk&lt;/p&gt;</description>
     </item>
   </channel>

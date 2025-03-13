@@ -2,20 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Elixir on Nukus Blog</title>
-    <link>https://nayibor.github.io/tags/elixir/</link>
+    <link>http://localhost:1313/tags/elixir/</link>
     <description>Recent content in Elixir on Nukus Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Mon, 04 Oct 2021 10:54:24 +0200</lastBuildDate>
-    <atom:link href="https://nayibor.github.io/tags/elixir/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Mar 2025 12:22:49 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/elixir/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Typst In Elixir</title>
+      <link>http://localhost:1313/posts/using-typist-elixir/</link>
+      <pubDate>Wed, 05 Mar 2025 12:22:49 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>http://localhost:1313/posts/using-typist-elixir/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://typst.app&#34;&gt;Typst&lt;/a&gt; is an application which is used for creating pdf and images from typst files.&#xA;Typst has a custom templating syntax which it uses for constructing various page elements and it also has a scripting system  much like a programming language which enables you to do some really cool stuff.&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s written in rust which makes it quite performant and gives it some type safe guarantees.it has a packaging system which enables you to import other packages written by others into your typst project.it is also multiplatform as well.its similar to latex in what it does and its functionality.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Talking to outside world from Elixir</title>
-      <link>https://nayibor.github.io/posts/meetup-talk/</link>
+      <link>http://localhost:1313/posts/meetup-talk/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/meetup-talk/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir.&#xA;&lt;!-- raw HTML omitted --&gt;The ecosystem for talking to the outside world from beam systems has a lot of options.&#xA;&lt;!-- raw HTML omitted --&gt;Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang.&#xA;&lt;!-- raw HTML omitted --&gt;ziglang was interesting not only for creating nifs&#xA;&lt;!-- raw HTML omitted --&gt;but also as a possible future replacement for writing simple,fast,safe code&#xA;&lt;!-- raw HTML omitted --&gt;This is the talk as well as a video about why to use zig to write nifs&#xA;&lt;!-- raw HTML omitted --&gt;enjoy !!&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/meetup-talk/</guid>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;I gave a talk recently at Elixir Kenya about how to communicate with the outside world from elixir.&#xA;&lt;!-- raw HTML omitted --&gt;The ecosystem for talking to the outside world from beam systems has a lot of options.&#xA;&lt;!-- raw HTML omitted --&gt;Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang.&#xA;&lt;!-- raw HTML omitted --&gt;ziglang was interesting not only for creating nifs&#xA;&lt;!-- raw HTML omitted --&gt;but also as a possible future replacement for writing simple,fast,safe code&#xA;&lt;!-- raw HTML omitted --&gt;This is the talk as well as a video about why to use zig to write nifs&#xA;&lt;!-- raw HTML omitted --&gt;enjoy !!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

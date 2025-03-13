@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Networking on Nukus Blog</title>
-    <link>https://nayibor.github.io/tags/networking/</link>
+    <link>http://localhost:1313/tags/networking/</link>
     <description>Recent content in Networking on Nukus Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
     <lastBuildDate>Mon, 04 Oct 2021 10:54:24 +0200</lastBuildDate>
-    <atom:link href="https://nayibor.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Talking to outside world from Elixir</title>
-      <link>https://nayibor.github.io/posts/meetup-talk/</link>
+      <link>http://localhost:1313/posts/meetup-talk/</link>
       <pubDate>Mon, 04 Oct 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/meetup-talk/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;I gave a talk recently at ElxirKenya about how to communicate with the outside world from elixir.&#xA;&lt;!-- raw HTML omitted --&gt;The ecosystem for talking to the outside world from beam systems has a lot of options.&#xA;&lt;!-- raw HTML omitted --&gt;Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang.&#xA;&lt;!-- raw HTML omitted --&gt;ziglang was interesting not only for creating nifs&#xA;&lt;!-- raw HTML omitted --&gt;but also as a possible future replacement for writing simple,fast,safe code&#xA;&lt;!-- raw HTML omitted --&gt;This is the talk as well as a video about why to use zig to write nifs&#xA;&lt;!-- raw HTML omitted --&gt;enjoy !!&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/meetup-talk/</guid>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;I gave a talk recently at Elixir Kenya about how to communicate with the outside world from elixir.&#xA;&lt;!-- raw HTML omitted --&gt;The ecosystem for talking to the outside world from beam systems has a lot of options.&#xA;&lt;!-- raw HTML omitted --&gt;Beyond the ports,nifs,interfaces,distributed erlang i found a new language ziglang.&#xA;&lt;!-- raw HTML omitted --&gt;ziglang was interesting not only for creating nifs&#xA;&lt;!-- raw HTML omitted --&gt;but also as a possible future replacement for writing simple,fast,safe code&#xA;&lt;!-- raw HTML omitted --&gt;This is the talk as well as a video about why to use zig to write nifs&#xA;&lt;!-- raw HTML omitted --&gt;enjoy !!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Conference and Community Building</title>
-      <link>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</link>
+      <link>http://localhost:1313/posts/conference-experience-and-starting-a-community/</link>
       <pubDate>Fri, 04 Jun 2021 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/conference-experience-and-starting-a-community/</guid>
+      <guid>http://localhost:1313/posts/conference-experience-and-starting-a-community/</guid>
       <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Conferences/communities are a great way for everyone to network and learn something new.&#xA;&lt;!-- raw HTML omitted --&gt;the effect of the pandemic on how these events are organized has been interesting.&#xA;&lt;!-- raw HTML omitted --&gt;its made people have to innovate around the organization of events.&#xA;&lt;!-- raw HTML omitted --&gt;there have been some positives out of this as well as some negatives&#xA;&lt;!-- raw HTML omitted --&gt;i have attended three erlang/elixir online conferences(two of my best languages)  so far this year and its been interesting&#xA;&lt;!-- raw HTML omitted --&gt;the positives/negatives as well as what the future may bring&lt;/p&gt;</description>
     </item>
   </channel>

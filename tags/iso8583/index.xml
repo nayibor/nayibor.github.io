@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Iso8583 on Nukus Blog</title>
-    <link>https://nayibor.github.io/tags/iso8583/</link>
+    <link>http://localhost:1313/tags/iso8583/</link>
     <description>Recent content in Iso8583 on Nukus Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
     <lastBuildDate>Mon, 22 Jan 2024 15:05:45 +0000</lastBuildDate>
-    <atom:link href="https://nayibor.github.io/tags/iso8583/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/iso8583/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using iso8583_erl Erlang Library</title>
-      <link>https://nayibor.github.io/posts/using-iso8583_erl-library/</link>
+      <link>http://localhost:1313/posts/using-iso8583_erl-library/</link>
       <pubDate>Mon, 22 Jan 2024 15:05:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/using-iso8583_erl-library/</guid>
+      <guid>http://localhost:1313/posts/using-iso8583_erl-library/</guid>
       <description>&lt;p&gt;i have been working on an iso8583 &lt;a href=&#34;https://github.com/nayibor/iso8583_erl&#34;&gt;library&lt;/a&gt; and decided to write a post about it.&lt;/p&gt;&#xA;&lt;p&gt;I have also used the library in three projects over the years so code is production ready and battle tested.&lt;/p&gt;&#xA;&lt;p&gt;iso8583 is a payment card messaging protocol and in some ways a dsl for describing how to send and receive payment card transactions from a sender to a receiver.&lt;/p&gt;&#xA;&lt;p&gt;the sender can be an atm,pos device,website,application,etc.. and the receiver an application,card processor like visa,mastercard etc.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Library for parsing iso8583 messages in erlang</title>
-      <link>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</link>
+      <link>http://localhost:1313/posts/c33083b29ef6e62daebc9459653f84b9/</link>
       <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</guid>
+      <guid>http://localhost:1313/posts/c33083b29ef6e62daebc9459653f84b9/</guid>
       <description>&lt;p&gt;i have been working on  an iso8583 payment card parsing library for time.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages.&#xA;&lt;!-- raw HTML omitted --&gt;this library can be used for packing and unpacking iso8583 financial messages.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;It accepts a specification file which contains info about fields,mti,bitmap for your messages.&#xA;&lt;!-- raw HTML omitted --&gt;The specification has info such as header length for various fields,padding info for fields,etc&amp;hellip;&#xA;&lt;!-- raw HTML omitted --&gt;This specification information is then used for packing/unpacking iso8583 formatted payment card messages.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Parsing iso8583 messages Part 2</title>
-      <link>https://nayibor.github.io/posts/4948d52595d68beab6dd3a919db6d115/</link>
+      <link>http://localhost:1313/posts/4948d52595d68beab6dd3a919db6d115/</link>
       <pubDate>Thu, 22 Dec 2016 10:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/4948d52595d68beab6dd3a919db6d115/</guid>
+      <guid>http://localhost:1313/posts/4948d52595d68beab6dd3a919db6d115/</guid>
       <description>&lt;p&gt;Today we will be showing how to  extract the various components out of an iso string.&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;The combination of a tcp server as well as code to extract the  iso message components&#xA;and send it for further processing is what is popularly called an interface server in payment processing .&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Specifically the components we are interested in are&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;message type indicator also known as mti&lt;/li&gt;&#xA;&lt;li&gt;bitmap&lt;/li&gt;&#xA;&lt;li&gt;data elements&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The code snippets  used for this post is in this  &lt;a href=&#34;https://github.com/nayibor/iso_process_tut_repo.git&#34;&gt;git&lt;/a&gt; repository.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Parsing iso8583 messages Part 1</title>
-      <link>https://nayibor.github.io/posts/73e0ec2ac943bfecb47acbe2e603f814/</link>
+      <link>http://localhost:1313/posts/73e0ec2ac943bfecb47acbe2e603f814/</link>
       <pubDate>Mon, 12 Dec 2016 07:57:26 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/73e0ec2ac943bfecb47acbe2e603f814/</guid>
+      <guid>http://localhost:1313/posts/73e0ec2ac943bfecb47acbe2e603f814/</guid>
       <description>&lt;p&gt;Today we are going to talk about creating a tcp server to  parse iso messages using erlang .&lt;/p&gt;&#xA;&lt;p&gt;This tutorial explains the very basic of creating tcp servers in erlang .&#xA;there are better specialized  libraries out there (&lt;!-- raw HTML omitted --&gt;ranch&lt;!-- raw HTML omitted --&gt;) for creating tcp servers and pools of them but this is very basic and we need just a simple tcp server to show how to process incoming iso messages . &lt;/p&gt;</description>
     </item>
     <item>
       <title>Iso8583  message structure</title>
-      <link>https://nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/</link>
+      <link>http://localhost:1313/posts/ddf349de5c9c5cf29af2e17bc71724b8/</link>
       <pubDate>Mon, 05 Dec 2016 07:55:57 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/ddf349de5c9c5cf29af2e17bc71724b8/</guid>
+      <guid>http://localhost:1313/posts/ddf349de5c9c5cf29af2e17bc71724b8/</guid>
       <description>&lt;p&gt;alloha.&lt;/p&gt;&#xA;&lt;p&gt;at last i have been able to get my lazy behind to write a blog post on this.&lt;/p&gt;&#xA;&lt;p&gt;About time :).&lt;/p&gt;&#xA;&lt;p&gt;This will be the first in a series about parsing iso8583 financial messages  using erlang.&lt;/p&gt;&#xA;&lt;p&gt;we will get to know&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;about iso8583 and the message structure&lt;/li&gt;&#xA;&lt;li&gt;receiving iso 8583 messages over the wire using erlang tcp server&lt;/li&gt;&#xA;&lt;li&gt;and parsing the message . &lt;!-- raw HTML omitted --&gt;parsing those messages in various formats(text(acii),binary,custom format).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Here we go.&lt;/p&gt;</description>
     </item>
   </channel>

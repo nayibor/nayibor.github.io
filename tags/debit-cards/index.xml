@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Debit Cards on Nukus Blog</title>
-    <link>https://nayibor.github.io/tags/debit-cards/</link>
+    <link>http://localhost:1313/tags/debit-cards/</link>
     <description>Recent content in Debit Cards on Nukus Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
     <lastBuildDate>Mon, 01 Jun 2020 00:54:24 +0200</lastBuildDate>
-    <atom:link href="https://nayibor.github.io/tags/debit-cards/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/debit-cards/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Library for parsing iso8583 messages in erlang</title>
-      <link>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</link>
+      <link>http://localhost:1313/posts/c33083b29ef6e62daebc9459653f84b9/</link>
       <pubDate>Mon, 01 Jun 2020 00:54:24 +0200</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/</guid>
+      <guid>http://localhost:1313/posts/c33083b29ef6e62daebc9459653f84b9/</guid>
       <description>&lt;p&gt;i have been working on  an iso8583 payment card parsing library for time.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages.&#xA;&lt;!-- raw HTML omitted --&gt;this library can be used for packing and unpacking iso8583 financial messages.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;It accepts a specification file which contains info about fields,mti,bitmap for your messages.&#xA;&lt;!-- raw HTML omitted --&gt;The specification has info such as header length for various fields,padding info for fields,etc&amp;hellip;&#xA;&lt;!-- raw HTML omitted --&gt;This specification information is then used for packing/unpacking iso8583 formatted payment card messages.&lt;/p&gt;</description>
     </item>
   </channel>
