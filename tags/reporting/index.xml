@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Typesetting on Nukus Blog</title>
-    <link>https://nayibor.github.io/tags/typesetting/</link>
-    <description>Recent content in Typesetting on Nukus Blog</description>
+    <title>Reporting on Nukus Blog</title>
+    <link>https://nayibor.github.io/tags/reporting/</link>
+    <description>Recent content in Reporting on Nukus Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
     <lastBuildDate>Thu, 22 May 2025 13:42:45 +0000</lastBuildDate>
-    <atom:link href="https://nayibor.github.io/tags/typesetting/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nayibor.github.io/tags/reporting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Typst Reporting Application</title>
       <link>https://nayibor.github.io/posts/typst_report_application/</link>
       <pubDate>Thu, 22 May 2025 13:42:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/typst_report_application/</guid>
       <description>&lt;p&gt;Hi All.hope you are good.&lt;/p&gt;&#xA;&lt;p&gt;I blogged in a previous post about &lt;a href=&#34;https://typst.app&#34;&gt;Typst&lt;/a&gt; which is a document processing application which outputs to pdf,images and other formats.&lt;/p&gt;&#xA;&lt;p&gt;Typst makes it easy to create documents like scientific journals,books,etc.. and other forms of writing.&#xA;From a software development perspective,the programming language used to create(rust) makes it quite fast and less buggy and ideal for creating reports,receipts,etc&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;I used the typst application and some typst packages in a recent software project using the elixir programming language.&#xA;It revolved around having a reporting functionality using typst where i could write custom sql queries and have the reporting engine create pdfs out of those sql queries.&#xA;The experience was nice and I decided to create a custom elixir application which i can embed in other elixir projects for easy reporting functionality.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Using Typst In Elixir</title>
-      <link>https://nayibor.github.io/posts/using-typist-elixir/</link>
-      <pubDate>Wed, 05 Mar 2025 12:22:49 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
-      <guid>https://nayibor.github.io/posts/using-typist-elixir/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://typst.app&#34;&gt;Typst&lt;/a&gt; is an application which is used for creating pdf and images from typst files.&#xA;Typst has a custom templating syntax which it uses for constructing various page elements and it also has a scripting system  much like a programming language which enables you to do some really cool stuff.&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s written in rust which makes it quite performant and gives it some type safe guarantees.it has a packaging system which enables you to import other packages written by others into your typst project.it is also multiplatform as well.its similar to latex in what it does and its functionality.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

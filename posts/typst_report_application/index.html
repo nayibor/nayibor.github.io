@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Library for parsing iso8583 messages in erlang - Nukus Blog</title>
-<meta name="description" content="library for payment card financial messages in erlang/elixir">
+<title>Typst Reporting Application - Nukus Blog</title>
+<meta name="description" content="automated reporting in elixir">
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +44,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/nayibor.github.io\/posts\/c33083b29ef6e62daebc9459653f84b9\/",
-          "name": "Library for parsing iso8583 messages in erlang"
+          "@id": "https:\/\/nayibor.github.io\/posts\/typst_report_application\/",
+          "name": "Typst reporting application"
         }
     }]
 }
@@ -54,17 +54,17 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "Nuku Ameyibor"
+    "name" : ""
   },
-  "headline": "Library for parsing iso8583 messages in erlang",
-  "description" : "library for payment card financial messages in erlang\/elixir",
+  "headline": "Typst Reporting Application",
+  "description" : "automated reporting in elixir",
   "inLanguage" : "en",
-  "wordCount":  102 ,
-  "datePublished" : "2020-06-01T00:54:24",
-  "dateModified" : "2020-06-01T00:54:24",
+  "wordCount":  226 ,
+  "datePublished" : "2025-05-22T13:42:45",
+  "dateModified" : "2025-05-22T13:42:45",
   "image" : "https:\/\/nayibor.github.io\/",
-  "keywords" : [ "erlang, iso8583, erlang binary processing, functional programming, payment cards, debit cards, credit cards" ],
-  "mainEntityOfPage" : "https:\/\/nayibor.github.io\/posts\/c33083b29ef6e62daebc9459653f84b9\/",
+  "keywords" : [ "elixir, typst, typesetting, live view, reporting" ],
+  "mainEntityOfPage" : "https:\/\/nayibor.github.io\/posts\/typst_report_application\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/nayibor.github.io\/",
@@ -78,8 +78,8 @@
 }
 </script>
 
-<meta property="og:image" content="https://nayibor.github.io/images/erlang.png">
-<meta property="og:url" content="https://nayibor.github.io/posts/c33083b29ef6e62daebc9459653f84b9/">
+<meta property="og:image" content="https://nayibor.github.io/images/typst.jpeg">
+<meta property="og:url" content="https://nayibor.github.io/posts/typst_report_application/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nukus Blog">
    
@@ -193,7 +193,7 @@
 
               
               <h1 class="fw-semibold display-5 lh-1 mb-3"> 
-                Library for parsing iso8583 messages in erlang
+                Typst Reporting Application
                 
               </h1>
               
@@ -220,7 +220,7 @@
 
       <div class="card-image card-image-blog p-0">
         
-        <img src="/images/erlang.png" alt="Library for parsing iso8583 messages in erlang" class="rounded img-fluid">
+        <img src="/images/typst.jpeg" alt="Typst Reporting Application" class="rounded img-fluid">
         
         
       </div>
@@ -228,14 +228,26 @@
  
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
       <article role="main" class="blog-post">
-        <p>i have been working on  an iso8583 payment card parsing library for time.</p>
-<p><!-- raw HTML omitted -->its written in erlang but can be used in erlang,elixir,lfe,etc.. basically all beam languages.
-<!-- raw HTML omitted -->this library can be used for packing and unpacking iso8583 financial messages.</p>
-<p><!-- raw HTML omitted -->It accepts a specification file which contains info about fields,mti,bitmap for your messages.
-<!-- raw HTML omitted -->The specification has info such as header length for various fields,padding info for fields,etc&hellip;
-<!-- raw HTML omitted -->This specification information is then used for packing/unpacking iso8583 formatted payment card messages.</p>
-<p><!-- raw HTML omitted -->it can be found on <a href="https://hex.pm/packages/iso8583_erl">hex</a> or <a href="https://github.com/nayibor/iso8583_erl">github</a>
-<!-- raw HTML omitted -->take it out for a spin and let me know how you find it !!.</p>
+        <p>Hi All.hope you are good.</p>
+<p>I blogged in a previous post about <a href="https://typst.app">Typst</a> which is a document processing application which outputs to pdf,images and other formats.</p>
+<p>Typst makes it easy to create documents like scientific journals,books,etc.. and other forms of writing.
+From a software development perspective,the programming language used to create(rust) makes it quite fast and less buggy and ideal for creating reports,receipts,etc&hellip;</p>
+<p>I used the typst application and some typst packages in a recent software project using the elixir programming language.
+It revolved around having a reporting functionality using typst where i could write custom sql queries and have the reporting engine create pdfs out of those sql queries.
+The experience was nice and I decided to create a custom elixir application which i can embed in other elixir projects for easy reporting functionality.</p>
+<p>Thus the typst reporting application was born which enables you to add reporting functionality to your elixir pheonix web applications.
+You can write custom sql queries and optional custom typst markup and the results of the queries will be passed into the typst markup as variables for use in generating the report.
+you can create,read,update and delete reports as well preview reports and download pdfs of reports.
+Find sample video below.</p>
+<video width="100%" height="240" controls>
+  <source src="/videos/typst_reporter_demo.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+
+
+<p>the github repo  can be found at <a href="https://github.com/nayibor/typst_reporter">Typst Reporting Application</a>.</p>
+<p>Happy hacking.</p>
 
       </article>
     </div>
@@ -249,19 +261,15 @@
         
           <div class="blog-tags">
             
-              <a href="https://nayibor.github.io//tags/erlang/">erlang</a>
+              <a href="https://nayibor.github.io//tags/elixir/">elixir</a>
             
-              <a href="https://nayibor.github.io//tags/iso8583/">iso8583</a>
+              <a href="https://nayibor.github.io//tags/typst/">typst</a>
             
-              <a href="https://nayibor.github.io//tags/erlang-binary-processing/">erlang binary processing</a>
+              <a href="https://nayibor.github.io//tags/typesetting/">typesetting</a>
             
-              <a href="https://nayibor.github.io//tags/functional-programming/">functional programming</a>
+              <a href="https://nayibor.github.io//tags/live-view/">live view</a>
             
-              <a href="https://nayibor.github.io//tags/payment-cards/">payment cards</a>
-            
-              <a href="https://nayibor.github.io//tags/debit-cards/">debit cards</a>
-            
-              <a href="https://nayibor.github.io//tags/credit-cards/">credit cards</a>
+              <a href="https://nayibor.github.io//tags/reporting/">reporting</a>
             
           </div>
         
@@ -292,19 +300,13 @@
           
           <li class="list-group-item b-0">
 
-            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/deploying-code-with-git-and-apache/"
-              data-toggle="tooltip" data-placement="top" title="Deploying code with git and apache">&larr;
+            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/using-typist-elixir/"
+              data-toggle="tooltip" data-placement="top" title="Using Typst In Elixir">&larr;
               Previous Post</a>
           </li>
           
 
 
-          
-          <li class="list-group-item ms-auto b-0">
-            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/conference-experience-and-starting-a-community/"
-              data-toggle="tooltip" data-placement="top" title="Conference and Community Building">Next Post
-              &rarr;</a>
-          </li>
           
         </ul>
         
