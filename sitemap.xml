@@ -2,22 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nayibor.github.io/posts/lua/</loc>
+    <lastmod>2026-02-27T14:10:59+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/dsl/</loc>
+    <lastmod>2026-02-27T14:10:59+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/extension_languages/</loc>
+    <lastmod>2026-02-27T14:10:59+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/game_programming/</loc>
+    <lastmod>2026-02-27T14:10:59+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/love-2d/</loc>
+    <lastmod>2026-02-27T14:10:59+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/lua/</loc>
+    <lastmod>2026-02-27T14:10:59+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/</loc>
+    <lastmod>2026-02-27T14:10:59+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/posts/</loc>
+    <lastmod>2026-02-27T14:10:59+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/</loc>
+    <lastmod>2026-02-27T14:10:59+00:00</lastmod>
+  </url><url>
     <loc>https://nayibor.github.io/tags/elixir/</loc>
     <lastmod>2025-05-22T13:42:45+00:00</lastmod>
   </url><url>
     <loc>https://nayibor.github.io/tags/live-view/</loc>
     <lastmod>2025-05-22T13:42:45+00:00</lastmod>
   </url><url>
-    <loc>https://nayibor.github.io/</loc>
-    <lastmod>2025-05-22T13:42:45+00:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/posts/</loc>
-    <lastmod>2025-05-22T13:42:45+00:00</lastmod>
-  </url><url>
     <loc>https://nayibor.github.io/tags/reporting/</loc>
-    <lastmod>2025-05-22T13:42:45+00:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/tags/</loc>
     <lastmod>2025-05-22T13:42:45+00:00</lastmod>
   </url><url>
     <loc>https://nayibor.github.io/tags/typesetting/</loc>

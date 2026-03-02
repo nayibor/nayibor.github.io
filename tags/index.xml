@@ -8,8 +8,43 @@
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Thu, 22 May 2025 13:42:45 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 14:10:59 +0000</lastBuildDate>
     <atom:link href="https://nayibor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dsl</title>
+      <link>https://nayibor.github.io/tags/dsl/</link>
+      <pubDate>Fri, 27 Feb 2026 14:10:59 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/dsl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Extension_languages</title>
+      <link>https://nayibor.github.io/tags/extension_languages/</link>
+      <pubDate>Fri, 27 Feb 2026 14:10:59 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/extension_languages/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Game_programming</title>
+      <link>https://nayibor.github.io/tags/game_programming/</link>
+      <pubDate>Fri, 27 Feb 2026 14:10:59 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/game_programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Love-2d</title>
+      <link>https://nayibor.github.io/tags/love-2d/</link>
+      <pubDate>Fri, 27 Feb 2026 14:10:59 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/love-2d/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lua</title>
+      <link>https://nayibor.github.io/tags/lua/</link>
+      <pubDate>Fri, 27 Feb 2026 14:10:59 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/tags/lua/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Elixir</title>
       <link>https://nayibor.github.io/tags/elixir/</link>
@@ -81,7 +116,7 @@
       <description></description>
     </item>
     <item>
-      <title>Payment-Cards</title>
+      <title>Payment Cards</title>
       <link>https://nayibor.github.io/tags/payment-cards/</link>
       <pubDate>Mon, 22 Jan 2024 15:05:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/tags/payment-cards/</guid>

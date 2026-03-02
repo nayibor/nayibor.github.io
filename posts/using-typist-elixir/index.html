@@ -9,7 +9,8 @@
 
 <title>Using Typst In Elixir - Nukus Blog</title>
 <meta name="description" content="typsetting in elixir">
-<script type="application/ld+json">
+
+<meta name="author" content="Nuku Ameyibor"><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -54,7 +55,7 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : ""
+    "name" : "map[author:Nuku Ameyibor cover:\/images\/cover.png email:nayibor@gmail.com github:nayibor name:Nuku Ameyibor website:https:\/\/nayibor.github.io\/]"
   },
   "headline": "Using Typst In Elixir",
   "description" : "typsetting in elixir",
@@ -78,21 +79,20 @@
 }
 </script>
 
-<meta property="og:image" content="https://nayibor.github.io/images/typst.jpeg">
-<meta property="og:url" content="https://nayibor.github.io/posts/using-typist-elixir/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Nukus Blog">
-   
+<meta property="og:title" content="Using Typst In Elixir" />
+<meta property="og:description" content="typsetting in elixir">
+<meta property="og:image" content="https://nayibor.github.io/images/typst.jpeg" />
+<meta property="og:url" content="https://nayibor.github.io/posts/using-typist-elixir/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Nukus Blog" />
 <link rel="apple-touch-icon" sizes="180x180" href=" https://nayibor.github.io/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://nayibor.github.io/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://nayibor.github.io/favicon/favicon-16x16.png">
 
 
-<meta name="generator" content="Hugo 0.147.5"><link rel="alternate" href="https://nayibor.github.io/index.xml" type="application/rss+xml" title="Nukus Blog">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<link rel="stylesheet" href="https://nayibor.github.io/css/main.css">
-<link disabled id="dark-mode-theme" rel="stylesheet" href="https://nayibor.github.io/css/dark.css"><link rel="stylesheet" href="https://nayibor.github.io/css/syntax.css"><link rel="stylesheet" href="https://nayibor.github.io/css/codeblock.css">
+<meta name="generator" content="Hugo 0.157.0">
+<link rel="alternate" href="https://nayibor.github.io/index.xml" type="application/rss+xml" title="Nukus Blog">
+<script src="https://nayibor.github.io/js/dark-mode.js"></script><link rel="stylesheet" href="/style.min.css">
 
 
 
@@ -100,16 +100,23 @@
 
 
 
+ 
+
+ <link href="https://nayibor.github.io/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+
+<script src="https://nayibor.github.io/vendor/glightbox/js/glightbox.min.js"></script>
+ 
   </head>
   <body>
     
-<div class="container fixed-top">
+<div class="container fixed-top mw-100">
   <div class="row justify-content-center">
     <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
 
       <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
         <div class="container">
-          
+
           <a class="navbar-brand fw-bold" href="https://nayibor.github.io/">Nukus Blog</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -117,12 +124,12 @@
           </button>
 
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav mb-2 mb-lg-0">
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-baseline">
               
+
               
 
               <li class="nav-item">
-
                 
                 
                 
@@ -135,10 +142,10 @@
 
               
               
+
               
 
               <li class="nav-item">
-
                 
                 
                 
@@ -152,12 +159,20 @@
               
               
 
-              
+
+                
+            
+
+            
               <li class="nav-item nav-link">
-                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+                <a id="dark-mode-toggle" class="bi bi-moon-stars" role="button"></a>
               </li>
+
+              
               
             </ul>
+
+            
           </div>
         </div>
       </nav>
@@ -177,34 +192,38 @@
 
 <header class="header-section ">
 
-  <div class="intro-header no-img mt-10">
+  <div class="intro-header no-img mt-10 pb-2">
     <div class="container">
       <div class="row justify-content-center">
-        
 
+        
           
-          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-sm-12  col-md-12 col-lg-12 col-xl-12 tags-sec  text-center">
+          
+          
+
+
+            
             
 
+            
             <div class="posts-heading">
-              
-
-              
-
-              
-              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+              <h1 class="fw-medium lh-1 align-items-center">
                 Using Typst In Elixir
                 
               </h1>
-              
-              
-
-              
-
-              
-              
-              
             </div>
+
+
+            
+
+            
+
+            
+
+            
+            
+            
           </div>
         </div>
       </div>
@@ -216,16 +235,9 @@
     
 <div class="container" role="main">
   <div class="row">
-    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
 
-      <div class="card-image card-image-blog p-0">
-        
-        <img src="/images/typst.jpeg" alt="Using Typst In Elixir" class="rounded img-fluid">
-        
-        
-      </div>
-    </div>
- 
+    
+
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
       <article role="main" class="blog-post">
         <p><a href="https://typst.app">Typst</a> is an application which is used for creating pdf and images from typst files.
@@ -233,28 +245,28 @@ Typst has a custom templating syntax which it uses for constructing various page
 <p>It&rsquo;s written in rust which makes it quite performant and gives it some type safe guarantees.it has a packaging system which enables you to import other packages written by others into your typst project.it is also multiplatform as well.its similar to latex in what it does and its functionality.</p>
 <p>First of all let&rsquo;s create a new phoenix project to show its usage.This project will be a blog where we will have the ability to create,read,update,preview,download and delete blog posts.</p>
 <p>First we create a  new phoenix project</p>
-<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>	mix phx<span style="color:#719e07">.</span>new typst_app
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>	mix phx<span style="color:#719e07">.</span>new typst_app
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>After creating the  project,we  need to have the typst executable in the  priv folder of our phoenix app.We go to the typst <a href="https://github.com/typst/typst">github</a> page and follow the instructions for installation.</p>
 <p>After installation of typst, we get the executable and then place it in the priv folder.I usually create a <code>priv/typst</code> folder and put the executable there.We also create two typst files and put them in the folder also.</p>
 <p>One is an api file(<code>main.typ</code>) and the other a template file(<code>blog.typ</code>) which contains the blog typst code.Seperation of the api file and the template typst files enables the template to be used in other scenarios and enables seperation of concern also.</p>
 <p><code>main.typ</code></p>
-<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>#import sys.inputs.templatePath: blog-from-metadata
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>#import sys.inputs.templatePath: blog-from-metadata
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>#let meta = json.decode(sys.inputs.blogJson)
@@ -262,9 +274,9 @@ Typst has a custom templating syntax which it uses for constructing various page
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>blog.typ</code></p>
-<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
@@ -289,10 +301,10 @@ Typst has a custom templating syntax which it uses for constructing various page
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>#let format-session-matter(blog-info) = [
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>#let format-session-matter(blog-info) = [
 </span></span><span style="display:flex;"><span>  = Blog Details
 </span></span><span style="display:flex;"><span>  #line(length: 100<span style="color:#586e75">%)
-</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span>  #v(1em) 
+</span></span></span><span style="display:flex;"><span>  #v(1em) 
 </span></span><span style="display:flex;"><span>  *Id*: #blog-info.id<span style="color:#719e07">\</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  *Title*: #blog-info.title<span style="color:#719e07">\	</span>
@@ -315,41 +327,41 @@ Typst has a custom templating syntax which it uses for constructing various page
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>We then run the generator for live view to generate some scaffolding and boilerplate code</p>
-<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>	cd typst_app
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>	cd typst_app
 </span></span><span style="display:flex;"><span>	mix phx<span style="color:#719e07">.</span>gen<span style="color:#719e07">.</span>live <span style="color:#268bd2">Blog</span> <span style="color:#268bd2">Post</span> posts title<span style="color:#2aa198">:string</span> body<span style="color:#2aa198">:text</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>We are now going to add some endpoints for the preview/downloading and also for the preview modal.
 We add the following endpoints th the <code>router.ex</code>.</p>
-<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>    get <span style="color:#2aa198">&#34;/process_blog/:id/:type&#34;</span>, <span style="color:#268bd2">PageController</span>, <span style="color:#2aa198">:process_blog</span>
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>    get <span style="color:#2aa198">&#34;/process_blog/:id/:type&#34;</span>, <span style="color:#268bd2">PageController</span>, <span style="color:#2aa198">:process_blog</span>
 </span></span><span style="display:flex;"><span>    live <span style="color:#2aa198">&#34;/posts/:id/preview&#34;</span>, <span style="color:#268bd2">PostLive.Index</span>, <span style="color:#2aa198">:preview</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>the first link enables you to process a blog based on the <code>id</code> and the <code>type</code>.the  <code>type</code> can be either view or download and enables you to view and download the pdf respectivity.
 the second link enables you to preview the pdf in a modal.</p>
 <p>We  create an action in <code>TypstAppWeb.PostLive.Index</code> to process the <code>preview</code> action.</p>
-<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>  <span style="color:#268bd2">defp</span> apply_action(socket, <span style="color:#2aa198">:preview</span>, %{<span style="color:#2aa198">&#34;id&#34;</span> <span style="color:#719e07">=&gt;</span> id}) <span style="color:#719e07">do</span>
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>  <span style="color:#268bd2">defp</span> apply_action(socket, <span style="color:#2aa198">:preview</span>, %{<span style="color:#2aa198">&#34;id&#34;</span> <span style="color:#719e07">=&gt;</span> id}) <span style="color:#719e07">do</span>
 </span></span><span style="display:flex;"><span>    socket
 </span></span><span style="display:flex;"><span>    <span style="color:#719e07">|&gt;</span> assign(<span style="color:#2aa198">:page_title</span>, <span style="color:#2aa198">&#34;Preview Post Pdf&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#719e07">|&gt;</span> assign(<span style="color:#2aa198">:post</span>, <span style="color:#268bd2">Blog</span><span style="color:#719e07">.</span>get_post!(id))
@@ -357,9 +369,9 @@ the second link enables you to preview the pdf in a modal.</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>We add a function <code>process_blog</code> in <code>TypstAppWeb.PageController</code> to enable us to get the blog information,encode to json which is acceptable to typst,shell out and execute the typst command for creating the pdf/png output file and send the generated file to the client.In my case i used the png for the preview and the pdf for the download option.</p>
-<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
@@ -384,7 +396,7 @@ the second link enables you to preview the pdf in a modal.</p>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>  <span style="color:#268bd2">def</span> process_blog(conn,%{<span style="color:#2aa198">&#34;id&#34;</span> <span style="color:#719e07">=&gt;</span> id,<span style="color:#2aa198">&#34;type&#34;</span> <span style="color:#719e07">=&gt;</span> type}) <span style="color:#719e07">do</span>
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>  <span style="color:#268bd2">def</span> process_blog(conn,%{<span style="color:#2aa198">&#34;id&#34;</span> <span style="color:#719e07">=&gt;</span> id,<span style="color:#2aa198">&#34;type&#34;</span> <span style="color:#719e07">=&gt;</span> type}) <span style="color:#719e07">do</span>
 </span></span><span style="display:flex;"><span>    data <span style="color:#719e07">=</span> <span style="color:#268bd2">Blog</span><span style="color:#719e07">.</span>get_post!(id)
 </span></span><span style="display:flex;"><span>    jason_map <span style="color:#719e07">=</span> %{<span style="color:#2aa198">&#34;id&#34;</span> <span style="color:#719e07">=&gt;</span> data<span style="color:#719e07">.</span>id,<span style="color:#2aa198">&#34;title&#34;</span> <span style="color:#719e07">=&gt;</span> data<span style="color:#719e07">.</span>title, <span style="color:#2aa198">&#34;body&#34;</span> <span style="color:#719e07">=&gt;</span> data<span style="color:#719e07">.</span>body}
 </span></span><span style="display:flex;"><span>    {<span style="color:#2aa198">:ok</span>,blog_data} <span style="color:#719e07">=</span> <span style="color:#268bd2">Jason</span><span style="color:#719e07">.</span>encode(jason_map) 
@@ -410,9 +422,9 @@ the second link enables you to preview the pdf in a modal.</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>We edit the <code>index.html.heex</code> file and add links after the edit link for previewing as well as downloading the blog as well.one is a patch and one is a normal href link.         .</p>
-<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">4
@@ -420,7 +432,7 @@ the second link enables you to preview the pdf in a modal.</p>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#719e07">&lt;</span><span style="color:#2aa198">:action</span> <span style="color:#2aa198">:let</span><span style="color:#719e07">=</span>{{_id, post}}<span style="color:#719e07">&gt;</span>
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#719e07">&lt;</span><span style="color:#2aa198">:action</span> <span style="color:#2aa198">:let</span><span style="color:#719e07">=</span>{{_id, post}}<span style="color:#719e07">&gt;</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#719e07">&lt;.</span>link patch<span style="color:#719e07">=</span>{<span style="color:#2aa198">~p&#34;/posts/</span><span style="color:#2aa198">#{</span>post<span style="color:#2aa198">}</span><span style="color:#2aa198">/preview&#34;</span>}<span style="color:#719e07">&gt;</span><span style="color:#268bd2">Preview</span><span style="color:#719e07">&lt;/.</span>link<span style="color:#719e07">&gt;</span> 
 </span></span><span style="display:flex;"><span>  <span style="color:#719e07">&lt;/</span><span style="color:#2aa198">:action</span><span style="color:#719e07">&gt;</span>    
 </span></span><span style="display:flex;"><span>  <span style="color:#719e07">&lt;</span><span style="color:#2aa198">:action</span> <span style="color:#2aa198">:let</span><span style="color:#719e07">=</span>{{_id, post}}<span style="color:#719e07">&gt;</span>
@@ -429,9 +441,9 @@ the second link enables you to preview the pdf in a modal.</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>We also add a modal component to <code>index.html.heex</code> to enable you to create a preview modal.</p>
-<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
@@ -444,7 +456,7 @@ the second link enables you to preview the pdf in a modal.</p>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#719e07">&lt;.</span>modal <span style="color:#2aa198">:if</span><span style="color:#719e07">=</span>{@live_action <span style="color:#719e07">in</span> [<span style="color:#2aa198">:preview</span>]}  id<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;preview-modal&#34;</span> show 
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#719e07">&lt;.</span>modal <span style="color:#2aa198">:if</span><span style="color:#719e07">=</span>{@live_action <span style="color:#719e07">in</span> [<span style="color:#2aa198">:preview</span>]}  id<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;preview-modal&#34;</span> show 
 </span></span><span style="display:flex;"><span>  on_cancel<span style="color:#719e07">=</span>{<span style="color:#268bd2">JS</span><span style="color:#719e07">.</span>patch(<span style="color:#2aa198">~p&#34;/posts&#34;</span>)}<span style="color:#719e07">&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#719e07">&lt;</span>div<span style="color:#719e07">&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#719e07">&lt;.</span>header<span style="color:#719e07">&gt;</span>
@@ -466,90 +478,64 @@ So have fun with it and you can also find the link to this example <a href="http
     </div>
   </div>
 
+  
   <div class="row">
-    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-      <hr />
-    </div>
-    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+      
+      <div class="blog-tags">
         
-          <div class="blog-tags">
-            
-              <a href="https://nayibor.github.io//tags/elixir/">elixir</a>
-            
-              <a href="https://nayibor.github.io//tags/typst/">typst</a>
-            
-              <a href="https://nayibor.github.io//tags/typesetting/">typesetting</a>
-            
-              <a href="https://nayibor.github.io//tags/live-view/">live view</a>
-            
-          </div>
+        <a href="https://nayibor.github.io/tags/elixir/">elixir</a>
+        
+        <a href="https://nayibor.github.io/tags/typst/">typst</a>
+        
+        <a href="https://nayibor.github.io/tags/typesetting/">typesetting</a>
+        
+        <a href="https://nayibor.github.io/tags/live-view/">live view</a>
         
       </div>
- 
+      
+    </div>
+
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
       
     </div>
 
-    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
-      <div class="card">
-        <div class="row no-gutters">
-          <div class="col-md-2 "> 
-            <div class="card-body ">
-            
-          </div>
-          </div>
-                   
-        </div>
+    <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-1 pt-4">
+      
+      <ul class="list-group list-group-horizontal" style="flex-direction: row">
+        
+        <li class="list-group-item b-0 p-0">
 
+          <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/using-iso8583_erl-library/"
+            data-toggle="tooltip" data-placement="top" title="Using iso8583_erl Erlang Library">&larr;
+            Previous Post</a>
+        </li>
+        
+
+
+        
+        <li class="list-group-item ms-auto b-0 p-0">
+          <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/typst_report_application/"
+            data-toggle="tooltip" data-placement="top" title="Typst Reporting Application">Next Post
+            &rarr;</a>
+        </li>
+        
+      </ul>
       
     </div>
-  </div>
 
-      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
-        
-        <ul class="list-group list-group-horizontal" style="flex-direction: row">
-          
-          <li class="list-group-item b-0">
-
-            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/using-iso8583_erl-library/"
-              data-toggle="tooltip" data-placement="top" title="Using iso8583_erl Erlang Library">&larr;
-              Previous Post</a>
-          </li>
-          
-
-
-          
-          <li class="list-group-item ms-auto b-0">
-            <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/typst_report_application/"
-              data-toggle="tooltip" data-placement="top" title="Typst Reporting Application">Next Post
-              &rarr;</a>
-          </li>
-          
-        </ul>
-        
-      </div>
-
-      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
-      </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
     </div>
   </div>
-
-  <div class="">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 mt-3">
-          <h3>Read more</h3>
-          <hr />
-        </div>
-
-        
-      </div>
-    </div>
-
-    
-
-  </div>
+  
 </div>
+
+<div class="">
+  
+  
+
+  
+
 </div>
 
     
@@ -564,6 +550,20 @@ So have fun with it and you can also find the link to this example <a href="http
           class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
 
           
+          <li>
+            <a href="mailto:nayibor@gmail.com" title="Email me" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-envelope"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/nayibor" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
           
         </ul>
       </div>
@@ -573,10 +573,14 @@ So have fun with it and you can also find the link to this example <a href="http
       <div class="col-md-12">
         <p class="credits copyright text-muted">
           
+          
+          <a href="https://nayibor.github.io/">Nuku Ameyibor</a>
+          
+          
 
           &nbsp;&bull;&nbsp;&copy;
           
-          2025
+          2026
           
 
           
@@ -592,8 +596,7 @@ So have fun with it and you can also find the link to this example <a href="http
       </div>
     </div>
   </div>
-</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script><script src="https://nayibor.github.io/js/dark-mode.js"></script>
+</footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     
   </body>
