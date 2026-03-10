@@ -8,8 +8,15 @@
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Fri, 27 Feb 2026 14:10:59 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2026 14:40:52 +0000</lastBuildDate>
     <atom:link href="https://nayibor.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>game dev with love2d</title>
+      <link>https://nayibor.github.io/posts/game_dev/</link>
+      <pubDate>Wed, 04 Mar 2026 14:40:52 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/posts/game_dev/</guid>
+      <description>&lt;p&gt;Hi all.hope  you are good.&lt;/p&gt;&#xA;&lt;p&gt;Recently i have been doing some indie game development with &lt;a href=&#34;https://www.love2d.org/&#34;&gt;love2d&lt;/a&gt; as the main game engine.&#xA;The engine uses lua as a scripting language which made scripting quiet easy due to the low learning curve of lua.&#xA;love2d itself is also quite easy to use itself with a low learning curve.&lt;/p&gt;&#xA;&lt;p&gt;The love2d engine uses C++,opengl and uses the lua j.i.t. intepreter.C++ with opengl is not a walk in the park and is complex.&#xA;So the engine does all the low level difficult stuff like drawing,physics manipulation,audio,video,etc.. and exposes them to&#xA;you through lua bindings.You also have the option of using third party love2d &lt;a href=&#34;https://github.com/love2d-community/awesome-love2d&#34;&gt;libraries&lt;/a&gt; for some functionality if you want.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Coding in lua</title>
       <link>https://nayibor.github.io/posts/lua/</link>
@@ -18,7 +25,7 @@
       <description>&lt;p&gt;Hi All.hope you are good. today i want to talk about Lua and my experience with it.&#xA;Lua is a lightweight, multi-paradigm, scripting programming language, intended to be a extension designed for embedded use in applications.&lt;/p&gt;&#xA;&lt;p&gt;Lua had it&amp;rsquo;s origins as a data entry language(DEL) for simulations and a report description language called simple object language(SOL).&#xA;You can read all about it&amp;rsquo;s interesting &lt;a href=&#34;https://www.lua.org/history.html&#34;&gt;history&lt;/a&gt;.Its a very simple language with very few operators,small size and is very portable&#xA;thus can be run on many platforms like  windows,linux,mac,linux etc..&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Typst Reporting Application</title>
+      <title>Reporting Application</title>
       <link>https://nayibor.github.io/posts/typst_report_application/</link>
       <pubDate>Thu, 22 May 2025 13:42:45 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
       <guid>https://nayibor.github.io/posts/typst_report_application/</guid>

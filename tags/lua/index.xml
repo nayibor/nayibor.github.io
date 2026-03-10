@@ -8,8 +8,15 @@
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Fri, 27 Feb 2026 14:10:59 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2026 14:40:52 +0000</lastBuildDate>
     <atom:link href="https://nayibor.github.io/tags/lua/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>game dev with love2d</title>
+      <link>https://nayibor.github.io/posts/game_dev/</link>
+      <pubDate>Wed, 04 Mar 2026 14:40:52 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/posts/game_dev/</guid>
+      <description>&lt;p&gt;Hi all.hope  you are good.&lt;/p&gt;&#xA;&lt;p&gt;Recently i have been doing some indie game development with &lt;a href=&#34;https://www.love2d.org/&#34;&gt;love2d&lt;/a&gt; as the main game engine.&#xA;The engine uses lua as a scripting language which made scripting quiet easy due to the low learning curve of lua.&#xA;love2d itself is also quite easy to use itself with a low learning curve.&lt;/p&gt;&#xA;&lt;p&gt;The love2d engine uses C++,opengl and uses the lua j.i.t. intepreter.C++ with opengl is not a walk in the park and is complex.&#xA;So the engine does all the low level difficult stuff like drawing,physics manipulation,audio,video,etc.. and exposes them to&#xA;you through lua bindings.You also have the option of using third party love2d &lt;a href=&#34;https://github.com/love2d-community/awesome-love2d&#34;&gt;libraries&lt;/a&gt; for some functionality if you want.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Coding in lua</title>
       <link>https://nayibor.github.io/posts/lua/</link>
