@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>mithril.js - Nukus Blog</title>
+<meta name="description" content="simpler alternative to react/angular/vue">
+
+<meta name="author" content="Nuku Ameyibor"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Nukus Blog",
+    
+    "url": "https:\/\/nayibor.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/nayibor.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/nayibor.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/nayibor.github.io\/posts\/mithril\/",
+          "name": "Mithril.js"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "map[author:Nuku Ameyibor cover:\/images\/cover.png email:nayibor@gmail.com github:nayibor name:Nuku Ameyibor website:https:\/\/nayibor.github.io\/]"
+  },
+  "headline": "mithril.js",
+  "description" : "simpler alternative to react\/angular\/vue",
+  "inLanguage" : "en",
+  "wordCount":  880 ,
+  "datePublished" : "2026-03-10T11:15:55",
+  "dateModified" : "2026-03-10T11:15:55",
+  "image" : "https:\/\/nayibor.github.io\/",
+  "keywords" : [ "javascript, virtual_dom, mithril" ],
+  "mainEntityOfPage" : "https:\/\/nayibor.github.io\/posts\/mithril\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/nayibor.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/nayibor.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="mithril.js" />
+<meta property="og:description" content="simpler alternative to react/angular/vue">
+<meta property="og:image" content="https://nayibor.github.io/images/mithril.png" />
+<meta property="og:url" content="https://nayibor.github.io/posts/mithril/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Nukus Blog" />
+<link rel="apple-touch-icon" sizes="180x180" href=" https://nayibor.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nayibor.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nayibor.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.157.0">
+<link rel="alternate" href="https://nayibor.github.io/index.xml" type="application/rss+xml" title="Nukus Blog">
+<script src="https://nayibor.github.io/js/dark-mode.js"></script><link rel="stylesheet" href="/style.min.css">
+
+
+
+
+
+
+
+ 
+
+ <link href="https://nayibor.github.io/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+
+<script src="https://nayibor.github.io/vendor/glightbox/js/glightbox.min.js"></script>
+ 
+  </head>
+  <body>
+    
+<div class="container fixed-top mw-100">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+
+          <a class="navbar-brand fw-bold" href="https://nayibor.github.io/">Nukus Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-baseline">
+              
+
+              
+
+              <li class="nav-item">
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+
+              
+
+              <li class="nav-item">
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+
+
+                
+            
+
+            
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-moon-stars" role="button"></a>
+              </li>
+
+              
+              
+            </ul>
+
+            
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10 pb-2">
+    <div class="container">
+      <div class="row justify-content-center">
+
+        
+          
+        <div class="col-sm-12  col-md-12 col-lg-12 col-xl-12 tags-sec  text-center">
+          
+          
+
+
+            
+            
+
+            
+            <div class="posts-heading">
+              <h1 class="fw-medium lh-1 align-items-center">
+                mithril.js
+                
+              </h1>
+            </div>
+
+
+            
+
+            
+
+            
+
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+
+    
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p>Two years or so,i was working on a web application which used elixir in the backend with a graphql layer for communication with the frontend section.
+I had the backend all figured out and it was time to decide which framework to use for the frontend.</p>
+<p>The requirements for the frontend were</p>
+<pre><code>  * user interfaces for tables which needed to be rendered with data from database
+  * modals to be used for editing info
+  * sections of the user interface had to be extensible so they could be reused with small changes.
+    e.g. content areas having same basic format but different columns,fields.
+  * highly interactive modal for loading content when buying or replacing inventory.
+  * highly interactive modal for patient details for medical consultantion session. 
+    e.g. customer symptoms,bio information,disease information etc..
+</code></pre>
+<p>So i needed a powerful templating engine first for 80% of the frontend.speed wasnt too importance in these cases.
+it should have block inheritance a.k.a template inheritance, autoescaping, macros,tags,filters,etc.
+A good old templating engine.This is what majority of the frontend will be built on.I choose <a href="https://mozilla.github.io/nunjucks/">nunjucks.js</a>
+for this and it worked well.</p>
+<p>The other 20% of the frontend which had highly interactive content was a different beast.I reliased nunjucks wouldent cut it due to the nature of the pages.highly interactive content
+which had state and could react to changes in the dom from ajax requests,etc..Also the solution i picked needed to be very compatible and
+easy to use alongside nunjucks.js.i decided to give the popular vdom libaries vue,react,angular and a less known library called mithril.js a try.</p>
+<p>I read quite a lot and researched  about each of them.I ended up using mithril.js however.</p>
+<p>Generally speaking if you are invested in a particular framework and have the developers who understand it very well regardless of its various issues,you can stick with it.
+The main thing is that you shouldent go in blind and should be aware of the pros/cons of any library you pick and the project requiments,team buy-in before diving in.
+vue,angular,react,etc.. are all good and polished libraries.In my case, based on my requirements i decided to go with mithril.js.But with that all that being said i also realiased that
+mithril.js offered a simpler,better alternative for those who had the flexibillty of choice.</p>
+<p>This <a href="https://github.com/pdfernhout/choose-mithril">article</a> sums everything about it all it nicely which i also reliased in the end and is a very nice read.
+It has a combination of the following features which make it worth your while for those not intimidated by a quality framework which has an  active development community  but isnt backed by a big company.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Angular</th>
+          <th style="text-align: left">React</th>
+          <th style="text-align: left">Mithril</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Defining UI Elements</td>
+          <td style="text-align: left">Templates</td>
+          <td style="text-align: left">JSX</td>
+          <td style="text-align: left">Hyperscript Api</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Typical Styling</td>
+          <td style="text-align: left">Virtualized by component</td>
+          <td style="text-align: left">Semantic Tooling</td>
+          <td style="text-align: left">Functional/Atomic</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Redraw Approach</td>
+          <td style="text-align: left">Dirty Checking</td>
+          <td style="text-align: left">State Changes</td>
+          <td style="text-align: left">User Action</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Data Model</td>
+          <td style="text-align: left">Component &amp; Services</td>
+          <td style="text-align: left">Component or Redux</td>
+          <td style="text-align: left">Flexible</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Complexity Of Debugging</td>
+          <td style="text-align: left">Very High</td>
+          <td style="text-align: left">Medium to High</td>
+          <td style="text-align: left">Low</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tooling Required To Get Started</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Low</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Size Of Library and Learning Curve</td>
+          <td style="text-align: left">Large</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Small</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Availability Of Third Party Components</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Large</td>
+          <td style="text-align: left">Small</td>
+      </tr>
+  </tbody>
+</table>
+<p>Well,to cut a long story short,the combination of the features above  from the mithril side made for a very overall pleasant experience.</p>
+<p>Creating views which have state,are highly interactive and writing components with mithril turned out to be incredibly easy as well.</p>
+<p>counter example taken from <a href="https://mithril.js.org/#getting-started">getting started in mithril</a> in mithril.js website.</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#586e75">/** counter example **/</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">var</span> root <span style="color:#719e07">=</span> <span style="color:#b58900">document</span>.body
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">var</span> count <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span> <span style="color:#586e75">// added a variable
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">var</span> Hello <span style="color:#719e07">=</span> {
+</span></span><span style="display:flex;"><span>    view<span style="color:#719e07">:</span> <span style="color:#268bd2">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">return</span> m(<span style="color:#2aa198">&#34;main&#34;</span>, [
+</span></span><span style="display:flex;"><span>            m(<span style="color:#2aa198">&#34;h1&#34;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#268bd2">class</span><span style="color:#719e07">:</span> <span style="color:#2aa198">&#34;title&#34;</span>
+</span></span><span style="display:flex;"><span>            }, <span style="color:#2aa198">&#34;My first app&#34;</span>),
+</span></span><span style="display:flex;"><span>            m(<span style="color:#2aa198">&#34;button&#34;</span>, {
+</span></span><span style="display:flex;"><span>                onclick<span style="color:#719e07">:</span> <span style="color:#268bd2">function</span>() {count<span style="color:#719e07">++</span>}
+</span></span><span style="display:flex;"><span>            }, count <span style="color:#719e07">+</span> <span style="color:#2aa198">&#34; clicks&#34;</span>)
+</span></span><span style="display:flex;"><span>        ])
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>m.mount(root, Hello)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>components in mithril.js</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#586e75">/** select and option components i wrote for a project **/</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">function</span> select(attributes,options,select_label,select_value,key_value_index,prompt <span style="color:#719e07">=</span> <span style="color:#cb4b16">true</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">var</span> obj <span style="color:#719e07">=</span> {}
+</span></span><span style="display:flex;"><span>    obj[<span style="color:#2aa198">&#34;class&#34;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;mt-2 block w-full rounded-md border border-gray-300 bg-white shadow-sm&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">Object</span>.assign(attributes,obj)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> m(<span style="color:#2aa198">&#34;div&#34;</span>,{},
+</span></span><span style="display:flex;"><span>      [
+</span></span><span style="display:flex;"><span>	  label(select_label),
+</span></span><span style="display:flex;"><span>	  m(<span style="color:#2aa198">&#34;select&#34;</span>,attributes,
+</span></span><span style="display:flex;"><span>	    [ prompt <span style="color:#719e07">?</span> m(<span style="color:#2aa198">&#34;option&#34;</span>,{},<span style="color:#2aa198">&#34;&#34;</span>) <span style="color:#719e07">:</span> [],
+</span></span><span style="display:flex;"><span>	      options.map((opt) =&gt; option(opt,select_value,opt[key_value_index.label]))
+</span></span><span style="display:flex;"><span>	   ]
+</span></span><span style="display:flex;"><span>	   )
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>     )
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">function</span> option(attributes,select_value,option_label){
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">var</span> obj <span style="color:#719e07">=</span> {selected<span style="color:#719e07">:</span> <span style="color:#2aa198">&#34;selected&#34;</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">if</span>(select_value <span style="color:#719e07">==</span> attributes.value){
+</span></span><span style="display:flex;"><span>	<span style="color:#b58900">Object</span>.assign(attributes,obj)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> m(<span style="color:#2aa198">&#34;option&#34;</span>,attributes,option_label)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>complex component with some lifecycle methods</p>
+<div class=""><div style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">46
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#586e75">/** test_view.js component to be used in other pages **/</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">function</span> TestView(vnode) {
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">var</span> errors <span style="color:#719e07">=</span> {}
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">var</span> new_amount_paid <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">var</span> id_transaction
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">var</span> total_amount_paid
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">function</span> save_form(form){
+</span></span><span style="display:flex;"><span>	<span style="color:#719e07">if</span>(new_amount_paid <span style="color:#719e07">==</span> <span style="color:#2aa198">0</span>){
+</span></span><span style="display:flex;"><span>	    errors[<span style="color:#2aa198">&#34;submit&#34;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;Please enter a valid amount greater than zero&#34;</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#719e07">else</span>{
+</span></span><span style="display:flex;"><span>	    <span style="color:#719e07">delete</span> errors[<span style="color:#2aa198">&#34;submit&#34;</span>]
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> {
+</span></span><span style="display:flex;"><span>	 oninit<span style="color:#719e07">:</span><span style="color:#268bd2">function</span>(vnode){
+</span></span><span style="display:flex;"><span>	    id_transaction <span style="color:#719e07">=</span> vnode.attrs.data.findTransaction.id
+</span></span><span style="display:flex;"><span>	    total_amount_paid <span style="color:#719e07">=</span> vnode.attrs.data.findTransaction.totalAmountPaid
+</span></span><span style="display:flex;"><span>	 },
+</span></span><span style="display:flex;"><span>	 view<span style="color:#719e07">:</span> <span style="color:#268bd2">function</span>(vnode){
+</span></span><span style="display:flex;"><span>	    <span style="color:#719e07">return</span> m(<span style="color:#2aa198">&#34;main&#34;</span>,
+</span></span><span style="display:flex;"><span>		     [
+</span></span><span style="display:flex;"><span>			   m(<span style="color:#2aa198">&#34;form&#34;</span>,{name<span style="color:#719e07">:</span> <span style="color:#2aa198">&#34;form_payment_add&#34;</span>,onsubmit<span style="color:#719e07">:</span> <span style="color:#268bd2">function</span>(event){event.preventDefault()},
+</span></span><span style="display:flex;"><span>			   [
+</span></span><span style="display:flex;"><span>			       m(<span style="color:#2aa198">&#34;div&#34;</span>,{<span style="color:#268bd2">class</span> <span style="color:#719e07">:</span> <span style="color:#2aa198">&#34;space-y-8&#34;</span>},
+</span></span><span style="display:flex;"><span>				 [
+</span></span><span style="display:flex;"><span>				     m(<span style="color:#2aa198">&#34;div&#34;</span>,{<span style="color:#268bd2">class</span><span style="color:#719e07">:</span> <span style="color:#2aa198">&#34;flex w-full&#34;</span>},
+</span></span><span style="display:flex;"><span>				       [
+</span></span><span style="display:flex;"><span>					   m(<span style="color:#2aa198">&#34;div&#34;</span>,{<span style="color:#268bd2">class</span><span style="color:#719e07">:</span> <span style="color:#2aa198">&#34;w-1/2 flex-initial&#34;</span>},mithril_api.label(<span style="color:#2aa198">&#34;New Payment&#34;</span>))
+</span></span><span style="display:flex;"><span>				       ]
+</span></span><span style="display:flex;"><span>				      ),
+</span></span><span style="display:flex;"><span>				     m(<span style="color:#2aa198">&#34;div&#34;</span>,{<span style="color:#268bd2">class</span><span style="color:#719e07">:</span> <span style="color:#2aa198">&#34;flex w-full&#34;</span>},
+</span></span><span style="display:flex;"><span>				     <span style="color:#b58900">Object</span>.entries(errors).map((entry) =&gt;  mithril_api.error(entry[<span style="color:#2aa198">1</span>]) )					 
+</span></span><span style="display:flex;"><span>				       [
+</span></span><span style="display:flex;"><span>				       ]
+</span></span><span style="display:flex;"><span>				      )
+</span></span><span style="display:flex;"><span>				 ]
+</span></span><span style="display:flex;"><span>				)
+</span></span><span style="display:flex;"><span>			   ]
+</span></span><span style="display:flex;"><span>			  )		 
+</span></span><span style="display:flex;"><span>		     ]
+</span></span><span style="display:flex;"><span>		    )
+</span></span><span style="display:flex;"><span>	 }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">export</span> { TestView }
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>have fun and let me know how your journey with mithril.js also went !!.</p>
+
+      </article>
+    </div>
+  </div>
+
+  
+  <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+      
+      <div class="blog-tags">
+        
+        <a href="https://nayibor.github.io/tags/javascript/">javascript</a>
+        
+        <a href="https://nayibor.github.io/tags/virtual_dom/">virtual_dom</a>
+        
+        <a href="https://nayibor.github.io/tags/mithril/">mithril</a>
+        
+      </div>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-1 pt-4">
+      
+      <ul class="list-group list-group-horizontal" style="flex-direction: row">
+        
+        <li class="list-group-item b-0 p-0">
+
+          <a type="button" class="btn btn-dark" role="button" href="https://nayibor.github.io/posts/game_dev/"
+            data-toggle="tooltip" data-placement="top" title="game dev with love2d">&larr;
+            Previous Post</a>
+        </li>
+        
+
+
+        
+      </ul>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+    </div>
+  </div>
+  
+</div>
+
+<div class="">
+  
+  
+
+  
+
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="mailto:nayibor@gmail.com" title="Email me" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-envelope"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/nayibor" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          <a href="https://nayibor.github.io/">Nuku Ameyibor</a>
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2026
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://nayibor.github.io/">Nukus Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
+

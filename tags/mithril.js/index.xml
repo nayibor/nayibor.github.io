@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mithril.js on Nukus Blog</title>
+    <link>http://localhost:1313/tags/mithril.js/</link>
+    <description>Recent content in Mithril.js on Nukus Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
+    <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
+    <lastBuildDate>Tue, 10 Mar 2026 11:15:55 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mithril.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mithril.js</title>
+      <link>http://localhost:1313/posts/mithril/</link>
+      <pubDate>Tue, 10 Mar 2026 11:15:55 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>http://localhost:1313/posts/mithril/</guid>
+      <description>&lt;p&gt;Two years or so,i was working on a web application which used elixir in the backend with a graphql layer for communication with the frontend section.&#xA;I had the backend all figured out and it was time to decide which framework to use for the frontend.&lt;/p&gt;&#xA;&lt;p&gt;The requirements for the frontend were&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  * interfaces for tables which needed to be rendered with data from database&#xA;  * modals to be used for editing info&#xA;  * sections of the user interface had to be extensible so they could be resused with small changes.&#xA;    e.g. a menu bar which lead to different content but having the same outer format.&#xA;  * highly interactive modal for loading content when buying or replacing inventory.&#xA;  * highly interactive modal for patient details for medical consultantion session. &#xA;    e.g. customer symptoms,bio information,disease information etc..&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

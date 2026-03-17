@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nayibor.github.io/tags/javascript/</loc>
+    <lastmod>2026-03-10T11:15:55+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/mithril/</loc>
+    <lastmod>2026-03-10T11:15:55+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/posts/mithril/</loc>
+    <lastmod>2026-03-10T11:15:55+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/</loc>
+    <lastmod>2026-03-10T11:15:55+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/posts/</loc>
+    <lastmod>2026-03-10T11:15:55+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/</loc>
+    <lastmod>2026-03-10T11:15:55+00:00</lastmod>
+  </url><url>
+    <loc>https://nayibor.github.io/tags/virtual_dom/</loc>
+    <lastmod>2026-03-10T11:15:55+00:00</lastmod>
+  </url><url>
     <loc>https://nayibor.github.io/tags/dsl/</loc>
     <lastmod>2026-03-04T14:40:52+00:00</lastmod>
   </url><url>
@@ -15,15 +36,6 @@
     <lastmod>2026-03-04T14:40:52+00:00</lastmod>
   </url><url>
     <loc>https://nayibor.github.io/tags/lua/</loc>
-    <lastmod>2026-03-04T14:40:52+00:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/</loc>
-    <lastmod>2026-03-04T14:40:52+00:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/posts/</loc>
-    <lastmod>2026-03-04T14:40:52+00:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/tags/</loc>
     <lastmod>2026-03-04T14:40:52+00:00</lastmod>
   </url><url>
     <loc>https://nayibor.github.io/posts/lua/</loc>
@@ -136,12 +148,6 @@
   </url><url>
     <loc>https://nayibor.github.io/tags/git/</loc>
     <lastmod>2017-04-25T10:54:24+02:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/tags/javascript/</loc>
-    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
-  </url><url>
-    <loc>https://nayibor.github.io/tags/mithril/</loc>
-    <lastmod>2017-04-09T20:52:24+02:00</lastmod>
   </url><url>
     <loc>https://nayibor.github.io/posts/0cbce1a3a305b158373f04c7e4c579dc/</loc>
     <lastmod>2017-04-09T20:52:24+02:00</lastmod>

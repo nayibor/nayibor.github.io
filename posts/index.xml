@@ -8,8 +8,15 @@
     <language>en-us</language>
     <managingEditor>nayibor@gmail.com (Nuku Ameyibor)</managingEditor>
     <webMaster>nayibor@gmail.com (Nuku Ameyibor)</webMaster>
-    <lastBuildDate>Wed, 04 Mar 2026 14:40:52 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2026 11:15:55 +0000</lastBuildDate>
     <atom:link href="https://nayibor.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mithril.js</title>
+      <link>https://nayibor.github.io/posts/mithril/</link>
+      <pubDate>Tue, 10 Mar 2026 11:15:55 +0000</pubDate><author>nayibor@gmail.com (Nuku Ameyibor)</author>
+      <guid>https://nayibor.github.io/posts/mithril/</guid>
+      <description>&lt;p&gt;Two years or so,i was working on a web application which used elixir in the backend with a graphql layer for communication with the frontend section.&#xA;I had the backend all figured out and it was time to decide which framework to use for the frontend.&lt;/p&gt;&#xA;&lt;p&gt;The requirements for the frontend were&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  * user interfaces for tables which needed to be rendered with data from database&#xA;  * modals to be used for editing info&#xA;  * sections of the user interface had to be extensible so they could be reused with small changes.&#xA;    e.g. content areas having same basic format but different columns,fields.&#xA;  * highly interactive modal for loading content when buying or replacing inventory.&#xA;  * highly interactive modal for patient details for medical consultantion session. &#xA;    e.g. customer symptoms,bio information,disease information etc..&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;So i needed a powerful templating engine first for 80% of the frontend.speed wasnt too importance in these cases.&#xA;it should have block inheritance a.k.a template inheritance, autoescaping, macros,tags,filters,etc.&#xA;A good old templating engine.This is what majority of the frontend will be built on.I choose &lt;a href=&#34;https://mozilla.github.io/nunjucks/&#34;&gt;nunjucks.js&lt;/a&gt;&#xA;for this and it worked well.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>game dev with love2d</title>
       <link>https://nayibor.github.io/posts/game_dev/</link>
